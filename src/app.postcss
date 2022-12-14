@@ -2,3 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        @apply dark:bg-black dark:text-white
+    }
+}
+
+@layer utilities {
+    .primary {
+        @apply text-blue-500 dark:text-red-500
+    }
+}
