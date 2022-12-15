@@ -3,9 +3,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Strawford';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/strawford-regular-webfont.woff2') format('woff2')
+}
+
+@font-face {
+    font-family: 'Strawford';
+    font-style: medium;
+    font-weight: 500;
+    src: url('/fonts/strawford-medium-webfont.woff2') format('woff2')
+}
+
 @layer base {
     :root {
         @apply dark:bg-black dark:text-white
+    }
+    html {
+        font-family: Strawford, system-ui, sans-serif;
     }
 }
 
