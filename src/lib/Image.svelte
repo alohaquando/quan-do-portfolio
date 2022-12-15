@@ -6,15 +6,9 @@
 <picture>
   {#each Object.entries(src.sources) as [format, images]}
     <source
-      srcset={images.map((i) => `${i.src}`).join(', ')}
-      type={'images/' + format}
+      srcSet={images.map((i) => `${i.src}`).join(', ')}
+      type={'image/' + format}
     />
   {/each}
-  <img loading="lazy" src={src.fallback.src} {alt}  />
+  <img src={src.fallback.src} {alt} loading="lazy" />
 </picture>
-
-<!--<style>-->
-<!--    img {-->
-<!--        max-width: 100%;-->
-<!--    }-->
-<!--</style>-->
