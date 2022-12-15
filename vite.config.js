@@ -13,6 +13,9 @@ const config = {
 				if (supportedExtensions.includes(extension)) {
 					return new URLSearchParams({
 						format: 'avif;webp;' + extension,
+						blur: '100;0',
+						quality: '50; 100',
+						width: '300; 600; 900; 2000',
 						picture: true
 					});
 				}
