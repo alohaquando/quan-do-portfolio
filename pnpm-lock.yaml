@@ -10,6 +10,7 @@ specifiers:
   eslint: ^8.29.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^4.0.0
+  lazysizes: ^5.3.2
   postcss: ^8.4.20
   postcss-load-config: ^4.0.1
   prettier: ^2.8.1
@@ -24,6 +25,9 @@ specifiers:
   vite: ^4.0.1
   vite-imagetools: ^4.0.11
   vitest: ^0.25.8
+
+dependencies:
+  lazysizes: 5.3.2
 
 devDependencies:
   '@playwright/test': 1.28.1
@@ -1427,6 +1431,10 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
     dev: true
+
+  /lazysizes/5.3.2:
+    resolution: {integrity: sha512-22UzWP+Vedi/sMeOr8O7FWimRVtiNJV2HCa+V8+peZOw6QbswN9k58VUhd7i6iK5bw5QkYrF01LJbeJe0PV8jg==}
+    dev: false
 
   /levn/0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
