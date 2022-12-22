@@ -12,10 +12,9 @@ const config = {
 				const extension = url.pathname.substring(url.pathname.lastIndexOf('.') + 1);
 				if (supportedExtensions.includes(extension)) {
 					return new URLSearchParams({
-						format: 'avif;webp;' + extension,
-						blur: '0;100',
-						quality: '80;50',
-						metadata: ''
+						// format: 'avif;webp;' + extension,
+						// metadata: ''
+						// picture: true
 					});
 				}
 				return new URLSearchParams();

@@ -1,45 +1,50 @@
-<!--suppress ES6UnusedImports -->
 <script>
-  export let src;
-  export let alt;
+  export let imageData;
 
   let className;
-  // noinspection ReservedWordAsName
-  export {className as class};
+  export { className as class };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   import lazySizes from "lazysizes";
 
-  let avifSrcset = "";
-  let webpSrcset = "";
-  let pngSrcset = "";
-  let placeholderSrc;
-
-  // noinspection JSUnusedAssignment
-  src.forEach(image => {
-    if (image.blur === 100 && image.quality === 50 && image.format==='webp') {
-      placeholderSrc = image.src
-    }
-    switch (image.format) {
-      case 'avif':
-        avifSrcset += image.src + ', ';
-        break;
-      case 'webp':
-        webpSrcset += image.src + ', ';
-        break;
-      case 'png':
-        pngSrcset += image.src + ', ';
-        break;
-      default:
-        break;
-    }
-  })
+  import { themeStore } from "$lib/stores/theme.js";
 </script>
 
-
-<picture >
-  <source data-srcset={avifSrcset} type="image/avif" />
-  <source data-srcset={webpSrcset} type="image/webp" />
-  <source data-srcset={pngSrcset} type="image/png" />
-  <img class="lazyload blur-up {className}" data-sizes="auto" src={placeholderSrc} {alt}/>
-</picture>
+{#if $themeStore === 'light'}
+  <picture>
+    <source
+      data-srcset={imageData.avifSrcLight}
+      type="image/avif"
+    />
+    <source
+      data-srcset={imageData.webpSrcLight}
+      type="image/webp"
+    />
+    <img
+      data-sizes="auto"
+      width={imageData.width}
+      height={imageData.height}
+      class="lazyload {className}"
+      src={imageData.lowQualitySrcLight}
+      alt={imageData.alt}
+    />
+  </picture>
+{:else}
+  <picture>
+    <source
+      data-srcset={imageData.avifSrcDark}
+      type="image/avif"
+    />
+    <source
+      data-srcset={imageData.webpSrcDark}
+      type="image/webp"
+    />
+    <img
+      data-sizes="auto"
+      width={imageData.width}
+      height={imageData.height}
+      class="lazyload {className}"
+      src={imageData.lowQualitySrcDark}
+      alt={imageData.alt}
+    />
+  </picture>
+{/if}
