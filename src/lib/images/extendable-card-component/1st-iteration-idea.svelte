@@ -1,35 +1,45 @@
 <script>
-  // Alt text
-  import Image from "$lib/components/Image.svelte";
+        import Image from "$lib/components/Image.svelte";
 
-  const alt = "The ideation of the first iteration";
+        // Alt text
+          export let alt;
+          if (!alt) {
+            alt = "1st iteration idea"
+          }
 
-  // Light image
-  import lowQualitySrcLight
-    from "$lib/images/extendable-card-component/1st-iteration-idea-light.png?format=avif&quality=45&blur=100";
-  import avifSrcLight
-    from "$lib/images/extendable-card-component/1st-iteration-idea-light.png?format=avif&quality=95";
-  import webpSrcLight
-    from "$lib/images/extendable-card-component/1st-iteration-idea-light.png?format=webp&quality=95";
+        // Metadata
+        import {width, height} from "$lib/images/extendable-card-component/1st-iteration-idea-L.png?metadata"
 
-  // Dark image
-  import lowQualitySrcDark
-    from "$lib/images/extendable-card-component/1st-iteration-idea-dark.png?format=avif&quality=45&blur=100";
-  import avifSrcDark from "$lib/images/extendable-card-component/1st-iteration-idea-dark.png?format=avif&quality=95";
-  import webpSrcDark from "$lib/images/extendable-card-component/1st-iteration-idea-dark.png?format=webp&quality=95";
+        // Light image
+        import lowQualitySrcLight
+          from "$lib/images/extendable-card-component/1st-iteration-idea-L.png?width=768&format=avif&quality=45&blur=100";
+        import avifSrcLight
+          from "$lib/images/extendable-card-component/1st-iteration-idea-L.png?width=640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+        import webpSrcLight
+          from "$lib/images/extendable-card-component/1st-iteration-idea-L.png?width=640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
-  const imageData = {
-    alt,
-    lowQualitySrcLight,
-    avifSrcLight,
-    webpSrcLight,
-    lowQualitySrcDark,
-    avifSrcDark,
-    webpSrcDark
-  }
+        // Dark image
+        import lowQualitySrcDark
+          from "$lib/images/extendable-card-component/1st-iteration-idea-D.png?width=768&format=avif&quality=45&blur=100";
+        import avifSrcDark from "$lib/images/extendable-card-component/1st-iteration-idea-D.png?width=640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+        import webpSrcDark from "$lib/images/extendable-card-component/1st-iteration-idea-D.png?width=640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
-  let className;
-  export {className as class};
-</script>
+        const imageData = {
+          alt,
+          width,
+          height,
+          lowQualitySrcLight,
+          avifSrcLight,
+          webpSrcLight,
+          lowQualitySrcDark,
+          avifSrcDark,
+          webpSrcDark
+        }
 
-<Image {imageData} class={className}/>
+        let className;
+        // noinspection ReservedWordAsName
+        export {className as class};
+      </script>
+
+
+      <Image {imageData} class={className}/>

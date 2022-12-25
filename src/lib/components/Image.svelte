@@ -23,7 +23,7 @@
       data-sizes="auto"
       width={imageData.width}
       height={imageData.height}
-      class="lazyload {className}"
+      class="lazyload rounded-[36px] border border-[rgba(0,0,0,0.08)] shadow-sm  sm:w-[60vw] object-scale-down mx-auto {className}"
       src={imageData.lowQualitySrcLight}
       alt={imageData.alt}
     />
@@ -42,7 +42,8 @@
       data-sizes="auto"
       width={imageData.width}
       height={imageData.height}
-      class="lazyload {className}"
+      class="lazyload rounded-[36px] border border-[rgba(255,255,255,0.15)] sm:w-[60vw] object-scale-down mx-auto
+{className}"
       src={imageData.lowQualitySrcDark}
       alt={imageData.alt}
     />
