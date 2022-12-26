@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const imageFoldersPath = "src/lib/images";
+const imageFoldersPath = "src/lib/assets/images";
 
 async function generateImageDataFiles() {
   // Get all image folders
@@ -45,21 +45,21 @@ async function generateImageDataFiles() {
           }
 
         // Metadata
-        import {width, height} from "$lib/images/${folderName}/${imageDataLightName}?metadata"
+        import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?metadata"
 
         // Light image
         import lowQualitySrcLight
-          from "$lib/images/${folderName}/${imageDataLightName}?width=768&format=avif&quality=45&blur=100";
+          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=768&format=avif&quality=45&blur=100";
         import avifSrcLight
-          from "$lib/images/${folderName}/${imageDataLightName}?width=640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
         import webpSrcLight
-          from "$lib/images/${folderName}/${imageDataLightName}?width=640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         // Dark image
         import lowQualitySrcDark
-          from "$lib/images/${folderName}/${imageDataDarkName}?width=768&format=avif&quality=45&blur=100";
-        import avifSrcDark from "$lib/images/${folderName}/${imageDataDarkName}?width=640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
-        import webpSrcDark from "$lib/images/${folderName}/${imageDataDarkName}?width=640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=768&format=avif&quality=45&blur=100";
+        import avifSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+        import webpSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         const imageData = {
           alt,

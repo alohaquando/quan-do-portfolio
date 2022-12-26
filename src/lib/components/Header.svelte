@@ -1,33 +1,57 @@
-<nav
-  class="sticky top-0 flex items-center h-16">
-  <!--  Links  -->
-  <div class="z-20 order-1 flex flex-grow place-content-between items-center px-6">
-    <a href="/"
-       class="text-2xl font-medium">
-      Quân's Portfolio
-    </a>
-    <div class="font-medium space-x-6">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/case-studies/grove/expandable-card-component">Card component</a>
-    </div>
-  </div>
+<script>
+	import Icon from '$lib/assets/icons/Icon.svelte';
 
-  <!--  Background Blur  -->
-  <div
-    class="nav-bg absolute top-0 left-0 z-10 h-20 w-full backdrop-blur "></div>
-  <div
-    class="nav-bg absolute top-0 left-0 z-0 h-20 w-full bg-white dark:bg-black opacity-50"></div>
+	let navLinks = [
+		{ a: '/', icon: 'home', title: 'Home' },
+		{ a: '/work', icon: 'rectangle_stack', title: 'Work' },
+		{ a: '/about', icon: 'face_smile', title: 'About' },
+		{ a: '/contact', icon: 'chat_bubble_left', title: 'Contact' }
+	];
 
-</nav>
+	import { page } from '$app/stores';
 
-<!--Full header blur, pretty but basic-->
-<!--sticky top-0 z-50 flex flex-wrap items-center justify-between bg-white px-4 py-5 shadow-md shadow-slate-900/5 transition duration-500 dark:shadow-none sm:px-6 lg:px-8 dark:bg-black/95 dark:backdrop-blur dark:[@supports(backdrop-filter:blur(0))]:bg-black/75-->
+	let activeSection;
 
+	$: if ($page.url.pathname === '/') {
+		activeSection = 'Home';
+	} else if ($page.url.pathname.includes('work')) {
+		activeSection = 'Work';
+	} else if ($page.url.pathname.includes('about')) {
+		activeSection = 'About';
+	} else if ($page.url.pathname.includes('contact')) {
+		activeSection = 'Contact';
+	}
+</script>
 
-<style>
-    .nav-bg {
-        mask-image: linear-gradient(#0E0E0E 50%, rgba(0, 0, 0, 0.75) 75%, rgba(0, 0, 0, 0) 100%);
-    }
-
-</style>
+<div
+	class="fixed bottom-0 w-full bg-gradient-to-t from-white via-white/70 py-4 dark:from-zinc-900 dark:via-zinc-900/80 sm:sticky sm:top-0 sm:from-transparent">
+	<nav
+		class="z-10 mx-6 flex rounded-full border bg-white/70 px-6 py-2 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-zinc-900/90 sm:mx-auto sm:w-fit sm:px-6">
+		<ul class="flex w-full place-content-between text-xs font-medium sm:space-x-4 sm:text-base">
+			{#each navLinks as link}
+				<li>
+					<a
+						href={link.a}
+						class="group flex w-16 flex-col place-content-center items-center  transition hover:text-amber-500/80 sm:w-auto border-b-0 {activeSection ===
+						link.title
+							? 'text-amber-500'
+							: 'text-zinc-400'}">
+						<div
+							class="sm:hidden mb-1.5 py-0.5 px-3.5 rounded-full  group-hover:bg-stone-100/80 dark:group-hover:bg-stone-800/50 transition {activeSection ===
+							link.title
+								? 'bg-stone-100/90 dark:bg-stone-800/90'
+								: ''}">
+							<Icon
+								name={link.icon}
+								class="mx-auto group-hover:stroke-amber-500/80 dark:group-hover:stroke-white/80 {activeSection ===
+								link.title
+									? 'stroke-amber-500 dark:stroke-amber-600'
+									: 'stroke-zinc-400'}" />
+						</div>
+						{link.title}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</nav>
+</div>

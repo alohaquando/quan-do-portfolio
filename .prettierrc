@@ -1,5 +1,6 @@
 {
   "singleAttributePerLine": true,
+  "bracketSameLine": true,
   "useTabs": true,
   "singleQuote": true,
   "trailingComma": "none",

@@ -21,18 +21,15 @@
 
 @layer base {
     :root {
-        @apply dark:bg-black dark:text-white
+        @apply dark:bg-zinc-900 dark:text-white sm:dark:bg-black
     }
     html {
         font-family: Strawford, system-ui, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-}
-
-@layer utilities {
-    .primary {
-        @apply text-blue-500 dark:text-red-500
+    a {
+        @apply font-medium border-b-2 border-amber-400 hover:border-amber-200 dark:border-amber-500 dark:hover:border-amber-300
     }
-
 }
+
