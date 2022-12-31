@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite dev",
-    "dev-host": "vite dev --host",
+    "dev": "vite dev --host",
     "build": "vite build",
     "preview": "vite preview --host",
     "test": "playwright test",
@@ -14,12 +13,14 @@
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
     "webstorm-integration": "vitest --watch --reporter=dot --reporter=json --outputFile=.vitest-result.json",
-    "generate-image-data": "node src/lib/scripts/generate-image-data.cjs"
+    "generate-image-data": "node src/lib/scripts/generate-image-data.cjs",
+    "preinstall": "npx only-allow pnpm"
   },
   "devDependencies": {
     "@playwright/test": "^1.28.1",
     "@sveltejs/adapter-auto": "^1.0.0",
     "@sveltejs/kit": "^1.0.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
     "autoprefixer": "^10.4.13",
@@ -30,6 +31,7 @@
     "postcss-load-config": "^4.0.1",
     "prettier": "^2.8.1",
     "prettier-plugin-svelte": "^2.9.0",
+    "prettier-plugin-tailwindcss": "^0.2.1",
     "svelte": "^3.55.0",
     "svelte-check": "^2.10.2",
     "svelte-dark-mode": "^2.1.0",
@@ -45,5 +47,9 @@
   "type": "module",
   "dependencies": {
     "lazysizes": "^5.3.2"
+  },
+  "engines": {
+    "npm": "use-pnpm",
+    "pnpm": "^7.19.0"
   }
 }

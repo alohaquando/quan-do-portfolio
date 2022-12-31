@@ -1,3 +1,5 @@
-<p class="underline">
-	This is the about page
-</p>
+<script>
+	import WIP from '$lib/components/_extras/WIP.svelte';
+</script>
+
+<WIP />

@@ -1,5 +1,5 @@
 <script>
-        import Image from "$lib/components/Image.svelte";
+        import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
           export let alt;
@@ -25,6 +25,7 @@
         import webpSrcDark from "$lib/assets/images/extendable-card-component/final-iteration-D.png?width=640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         const imageData = {
+          lightDark: true,
           alt,
           width,
           height,

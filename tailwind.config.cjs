@@ -5,16 +5,18 @@ const config = {
 
     fontFamily: {
       sans: [
-        "Strawford", { fontFeatureSettings: '"tnum", "lnum", "salt", "ss01"' }
+        "Inter, system-ui",
+        { fontFeatureSettings: "\"calt\", \"case\", \"ss01\", \"ss03\", \"cv11\"" }
+      ],
+      display: [
+        "Strawford, system-ui", { fontFeatureSettings: "\"tnum\", \"lnum\", \"salt\", \"ss01\"" }
       ]
     },
 
-    extend: {
-
-    }
+    extend: {}
   },
 
-  plugins: []
+  plugins: [require("@tailwindcss/line-clamp")]
 };
 
 module.exports = config;

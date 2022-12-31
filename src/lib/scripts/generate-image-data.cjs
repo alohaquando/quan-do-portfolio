@@ -11,6 +11,7 @@ async function generateImageDataFiles() {
 
   // For each folder
   for (let folderName of folders) {
+    let uniqueLightDarkImages = [];
     let uniqueImages = [];
     let folderPath = `${imageFoldersPath}/${folderName}`;
     let images = await fs.promises.readdir(folderPath);
@@ -18,16 +19,18 @@ async function generateImageDataFiles() {
     // Get images
     for (let imageName of images) {
       if (
-        !uniqueImages.includes(imageName.replace(/-[LD].png/g, "")) &&
-        imageName.includes(".png")
+        !uniqueLightDarkImages.includes(imageName.replace(/-[LD]\.png/g, "")) &&
+        imageName.match(/-[LD]\.png/g)
       ) {
-        imageName = imageName.replace(/-[LD].png/g, "");
-        uniqueImages.push(imageName);
+        imageName = imageName.replace(/-[LD]\.png/g, "");
+        uniqueLightDarkImages.push(imageName);
+      } else if (imageName.match(/[^LD]\.png/g)) {
+        uniqueImages.push(imageName.replace(/\.png/g, ""));
       }
     }
 
-    // Write data files
-    for (const imageName of uniqueImages) {
+    // Write data files for light dark images
+    for (const imageName of uniqueLightDarkImages) {
       let imageDataFileName = `${folderPath}/${imageName}.svelte`;
       let imageDataLightName = imageName + "-L.png";
       let imageDataDarkName = imageName + "-D.png";
@@ -36,7 +39,7 @@ async function generateImageDataFiles() {
 
       // noinspection JSUnresolvedVariable
       let imageData = `<script>
-        import Image from "$lib/components/Image.svelte";
+        import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
           export let alt;
@@ -62,6 +65,7 @@ async function generateImageDataFiles() {
         import webpSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         const imageData = {
+          lightDark: true,
           alt,
           width,
           height,
@@ -71,6 +75,53 @@ async function generateImageDataFiles() {
           lowQualitySrcDark,
           avifSrcDark,
           webpSrcDark
+        }
+
+        let className;
+        // noinspection ReservedWordAsName
+        export {className as class};
+      </script>
+
+      <Image {imageData} class={className}/>`;
+
+      await fs.promises.writeFile(imageDataFileName, imageData);
+    }
+
+    for (const imageName of uniqueImages) {
+      let imageDataFileName = `${folderPath}/${imageName}.svelte`;
+      let imageDataName = imageName + ".png";
+      let imageAlt = imageName.replace(/-/g, " ");
+      imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
+
+      // noinspection JSUnresolvedVariable
+      let imageData = `<script>
+        import Image from "$lib/components/media/Image.svelte";
+
+        // Alt text
+          export let alt;
+          if (!alt) {
+            alt = "${imageAlt}"
+          }
+
+        // Metadata
+        import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?metadata"
+
+        // Image
+        import lowQualitySrc
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=768&format=avif&quality=45&blur=100";
+        import avifSrc
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+        import webpSrc
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+
+        const imageData = {
+          lightDark: false,
+          alt,
+          width,
+          height,
+          lowQualitySrc,
+          avifSrc,
+          webpSrc,
         }
 
         let className;
