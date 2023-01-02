@@ -12,9 +12,7 @@
     "test:unit": "vitest",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
-    "webstorm-integration": "vitest --watch --reporter=dot --reporter=json --outputFile=.vitest-result.json",
-    "generate-image-data": "node src/lib/scripts/generate-image-data.cjs",
-    "preinstall": "npx only-allow pnpm"
+    "generate-image-data": "node src/lib/scripts/generate-image-data.cjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.28.1",

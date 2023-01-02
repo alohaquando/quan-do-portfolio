@@ -56,7 +56,7 @@
 			data-sizes="auto"
 			width={imageData.width}
 			height={imageData.height}
-			class="lazyload w-full h-full {className}"
+			class="w-full h-full {className}"
 			src={imageData.lowQualitySrc}
 			alt={imageData.alt} />
 	</picture>
