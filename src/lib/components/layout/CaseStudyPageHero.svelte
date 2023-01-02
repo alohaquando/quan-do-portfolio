@@ -11,10 +11,10 @@
 <header class="relative">
 	<!--		Background Colors-->
 	<div
-		class="absolute flex h-full w-full place-content-between items-center opacity-40 blur-3xl dark:opacity-80 ">
-		<div class="h-[83%] w-[33%] rounded-full bg-red-600 dark:bg-red-900 " />
-		<div class="h-[83%] w-[33%] rounded-full bg-amber-600 dark:bg-amber-900 " />
-		<div class="h-[83%] w-[33%] rounded-full bg-yellow-600 dark:bg-yellow-900 " />
+		class="absolute flex h-full w-full items-center opacity-40 blur-3xl dark:opacity-80 ">
+		<div class="h-[83%] w-[44%] rounded-full bg-red-600 dark:bg-red-900 " />
+		<div class="h-[83%] w-[44%] rounded-full bg-amber-600 dark:bg-amber-900 " />
+		<div class="h-[83%] w-[44%] rounded-full bg-yellow-600 dark:bg-yellow-900 " />
 	</div>
 	<!--		Background Colors-->
 
@@ -33,7 +33,7 @@
 
 	<!--Background-->
 	<div
-		class="absolute h-full w-full bg-white/80 dark:bg-black/60 md:rounded-t-3xl {$themeStore ===
+		class="absolute h-full w-full bg-white/80 dark:bg-zinc-900/20 md:rounded-3xl {$themeStore ===
 		'light'
 			? 'hero'
 			: 'hero-dark'}" />
