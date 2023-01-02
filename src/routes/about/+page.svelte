@@ -1,5 +1,8 @@
 <script>
-	import WIP from '$lib/components/_extras/WIP.svelte';
+  import ShowcasePage from "$lib/components/layout/ShowcasePage.svelte";
+  import WIP from '$lib/components/_extras/WIP.svelte';
 </script>
 
-<WIP />
+<ShowcasePage title="About">
+  <WIP/>
+</ShowcasePage>

@@ -11,10 +11,9 @@
 <header class="relative">
 	<!--		Background Colors-->
 	<div
-		class="absolute flex h-full w-full items-center opacity-40 blur-3xl dark:opacity-80 ">
-		<div class="h-[83%] w-[44%] rounded-full bg-red-600 dark:bg-red-900 " />
-		<div class="h-[83%] w-[44%] rounded-full bg-amber-600 dark:bg-amber-900 " />
-		<div class="h-[83%] w-[44%] rounded-full bg-yellow-600 dark:bg-yellow-900 " />
+		class="absolute flex h-full w-full items-center -space-x-96 opacity-40 blur-3xl dark:opacity-80 ">
+		<div
+			class=" w-full h-5/6 flex-none [background-image:linear-gradient(90deg,rgba(217,119,6,0.2)_0%,rgba(217,119,6,0.4)_32.29%,rgba(220,38,38,0.3)_67.19%,rgba(202,138,4,0.2)_100%)]" />
 	</div>
 	<!--		Background Colors-->
 
@@ -41,10 +40,10 @@
 
 	<!--	Front Content-->
 	<div
-		class="flex flex-col place-content-center items-center space-y-6 py-16 text-center sm:space-y-10 md:pt-16">
+		class="flex flex-col place-content-center items-center space-y-6 py-16 text-center sm:space-y-10 sm:pt-32">
 		<!--	Image Design Block Outline -->
 		<div
-			class="relative mx-10 outline outline-2 outline-amber-500 dark:outline-amber-600 sm:max-w-xs">
+			class="relative mx-10 outline outline-2 outline-amber-500 dark:outline-amber-600 w-4/5 max-w-md">
 			<!--	Image Design Block 4 Corners Squares-->
 			<div>
 				<div

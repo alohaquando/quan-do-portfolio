@@ -4,50 +4,54 @@
 @tailwind utilities;
 
 @layer base {
-    @font-face {
-        font-family: 'Strawford';
-        font-weight: 400;
-        font-display: swap;
-        src: url('$lib/assets/fonts/strawford-regular-webfont.woff2') format('woff2')
-    }
-    @font-face {
-        font-family: 'Strawford';
-        font-weight: 500;
-        font-display: swap;
-        src: url('$lib/assets/fonts/strawford-medium-webfont.woff2') format('woff2')
-    }
-    @font-face {
-        font-family: 'Strawford';
-        font-weight: 700;
-        font-display: swap;
-        src: url('$lib/assets/fonts/strawford-bold-webfont.woff2') format('woff2')
-    }
-    @font-face {
-        font-family: 'Inter';
-        font-weight: 400;
-        font-display: swap;
-        src: url('$lib/assets/fonts/Inter-Regular.woff2') format('woff2')
-    }
-    @font-face {
-        font-family: 'Inter';
-        font-weight: 600;
-        font-display: swap;
-        src: url('$lib/assets/fonts/Inter-SemiBold.woff2') format('woff2')
-    }
-    :root {
-        @apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white
-    }
-    html {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+	@font-face {
+		font-family: 'Strawford';
+		font-weight: 400;
+		font-display: swap;
+		src: url('$lib/assets/fonts/strawford-regular-webfont.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Strawford';
+		font-weight: 500;
+		font-display: swap;
+		src: url('$lib/assets/fonts/strawford-medium-webfont.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Strawford';
+		font-weight: 700;
+		font-display: swap;
+		src: url('$lib/assets/fonts/strawford-bold-webfont.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Inter';
+		font-weight: 400;
+		font-display: swap;
+		src: url('$lib/assets/fonts/Inter-Regular.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Inter';
+		font-weight: 600;
+		font-display: swap;
+		src: url('$lib/assets/fonts/Inter-SemiBold.woff2') format('woff2');
+	}
 
-    .glass {
-        @apply bg-zinc-100/10 backdrop-blur dark:bg-zinc-50/10 glass-ring
-    }
+	:root {
+		@apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white overscroll-x-none;
+		/*noinspection CssInvalidPropertyValue*/
+		overflow: overlay;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 
-    .glass-ring {
-        @apply ring-1 ring-zinc-900/10 dark:ring-zinc-50/20
-    }
+	.glass {
+		@apply glass-ring bg-zinc-100/10 backdrop-blur dark:bg-zinc-50/10;
+	}
+
+	.glass-ring {
+		@apply ring-1 ring-zinc-900/10 dark:ring-zinc-50/20;
+	}
+
+	.spacing-default {
+		@apply flex flex-col space-y-6;
+	}
 }
-

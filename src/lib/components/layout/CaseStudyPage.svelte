@@ -13,20 +13,22 @@
 		content={title} />
 </svelte:head>
 
-<PageLayout>
-	<!--	Hero Header-->
-	<CaseStudyPageHero
-		{title}
-		{headline}>
-		<slot name="hero_image" />
-	</CaseStudyPageHero>
+<!--	Hero Header-->
+<CaseStudyPageHero
+	{title}
+	{headline}>
+	<slot name="hero_image" />
+</CaseStudyPageHero>
 
+<PageLayout>
 	<!--	Content-->
-	<slot name="content" />
+	<div class="spacing-default">
+		<slot />
+	</div>
 </PageLayout>
 
-<style>
-	:global([slot='content']) {
-		@apply flex flex-col px-6 pt-16 pb-28 sm:mx-12 md:mx-auto md:w-[80%];
-	}
-</style>
+<!--<style>-->
+<!--	:global([slot='content']) {-->
+<!--		@apply flex flex-col px-6 pt-16 pb-28 sm:mx-12 md:mx-auto md:w-[80%];-->
+<!--	}-->
+<!--</style>-->

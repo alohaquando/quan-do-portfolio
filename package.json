@@ -47,9 +47,5 @@
   "type": "module",
   "dependencies": {
     "lazysizes": "^5.3.2"
-  },
-  "engines": {
-    "npm": "use-pnpm",
-    "pnpm": "^7.19.0"
   }
 }

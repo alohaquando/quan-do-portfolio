@@ -21,9 +21,6 @@
 	title="Extendable Card Component"
 	headline="Display complex data in an easily scannable and actionable component">
 	<IMG_Hero slot="hero_image" />
-	<div
-		slot="content"
-		class="space-y-4">
 		<Title>Heading</Title>
 		<Body>
 			The web has evolved a lot since it started. While designing for the web used to involve a
@@ -45,5 +42,4 @@
 		<IMG_10 />
 		<IMG_11 />
 		<IMG_12 />
-	</div>
 </CaseStudyPage>

@@ -2,10 +2,10 @@
 	import Icon from '$lib/components/iconography/Icon.svelte';
 
 	let navLinks = [
-		{ a: '/', icon: 'home', title: 'Home' },
-		{ a: '/work', icon: 'rectangle_stack', title: 'Work' },
-		{ a: '/about', icon: 'face_smile', title: 'About' },
-		{ a: '/contact', icon: 'chat_bubble_left', title: 'Contact' }
+		{ href: '/', icon: 'home', title: 'Home' },
+		{ href: '/work', icon: 'rectangle_stack', title: 'Work' },
+		{ href: '/about', icon: 'face_smile', title: 'About' },
+		{ href: '/contact', icon: 'at_symbol', title: 'Contact' }
 	];
 
 	import { page } from '$app/stores';
@@ -25,14 +25,14 @@
 
 <!--	Navigation bar-->
 <nav
-	class="fixed z-50 mx-6 rounded-full border bg-white/70 px-4 shadow-lg backdrop-blur dark:border-white/10 dark:bg-zinc-900/90 sm:mx-auto sm:w-fit">
+	class="fixed left-0 right-0 z-50 mx-6 rounded-full border bg-white/90 px-4 shadow backdrop-blur dark:border-white/10 dark:bg-zinc-900/90 max-sm:bottom-4 sm:top-6 sm:mx-auto sm:w-fit ">
 	<ul class="flex place-content-between text-xs sm:text-base">
 		<!--			Links-->
 		{#each navLinks as link}
 			<li class="contents">
 				<!--Text-->
 				<a
-					href={link.a}
+					href={link.href}
 					class="group flex flex-1 flex-col place-content-center items-center border-b-0 py-2 font-display font-medium font-medium transition hover:text-amber-500/80 dark:hover:text-amber-400 sm:px-4 {activeSection ===
 					link.title
 						? 'text-amber-500'

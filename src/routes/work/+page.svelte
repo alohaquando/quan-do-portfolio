@@ -1,7 +1,6 @@
 <script>
-	import LinkCard from '$lib/components/LinkCard.svelte';
+	import LinkCard from '$lib/components/cards/LinkCard.svelte';
 	import ShowcasePage from '$lib/components/layout/ShowcasePage.svelte';
-	import Display from '$lib/components/typography/DisplayLarge.svelte';
 	import IMG_Grove from '$lib/assets/images/work/grove.svelte';
 	import IMG_Logo_Grove from '$lib/assets/images/work/grove-logo.svelte';
 	import IMG_Card_Component from '$lib/assets/images/extendable-card-component/hero.svelte';
