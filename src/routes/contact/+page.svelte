@@ -3,14 +3,16 @@
 	import ContactCard from "$lib/components/cards/ContactCard.svelte";
 
 	let contactLinks = [
-		{ href: 'mailto:work@quanhdo.com', icon: 'rectangle_stack', title: 'Email', subtitle: 'work@quanhdo.com' },
-		{ href: '/about', icon: 'face_smile', title: 'GitHub', subtitle: '@alohaquando' },
-		{ href: '/contact', icon: 'at_symbol', title: 'LinkedIn', subtitle: '@' }
+		{ href: 'mailto:work@quanhdo.com', icon: 'envelope', title: 'Email', subtitle: 'work@quanhdo.com', colorStyle: 'bg-amber-400 dark:bg-amber-600', ringStyle: 'group-hover:ring-amber-400 dark:group-hover:ring-amber-600' },
+		{ href: 'https://github.com/alohaquando', icon: 'github', title: 'GitHub', subtitle: '@alohaquando', colorStyle: 'bg-violet-400 dark:bg-violet-600', ringStyle: 'group-hover:ring-violet-400 dark:group-hover:ring-violet-600' },
+		{ href: '/contact', icon: 'linkedin', title: 'LinkedIn', subtitle: '@', colorStyle: 'bg-blue-400 dark:bg-blue-600', ringStyle: 'group-hover:ring-blue-400 dark:group-hover:ring-blue-600' }
 	];
 </script>
 
 <ShowcasePage title="Contact">
+<div class="grid grid-cols-2 grid-rows-2 grid-flow-row gap-6">
 	{#each contactLinks as link}
-		<ContactCard href={link.href} title={link.title} body={link.subtitle} />
-	{/each}
+		<ContactCard href={link.href} title={link.title} body={link.subtitle} colorStyle={link.colorStyle} ringStyle={link.ringStyle} icon={link.icon} class="first:col-span-2"/>
+		{/each}
+</div>
 </ShowcasePage>
