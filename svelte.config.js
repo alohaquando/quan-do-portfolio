@@ -1,8 +1,8 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-cloudflare';
 import importAssets from 'svelte-preprocess-import-assets';
 
-/** @type {import('@sveltejs/kit').Config} */
+/** @type {import('@sveltejs/kit').Config} **/
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors

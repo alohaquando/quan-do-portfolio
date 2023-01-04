@@ -15,7 +15,6 @@
     "generate-image-data": "node src/lib/scripts/generate-image-data.cjs"
   },
   "devDependencies": {
-    "@sveltejs/adapter-auto": "^1.0.0",
     "@sveltejs/kit": "^1.0.1",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
@@ -41,5 +40,8 @@
     "vite-imagetools": "^4.0.13",
     "vitest": "^0.25.8"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@sveltejs/adapter-cloudflare": "^1.0.0"
+  }
 }

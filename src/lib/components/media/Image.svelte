@@ -20,11 +20,10 @@
 				type="image/webp" />
 			<!--suppress HtmlWrongAttributeValue -->
 			<img
-				loading="{eager ? 'eager' : 'lazy'}"
+				loading={eager ? 'eager' : 'lazy'}
 				width={imageData.width}
 				height={imageData.height}
 				class="mx-auto my-2 rounded-2xl border border-black/10 object-scale-down shadow-sm sm:rounded-3xl {className}"
-				src={imageData.lowQualitySrcLight}
 				alt={imageData.alt} />
 		</picture>
 	{:else}
@@ -37,13 +36,12 @@
 				type="image/webp" />
 			<!--suppress HtmlWrongAttributeValue -->
 			<img
-				loading="{eager ? 'eager' : 'lazy'}"
+				loading={eager ? 'eager' : 'lazy'}
 				sizes="auto"
 				width={imageData.width}
 				height={imageData.height}
 				class="mx-auto my-2 rounded-2xl border border-white/10 object-scale-down sm:rounded-3xl
 {className}"
-				src={imageData.lowQualitySrcDark}
 				alt={imageData.alt} />
 		</picture>
 	{/if}
@@ -57,11 +55,10 @@
 			type="image/webp" />
 		<!--suppress HtmlWrongAttributeValue -->
 		<img
-			loading="{eager ? 'eager' : 'lazy'}"
+			loading={eager ? 'eager' : 'lazy'}
 			width={imageData.width}
 			height={imageData.height}
-			class="w-full h-full {className}"
-			src={imageData.lowQualitySrc}
+			class="h-auto w-full object-contain {className}"
 			alt={imageData.alt} />
 	</picture>
 {/if}

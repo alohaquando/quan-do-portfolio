@@ -6,13 +6,6 @@
 	import CaseStudyPageHero from '$lib/components/layout/CaseStudyPageHero.svelte';
 </script>
 
-<svelte:head>
-	<title>{title}</title>
-	<meta
-		name="description"
-		content={title} />
-</svelte:head>
-
 <!--	Hero Header-->
 <CaseStudyPageHero
 	{title}
@@ -20,7 +13,7 @@
 	<slot name="hero_image" />
 </CaseStudyPageHero>
 
-<PageLayout>
+<PageLayout {title}>
 	<!--	Content-->
 	<div class="spacing-default">
 		<slot />

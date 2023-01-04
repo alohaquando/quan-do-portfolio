@@ -1,12 +1,12 @@
 <script>
 	import Icon from '$lib/components/iconography/Icon.svelte';
 
-	let navLinks = [
-		{ href: '/', icon: 'home', title: 'Home' },
-		{ href: '/work', icon: 'rectangle_stack', title: 'Work' },
-		{ href: '/about', icon: 'face_smile', title: 'About' },
-		{ href: '/contact', icon: 'at_symbol', title: 'Contact' }
-	];
+	let navLinks = {
+		home: { href: '/', icon: 'home', title: 'Home' },
+		work: { href: '/work', icon: 'rectangle_stack', title: 'Work' },
+		about: { href: '/about', icon: 'face_smile', title: 'About' },
+		contact: { href: '/contact', icon: 'at_symbol', title: 'Contact' }
+	};
 
 	import { page } from '$app/stores';
 
@@ -28,7 +28,7 @@
 	class="fixed left-0 right-0 z-50 mx-6 rounded-full border bg-white/90 px-4 shadow backdrop-blur dark:border-white/10 dark:bg-zinc-900/90 max-sm:bottom-4 sm:top-6 sm:mx-auto sm:w-fit ">
 	<ul class="flex place-content-between text-xs sm:text-base">
 		<!--			Links-->
-		{#each navLinks as link}
+		{#each Object.values(navLinks) as link}
 			<li class="contents">
 				<!--Text-->
 				<a
