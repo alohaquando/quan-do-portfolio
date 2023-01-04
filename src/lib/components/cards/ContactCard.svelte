@@ -9,6 +9,7 @@
 	export let icon = 'sparkles';
 
 	let className;
+	// noinspection ReservedWordAsName
 	export { className as class };
 
 	import DisplayMedium from '$lib/components/typography/DisplayMedium.svelte';
@@ -25,7 +26,7 @@
 			<div
 				class="glass-ring absolute backdrop-blur-2xl -z-10 h-full w-full rounded-3xl ring-inset transition-all {ringStyle}" />
 			<div
-				class="absolute top-1 left-8 right-8 bottom-20 max-sm:left-2 max-sm:right-2 max-sm:bottom-2 -z-20 rounded-full opacity-10 transition-all group-hover:opacity-20 dark:opacity-[0.15] dark:group-hover:opacity-30 {colorStyle}" />
+				class="absolute -top-2/3 -left-4 -right-4 mx-auto bottom-32 max-sm:left-2 max-sm:right-2 max-sm:bottom-2 -z-20 rounded-[50%] opacity-10 transition-all group-hover:opacity-20 dark:opacity-[0.15] dark:group-hover:opacity-30 {colorStyle}" />
 		</div>
 		<!--		Elements-->
 		<div class="flex w-full flex-col space-y-6 py-8 md:px-10 md:py-12">
