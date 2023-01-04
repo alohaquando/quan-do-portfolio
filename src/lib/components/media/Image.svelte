@@ -2,8 +2,10 @@
 	export let imageData;
 
 	let className;
+	// noinspection ReservedWordAsName
 	export { className as class };
 
+	// noinspection ES6UnusedImports
 	import lazySizes from 'lazysizes';
 
 	import { themeStore } from '$lib/stores/theme.js';
@@ -56,7 +58,7 @@
 			data-sizes="auto"
 			width={imageData.width}
 			height={imageData.height}
-			class="w-full h-full {className}"
+			class="lazyload w-full h-full {className}"
 			src={imageData.lowQualitySrc}
 			alt={imageData.alt} />
 	</picture>
