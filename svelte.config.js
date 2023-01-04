@@ -14,10 +14,6 @@ const config = {
 					{
 						tag: 'Image',
 						srcAttributes: ['src']
-					},
-					{
-						tag: 'source',
-						srcAttributes: ['data-srcset']
 					}
 				];
 			}

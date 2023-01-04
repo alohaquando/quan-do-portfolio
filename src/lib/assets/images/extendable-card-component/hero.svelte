@@ -2,14 +2,14 @@
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-          export let alt = 'Hero';
+        export let alt = 'Hero';
+        // Lazy / eager loading
+        export let eager;
 
         // Metadata
         import {width, height} from "$lib/assets/images/extendable-card-component/hero.png?metadata"
 
         // Image
-        import lowQualitySrc
-          from "$lib/assets/images/extendable-card-component/hero.png?width=360&format=avif&quality=45&blur=100";
         import avifSrc
           from "$lib/assets/images/extendable-card-component/hero.png?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
         import webpSrc
@@ -20,7 +20,6 @@
           alt,
           width,
           height,
-          lowQualitySrc,
           avifSrc,
           webpSrc,
         }
@@ -30,4 +29,4 @@
         export {className as class};
       </script>
 
-      <Image {imageData} class={className}/>
+      <Image {imageData} {eager} class={className}/>

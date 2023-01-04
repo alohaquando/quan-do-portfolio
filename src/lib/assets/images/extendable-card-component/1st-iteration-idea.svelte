@@ -2,22 +2,20 @@
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-          export let alt = '1st iteration idea';
+        export let alt = '1st iteration idea';
+        // Lazy / eager loading 
+        export let eager;
 
         // Metadata
         import {width, height} from "$lib/assets/images/extendable-card-component/1st-iteration-idea-L.png?metadata"
 
         // Light image
-        import lowQualitySrcLight
-          from "$lib/assets/images/extendable-card-component/1st-iteration-idea-L.png?width=360&format=avif&quality=45&blur=100";
         import avifSrcLight
           from "$lib/assets/images/extendable-card-component/1st-iteration-idea-L.png?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
         import webpSrcLight
           from "$lib/assets/images/extendable-card-component/1st-iteration-idea-L.png?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         // Dark image
-        import lowQualitySrcDark
-          from "$lib/assets/images/extendable-card-component/1st-iteration-idea-D.png?width=360&format=avif&quality=45&blur=100";
         import avifSrcDark from "$lib/assets/images/extendable-card-component/1st-iteration-idea-D.png?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
         import webpSrcDark from "$lib/assets/images/extendable-card-component/1st-iteration-idea-D.png?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
@@ -26,10 +24,8 @@
           alt,
           width,
           height,
-          lowQualitySrcLight,
           avifSrcLight,
           webpSrcLight,
-          lowQualitySrcDark,
           avifSrcDark,
           webpSrcDark
         }
@@ -39,4 +35,4 @@
         export {className as class};
       </script>
 
-      <Image {imageData} class={className}/>
+      <Image {imageData} {eager} class={className}/>

@@ -41,6 +41,7 @@
 		overflow: overlay;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		-webkit-tap-highlight-color: transparent;
 	}
 
 	.glass {
@@ -53,5 +54,13 @@
 
 	.spacing-default {
 		@apply flex flex-col space-y-6;
+	}
+
+	.noselect {
+		-webkit-touch-callout: none; /* Safari Touch */
+		-webkit-user-select: none;   /* Webkit */
+		-moz-user-select: none;      /* Firefox */
+		-ms-user-select: none;       /* Edge*/
+		user-select: none;       /* Future-proof*/
 	}
 }

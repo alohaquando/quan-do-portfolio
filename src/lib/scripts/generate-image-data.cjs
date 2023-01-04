@@ -42,22 +42,20 @@ async function generateImageDataFiles() {
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-          export let alt = '${imageAlt}';
+        export let alt = '${imageAlt}';
+        // Lazy / eager loading 
+        export let eager;
 
         // Metadata
         import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?metadata"
 
         // Light image
-        import lowQualitySrcLight
-          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=360&format=avif&quality=45&blur=100";
         import avifSrcLight
           from "$lib/assets/images/${folderName}/${imageDataLightName}?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
         import webpSrcLight
           from "$lib/assets/images/${folderName}/${imageDataLightName}?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         // Dark image
-        import lowQualitySrcDark
-          from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=360&format=avif&quality=45&blur=100";
         import avifSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
         import webpSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
@@ -66,10 +64,8 @@ async function generateImageDataFiles() {
           alt,
           width,
           height,
-          lowQualitySrcLight,
           avifSrcLight,
           webpSrcLight,
-          lowQualitySrcDark,
           avifSrcDark,
           webpSrcDark
         }
@@ -79,7 +75,7 @@ async function generateImageDataFiles() {
         export {className as class};
       </script>
 
-      <Image {imageData} class={className}/>`;
+      <Image {imageData} {eager} class={className}/>`;
 
 			await fs.promises.writeFile(imageDataFileName, imageData);
 		}
@@ -95,14 +91,14 @@ async function generateImageDataFiles() {
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-          export let alt = '${imageAlt}';
+        export let alt = '${imageAlt}';
+        // Lazy / eager loading
+        export let eager;
 
         // Metadata
         import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?metadata"
 
         // Image
-        import lowQualitySrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=360&format=avif&quality=45&blur=100";
         import avifSrc
           from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
         import webpSrc
@@ -113,7 +109,6 @@ async function generateImageDataFiles() {
           alt,
           width,
           height,
-          lowQualitySrc,
           avifSrc,
           webpSrc,
         }
@@ -123,7 +118,7 @@ async function generateImageDataFiles() {
         export {className as class};
       </script>
 
-      <Image {imageData} class={className}/>`;
+      <Image {imageData} {eager} class={className}/>`;
 
 			await fs.promises.writeFile(imageDataFileName, imageData);
 		}

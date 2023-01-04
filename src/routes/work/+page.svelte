@@ -13,8 +13,8 @@
 		title="GroveHR App"
 		body="Cross-platform app with 10k+ downloads"
 		imageDirection="vertical">
-		<IMG_Logo_Grove slot="logo" />
-		<IMG_Grove slot="image" />
+		<IMG_Logo_Grove eager slot="logo" />
+		<IMG_Grove eager slot="image" />
 	</LinkCard>
 
 	<LinkCard
@@ -22,16 +22,16 @@
 		title="GroveHR App"
 		body="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 	imageDirection="horizontal">
-		<IMG_Logo_Grove slot="logo" />
-		<IMG_Card_Component slot="image" />
+		<IMG_Logo_Grove eager slot="logo" />
+		<IMG_Card_Component eager slot="image" />
 	</LinkCard>
 
 	<LinkCard
 		href="/work/grove/expandable-card-component"
 		title="GroveHR App"
 		body="Cross-platform app with 10k+ downloads">
-		<IMG_Logo_Grove slot="logo" />
-		<IMG_Grove slot="image" />
+		<IMG_Logo_Grove eager slot="logo" />
+		<IMG_Grove eager slot="image" />
 	</LinkCard>
 
 

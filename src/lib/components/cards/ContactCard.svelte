@@ -18,7 +18,7 @@
 
 <a
 	{href}
-	class={className}>
+	class="{className} noselect">
 	<div class="group relative z-30">
 		<!--		Background-->
 		<div
