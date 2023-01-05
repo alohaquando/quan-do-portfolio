@@ -8,7 +8,7 @@
 <CaseStudyPage
   title="Concept Design System"
   headline="Robust design system for web dashboards">
-  <IMG_Hero eager slot="hero_image" class="max-h-[60vh]" />
+  <IMG_Hero eager slot="hero_image" class="max-h-[50vh]" />
   <Title>Heading</Title>
   <Body>
   The web has evolved a lot since it started. While designing for the web used to involve a

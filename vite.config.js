@@ -11,11 +11,7 @@ const config = {
 			defaultDirectives: (url) => {
 				const extension = url.pathname.substring(url.pathname.lastIndexOf('.') + 1);
 				if (supportedExtensions.includes(extension)) {
-					return new URLSearchParams({
-						// format: 'avif;webp;' + extension,
-						// metadata: ''
-						// picture: true
-					});
+					return new URLSearchParams({});
 				}
 				return new URLSearchParams();
 			}

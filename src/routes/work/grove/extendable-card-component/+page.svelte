@@ -20,7 +20,7 @@
 <CaseStudyPage
 	title="Extendable Card Component"
 	headline="Display complex data in an easily scannable and actionable component">
-	<IMG_Hero eager slot="hero_image" />
+	<IMG_Hero eager slot="hero_image" class="max-h-[30vh]" />
 		<Title>Heading</Title>
 		<Body>
 			The web has evolved a lot since it started. While designing for the web used to involve a

@@ -36,7 +36,7 @@
 	}
 
 	:root {
-		@apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white overscroll-x-none;
+		@apply bg-zinc-50/50 text-zinc-900 dark:bg-[#0A0A0A] dark:text-white overscroll-x-none;
 		/*noinspection CssInvalidPropertyValue*/
 		overflow: overlay;
 		-webkit-font-smoothing: antialiased;
@@ -45,11 +45,19 @@
 	}
 
 	.glass {
-		@apply glass-ring bg-white/10 backdrop-blur;
+		@apply glass-ring bg-white/10 dark:bg-neutral-900/60 backdrop-blur;
 	}
 
 	.glass-ring {
-		@apply ring-1 ring-zinc-900/10 dark:ring-white/20;
+		@apply ring-1 ring-zinc-900/10 dark:ring-neutral-100 dark:ring-opacity-[2%];
+	}
+
+	.glass-light {
+		@apply glass-ring-light bg-white/10 backdrop-blur;
+	}
+
+	.glass-ring-light {
+		@apply ring-1 ring-zinc-900/10 dark:ring-white/10 ;
 	}
 
 	.spacing-default {

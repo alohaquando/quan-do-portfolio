@@ -2,7 +2,6 @@
 	export let title = 'Title';
 	export let subtitle = 'Subtitle';
 	export let href = '/';
-	export let imageDirection = 'vertical';
 	export let colorStyle = 'bg-amber-400 dark:bg-amber-600';
 	export let ringStyle = 'group-hover:ring-amber-400 dark:group-hover:ring-amber-600';
 
@@ -16,28 +15,26 @@
 		<div
 			class="absolute top-0 bottom-0 left-0 right-0 overflow-clip rounded-3xl shadow transition-all group-hover:top-1 group-hover:bottom-1 group-hover:left-1 group-hover:right-1">
 			<div
-				class="glass-ring absolute -z-10 h-full w-full rounded-3xl ring-inset backdrop-blur-2xl transition-all {ringStyle}" />
+				class="glass absolute -z-10 h-full w-full rounded-3xl ring-inset backdrop-blur-2xl transition-all {ringStyle}" />
 			<!--			Color blur-->
 			<div
-				class="absolute -top-2/3 -right-4 -left-1/2 bottom-32 -z-20 mx-auto rounded-[80%] opacity-5 dark:opacity-10 transition-all group-hover:opacity-20 dark:group-hover:opacity-30 max-sm:left-2 max-sm:right-2 max-sm:bottom-2 {colorStyle}" />
+				class="absolute -top-2/3 -right-4 -left-1/2 bottom-32 -z-20 mx-auto rounded-[80%] opacity-[3%] transition-all group-hover:opacity-20 dark:group-hover:opacity-30 max-sm:left-2 max-sm:right-2 max-sm:bottom-2 {colorStyle}" />
 
 			<!--Right side-->
 			{#if $$slots.image}
 				<div class="absolute right-0 h-full w-1/3 md:w-2/5">
 					<!--Image group-->
-					<div
-						class="absolute w-[105%] transition-all
-						{imageDirection === 'vertical' ? 'top-12' : '-bottom-4 mt-20'}">
+					<div class="absolute -bottom-4 top-12 w-[115%] transition-all">
 						<!--Color blur-->
 						<div
 							class="absolute -top-40 left-0 -z-10 h-full w-full -rotate-12 rounded-b-full opacity-5 blur-3xl transition dark:opacity-10 dark:group-hover:opacity-20" />
 
 						<!--Glass behind image-->
 						<div
-							class="glass absolute -top-3 left-3 -z-10 h-full w-full overflow-clip rounded-t-2xl" />
+							class="glass-light absolute -top-3 left-3 -z-10 h-full w-full overflow-clip rounded-t-2xl" />
 
 						<!--Image-->
-						<div class="glass-ring overflow-clip rounded-2xl">
+						<div class="glass-ring-light h-full overflow-clip rounded-2xl">
 							<slot name="image" />
 						</div>
 					</div>
@@ -60,3 +57,5 @@
 		</div>
 	</div>
 </a>
+
+

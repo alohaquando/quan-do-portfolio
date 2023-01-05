@@ -1,6 +1,8 @@
 <script>
-	import WIP from '$lib/components/_extras/WIP.svelte';
-	import Icon from '$lib/components/iconography/Icon.svelte';
+	import ShowcasePage from '$lib/components/layout/ShowcasePage.svelte';
+	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
 </script>
 
-<WIP />
+<ShowcasePage title="Quân Đô">
+	<DisplaySmall>UI/UX Designer & Front-end Developer</DisplaySmall>
+</ShowcasePage>

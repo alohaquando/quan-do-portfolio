@@ -58,7 +58,7 @@
 			loading={eager ? 'eager' : 'lazy'}
 			width={imageData.width}
 			height={imageData.height}
-			class="h-auto w-full object-contain {className}"
+			class="h-full w-full object-cover {className}"
 			alt={imageData.alt} />
 	</picture>
 {/if}

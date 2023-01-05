@@ -6,7 +6,7 @@
 </script>
 
 <PageLayout
-	class="relative sm:pt-40 md:pt-56"
+	class="relative sm:pt-56"
 	{title}>
 	<!--	Color Blur Highlight-->
 	<div class="absolute z-0 h-full w-[90%]">
@@ -16,8 +16,8 @@
 	<!--	Color Blur Highlight-->
 
 	<!--	Main content-->
-	<div class="spacing-default z-10">
-		<DisplayLarge class="sm:mb-4">{title}</DisplayLarge>
+	<div class="z-10 space-y-2 sm:space-y-4">
+		<DisplayLarge>{title}</DisplayLarge>
 		<slot />
 	</div>
 	<!--	Main content-->

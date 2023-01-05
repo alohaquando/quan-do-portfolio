@@ -6,5 +6,5 @@
 <CaseStudyPage
   title="GroveHR App"
   headline="Cross-platform app designed for everyday HR tasks">
-  <IMG_Hero slot="hero_image" class="h-[60vh]"></IMG_Hero>
+  <IMG_Hero slot="hero_image" class="h-[50vh]"></IMG_Hero>
 </CaseStudyPage>

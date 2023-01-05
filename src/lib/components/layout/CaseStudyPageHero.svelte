@@ -44,7 +44,7 @@
 		<!--	Image Design Block Outline -->
 		<div class="mx-10">
 			<!--	Image goes here-->
-			<div class="relative outline outline-2 outline-amber-500 dark:outline-amber-600">
+			<div class="relative outline outline-2 outline-amber-500 dark:outline-amber-600 max-h-[60vh]">
 				<!--	Image Design Block 4 Corners Squares-->
 				<slot />
 				<div class="absolute top-0 bottom-0 left-0 right-0 w-full">
@@ -63,7 +63,7 @@
 
 		<!--	Text-->
 		<div
-			class="relative mx-6 flex flex-col place-content-center items-center space-y-4 sm:space-y-6">
+			class="relative mx-6 flex flex-col place-content-center items-center space-y-4 sm:space-y-6 w-full">
 			<!--	Title-->
 			<Display>
 				{title}

@@ -9,7 +9,7 @@ const config = {
         { fontFeatureSettings: "\"calt\", \"case\", \"ss01\", \"ss03\", \"cv11\"" }
       ],
       display: [
-        "Strawford, system-ui", { fontFeatureSettings: "\"tnum\", \"lnum\", \"salt\", \"ss01\"" }
+        "Strawford, system-ui"
       ]
     },
 

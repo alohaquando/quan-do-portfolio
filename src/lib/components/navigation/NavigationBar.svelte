@@ -4,8 +4,7 @@
 	let navLinks = {
 		home: { href: '/', icon: 'home', title: 'Home' },
 		work: { href: '/work', icon: 'rectangle_stack', title: 'Work' },
-		about: { href: '/about', icon: 'face_smile', title: 'About' },
-		contact: { href: '/contact', icon: 'at_symbol', title: 'Contact' }
+		about: { href: '/about', icon: 'face_smile', title: 'About' }
 	};
 
 	import { page } from '$app/stores';
@@ -18,14 +17,12 @@
 		activeSection = 'Work';
 	} else if ($page.url.pathname.includes('about')) {
 		activeSection = 'About';
-	} else if ($page.url.pathname.includes('contact')) {
-		activeSection = 'Contact';
 	}
 </script>
 
 <!--	Navigation bar-->
 <nav
-	class="fixed left-0 right-0 z-50 mx-6 rounded-full border bg-white/90 px-4 shadow backdrop-blur dark:border-white/10 dark:bg-zinc-900/90 max-sm:bottom-4 sm:top-6 sm:mx-auto sm:w-fit ">
+	class="fixed left-0 right-0 z-50 mx-6 rounded-full border bg-white/90 px-6 shadow backdrop-blur dark:border-white/10 dark:bg-zinc-900/90 max-sm:bottom-4 sm:top-6 sm:mx-auto sm:w-fit ">
 	<ul class="flex place-content-between text-xs sm:text-base">
 		<!--			Links-->
 		{#each Object.values(navLinks) as link}

@@ -8,24 +8,24 @@
 			icon: 'envelope',
 			title: 'Email',
 			subtitle: 'work@quanhdo.com',
-			colorStyle: 'bg-amber-400 dark:bg-amber-600',
-			ringStyle: 'group-hover:ring-amber-400 dark:group-hover:ring-amber-600'
+			// colorStyle: 'bg-amber-400 dark:bg-amber-600',
+			// ringStyle: 'group-hover:ring-amber-400 dark:group-hover:ring-amber-600'
 		},
 		github: {
 			href: 'https://github.com/alohaquando',
 			icon: 'github',
 			title: 'GitHub',
 			subtitle: '@alohaquando',
-			colorStyle: 'bg-violet-400 dark:bg-violet-600',
-			ringStyle: 'group-hover:ring-violet-400 dark:group-hover:ring-violet-600'
+			// colorStyle: 'bg-violet-400 dark:bg-violet-600',
+			// ringStyle: 'group-hover:ring-violet-400 dark:group-hover:ring-violet-600'
 		},
 		linkedin: {
 			href: 'https://linkedin.com/in/quanhoangdo',
 			icon: 'linkedin',
 			title: 'LinkedIn',
 			subtitle: '/quanhoangdo',
-			colorStyle: 'bg-blue-400 dark:bg-blue-600',
-			ringStyle: 'group-hover:ring-blue-400 dark:group-hover:ring-blue-600'
+			// colorStyle: 'bg-blue-400 dark:bg-blue-600',
+			// ringStyle: 'group-hover:ring-blue-400 dark:group-hover:ring-blue-600'
 		}
 	};
 </script>

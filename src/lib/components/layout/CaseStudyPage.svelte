@@ -10,7 +10,7 @@
 <CaseStudyPageHero
 	{title}
 	{headline}>
-	<slot name="hero_image" />
+	<slot name="hero_image"/>
 </CaseStudyPageHero>
 
 <PageLayout {title}>
@@ -19,9 +19,3 @@
 		<slot />
 	</div>
 </PageLayout>
-
-<!--<style>-->
-<!--	:global([slot='content']) {-->
-<!--		@apply flex flex-col px-6 pt-16 pb-28 sm:mx-12 md:mx-auto md:w-[80%];-->
-<!--	}-->
-<!--</style>-->
