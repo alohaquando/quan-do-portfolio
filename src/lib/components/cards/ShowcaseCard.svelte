@@ -10,7 +10,7 @@
 </script>
 
 <a {href}>
-	<div class="group relative z-30 h-60 md:h-96">
+	<div class="group relative z-30 h-52 sm:h-80">
 		<!--		Background-->
 		<div
 			class="absolute top-0 bottom-0 left-0 right-0 overflow-clip rounded-3xl shadow transition-all group-hover:top-1 group-hover:bottom-1 group-hover:left-1 group-hover:right-1">
@@ -25,14 +25,9 @@
 				<div class="absolute right-0 h-full w-1/3 md:w-2/5">
 					<!--Image group-->
 					<div class="absolute -bottom-4 top-12 w-[115%] transition-all">
-						<!--Color blur-->
-						<div
-							class="absolute -top-40 left-0 -z-10 h-full w-full -rotate-12 rounded-b-full opacity-5 blur-3xl transition dark:opacity-10 dark:group-hover:opacity-20" />
-
 						<!--Glass behind image-->
 						<div
 							class="glass-light absolute -top-3 left-3 -z-10 h-full w-full overflow-clip rounded-t-2xl" />
-
 						<!--Image-->
 						<div class="glass-ring-light h-full overflow-clip rounded-2xl">
 							<slot name="image" />
@@ -43,19 +38,17 @@
 		</div>
 
 		<!--		Left side-->
-		<div class="w-2/3 space-y-4 px-6 py-8 md:w-3/5 md:space-y-6 md:px-10 md:py-12">
+		<div class="w-2/3 space-y-4 px-6 py-8 sm:w-3/5 sm:space-y-6 md:px-10 sm:py-12">
 			<!--			Logo-->
-			<div class="w-8 overflow-clip rounded-lg md:w-12">
+			<div class="w-8 overflow-clip rounded-lg sm:w-12">
 				<slot name="logo" />
 			</div>
 
 			<!--			Text-->
-			<div class="flex flex-col space-y-1 md:space-y-3">
+			<div class="flex flex-col space-y-1 sm:gap-2">
 				<DisplayMedium class="line-clamp-2">{title}</DisplayMedium>
-				<Body class="line-clamp-3">{subtitle}</Body>
+				<Body class="line-clamp-2">{subtitle}</Body>
 			</div>
 		</div>
 	</div>
 </a>
-
-

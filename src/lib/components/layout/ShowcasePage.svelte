@@ -16,7 +16,7 @@
 	<!--	Color Blur Highlight-->
 
 	<!--	Main content-->
-	<div class="z-10 space-y-2 sm:space-y-4">
+	<div class="z-10 gap-2 sm:gap-4">
 		<DisplayLarge>{title}</DisplayLarge>
 		<slot />
 	</div>

@@ -7,91 +7,54 @@
 	let title = 'Quân Đô';
 
 	import IMG_Me from '$lib/assets/images/about/me.svelte';
-	import Title from "$lib/components/typography/Title.svelte";
-	import Body from "$lib/components/typography/Body.svelte";
+	import Title from '$lib/components/typography/Title.svelte';
+	import Body from '$lib/components/typography/Body.svelte';
 </script>
 
-<header class="relative">
-	<!--	Background-->
-	<div>
-		<!--		Background Colors-->
-		<div
-			class="absolute flex h-full w-full items-center -space-x-96 opacity-40 blur-3xl dark:opacity-80 ">
+<!--Page-->
+<PageLayout
+	title="About"
+	class="relative sm:pt-56">
+	<header>
+		<!--	Color Blur Highlight-->
+		<div class="absolute -z-10 h-full w-[90%]">
 			<div
-				class="h-5/6 w-full flex-none [background-image:linear-gradient(90deg,rgba(217,119,6,0.2)_0%,rgba(217,119,6,0.4)_32.29%,rgba(220,38,38,0.3)_67.19%,rgba(202,138,4,0.2)_100%)]" />
+				class="absolute -left-40 -top-8 h-20 w-full rotate-12 rounded-full bg-amber-500 opacity-30 blur-2xl dark:bg-amber-900 sm:h-32 sm:blur-3xl" />
 		</div>
-		<!--		Background Colors-->
 
-		<!--	Color Bar-->
-		<div class="absolute -bottom-px flex h-[2px] w-full dark:opacity-80">
-			<div
-				class="w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(217,119,6,0)_0%,rgba(217,119,6,0.4)_32.29%,rgba(220,38,38,0.3)_67.19%,rgba(202,138,4,0)_100%)]" />
-			<div
-				class="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(217,119,6,0)_0%,rgba(217,119,6,0.4)_32.29%,rgba(220,38,38,0.3)_67.19%,rgba(202,138,4,0)_100%)]" />
-			<div
-				class="-ml-[100%] w-full flex-none blur-sm [background-image:linear-gradient(90deg,rgba(217,119,6,0)_0%,rgba(217,119,6,0.4)_32.29%,rgba(236,72,153,0.3)_67.19%,rgba(202,138,4,0)_100%)]" />
-			<div
-				class="-ml-[100%] w-full flex-none blur-[1px] [background-image:linear-gradient(90deg,rgba(200,38,38,0)_0%,rgba(200,38,38,0.4)_32.29%,rgba(220,38,38,0.3)_67.19%,rgba(202,138,4,0)_100%)]" />
-		</div>
-		<!--	Color Bar-->
+		<!--	Front Content-->
+		<div class="relative flex gap-10 max-sm:flex-col">
+			<div class="flex flex-col gap-2 sm:w-1/2 sm:gap-4">
+				<!--		Title-->
+				<DisplayLarge class="relative w-fit">
+					{title}
+					<span class="absolute font-display top-0.5 text-3xl font-bold sm:-right-1 sm:text-5xl"
+						>&#x303;</span>
+				</DisplayLarge>
+				<!--		Subtitle -->
+				<Headline>
+					I'm a Senior UI/UX Designer with 2+ years of experience & Front-end Development skill
+				</Headline>
+			</div>
+			<!--		Image-->
 
-		<!--Background-->
-		<div
-			class="absolute h-full w-full bg-white/80 dark:bg-zinc-900/20 md:rounded-3xl {$themeStore ===
-			'light'
-				? 'hero'
-				: 'hero-dark'}" />
-		<!--Background-->
-	</div>
+			<!--Image group-->
+			<div class="relative sm:w-1/2">
+				<!--Glass behind image-->
+				<div
+					class="glass-light absolute -top-3 left-3 -z-10 h-full w-full overflow-clip rounded-3xl max-sm:hidden" />
 
-	<!--	Front Content-->
-	<div
-		class="spacing-default relative flex flex-col px-6 pt-16 pb-12 transition-all sm:mx-12 sm:mb-4 sm:pt-40 sm:pt-56 md:mx-auto md:w-[40rem]">
-		<div class="flex flex-col space-y-2 sm:space-y-4 sm:pb-28">
-			<!--		Title-->
-			<DisplayLarge class="">{title}</DisplayLarge>
-			<!--		Subtitle -->
-			<Headline class="sm:w-1/2">I'm a Senior UI/UX Designer with 2+ years of experience & Front-end Development skill </Headline>
-		</div>
-		<!--		Image-->
-		<div
-			class="relative outline outline-2 outline-amber-500 dark:outline-amber-600 sm:absolute sm:top-36 sm:-right-24 sm:w-3/5">
-			<IMG_Me />
-			<div class="absolute top-0 bottom-0 left-0 right-0 w-full">
-				<div
-					class="absolute -top-1 -left-1 h-1.5 w-1.5 bg-white outline outline-2 outline-amber-500 dark:outline-amber-600" />
-				<div
-					class="absolute -top-1 -right-1 h-1.5 w-1.5 bg-white outline outline-2 outline-amber-500 dark:outline-amber-600" />
-				<div
-					class="absolute -bottom-1 -left-1 h-1.5 w-1.5 bg-white outline outline-2 outline-amber-500 dark:outline-amber-600" />
-				<div
-					class="absolute -bottom-1 -right-1 h-1.5 w-1.5 bg-white outline outline-2 outline-amber-500 dark:outline-amber-600" />
+				<!--Image-->
+				<div class="glass-ring-light h-full overflow-clip rounded-2xl">
+					<IMG_Me eager />
+				</div>
 			</div>
 		</div>
-	</div>
-</header>
+	</header>
 
-<!--Page-->
-<PageLayout title="About">
 	<!--	Content-->
-	<div class="spacing-default">
+	<div class="spacing-default pt-10">
 		<Title>Hello</Title>
 		<Body>This is something about me</Body>
 	</div>
 </PageLayout>
-
-<style>
-	.hero {
-		background-size: 40px 40px;
-		background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-			linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-		background-position: center;
-	}
-
-	.hero-dark {
-		background-size: 40px 40px;
-		background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-			linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-		background-position: center;
-	}
-</style>

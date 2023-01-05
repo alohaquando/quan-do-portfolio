@@ -15,6 +15,6 @@
 
 <!--Page-->
 <div
-	class="flex flex-col px-6 pt-16 pb-24 transition-all sm:mx-12 sm:mb-4 md:mx-auto md:w-[40rem] {className}">
+	class="flex flex-col px-6 pt-16 max-sm:pb-12 sm:mx-auto sm:max-w-[55rem] {className}">
 	<slot />
 </div>
