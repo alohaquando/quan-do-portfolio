@@ -59,9 +59,7 @@
 		<!--suppress HtmlWrongAttributeValue -->
 		<img
 			loading={eager ? 'eager' : 'lazy'}
-			width={imageData.width}
-			height={imageData.height}
-			class=" {className}"
+			class="{className}"
 			alt={imageData.alt} />
 	</picture>
 {/if}

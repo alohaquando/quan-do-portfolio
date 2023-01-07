@@ -5,7 +5,6 @@
         export let alt = 'Me';
         // Lazy / eager loading
         export let eager;
-        export let frame;
 
         // Metadata
         import {width, height} from "$lib/assets/images/about/me.png?metadata"
@@ -30,4 +29,4 @@
         export {className as class};
       </script>
 
-      <Image {imageData} {eager} {frame} class={className}/>
+      <Image {imageData} {eager} class={className}/>

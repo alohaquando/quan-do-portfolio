@@ -3,13 +3,14 @@
 	import DisplayXL from '$lib/components/typography/DisplayXL.svelte';
 </script>
 
-<header class="mx-auto flex h-screen w-screen flex-col place-content-between items-center pb-28 sm:pb-20 gap-10">
+<header
+	class="mx-auto flex min-h-screen w-screen flex-col place-content-between items-center gap-10 px-6 pb-36 sm:pb-wr sm:px-32">
 	<!--  Visual-->
-	<div class="h-32 self-stretch flex-grow items-center ">
+	<div class="flex flex-grow items-center self-stretch">
 		<slot />
 	</div>
 	<!--  Tagline-->
-	<div class="text-center">
+	<div class="text-center ">
 		<DisplayXL>{tagline}</DisplayXL>
 	</div>
 </header>

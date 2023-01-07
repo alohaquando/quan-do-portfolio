@@ -11,7 +11,7 @@
 	<IMG_Hero
 		eager
 		slot="hero_image"
-		frame />
+		 />
 	<Title>Heading</Title>
 	<Body>
 		The web has evolved a lot since it started. While designing for the web used to involve a single

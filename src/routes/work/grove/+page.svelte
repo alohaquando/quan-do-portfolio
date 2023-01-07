@@ -8,6 +8,6 @@
 	headline="Cross-platform app designed for everyday HR tasks">
 	<IMG_Hero
 		slot="hero_image"
-		frame
-		eager />
+		eager
+	/>
 </CaseStudyPage>

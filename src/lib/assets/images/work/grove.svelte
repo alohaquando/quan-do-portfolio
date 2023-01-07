@@ -5,8 +5,6 @@
         export let alt = 'Grove';
         // Lazy / eager loading
         export let eager;
-        export let frame;
-        export let test;
 
         // Metadata
         import {width, height} from "$lib/assets/images/work/grove.png?metadata"
@@ -31,4 +29,4 @@
         export {className as class};
       </script>
 
-      <Image {imageData} {eager} {frame} class={className}/>
+      <Image {imageData} {eager} class={className}/>

@@ -35,25 +35,29 @@
 			// ringStyle: 'group-hover:ring-slate-400 dark:group-hover:ring-slate-600'
 		}
 	};
+
+	import {fade} from "svelte/transition";
 </script>
 
-<Landing tagline="Designs that work" />
+<div in:fade={{ duration: 350 }}>
+	<Landing tagline="Designs that work" />
 
-<ShowcasePage title="Work">
-	<div class="spacing-default flex flex-col pt-6">
-		<ShowcaseCard {...workLinks.grove}>
-			<IMG_Grove_Logo slot="logo" />
-			<IMG_Grove slot="image" />
-		</ShowcaseCard>
+	<ShowcasePage title="Work">
+		<div class="spacing-default flex flex-col pt-6">
+			<ShowcaseCard {...workLinks.grove}>
+				<IMG_Grove_Logo slot="logo" />
+				<IMG_Grove slot="image" />
+			</ShowcaseCard>
 
-		<ShowcaseCard {...workLinks.concept}>
-			<IMG_Concept_Logo slot="logo" />
-			<IMG_Concept slot="image" />
-		</ShowcaseCard>
+			<ShowcaseCard {...workLinks.concept}>
+				<IMG_Concept_Logo slot="logo" />
+				<IMG_Concept slot="image" />
+			</ShowcaseCard>
 
-		<ShowcaseCard {...workLinks.extendable_card_component}>
-			<IMG_Grove_Logo slot="logo" />
-			<IMG_Card_Component slot="image" />
-		</ShowcaseCard>
-	</div>
-</ShowcasePage>
+			<ShowcaseCard {...workLinks.extendable_card_component}>
+				<IMG_Grove_Logo slot="logo" />
+				<IMG_Card_Component slot="image" />
+			</ShowcaseCard>
+		</div>
+	</ShowcasePage>
+</div>

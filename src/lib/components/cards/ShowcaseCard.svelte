@@ -29,7 +29,7 @@
 						class="glass-light absolute -top-3 left-3 -z-10 h-full w-full overflow-clip rounded-t-2xl" />
 					<!--Image-->
 					<div
-						class="glass-ring-light overflow-clip rounded-2xl h-full [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
+						class="glass-ring-light overflow-clip rounded-2xl h-full [&_img]:w-full [&_img]:h-full [&_img]:object-cover [&_img]:object-left-top">
 						<slot name="image" />
 					</div>
 				</div>
