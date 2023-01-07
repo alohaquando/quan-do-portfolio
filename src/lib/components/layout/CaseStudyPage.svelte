@@ -9,8 +9,10 @@
 <!--	Hero Header-->
 <CaseStudyPageHero
 	{title}
-	{headline}>
-	<slot name="hero_image"/>
+	{headline}
+	>
+	<slot
+		name="hero_image" />
 </CaseStudyPageHero>
 
 <PageLayout {title}>

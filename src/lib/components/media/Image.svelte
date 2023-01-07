@@ -1,6 +1,9 @@
 <script>
+	import Frame from '$lib/components/visuals/FrameOutline.svelte';
+
 	export let imageData;
 	export let eager;
+	export let frame;
 
 	let className;
 	// noinspection ReservedWordAsName
@@ -58,7 +61,7 @@
 			loading={eager ? 'eager' : 'lazy'}
 			width={imageData.width}
 			height={imageData.height}
-			class="h-full w-full object-cover {className}"
+			class=" {className}"
 			alt={imageData.alt} />
 	</picture>
 {/if}

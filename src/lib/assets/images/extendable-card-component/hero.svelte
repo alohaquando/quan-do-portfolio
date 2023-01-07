@@ -5,6 +5,7 @@
         export let alt = 'Hero';
         // Lazy / eager loading
         export let eager;
+        export let frame;
 
         // Metadata
         import {width, height} from "$lib/assets/images/extendable-card-component/hero.png?metadata"
@@ -29,4 +30,4 @@
         export {className as class};
       </script>
 
-      <Image {imageData} {eager} class={className}/>
+      <Image {imageData} {eager} {frame} class={className}/>

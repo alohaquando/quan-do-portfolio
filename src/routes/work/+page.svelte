@@ -9,6 +9,8 @@
 	import IMG_Concept_Logo from '$lib/assets/images/work/concept-logo.svelte';
 
 	import IMG_Card_Component from '$lib/assets/images/extendable-card-component/hero.svelte';
+	import DisplayXL from '$lib/components/typography/DisplayXL.svelte';
+	import Landing from '$lib/components/layout/Landing.svelte';
 
 	let workLinks = {
 		grove: {
@@ -35,49 +37,23 @@
 	};
 </script>
 
+<Landing tagline="Designs that work" />
+
 <ShowcasePage title="Work">
-	<div class="flex flex-col spacing-default pt-6">
-	<ShowcaseCard
-		href={workLinks.grove.href}
-		title={workLinks.grove.title}
-		subtitle={workLinks.grove.subtitle}
-		colorStyle={workLinks.grove.colorStyle}
-		ringStyle={workLinks.grove.ringStyle}>
-		<IMG_Grove_Logo
-			eager
-			slot="logo" />
-		<IMG_Grove
-			eager
-			slot="image"
-			class="object-left-top" />
-	</ShowcaseCard>
+	<div class="spacing-default flex flex-col pt-6">
+		<ShowcaseCard {...workLinks.grove}>
+			<IMG_Grove_Logo slot="logo" />
+			<IMG_Grove slot="image" />
+		</ShowcaseCard>
 
-	<ShowcaseCard
-		href={workLinks.concept.href}
-		title={workLinks.concept.title}
-		subtitle={workLinks.concept.subtitle}
-		colorStyle={workLinks.concept.colorStyle}
-		ringStyle={workLinks.concept.ringStyle}>
-		<IMG_Concept_Logo
-			eager
-			slot="logo" />
-		<IMG_Concept
-			eager
-			slot="image"
-			class="object-left-top" />
-	</ShowcaseCard>
+		<ShowcaseCard {...workLinks.concept}>
+			<IMG_Concept_Logo slot="logo" />
+			<IMG_Concept slot="image" />
+		</ShowcaseCard>
 
-	<ShowcaseCard
-		href={workLinks.extendable_card_component.href}
-		title={workLinks.extendable_card_component.title}
-		subtitle={workLinks.extendable_card_component.subtitle}>
-		<IMG_Grove_Logo
-			eager
-			slot="logo" />
-		<IMG_Card_Component
-			eager
-			slot="image"
-			class="object-left-top" />
-	</ShowcaseCard>
+		<ShowcaseCard {...workLinks.extendable_card_component}>
+			<IMG_Grove_Logo slot="logo" />
+			<IMG_Card_Component slot="image" />
+		</ShowcaseCard>
 	</div>
 </ShowcasePage>

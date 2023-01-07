@@ -21,26 +21,25 @@
 				class="absolute -top-2/3 -right-4 -left-1/2 bottom-32 -z-20 mx-auto rounded-[80%] opacity-[3%] transition-all group-hover:opacity-20 dark:group-hover:opacity-30 max-sm:left-2 max-sm:right-2 max-sm:bottom-2 {colorStyle}" />
 
 			<!--Right side-->
-			{#if $$slots.image}
-				<div class="absolute right-0 h-full w-1/3 md:w-2/5">
-					<!--Image group-->
-					<div class="absolute -bottom-4 top-12 w-[115%] transition-all">
-						<!--Glass behind image-->
-						<div
-							class="glass-light absolute -top-3 left-3 -z-10 h-full w-full overflow-clip rounded-t-2xl" />
-						<!--Image-->
-						<div class="glass-ring-light h-full overflow-clip rounded-2xl">
-							<slot name="image" />
-						</div>
+			<div class="absolute right-0 h-full w-1/3 md:w-2/5">
+				<!--Image group-->
+				<div class="absolute -bottom-4 top-12 w-[105%] transition-all">
+					<!--Glass behind image-->
+					<div
+						class="glass-light absolute -top-3 left-3 -z-10 h-full w-full overflow-clip rounded-t-2xl" />
+					<!--Image-->
+					<div
+						class="glass-ring-light overflow-clip rounded-2xl h-full [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
+						<slot name="image" />
 					</div>
 				</div>
-			{/if}
+			</div>
 		</div>
 
 		<!--		Left side-->
-		<div class="w-2/3 space-y-4 px-6 py-8 sm:w-3/5 sm:space-y-6 md:px-10 sm:py-12">
+		<div class="w-2/3 space-y-4 px-6 py-8 sm:w-3/5 sm:space-y-6 sm:py-12 md:px-10">
 			<!--			Logo-->
-			<div class="w-8 overflow-clip rounded-lg sm:w-12">
+			<div class="w-8 overflow-clip rounded-lg sm:w-12 [&_img]:w-full [&_img]:h-full">
 				<slot name="logo" />
 			</div>
 

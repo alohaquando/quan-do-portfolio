@@ -1,8 +1,5 @@
 <script>
-	import ShowcasePage from '$lib/components/layout/ShowcasePage.svelte';
-	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
+	import Landing from "$lib/components/layout/Landing.svelte";
 </script>
 
-<header>
-
-</header>
+<Landing title=""></Landing>

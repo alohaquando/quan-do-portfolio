@@ -94,6 +94,7 @@ async function generateImageDataFiles() {
         export let alt = '${imageAlt}';
         // Lazy / eager loading
         export let eager;
+        export let frame;
 
         // Metadata
         import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?metadata"
@@ -118,7 +119,7 @@ async function generateImageDataFiles() {
         export {className as class};
       </script>
 
-      <Image {imageData} {eager} class={className}/>`;
+      <Image {imageData} {eager} {frame} class={className}/>`;
 
 			await fs.promises.writeFile(imageDataFileName, imageData);
 		}

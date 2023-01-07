@@ -2,14 +2,21 @@
 	import PageLayout from '$lib/components/layout/PageLayout.svelte';
 	import DisplayLarge from '$lib/components/typography/DisplayLarge.svelte';
 	import Headline from '$lib/components/typography/Headline.svelte';
-	import { themeStore } from '$lib/stores/theme.js';
 
 	let title = 'Quân Đô';
 
 	import IMG_Me from '$lib/assets/images/about/me.svelte';
 	import Title from '$lib/components/typography/Title.svelte';
 	import Body from '$lib/components/typography/Body.svelte';
+	import Landing from '$lib/components/layout/Landing.svelte';
 </script>
+
+<Landing tagline="Designer with developer's insights">
+	<div
+		class="mx-auto aspect-square h-full overflow-clip rounded-full [&_img]:h-full [&_img]:rounded-full [&_img]:object-cover">
+		<IMG_Me eager />
+	</div>
+</Landing>
 
 <!--Page-->
 <PageLayout
@@ -28,7 +35,7 @@
 				<!--		Title-->
 				<DisplayLarge class="relative w-fit">
 					{title}
-					<span class="absolute font-display top-0.5 text-3xl font-bold sm:-right-1 sm:text-5xl"
+					<span class="absolute top-0.5 font-display text-3xl font-bold sm:-right-1 sm:text-5xl"
 						>&#x303;</span>
 				</DisplayLarge>
 				<!--		Subtitle -->
