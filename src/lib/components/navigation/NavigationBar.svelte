@@ -30,7 +30,7 @@
 				<!--Text-->
 				<a
 					href={link.href}
-					class="group flex flex-1 flex-col place-content-center items-center border-b-0 py-2 font-display font-medium font-medium transition hover:text-amber-500/80 dark:hover:text-amber-400 sm:px-4 {activeSection ===
+					class="group flex flex-1 flex-col place-content-center items-center py-2 font-display font-medium font-medium transition hover:text-amber-500/80 dark:hover:text-amber-400 sm:px-4 {activeSection ===
 					link.title
 						? 'text-amber-500'
 						: 'text-zinc-400'}">

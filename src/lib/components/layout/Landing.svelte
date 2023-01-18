@@ -4,13 +4,13 @@
 </script>
 
 <header
-	class="mx-auto flex min-h-screen w-screen flex-col place-content-between items-center gap-10 px-6 pb-36 sm:pb-wr sm:px-32">
-	<!--  Visual-->
-	<div class="flex flex-grow items-center self-stretch">
+	class="mx-auto flex h-screen w-screen flex-col place-content-between items-center gap-10 pb-16 max-sm:[height:-webkit-fill-available]">
+	<!--  Visual  -->
+	<div class="flex flex-grow items-center self-stretch overflow-clip">
 		<slot />
 	</div>
-	<!--  Tagline-->
-	<div class="text-center ">
+	<!--  Tagline  -->
+	<div class="px-6 text-center sm:px-32">
 		<DisplayXL>{tagline}</DisplayXL>
 	</div>
 </header>

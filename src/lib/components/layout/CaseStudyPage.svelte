@@ -14,11 +14,11 @@
 		{headline}>
 		<slot name="hero_image" />
 	</CaseStudyPageHero>
+</div>
 
 	<PageLayout {title}>
 		<!--	Content-->
-		<div class="spacing-default">
+		<div class="space-default">
 			<slot />
 		</div>
 	</PageLayout>
-</div>

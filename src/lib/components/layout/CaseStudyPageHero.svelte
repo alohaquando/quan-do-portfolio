@@ -8,7 +8,7 @@
 	import Headline from '$lib/components/typography/Headline.svelte';
 </script>
 
-<header class="relative flex h-[32rem] min-h-[600px] justify-center sm:h-[56rem]">
+<header class="relative flex min-h-[80vh] justify-center">
 	<!--		Background-->
 	<div class="absolute top-0 bottom-0 left-0 right-0">
 		<!--		Background Colors-->
@@ -29,7 +29,7 @@
 	<div class="relative mx-6 mb-12 mt-4 flex flex-grow flex-col gap-6 sm:mb-24 sm:max-w-[55rem]">
 		<!--	Image-->
 		<div
-			class="[&_img]:glass-light relative flex flex-grow place-content-center items-center sm:mt-24 [&_img]:mx-auto [&_img]:max-h-[26rem] [&_img]:rounded-2xl [&_img]:object-contain [&_img]:p-2 sm:[&_img]:max-h-[32rem]">
+			class="[&_img]:glass-light flex flex-grow place-content-center items-center self-stretch  sm:mt-24 [&_img]:max-h-[45vh] [&_img]:rounded-2xl [&_img]:object-contain [&_img]:p-1.5 sm:[&_img]:max-h-[32rem]">
 			<slot />
 		</div>
 

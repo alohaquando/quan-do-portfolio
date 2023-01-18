@@ -18,7 +18,7 @@
 
 <a
 	{href}
-	class="{className} noselect">
+	class="{className} select-none">
 	<div class="group relative z-30">
 		<!--		Background-->
 		<div

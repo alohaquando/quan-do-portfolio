@@ -4,5 +4,5 @@
 </script>
 
 <div in:fade={{  duration: 350 }}>
-	<Landing tagline="I design & build  interfaces" />
+	<Landing tagline="I design & build interfaces" />
 </div>

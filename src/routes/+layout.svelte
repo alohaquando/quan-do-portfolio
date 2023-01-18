@@ -12,6 +12,6 @@
 
 <Header />
 
-<div class="">
+<div>
 	<slot />
 </div>

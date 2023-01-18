@@ -3,7 +3,6 @@
 
 	export let imageData;
 	export let eager;
-	export let frame;
 
 	let className;
 	// noinspection ReservedWordAsName
@@ -59,7 +58,7 @@
 		<!--suppress HtmlWrongAttributeValue -->
 		<img
 			loading={eager ? 'eager' : 'lazy'}
-			class="{className}"
+			class="{className} max-w-full"
 			alt={imageData.alt} />
 	</picture>
 {/if}
