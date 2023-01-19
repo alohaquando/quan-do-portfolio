@@ -10,7 +10,7 @@
 
 <DarkMode bind:theme />
 
-<Header />
+<!--<Header />-->
 
 <div>
 	<slot />

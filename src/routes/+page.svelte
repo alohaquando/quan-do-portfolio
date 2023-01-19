@@ -9,7 +9,7 @@
 	<Landing tagline="Designer with developer's insights" />
 </div>
 
-<PageLayout title="Designer with developer's insights">
+<PageLayout title="Quân Đ">
 	<div class="flex flex-col gap-32 sm:gap-48 pt-20">
 		<DisplayMedium>
 			I'm Quân Đô.
