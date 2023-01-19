@@ -26,7 +26,7 @@
 	</div>
 
 	<!--	Front Content-->
-	<div class="relative mx-6 mb-12 mt-4 flex flex-grow flex-col gap-6 sm:mb-24 sm:max-w-[55rem]">
+	<div class="relative mx-6 mb-12 mt-8 flex flex-grow flex-col gap-6 sm:mb-24 sm:max-w-[55rem]">
 		<!--	Image-->
 		<div
 			class="[&_img]:glass-light flex flex-grow place-content-center items-center self-stretch  sm:mt-24 [&_img]:max-h-[45vh] [&_img]:rounded-2xl [&_img]:object-contain [&_img]:p-1.5 sm:[&_img]:max-h-[32rem]">

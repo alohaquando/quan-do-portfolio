@@ -5,6 +5,6 @@
 </script>
 
 <h1
-	class="font-display text-4xl leading-snug sm:text-6xl sm:leading-snug md:text-7xl lg:text-8xl md:leading-snug lg:leading-snug {className}">
+	class="font-display text-4xl leading-snug sm:text-6xl sm:leading-snug md:text-7xl md:leading-snug lg:text-8xl lg:leading-snug {className}">
 	<slot />
 </h1>

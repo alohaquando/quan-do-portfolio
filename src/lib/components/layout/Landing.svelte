@@ -6,7 +6,7 @@
 <header
 	class="mx-auto flex h-screen w-screen flex-col place-content-between items-center gap-10 pb-16 max-sm:[height:-webkit-fill-available]">
 	<!--  Visual  -->
-	<div class="flex flex-grow items-center self-stretch overflow-clip">
+	<div class="flex flex-grow items-center self-stretch overflow-auto">
 		<slot />
 	</div>
 	<!--  Tagline  -->
