@@ -1,5 +1,5 @@
 <script>
-	import DisplayLarge from '$lib/components/typography/DisplayLarge.svelte';
+	import DisplayLarge from '$lib/components/typography/display/DisplayLarge.svelte';
 
 	export let title;
 	import PageLayout from '$lib/components/layout/PageLayout.svelte';

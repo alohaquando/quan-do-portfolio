@@ -4,7 +4,7 @@
 	export let title = 'Title';
 	export let headline = 'Headline';
 
-	import Display from '$lib/components/typography/DisplayLarge.svelte';
+	import Display from '$lib/components/typography/display/DisplayLarge.svelte';
 	import Headline from '$lib/components/typography/Headline.svelte';
 </script>
 

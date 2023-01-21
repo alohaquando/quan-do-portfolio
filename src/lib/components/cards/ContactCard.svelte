@@ -12,7 +12,7 @@
 	// noinspection ReservedWordAsName
 	export { className as class };
 
-	import DisplayMedium from '$lib/components/typography/DisplayMedium.svelte';
+	import DisplayMedium from '$lib/components/typography/display/DisplayMedium.svelte';
 	import Body from '$lib/components/typography/Body.svelte';
 </script>
 
@@ -32,7 +32,7 @@
 		<div class="flex w-full flex-col space-y-6 py-8 md:px-10 md:py-12">
 			<!--			Icons-->
 			<div
-				class="glass-ring mx-auto flex h-16 w-16 place-content-center items-center rounded-full bg-white shadow-inner shadow-sm transition-all dark:bg-zinc-800/50 {ringStyle}">
+				class="ring-glass mx-auto flex h-16 w-16 place-content-center items-center rounded-full bg-white shadow-inner shadow-sm transition-all dark:bg-zinc-800/50 {ringStyle}">
 				<Icon
 					name={icon}
 					size="w-10"

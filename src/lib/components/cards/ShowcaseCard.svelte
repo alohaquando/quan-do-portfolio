@@ -5,7 +5,7 @@
 	export let colorStyle = 'bg-amber-400 dark:bg-amber-600';
 	export let ringStyle = 'group-hover:ring-amber-400 dark:group-hover:ring-amber-600';
 
-	import DisplayMedium from '$lib/components/typography/DisplayMedium.svelte';
+	import DisplayMedium from '$lib/components/typography/display/DisplayMedium.svelte';
 	import Body from '$lib/components/typography/Body.svelte';
 </script>
 
@@ -29,7 +29,7 @@
 						class="glass-light absolute -top-3 left-3 -z-10 h-full w-full overflow-clip rounded-t-2xl" />
 					<!--Image-->
 					<div
-						class="glass-ring-light overflow-clip rounded-2xl h-full [&_img]:w-full [&_img]:h-full [&_img]:object-cover [&_img]:object-left-top">
+						class="ring-glass-light overflow-clip rounded-2xl h-full [&_img]:w-full [&_img]:h-full [&_img]:object-cover [&_img]:object-left-top">
 						<slot name="image" />
 					</div>
 				</div>
