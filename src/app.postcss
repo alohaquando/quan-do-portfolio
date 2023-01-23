@@ -4,102 +4,100 @@
 @tailwind utilities;
 
 @layer base {
-	@font-face {
-		font-family: 'Strawford';
-		font-weight: 400;
-		font-display: swap;
-		src: url('$lib/assets/fonts/strawford-regular-webfont.woff2') format('woff2');
-	}
-	@font-face {
-		font-family: 'Strawford';
-		font-weight: 500;
-		font-display: swap;
-		src: url('$lib/assets/fonts/strawford-medium-webfont.woff2') format('woff2');
-	}
-	@font-face {
-		font-family: 'Strawford';
-		font-weight: 700;
-		font-display: swap;
-		src: url('$lib/assets/fonts/strawford-bold-webfont.woff2') format('woff2');
-	}
-	@font-face {
-		font-family: 'Inter';
-		font-weight: 400;
-		font-display: swap;
-		src: url('$lib/assets/fonts/Inter-Regular.woff2') format('woff2');
-	}
-	@font-face {
-		font-family: 'Inter';
-		font-weight: 600;
-		font-display: swap;
-		src: url('$lib/assets/fonts/Inter-SemiBold.woff2') format('woff2');
-	}
+    @font-face {
+        font-family: 'Strawford';
+        font-weight: 400;
+        font-display: swap;
+        src: url('$lib/assets/fonts/strawford-regular-webfont.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: 'Strawford';
+        font-weight: 500;
+        font-display: swap;
+        src: url('$lib/assets/fonts/strawford-medium-webfont.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: 'Strawford';
+        font-weight: 700;
+        font-display: swap;
+        src: url('$lib/assets/fonts/strawford-bold-webfont.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: 'Inter';
+        font-weight: 400;
+        font-display: swap;
+        src: url('$lib/assets/fonts/Inter-Regular.woff2') format('woff2');
+    }
+    @font-face {
+        font-family: 'Inter';
+        font-weight: 600;
+        font-display: swap;
+        src: url('$lib/assets/fonts/Inter-SemiBold.woff2') format('woff2');
+    }
 
-	:root {
-		/* Text color */
-		@apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white overscroll-x-none;
+    :root {
+        /* Text color */
+        @apply overscroll-x-none bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white;
 
-		/* Scrollbar overlay */
-		/*noinspection CssInvalidPropertyValue*/
-		overflow: overlay;
+        /* Scrollbar overlay */
+        /*noinspection CssInvalidPropertyValue*/
+        overflow: overlay;
 
-		/* Smooth scrolling to sections */
+        /* Smooth scrolling to sections */
 
-		/* Hide tap color */
-		-webkit-tap-highlight-color: transparent;
+        /* Hide tap color */
+        -webkit-tap-highlight-color: transparent;
 
-		/* Font antialiasing */
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
+        /* Font antialiasing */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 }
 
 @layer utilities {
-	.min-safe-h-screen {
-		/* equivalent to 100dvh in major browsers */
-		min-height: calc(
-				100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0)
-		);
-	}
+    .min-safe-h-screen {
+        /* equivalent to 100dvh in major browsers */
+        min-height: calc(100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
+    }
 
-	@supports (-webkit-touch-callout: none) {
-		/*noinspection CssInvalidPropertyValue*/
-		.min-safe-h-screen {
-			/* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
-			min-height: -webkit-fill-available;
-		}
-	}
+    @supports (-webkit-touch-callout: none) {
+        /*noinspection CssInvalidPropertyValue*/
+        .min-safe-h-screen {
+            /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
+            min-height: -webkit-fill-available;
+        }
+    }
 
-	.space-brand-style {
-		@apply flex flex-col gap-4;
-	}
+    .space-brand-style {
+        @apply flex flex-col gap-4;
+    }
 
-	.scale-brand-style {
-		@apply scale-[1.02];
-	}
+    .scale-brand-style {
+        @apply scale-[1.02];
+    }
 
-	.blur-fix {
-		-webkit-backface-visibility: hidden;
-		-moz-backface-visibility: hidden;
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
-	}
+    .blur-fix {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+    }
 }
 
 @layer components {
-	.glass {
-		@apply ring-glass bg-white/10 dark:bg-zinc-900/20 max-sm:dark:bg-zinc-900/60 backdrop-blur blur-fix;
-	}
+    .glass {
+        @apply ring-glass blur-fix bg-white/10 backdrop-blur dark:bg-zinc-900/50;
+    }
 
-	.glass-light {
-		@apply ring-glass-light bg-white/10 backdrop-saturate-200 backdrop-blur blur-fix;
-	}
+    .glass-light {
+        @apply ring-glass-light blur-fix bg-white/10 backdrop-blur backdrop-saturate-200;
+    }
 
-	.ring-glass {
-		@apply ring-1 ring-zinc-900/10 dark:ring-neutral-100 dark:ring-opacity-[2%];
-	}
+    .ring-glass {
+        @apply ring-1 ring-zinc-900/10 dark:ring-neutral-100 dark:ring-opacity-[2%];
+    }
 
-	.ring-glass-light {
-		@apply ring-1 ring-zinc-900/10 dark:ring-white/10 ;
-	}
+    .ring-glass-light {
+        @apply ring-1 ring-zinc-900/10 dark:ring-white/10;
+    }
 }

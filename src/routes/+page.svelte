@@ -17,4 +17,3 @@
 		<Contact />
 	</div>
 </PageLayout>
-

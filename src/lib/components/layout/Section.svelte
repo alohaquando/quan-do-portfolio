@@ -6,7 +6,7 @@
 
 <section
 	{id}
-	class="min-h-[50vh] pt-8 space-brand-style">
-	<DisplayLarge class="mb-8">{title}</DisplayLarge>
+	class="space-brand-style min-h-[50vh] pt-8">
+	<DisplayLarge class="mb-8 text-center">{title}</DisplayLarge>
 	<slot />
 </section>
