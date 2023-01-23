@@ -6,12 +6,13 @@
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 
 	let theme;
-	let root;
+	$: $themeStore = theme;
 
+	let root;
 	onMount(() => {
 		root = document.getElementsByTagName('html')[0];
 		root?.classList.add('scroll-smooth');
-		$: $themeStore = theme;
+    $themeStore = theme;
 	});
 	beforeNavigate(() => {
 		root?.classList.remove('scroll-smooth');
