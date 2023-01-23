@@ -24,7 +24,7 @@
 			href: '/work/grove/extendable-card-component',
 			title: 'Extendable Card Component',
 			subtitle: 'Showcase data and actions effortlessly',
-			color: 'green'
+			color: 'amber',
 		}
 	};
 </script>

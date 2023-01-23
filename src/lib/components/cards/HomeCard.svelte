@@ -14,7 +14,7 @@
 	import { Colors } from "$lib/components/visuals/Colors.js";
 
 	const bgColors = Colors.bgColors;
-	const ringColors = Colors.ringColors;
+	const ringColors = Colors.ringHoverColors;
 	const glowColors = Colors.gradientColors;
 
 	const glowOpacity = {
