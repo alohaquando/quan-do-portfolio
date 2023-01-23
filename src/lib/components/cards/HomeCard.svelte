@@ -1,5 +1,5 @@
 <script>
-	import DisplaySmall from "$lib/components/typography/display/DisplaySmall.svelte";
+	import DisplaySmall from '$lib/components/typography/display/DisplaySmall.svelte';
 
 	export let href = '/';
 	export let title = 'Title';
@@ -11,42 +11,17 @@
 	// noinspection ReservedWordAsName
 	export { className as class };
 
-	const ringColors = {
-		amber: 'group-hover:ring-amber-300 ',
-		blue: 'group-hover:ring-blue-300 ',
-		purple: 'group-hover:ring-purple-300 ',
-		indigo: 'group-hover:ring-indigo-300 ',
-		pink: 'group-hover:ring-pink-300 ',
-		rose: 'group-hover:ring-rose-300 ',
-		orange: 'group-hover:ring-orange-300 '
-	};
+	import { Colors } from "$lib/components/visuals/Colors.js";
 
-	const bgColors = {
-		amber: 'bg-amber-300 dark:bg-amber-800',
-		blue: 'bg-blue-300 dark:bg-blue-800',
-		purple: 'bg-purple-300 dark:bg-purple-800',
-		indigo: 'bg-indigo-300 dark:bg-indigo-800',
-		pink: 'bg-pink-300 dark:bg-pink-800',
-		rose: 'bg-rose-300 dark:bg-rose-800',
-		orange: 'bg-orange-300 dark:bg-orange-800'
-	};
-
-	const glowColors = {
-		amber: 'from-amber-300 dark:from-amber-800',
-		blue: 'from-blue-300 dark:from-blue-800',
-		purple: 'from-purple-300 dark:from-purple-800',
-		indigo: 'from-indigo-300 dark:from-indigo-800',
-		pink: 'from-pink-300 dark:from-pink-800',
-		rose: 'from-rose-300 dark:from-rose-800',
-		orange: 'from-orange-300 dark:from-orange-800'
-	};
+	const bgColors = Colors.bgColors;
+	const ringColors = Colors.ringColors;
+	const glowColors = Colors.gradientColors;
 
 	const glowOpacity = {
-		high: 'dark:opacity-20 opacity-0 dark:group-hover:opacity-40',
-		low: 'dark:opacity-10 opacity-0 dark:group-hover:opacity-20'
+		high: 'dark:opacity-5 dark:group-hover:opacity-10',
+		low: 'dark:opacity-5 dark:group-hover:opacity-10'
 	};
 
-	import DisplayMedium from '$lib/components/typography/display/DisplayMedium.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
 </script>
 
@@ -57,19 +32,19 @@
 	<div
 		class="{className} {ringColors[
 			color
-		]} ring-glass-light relative z-0 flex h-full rounded-3xl shadow-sm transition hover:shadow group-hover:scale-[1.02] dark:bg-zinc-900/20 dark:group-hover:ring-white/20 sm:items-end">
+		]} glass relative z-0 flex h-full rounded-3xl shadow-sm transition group-hover:shadow group-hover:ring-2 group-hover:scale-brand-style sm:items-end">
 		<!--Visual-->
 		<div class="blur-fix absolute h-full w-full overflow-clip rounded-3xl">
 			<!--Whole card color-->
 			<div
-				class="{glowColors[
-					color
-				]} absolute top-0 -bottom-full left-1/2 z-10 w-[200%] -translate-x-1/2 transform bg-gradient-radial opacity-0 dark:opacity-5 dark:group-hover:opacity-10 dark:group-hover:saturate-[150%]" />
+				class="{glowColors[color]} {glowOpacity[
+					colorOpacity
+				]} absolute top-0 -bottom-full left-1/2 z-10 w-[200%] -translate-x-1/2 transform bg-gradient-radial opacity-0 dark:group-hover:saturate-[110%]" />
 			<!--Prominent bottom glow-->
 			<div
 				class="{glowColors[color]} {glowOpacity[
 					colorOpacity
-				]} blur-fix absolute top-2/3 -bottom-1/2 -left-1/2 z-20 w-[200%] rounded-[50%] bg-gradient-radial blur-3xl transition dark:group-hover:saturate-[150%] " />
+				]} blur-fix absolute top-2/3 -bottom-1/2 -left-1/2 z-20 w-[200%] rounded-[50%] bg-gradient-radial opacity-0 blur-3xl transition dark:group-hover:saturate-[110%] " />
 		</div>
 
 		<!--Text and icon-->
@@ -94,5 +69,5 @@
 	<div
 		class="{bgColors[
 			color
-		]} blur-fix pointer-events-none absolute top-0 right-0 left-0 bottom-0 -z-40 opacity-0 blur-3xl transition dark:group-hover:opacity-5" />
+		]} blur-fix pointer-events-none absolute top-0 right-0 left-0 bottom-0 -z-40 opacity-0 blur-3xl transition dark:group-hover:opacity-10" />
 </a>

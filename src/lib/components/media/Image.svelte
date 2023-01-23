@@ -1,6 +1,4 @@
 <script>
-	import Frame from '$lib/components/visuals/FrameOutline.svelte';
-
 	export let imageData;
 	export let eager;
 

@@ -18,7 +18,7 @@
 
 	<PageLayout {title}>
 		<!--	Content-->
-		<div class="space-default">
+		<div class="space-brand-style">
 			<slot />
 		</div>
 	</PageLayout>
