@@ -23,7 +23,7 @@
 				loading={eager ? 'eager' : 'lazy'}
 				width={imageData.width}
 				height={imageData.height}
-				class="mx-auto my-2 rounded-2xl border border-black/10 object-scale-down shadow-sm sm:rounded-3xl {className}"
+				class="{className} mx-auto my-2 rounded-2xl border border-black/10 object-scale-down shadow-sm sm:w-[90%] sm:rounded-3xl lg:w-[70%]"
 				alt={imageData.alt} />
 		</picture>
 	{:else}
@@ -40,8 +40,7 @@
 				sizes="auto"
 				width={imageData.width}
 				height={imageData.height}
-				class="mx-auto my-2 rounded-2xl border border-white/10 object-scale-down sm:rounded-3xl
-{className}"
+				class="{className} mx-auto my-2 rounded-2xl border border-white/10 object-scale-down sm:w-[90%] sm:rounded-3xl lg:w-[70%]"
 				alt={imageData.alt} />
 		</picture>
 	{/if}

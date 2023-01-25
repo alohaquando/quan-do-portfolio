@@ -1,43 +1,58 @@
 <script>
-	import BottomColorBar from '$lib/components/visuals/BottomColorBar.svelte';
-
 	export let title = 'Title';
 	export let headline = 'Headline';
+	export let color = 'blue';
 
-	import Display from '$lib/components/typography/display/DisplayLarge.svelte';
+	import Icon from '$lib/components/iconography/Icon.svelte';
 	import Headline from '$lib/components/typography/Headline.svelte';
+	import DisplayLarge from '$lib/components/typography/display/DisplayLarge.svelte';
+	import DisplayMedium from '$lib/components/typography/display/DisplayMedium.svelte';
+	import SlidingButton from '$lib/components/buttons/SlidingButton.svelte';
+
+	import { page } from '$app/stores';
+	let return_path = $page.url.pathname;
+	return_path = return_path.replace('/work/', '');
+
+	import { Colors } from '$lib/components/visuals/Colors.js';
+	const gradientGroupColors = Colors.gradientGroupColors;
+	const textGradientColor = Colors.textGradientColors;
 </script>
 
-<header class="relative flex min-h-[80vh] justify-center">
-	<!--		Background-->
-	<div class="absolute top-0 bottom-0 left-0 right-0">
-		<!--		Background Colors-->
-		<div
-			class="absolute flex h-full w-full items-center -space-x-96 overflow-clip opacity-80 blur-3xl">
-			<div
-				class="h-5/6 w-full flex-none [background-image:linear-gradient(90deg,rgba(217,119,6,0.2)_0%,rgba(217,119,6,0.4)_32.29%,rgba(220,38,38,0.3)_67.19%,rgba(202,138,4,0.2)_100%)]" />
-		</div>
-
-		<!--	Color Bar-->
-		<BottomColorBar />
-
-		<!--Background-->
-		<div class="absolute h-full w-full bg-white/20 dark:bg-zinc-900/20 md:rounded-3xl" />
+<header class="relative flex">
+	<!--Visual-->
+	<div class="blur-fix pointer-events-none absolute z-0 h-full w-full overflow-clip">
+		<!--Prominent bottom glow-->
+		<div class="{gradientGroupColors[color].first} gradients-brand-style absolute -top-1/2 bottom-1/2 -left-1/3 right-0 rounded-[90%] bg-gradient-to-r" />
+		<div class="{gradientGroupColors[color].second} gradients-brand-style absolute -top-1/2 bottom-1/2 left-0 right-0 rounded-[50%] bg-gradient-radial" />
+		<div class="{gradientGroupColors[color].third} gradients-brand-style absolute -top-1/2 bottom-1/2 left-0 -right-1/3 rounded-[80%] bg-gradient-to-l" />
 	</div>
 
-	<!--	Front Content-->
-	<div class="relative mx-6 mb-12 mt-8 flex flex-grow flex-col gap-6 sm:mb-24 sm:max-w-[55rem]">
-		<!--	Image-->
-		<div
-			class="[&_img]:glass-light flex flex-grow place-content-center items-center self-stretch  sm:mt-24 [&_img]:max-h-[45vh] [&_img]:rounded-2xl [&_img]:object-contain [&_img]:p-1.5 sm:[&_img]:max-h-[32rem]">
-			<slot />
+	<!--Elements-->
+	<div class="max-w-brand-style z-10 flex grow flex-col gap-12 pb-8 pt-20 sm:pt-24">
+		<!--Left side-->
+		<div class="flex flex-col place-content-center gap-3 lg:gap-3">
+			<!--Back-->
+			<SlidingButton
+				{color}
+				href="/#{return_path}">
+				<Icon
+					name="chevron_left"
+					class="w-4 stroke-zinc-500 group-hover:stroke-zinc-900 group-hover:stroke-[3px] dark:stroke-zinc-400 dark:group-hover:stroke-white" />
+				Work
+			</SlidingButton>
+
+			<!--Text-->
+			<div class="flex flex-col gap-1">
+				<DisplayLarge class="{textGradientColor[color]} text-gradient">{title}</DisplayLarge>
+				<DisplayMedium class="">{headline}</DisplayMedium>
+			</div>
 		</div>
 
-		<!--	Text-->
-		<div class="flex flex-col gap-2 text-center sm:gap-4">
-			<Display>{title}</Display>
-			<Headline>{headline}</Headline>
+		<!--Right side-->
+		<div class="glass-light w-fit self-center rounded-2xl p-2">
+			<div class="[&_img]:ring-glass [&_img]:max-h-[55vh] [&_img]:min-h-[8rem] [&_img]:rounded-lg [&_img]:object-contain">
+				<slot />
+			</div>
 		</div>
-		<!--	Text-->
 	</div>
 </header>

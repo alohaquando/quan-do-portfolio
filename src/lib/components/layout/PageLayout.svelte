@@ -2,7 +2,7 @@
 	export let title;
 
 	let className;
-	// noinspection ReservedWordAsName
+	// noinspection ReservedWordAsNamez
 	export { className as class };
 </script>
 
@@ -15,6 +15,6 @@
 
 <!--Page-->
 <div
-	class="flex flex-col px-6 pt-16 max-sm:pb-28 pb-6 sm:mx-auto sm:max-w-[55rem] {className}">
+	class="flex flex-col pt-16 max-sm:pb-28 pb-6 max-w-brand-style {className}">
 	<slot />
 </div>

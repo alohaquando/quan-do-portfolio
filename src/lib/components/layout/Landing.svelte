@@ -34,11 +34,12 @@
 
 <header class="min-safe-h-screen flex flex-col place-content-between items-center">
 	<!--Visual-->
-	<div class="contents pointer-events-none">
+	<div class="pointer-events-none contents">
 		<TopColorBar />
 		<div class="absolute bottom-0 top-0 left-0 right-0 -z-50 h-[30vh] select-none">
-			<div
-				class=" blur-fix absolute -top-1/2 bottom-1/2 left-12 right-12 flex rounded-full bg-gradient-to-r from-red-300 via-purple-300 to-blue-300 opacity-30 blur-3xl dark:from-red-700 dark:via-purple-700 dark:to-blue-700 sm:opacity-10" />
+			<div class="blur-fix absolute -top-[90%] bottom-2/3 left-12 right-0 rounded-[90%] bg-gradient-to-r from-red-300 opacity-30 blur-3xl dark:from-red-700" />
+			<div class="blur-fix absolute -top-1/2 bottom-1/2 left-0 right-0 rounded-[50%] bg-gradient-radial from-purple-300 opacity-5 blur-3xl dark:from-purple-700" />
+			<div class="blur-fix absolute -top-1/2 bottom-1/2 left-0 right-12 rounded-[80%] bg-gradient-to-l from-blue-300 opacity-20 blur-3xl dark:from-blue-700" />
 		</div>
 	</div>
 
@@ -52,8 +53,7 @@
 	</div>
 
 	<!--Links-->
-	<div
-		class="grid grow gap-3 self-stretch p-6 pt-0 max-lg:grid-cols-2 max-lg:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 lg:gap-4">
+	<div class="grid grow gap-3 self-stretch p-6 pt-0 max-lg:grid-cols-2 max-lg:grid-rows-4 lg:grid-cols-4 lg:grid-rows-2 lg:gap-4">
 		<HomeCard
 			{...links.work}
 			class="row-span-2 first:items-end max-lg:col-span-2 lg:col-span-2" />

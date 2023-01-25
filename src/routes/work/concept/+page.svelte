@@ -3,15 +3,18 @@
 	import Body from '$lib/components/typography/Body.svelte';
 	import Title from '$lib/components/typography/Title.svelte';
 	import CaseStudyPage from '$lib/components/layout/CaseStudyPage.svelte';
+
+	const info = {
+		title: 'Concept Design System',
+		headline: 'Robust design system for web dashboards',
+		color: 'blue'
+	};
 </script>
 
-<CaseStudyPage
-	title="Concept Design System"
-	headline="Robust design system for web dashboards">
+<CaseStudyPage {...info}>
 	<IMG_Hero
 		eager
-		slot="hero_image"
-		 />
+		slot="hero_image" />
 	<Title>Heading</Title>
 	<Body>
 		The web has evolved a lot since it started. While designing for the web used to involve a single

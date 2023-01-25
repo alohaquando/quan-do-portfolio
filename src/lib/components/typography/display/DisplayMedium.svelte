@@ -4,6 +4,6 @@
 </script>
 
 <h1
-	class="font-display text-2xl leading-normal sm:leading-normal sm:text-4xl {className}">
+	class="font-display text-2xl leading-relaxed sm:leading-relaxed sm:text-2xl md:leading-relaxed md:text-3xl {className}">
 	<slot />
 </h1>
