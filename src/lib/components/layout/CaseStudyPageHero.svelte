@@ -28,28 +28,28 @@
 	</div>
 
 	<!--Elements-->
-	<div class="max-w-brand-style z-10 flex grow flex-col gap-12 pb-8 pt-20 sm:pt-24">
+	<div class="max-w-brand-style z-10 flex grow flex-col gap-12 pb-8 pt-20 sm:pt-32">
 		<!--Left side-->
-		<div class="flex flex-col place-content-center gap-3 lg:gap-3">
+		<div class="flex flex-col place-content-center gap-10">
 			<!--Back-->
-			<SlidingButton
-				{color}
-				href="/#{return_path}">
-				<Icon
-					name="chevron_left"
-					class="w-4 stroke-zinc-500 group-hover:stroke-zinc-900 group-hover:stroke-[3px] dark:stroke-zinc-400 dark:group-hover:stroke-white" />
-				Work
-			</SlidingButton>
+				<SlidingButton
+					{color}
+					href="/#{return_path}">
+					<Icon
+						name="chevron_left"
+						class="w-4 stroke-zinc-500 group-hover:stroke-zinc-900 group-hover:stroke-[3px] dark:stroke-zinc-400 dark:group-hover:stroke-white" />
+					Work
+				</SlidingButton>
 
 			<!--Text-->
 			<div class="flex flex-col gap-1">
-				<DisplayLarge class="{textGradientColor[color]} text-gradient">{title}</DisplayLarge>
+				<DisplayLarge class="{textGradientColor[color]} text-gradient font-medium">{title}</DisplayLarge>
 				<DisplayMedium class="">{headline}</DisplayMedium>
 			</div>
 		</div>
 
 		<!--Right side-->
-		<div class="glass-light w-fit self-center rounded-2xl p-2">
+		<div class="glass-light w-fit self-center rounded-xl sm:rounded-2xl p-1.5 sm:p-2 ">
 			<div class="[&_img]:ring-glass [&_img]:max-h-[55vh] [&_img]:min-h-[8rem] [&_img]:rounded-lg [&_img]:object-contain">
 				<slot />
 			</div>

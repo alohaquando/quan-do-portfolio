@@ -3,12 +3,15 @@
 	import HomeCard from '$lib/components/cards/HomeCard.svelte';
 	import TopColorBar from '$lib/components/visuals/TopColorBar.svelte';
 
+	import { Colors } from '$lib/components/visuals/Colors.js';
+	const gradientColors = Colors.gradientColors;
+
 	const links = {
 		work: {
 			href: '#work',
 			title: 'Work',
 			icon: 'rectangle_stack',
-			color: 'rose',
+			color: 'blue',
 			colorOpacity: 'high'
 		},
 		about: {
@@ -21,7 +24,7 @@
 			href: '#resume',
 			title: 'Resume',
 			icon: 'document_text',
-			color: 'blue'
+			color: 'rose'
 		},
 		contact: {
 			href: '#contact',
@@ -37,9 +40,9 @@
 	<div class="pointer-events-none contents">
 		<TopColorBar />
 		<div class="absolute bottom-0 top-0 left-0 right-0 -z-50 h-[30vh] select-none">
-			<div class="blur-fix absolute -top-[90%] bottom-2/3 left-12 right-0 rounded-[90%] bg-gradient-to-r from-red-300 opacity-30 blur-3xl dark:from-red-700" />
-			<div class="blur-fix absolute -top-1/2 bottom-1/2 left-0 right-0 rounded-[50%] bg-gradient-radial from-purple-300 opacity-5 blur-3xl dark:from-purple-700" />
-			<div class="blur-fix absolute -top-1/2 bottom-1/2 left-0 right-12 rounded-[80%] bg-gradient-to-l from-blue-300 opacity-20 blur-3xl dark:from-blue-700" />
+			<div class="{gradientColors['sky']} blur-fix absolute -top-[90%] bottom-2/3 left-12 right-0 rounded-[90%] bg-gradient-to-r  opacity-30 blur-3xl" />
+			<div class="{gradientColors['purple']} blur-fix absolute -top-1/2 bottom-1/2 left-0 right-0 rounded-[50%] bg-gradient-radial  opacity-5 blur-3xl" />
+			<div class="{gradientColors['pink']} blur-fix absolute -top-1/2 bottom-1/2 left-0 right-12 rounded-[80%] bg-gradient-to-l  opacity-20 blur-3xl" />
 		</div>
 	</div>
 

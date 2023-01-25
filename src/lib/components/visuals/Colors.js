@@ -34,11 +34,12 @@ export const Colors = {
 	},
 	gradientColors: {
 		amber: 'from-amber-300 dark:from-amber-500',
-		blue: 'from-blue-300 dark:from-blue-800',
-		purple: 'from-purple-300 dark:from-purple-800',
+		blue: 'from-blue-300 dark:from-blue-700',
+		sky: 'from-sky-300 dark:from-sky-400',
+		purple: 'from-purple-300 dark:from-purple-500',
 		indigo: 'from-indigo-300 dark:from-indigo-800',
-		pink: 'from-pink-300 dark:from-pink-800',
-		rose: 'from-rose-300 dark:from-rose-800',
+		pink: 'from-pink-300 dark:from-pink-500',
+		rose: 'from-rose-300 dark:from-rose-600',
 		orange: 'from-orange-300 dark:from-orange-800',
 		green: 'from-green-300 dark:from-green-800',
 		emerald: 'from-emerald-300 dark:from-emerald-800'
@@ -72,7 +73,7 @@ export const Colors = {
 			third: 'from-blue-200 dark:from-blue-700'
 		},
 		blue: {
-			first: 'from-sky-200 dark:from-sky-700 ',
+			first: 'from-sky-200 dark:from-sky-400 ',
 			second: 'from-indigo-200 dark:from-indigo-700',
 			third: 'rom-violet-200 dark:from-violet-700'
 		},

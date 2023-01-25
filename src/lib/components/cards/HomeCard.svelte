@@ -1,6 +1,4 @@
 <script>
-	import DisplaySmall from '$lib/components/typography/display/DisplaySmall.svelte';
-
 	export let href = '/';
 	export let title = 'Title';
 	export let icon = 'sparkles';
@@ -11,18 +9,18 @@
 	// noinspection ReservedWordAsName
 	export { className as class };
 
-	import { Colors } from '$lib/components/visuals/Colors.js';
+	import Icon from '$lib/components/iconography/Icon.svelte';
+	import DisplaySmall from '$lib/components/typography/display/DisplaySmall.svelte';
 
+	import { Colors } from '$lib/components/visuals/Colors.js';
 	const bgColors = Colors.bgColors;
 	const ringColors = Colors.ringHoverColors;
 	const glowColors = Colors.gradientColors;
 
 	const glowOpacity = {
-		high: 'dark:opacity-5 dark:group-hover:opacity-10',
-		low: 'dark:opacity-5 dark:group-hover:opacity-10'
+		high: 'dark:opacity-[3%] dark:group-hover:opacity-10',
+		low: 'dark:opacity-[3%] dark:group-hover:opacity-10'
 	};
-
-	import Icon from '$lib/components/iconography/Icon.svelte';
 </script>
 
 <a
@@ -35,7 +33,7 @@
 			<!--Whole card color-->
 			<div class="{glowColors[color]} {glowOpacity[colorOpacity]} absolute top-0 -bottom-full left-1/2 z-10 w-[200%] -translate-x-1/2 transform bg-gradient-radial opacity-0 dark:group-hover:saturate-[110%]" />
 			<!--Prominent bottom glow-->
-			<div class="{glowColors[color]} {glowOpacity[colorOpacity]} blur-2xl absolute top-2/3 -bottom-1/2 -left-1/2 z-20 w-[200%] rounded-[50%] bg-gradient-radial opacity-0 transition dark:group-hover:saturate-[110%] " />
+			<div class="{glowColors[color]} {glowOpacity[colorOpacity]} absolute top-2/3 -bottom-1/2 -left-1/2 z-20 w-[200%] rounded-[50%] bg-gradient-radial opacity-0 blur-2xl transition dark:group-hover:saturate-[110%] " />
 		</div>
 
 		<!--Text and icon-->
