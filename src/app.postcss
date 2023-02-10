@@ -4,6 +4,13 @@
 @tailwind utilities;
 
 @layer base {
+	/* Font- Strawford */
+	@font-face {
+		font-family: 'Strawford';
+		font-weight: 300;
+		font-display: swap;
+		src: url('$lib/assets/fonts/strawford-light-webfont.woff2') format('woff2');
+	}
 	@font-face {
 		font-family: 'Strawford';
 		font-weight: 400;
@@ -16,12 +23,7 @@
 		font-display: swap;
 		src: url('$lib/assets/fonts/strawford-medium-webfont.woff2') format('woff2');
 	}
-	@font-face {
-		font-family: 'Strawford';
-		font-weight: 700;
-		font-display: swap;
-		src: url('$lib/assets/fonts/strawford-bold-webfont.woff2') format('woff2');
-	}
+	/* Font- Inter */
 	@font-face {
 		font-family: 'Inter';
 		font-weight: 400;
@@ -50,10 +52,6 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-
-	.max-w-brand-style {
-		@apply px-6 sm:px-16 sm:mx-auto sm:max-w-[80rem];
-	}
 }
 
 @layer utilities {
@@ -70,44 +68,10 @@
 		}
 	}
 
-	.space-brand-style {
-		@apply flex flex-col gap-4;
-	}
-
-	.scale-brand-style {
-		@apply scale-[1.02];
-	}
-
 	.blur-fix {
 		-webkit-backface-visibility: hidden;
 		-moz-backface-visibility: hidden;
 		-webkit-transform: translate3d(0, 0, 0);
 		-moz-transform: translate3d(0, 0, 0);
-	}
-}
-
-@layer components {
-	.glass {
-		@apply ring-glass blur-fix bg-white/10 backdrop-blur dark:bg-zinc-900/70;
-	}
-
-	.glass-light {
-		@apply ring-glass-light blur-fix bg-white/[12%] backdrop-blur backdrop-saturate-200;
-	}
-
-	.ring-glass {
-		@apply ring-1 ring-zinc-900/10;
-	}
-
-	.ring-glass-light {
-		@apply ring-1 ring-zinc-900/10 dark:ring-white/10;
-	}
-
-	.gradients-brand-style {
-		@apply blur-fix opacity-40 blur-3xl transition group-hover:opacity-50 group-hover:saturate-[120%] dark:opacity-20 dark:group-hover:opacity-30 dark:group-hover:saturate-[110%];
-	}
-
-	.text-gradient {
-		@apply bg-clip-text text-transparent [background-image:linear-gradient(120deg,var(--tw-gradient-stops))];
 	}
 }
