@@ -3,6 +3,6 @@
   export { className as class };
 </script>
 
-<p class="{className} text-[1.5rem] md:text-[1.75rem] font-light">
+<h1 class="{className} text-[3.125rem] md:text-[4rem] font-light">
   <slot />
-</p>
+</h1>
