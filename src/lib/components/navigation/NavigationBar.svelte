@@ -1,0 +1,76 @@
+<script>
+	// Imports child components
+	import NavigationLink from '$lib/components/navigation/NavigationLink.svelte';
+
+	// Data
+	let navLinks = {
+		landing: {
+			title: 'home',
+			href: '/#'
+		},
+		work: {
+			title: 'work',
+			href: '/#work'
+		},
+		about: {
+			title: 'about',
+			href: '/#about'
+		},
+		contact: {
+			title: 'contact',
+			href: '/#contact'
+		},
+		resume: {
+			title: 'resume',
+			href: '#'
+		}
+	};
+
+	// Auto hide Navigation Bar
+	let hideNav, usedNav;
+	let y = 0;
+	let prevY = 0;
+
+	$: {
+		hideNav = !usedNav && y > 0 && y - prevY > 0;
+		prevY = y;
+	}
+
+	$: if (usedNav) {
+		setTimeout(() => {
+			usedNav = false;
+		}, 800);
+	}
+
+	// Highlight section in view
+	import { sectionInView } from '$lib/stores/sectionInView.js';
+</script>
+
+<svelte:window bind:scrollY={y} />
+
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex h-14 transition-all duration-500 ease-in-out sm:top-0 sm:h-fit sm:place-content-between sm:p-16 lg:px-28 {hideNav ? 'translate-y-full sm:-translate-y-full' : ''}">
+	<!-- Foreground elements -->
+	<div class="z-50 contents [&_a]:z-50">
+		<!-- Logo	-->
+		<a
+			href="/#"
+			class="whitespace-nowrap max-sm:hidden sm:py-2 sm:px-6">
+			Quan Do
+		</a>
+
+		<!-- Links -->
+		<ul
+			class="flex w-full place-content-between sm:w-fit"
+			on:click={() => (usedNav = true)}>
+			{#each Object.values(navLinks) as link, i}
+				<NavigationLink
+					class="sm:first-of-type:hidden"
+					{...link}
+					active={Object.keys(navLinks)[i] === $sectionInView} />
+			{/each}
+		</ul>
+	</div>
+
+	<!-- Shadow below navigation bar-->
+	<div class="z absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 sm:bg-gradient-to-b" />
+</nav>

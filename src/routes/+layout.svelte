@@ -1,7 +1,11 @@
 <script>
+	// Import CSS
 	import '../app.postcss';
+
+	// Smooth scroll enabled after load
 	import { onMount } from 'svelte';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
+	import NavigationBar from "$lib/components/navigation/NavigationBar.svelte";
 
 	let root;
 	onMount(() => {
@@ -16,4 +20,5 @@
 	});
 </script>
 
+<NavigationBar/>
 <slot />

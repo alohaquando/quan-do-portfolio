@@ -5,11 +5,11 @@ const config = {
 
     fontFamily: {
       sans: [
-        "Inter, system-ui",
+        "Strawford, system-ui",
         { fontFeatureSettings: "\"calt\", \"case\", \"ss01\", \"ss03\", \"cv11\"" }
       ],
       display: [
-        "Strawford, system-ui"
+        "Inter, system-ui"
       ]
     },
 

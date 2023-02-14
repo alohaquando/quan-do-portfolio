@@ -17,6 +17,7 @@ specifiers:
   prettier-plugin-tailwindcss: ^0.2.2
   svelte: ^3.55.1
   svelte-check: ^2.10.3
+  svelte-inview: ^3.0.2
   svelte-preprocess: ^5.0.1
   svelte-preprocess-import-assets: ^0.2.5
   tailwindcss: ^3.2.6
@@ -28,6 +29,7 @@ specifiers:
 
 dependencies:
   '@sveltejs/adapter-cloudflare': 1.1.0_@sveltejs+kit@1.5.5
+  svelte-inview: 3.0.2_svelte@3.55.1
 
 devDependencies:
   '@sveltejs/kit': 1.5.5_svelte@3.55.1+vite@4.1.1
@@ -2128,6 +2130,14 @@ packages:
       svelte: '>=3.19.0'
     dependencies:
       svelte: 3.55.1
+
+  /svelte-inview/3.0.2_svelte@3.55.1:
+    resolution: {integrity: sha512-QdMGe8oE/dsoqbQHppeNgz9zK0Ahir+RYDqw5JwKJcbdzLOkgPGp0Dzt8c9PIdEQXoJD+piOeMGdQGrCmlyMag==}
+    peerDependencies:
+      svelte: ^3.0.0
+    dependencies:
+      svelte: 3.55.1
+    dev: false
 
   /svelte-parse-markup/0.1.1_svelte@3.55.1:
     resolution: {integrity: sha512-xCBSldaZdwi0u0ANASVCUFynCaV8z5D6sQOnzPcYSEoD9dd40MLzOKMBVmuTf/LUuPvc+cUvF132MnwdG7mDig==}

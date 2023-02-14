@@ -39,7 +39,7 @@
 
 	:root {
 		/* Text color */
-		@apply overscroll-x-none bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white;
+		@apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white;
 
 		/* Scrollbar overlay */
 		/*noinspection CssInvalidPropertyValue*/
@@ -55,14 +55,14 @@
 }
 
 @layer utilities {
-	.min-safe-h-screen {
+	.min-h-screen-safe {
 		/* equivalent to 100dvh in major browsers */
 		min-height: calc(100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
 	}
 
 	@supports (-webkit-touch-callout: none) {
 		/*noinspection CssInvalidPropertyValue*/
-		.min-safe-h-screen {
+		.min-h-screen-safe {
 			/* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
 			min-height: -webkit-fill-available;
 		}
