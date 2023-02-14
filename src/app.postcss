@@ -26,6 +26,12 @@
 	/* Font- Inter */
 	@font-face {
 		font-family: 'Inter';
+		font-weight: 300;
+		font-display: swap;
+		src: url('$lib/assets/fonts/Inter-Light.woff2') format('woff2');
+	}
+	@font-face {
+		font-family: 'Inter';
 		font-weight: 400;
 		font-display: swap;
 		src: url('$lib/assets/fonts/Inter-Regular.woff2') format('woff2');
@@ -40,10 +46,6 @@
 	:root {
 		/* Text color */
 		@apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white;
-
-		/* Scrollbar overlay */
-		/*noinspection CssInvalidPropertyValue*/
-		overflow: overlay;
 
 		/* Hide tap color */
 		-webkit-tap-highlight-color: transparent;

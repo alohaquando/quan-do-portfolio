@@ -48,13 +48,13 @@
 
 <svelte:window bind:scrollY={y} />
 
-<nav class="fixed bottom-0 left-0 right-0 z-50 flex h-14 transition-all duration-500 ease-in-out sm:top-0 sm:h-fit sm:place-content-between sm:p-16 lg:px-28 {hideNav ? 'translate-y-full sm:-translate-y-full' : ''}">
+<nav class="fixed bottom-0 left-0 right-0 z-50 flex h-14 transition-all duration-500 ease-in-out sm:top-0 sm:h-fit sm:place-content-between sm:p-10 lg:px-28 {hideNav ? 'translate-y-[180%] sm:-translate-y-[180%]' : ''}">
 	<!-- Foreground elements -->
 	<div class="z-50 contents [&_a]:z-50">
 		<!-- Logo	-->
 		<a
 			href="/#"
-			class="whitespace-nowrap max-sm:hidden sm:py-2 sm:px-6">
+			class="whitespace-nowrap max-sm:hidden sm:py-2 sm:px-6 font-medium text-[1.25rem]">
 			Quan Do
 		</a>
 
@@ -71,6 +71,12 @@
 		</ul>
 	</div>
 
-	<!-- Shadow below navigation bar-->
-	<div class="z absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 sm:bg-gradient-to-b" />
+	<!-- Blur and darken BG -->
+	<div class="absolute -top-12 bottom-0 left-0 right-0 sm:top-0 sm:-bottom-12">
+		<div
+			class="blur-fix absolute h-full w-full backdrop-blur backdrop-brightness-90
+		[mask-image:linear-gradient(to_top,black,black,transparent)]
+		sm:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
+		<div class="absolute h-full w-full bg-gradient-to-t from-zinc-900 sm:bg-gradient-to-b sm:via-zinc-900/80" />
+	</div>
 </nav>

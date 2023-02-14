@@ -8,7 +8,7 @@ const config = {
         "Strawford, system-ui",
         { fontFeatureSettings: "\"calt\", \"case\", \"ss01\", \"ss03\", \"cv11\"" }
       ],
-      display: [
+      reader: [
         "Inter, system-ui"
       ]
     },
