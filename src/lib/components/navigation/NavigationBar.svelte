@@ -76,9 +76,9 @@
 	<!-- Blur and darken BG -->
 	<div class="absolute -top-12 bottom-0 left-0 right-0 md:top-0 md:-bottom-12">
 		<div
-			class="blur-fix absolute h-full w-full backdrop-blur backdrop-brightness-90
+			class="blur-fix absolute h-full w-full backdrop-blur-xl backdrop-brightness-90
 		[mask-image:linear-gradient(to_top,black,black,transparent)]
 		md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
-		<div class="absolute h-full w-full bg-gradient-to-t md:bg-gradient-to-b {readerMode? 'from-zinc-900 md:via-zinc-900/80' : 'from-black/30'}" />
+		<div class="absolute bottom-0 md:top-0 h-[1px] w-full bg-black"></div>
 	</div>
 </nav>

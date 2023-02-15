@@ -1,8 +1,8 @@
 <script>
-  let className;
+  let className = '';
   export { className as class };
 </script>
 
-<p class="{className} text-[1.5rem] md:text-[1.75rem] font-light">
+<p class="{className} text-2x font-light">
   <slot />
 </p>
