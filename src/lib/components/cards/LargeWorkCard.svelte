@@ -1,5 +1,4 @@
 <script>
-	import Display from '$lib/components/typography/Display.svelte';
 	import BodyLarge from '$lib/components/typography/BodyLarge.svelte';
 	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
 
@@ -12,7 +11,7 @@
 	<a
 		{href}
 		class="contents">
-		<div class="m-4 flex w-full place-content-start items-end rounded-[2.5rem] bg-zinc-900 px-12 py-16 md:px-20 md:py-24">
+		<div class="m-6 flex w-full place-content-start items-end rounded-[2.5rem] bg-zinc-900 px-12 py-16 md:px-20 md:py-24">
 			<div class="flex flex-col">
 				<DisplaySmall>{title}</DisplaySmall>
 				<BodyLarge class="opacity-80">{subtitle}</BodyLarge>

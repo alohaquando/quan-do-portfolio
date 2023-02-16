@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import NavigationBar from "$lib/components/navigation/NavigationBar.svelte";
+  import Footer from "$lib/sections/Footer.svelte";
 
 	let root;
 	onMount(() => {
@@ -22,3 +23,4 @@
 
 <NavigationBar/>
 <slot />
+<Footer/>

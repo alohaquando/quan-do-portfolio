@@ -2,7 +2,7 @@
 	import Body from '$lib/components/typography/Body.svelte';
 	import Title from '$lib/components/typography/Title.svelte';
 	import Tagline from '$lib/components/typography/Tagline.svelte';
-	export let data;
+	export let data = 'me';
 
 	const aboutData = {
 		me: {
@@ -42,7 +42,7 @@
 </script>
 
 <!-- Card BG & layout -->
-<div class="{aboutData[data].className} flex rounded-xl bg-gradient-to-b from-[#0E101B] to-[#25262F] py-10 px-8 md:py-16 md:px-14">
+<div class="{aboutData[data].className} flex bg-glass py-10 px-8 md:py-12 md:px-10">
 	<!-- Text elements -->
 	<div class={aboutData[data].secondary ? 'grid grow gap-12 sm:gap-4 grid-rows-2 grid-cols-1 sm:grid-rows-1 sm:grid-cols-2' : 'contents'}>
 		<!-- Main text elements -->

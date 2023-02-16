@@ -45,15 +45,13 @@
 
 	:root {
 		/* Text color */
-		@apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white;
-
-		/* Hide tap color */
-		-webkit-tap-highlight-color: transparent;
+		@apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white overscroll-x-none overflow-x-hidden;
 
 		/* Font antialiasing */
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
+
 }
 
 @layer components {
@@ -84,6 +82,10 @@
 
 	.text-6x {
 		@apply text-[3.125rem] leading-relaxed md:text-[5.25rem] md:leading-relaxed;
+	}
+
+	.bg-glass {
+		@apply blur-fix backdrop-blur-2xl backdrop-saturate-150 rounded-[2.5rem] bg-gradient-to-b from-white/10 to-white/5;
 	}
 }
 
