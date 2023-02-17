@@ -1,6 +1,7 @@
 <script>
 	import Body from '$lib/components/typography/Body.svelte';
 	import NavigationLink from '$lib/components/navigation/NavigationLink.svelte';
+	import Section from "$lib/components/layouts/Section.svelte";
 
 	let footerLinks = {
 		landing: {
@@ -62,9 +63,11 @@
 	};
 </script>
 
-<section class="relative mt-24 sm:mt-64">
+<Section class="relative mt-24 sm:mt-64">
+	<div class="mx-6 flex h-px grow bg-white/10 md:mx-10 lg:mx-32" />
+
 	<!-- Elements -->
-	<div class="flex flex-col place-content-between gap-24 px-6 py-24 sm:flex-row md:px-10 lg:px-32">
+	<div class="flex flex-col place-content-between gap-10 px-6 py-24 sm:flex-row md:gap-24 md:px-10 lg:px-32">
 		<!-- Left container -->
 		<div class="flex flex-col place-content-between gap-10">
 			<!-- Top Left -->
@@ -82,13 +85,17 @@
 		</div>
 
 		<!--	Right container	-->
-		<div class="grid max-w-screen-md grow  place-content-between gap-12 sm:grid-cols-2 md:grid-cols-4">
+		<div class="grid max-w-screen-md grow place-content-between gap-12 sm:grid-cols-2 md:grid-cols-4">
 			{#each Object.values(footerLinks) as link, i}
+
+				<!--	Individual link group	-->
 				{#if Object.keys(footerLinks)[i] !== 'landing' && Object.keys(footerLinks)[i] !== 'to_top'}
 					<div class="flex grow flex-col">
 						<NavigationLink
 							class="place-content-start [&_p]:opacity-100"
 							{...link} />
+
+						<!--	Sub-links	-->
 						{#if link.subLinks}
 							<div>
 								{#each Object.values(link.subLinks) as subLink, i}
@@ -103,4 +110,4 @@
 			{/each}
 		</div>
 	</div>
-</section>
+</Section>

@@ -3,8 +3,8 @@
 	import Display from '$lib/components/typography/Display.svelte';
 </script>
 
-<Section section="landing" class="flex items-center place-content-center">
-	<div class="flex text-center max-w-screen-lg ">
+<Section section="landing" class="flex items-center place-content-center min-h-screen-safe">
+	<div class="flex text-center max-w-screen-lg px-6">
 		<Display>With a knack for making designs that works</Display>
 	</div>
 </Section>

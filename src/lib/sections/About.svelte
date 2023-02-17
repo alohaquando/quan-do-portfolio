@@ -6,7 +6,7 @@
 
 <Section
 	section="about"
-	class="flex flex-col items-center items-stretch gap-20 md:gap-40 md:pt-[22.5rem] pt-[12rem]">
+	class="flex flex-col items-center items-stretch gap-20 pt-[12rem] md:gap-40 md:pt-[22.5rem]">
 	<!-- Section title -->
 	<Display class="text-center">A bit about me</Display>
 

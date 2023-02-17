@@ -3,10 +3,11 @@
 	export let eager;
 
 	let className;
-	// noinspection ReservedWordAsName
 	export { className as class };
 
-	import { themeStore } from '$lib/stores/theme.js';
+	import { themeStore } from '$lib/data/colorScheme.js';
+
+	const lightDarkImageClass = 'rounded-2xl md:max-w-screen-sm md:mx-auto';
 </script>
 
 {#if imageData.lightDark}
@@ -23,7 +24,7 @@
 				loading={eager ? 'eager' : 'lazy'}
 				width={imageData.width}
 				height={imageData.height}
-				class="{className} mx-auto my-2 rounded-2xl border border-black/10 object-scale-down shadow-sm sm:w-[90%] sm:rounded-3xl lg:w-[70%]"
+				class="{className} {lightDarkImageClass}"
 				alt={imageData.alt} />
 		</picture>
 	{:else}
@@ -40,7 +41,7 @@
 				sizes="auto"
 				width={imageData.width}
 				height={imageData.height}
-				class="{className} mx-auto my-2 rounded-2xl border border-white/10 object-scale-down sm:w-[90%] sm:rounded-3xl lg:w-[70%]"
+				class="{className} {lightDarkImageClass}"
 				alt={imageData.alt} />
 		</picture>
 	{/if}
@@ -55,7 +56,7 @@
 		<!--suppress HtmlWrongAttributeValue -->
 		<img
 			loading={eager ? 'eager' : 'lazy'}
-			class="{className} max-w-full"
+			class="{className} h-auto"
 			alt={imageData.alt} />
 	</picture>
 {/if}

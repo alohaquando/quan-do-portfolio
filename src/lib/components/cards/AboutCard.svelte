@@ -46,7 +46,7 @@
 	<!-- Text elements -->
 	<div class={aboutData[data].secondary ? 'grid grow gap-12 sm:gap-4 grid-rows-2 grid-cols-1 sm:grid-rows-1 sm:grid-cols-2' : 'contents'}>
 		<!-- Main text elements -->
-		<div class="flex flex-col md:w-1/2 ">
+		<div class="flex flex-col md:w-1/2 gap-2">
 			<!-- Tagline -->
 			{#if aboutData[data].tagline}
 				<Tagline>{aboutData[data].tagline}</Tagline>

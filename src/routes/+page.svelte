@@ -5,6 +5,10 @@
 	import Contact from "$lib/sections/Contact.svelte";
 </script>
 
+<svelte:head>
+  <title>Quân Đỗ | Portfolio</title>
+</svelte:head>
+
 <Landing/>
 <Work/>
 <About/>

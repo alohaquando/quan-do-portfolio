@@ -12,9 +12,12 @@
 	<a
 		{href}
 		class="flex grow">
-			<Body class="{active ? 'opacity-100' : 'opacity-80'} relative py-2 group-hover:opacity-100">
-				{title}
-				<span class="{active ? 'opacity-100 group-hover:opacity-100' : 'opacity-0 group-hover:opacity-50'} absolute bottom-0 -left-2 -right-2 h-[1px] rounded-full bg-white opacity-0 " />
-			</Body>
+		<Body class="{active ? 'opacity-100' : 'opacity-80'} relative py-2 group-hover:opacity-100">
+			{title}
+			<!-- TODO: Make focus not show -->
+			<span
+				class="{active ? 'opacity-100 group-hover:opacity-100' : 'opacity-0 group-hover:opacity-50'} absolute bottom-0 -left-2 -right-2 h-[1px] rounded-full bg-white opacity-0 "
+				aria-hidden="true" />
+		</Body>
 	</a>
 </li>
