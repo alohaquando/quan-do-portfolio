@@ -22,6 +22,7 @@
 			<!--suppress HtmlWrongAttributeValue -->
 			<img
 				loading={eager ? 'eager' : 'lazy'}
+				sizes="auto"
 				width={imageData.width}
 				height={imageData.height}
 				class="{className} {lightDarkImageClass}"

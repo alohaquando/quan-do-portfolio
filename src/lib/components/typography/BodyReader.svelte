@@ -1,5 +1,5 @@
 <script>
-  let className = '';
+  let className = undefined;
   export { className as class };
 </script>
 

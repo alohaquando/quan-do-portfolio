@@ -14,8 +14,7 @@
 	import { beforeNavigate } from '$app/navigation';
 	import TaglineTitle from '$lib/components/typography/TaglineTitle.svelte';
 
-	import { readerMode } from "$lib/data/colorScheme.js";
-
+	import { readerMode } from '$lib/data/colorScheme.js';
 
 	let root;
 	onMount(() => {
@@ -32,6 +31,9 @@
 
 	let scrollY;
 	let innerHeight;
+
+	import { page } from '$app/stores';
+	export let pathBack = '/#' + $page.route.id;
 </script>
 
 <svelte:window
@@ -59,15 +61,15 @@
 		<!-- Text -->
 		<div class="mx-auto flex w-full max-w-screen-md flex-col gap-2">
 			<!-- Back -->
-			<!-- TODO: Make functional -->
-			<div class="flex items-center gap-2">
+			<!-- TODO: Add hover state -->
+			<a
+				href={pathBack}
+				class="flex items-center gap-2">
 				<Icon
 					name="chevron_left"
-					stroke_width="1.5"
-					fill="none"
-					class="stroke-white" />
+					stroke_width="1.2" />
 				<Tagline>Work</Tagline>
-			</div>
+			</a>
 			<!-- /Back -->
 			<!-- Title and Subtitle -->
 			<div>
@@ -81,7 +83,7 @@
 		<!-- Hero Image -->
 		{#if $$slots.hero_img}
 			<!-- Hero Image -->
-			<div class="mx-auto max-w-screen-lg bg-glass">
+			<div class="bg-glass mx-auto max-w-screen-lg">
 				<slot name="hero_img" />
 			</div>
 		{/if}

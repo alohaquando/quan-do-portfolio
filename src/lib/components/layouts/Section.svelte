@@ -1,7 +1,7 @@
 <script>
-	let className = '';
+	let className = undefined;
 	export { className as class };
-	export let section;
+	export let section = undefined;
 	import { inview } from 'svelte-inview';
 	import { sectionInView, prevSectionInView } from '$lib/data/sectionInView.js';
 </script>

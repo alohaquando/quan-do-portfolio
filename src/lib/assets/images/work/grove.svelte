@@ -4,7 +4,7 @@
         // Alt text
         export let alt = 'Grove';
         // Lazy / eager loading
-        export let eager;
+        export let eager = undefined;
 
         // Metadata
         import {width, height} from "$lib/assets/images/work/grove.png?metadata"
@@ -24,8 +24,7 @@
           webpSrc,
         }
 
-        let className;
-        // noinspection ReservedWordAsName
+        let className = undefined;
         export {className as class};
       </script>
 

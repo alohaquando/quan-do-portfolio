@@ -3,7 +3,7 @@
 	import Title from '$lib/components/typography/Title.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	export let data = 'email';
-	let className = '';
+	let className = undefined;
 	export { className as class };
 
 	const contactData = {
@@ -30,7 +30,7 @@
 
 <a
 	href={contactData[data].href}
-	class="{className}">
+	class={className}>
 	<!-- Card BG & layout -->
 	<div class=" bg-glass-gradient flex flex-col gap-8 py-10 px-8 md:gap-12 md:py-12 md:px-10">
 		<!-- Elements -->
@@ -38,12 +38,20 @@
 		<div class="flex h-12 w-12 place-content-center items-center rounded-xl bg-white/10 p-2 md:h-14 md:w-14">
 			<Icon
 				name={contactData[data].icon}
-				class="w-7 md:w-8" />
+				type="fill"
+				size="w-7 md:w-8" />
 		</div>
 		<!-- Text elements -->
 		<div class="flex flex-col">
 			<!-- Title -->
-			<Title>{contactData[data].title}</Title>
+			<Title class="flex gap-2 items-center">
+				{contactData[data].title}
+				<Icon
+					name="arrow_up_right"
+					stroke_width="1.5"
+					size="w-7 md:w-8"
+					class="inline-block mb-0.5" />
+			</Title>
 			<!-- Subtitle -->
 			<Body class="opacity-50">{contactData[data].subtitle}</Body>
 		</div>

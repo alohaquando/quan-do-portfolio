@@ -1,7 +1,7 @@
 <script>
 	import Body from '$lib/components/typography/Body.svelte';
 
-	let className = '';
+	let className = undefined;
 	export { className as class };
 	export let href = '/#';
 	export let title = 'title';

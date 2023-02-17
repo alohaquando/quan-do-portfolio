@@ -1,7 +1,8 @@
 <script>
 	import Body from '$lib/components/typography/Body.svelte';
 	import NavigationLink from '$lib/components/navigation/NavigationLink.svelte';
-	import Section from "$lib/components/layouts/Section.svelte";
+	import Section from '$lib/components/layouts/Section.svelte';
+	import Icon from '$lib/components/iconography/Icon.svelte';
 
 	let footerLinks = {
 		landing: {
@@ -61,7 +62,11 @@
 			href: '#'
 		}
 	};
+
+	let scrollY;
 </script>
+
+<svelte:window bind:scrollY />
 
 <Section class="relative mt-24 sm:mt-64">
 	<div class="mx-6 flex h-px grow bg-white/10 md:mx-10 lg:mx-32" />
@@ -77,17 +82,24 @@
 				</a>
 			</div>
 
-			<!-- Bottom Left -->
-			<a href={footerLinks.to_top.href}>
+			<!-- Back to top -->
+			<!--	TODO: Add hover state		-->
+			<button
+				class="flex items-center gap-2"
+				on:click={() => {
+					scrollY = 0;
+				}}>
 				<Body class="whitespace-nowrap py-2 font-medium">{footerLinks.to_top.title}</Body>
-			</a>
-			<!--	TODO: Add icon -->
+				<Icon
+					name="arrow_up"
+					stroke_width="1.75" />
+			</button>
+			<!-- /Back to top -->
 		</div>
 
 		<!--	Right container	-->
 		<div class="grid max-w-screen-md grow place-content-between gap-12 sm:grid-cols-2 md:grid-cols-4">
 			{#each Object.values(footerLinks) as link, i}
-
 				<!--	Individual link group	-->
 				{#if Object.keys(footerLinks)[i] !== 'landing' && Object.keys(footerLinks)[i] !== 'to_top'}
 					<div class="flex grow flex-col">

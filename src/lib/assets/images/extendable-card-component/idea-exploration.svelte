@@ -4,7 +4,7 @@
         // Alt text
         export let alt = 'Idea exploration';
         // Lazy / eager loading 
-        export let eager;
+        export let eager = undefined;
 
         // Metadata
         import {width, height} from "$lib/assets/images/extendable-card-component/idea-exploration-L.png?metadata"
@@ -30,8 +30,7 @@
           webpSrcDark
         }
 
-        let className;
-        // noinspection ReservedWordAsName
+        let className = undefined;
         export {className as class};
       </script>
 

@@ -10,20 +10,19 @@
 			subtitle: 'Subtitle'
 		},
 		case_studies: {
-			href: '/',
 			title: 'Case studies',
 			subtitle: 'Specialized UI and UX case studies',
 			secondaryWorks: {
 				extendable_card_component: {
-					href: '/work/',
+					href: '/work/case_studies/extendable_card_component',
 					title: 'Extendable Card Component'
 				},
 				people_select_modal: {
-					href: '/work/',
+					href: '/work/case_studies/people_select_modal',
 					title: 'People Select Modal'
 				},
 				create_new_flow: {
-					href: '/work/',
+					href: '/work/case_studies/create_new_flow',
 					title: '"Create New" Flow'
 				}
 			}
@@ -34,20 +33,19 @@
 			subtitle: 'Subtitle'
 		},
 		external: {
-			href: '',
 			title: 'External projects',
 			subtitle: 'Subtitle',
 			secondaryWorks: {
 				movieNow: {
-					href: '/work/',
+					href: '/work/external_projects/movieNow',
 					title: 'movieNow App'
 				},
 				hcmc_bars: {
-					href: '/work/',
+					href: '/work/external_projects/hcmc_bars',
 					title: 'HCMC Bars App'
 				},
 				task_calendar_dashboard: {
-					href: '/work/',
+					href: '/work/external_projects/task_calendar_dashboard',
 					title: 'Task Calendar Dashboard'
 				}
 			}

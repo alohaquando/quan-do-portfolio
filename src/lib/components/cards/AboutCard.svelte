@@ -2,69 +2,55 @@
 	import Body from '$lib/components/typography/Body.svelte';
 	import Title from '$lib/components/typography/Title.svelte';
 	import Tagline from '$lib/components/typography/Tagline.svelte';
-	export let data = 'me';
+	import Icon from '$lib/components/iconography/Icon.svelte';
 
-	const aboutData = {
-		me: {
-			title: 'Quan Do',
-			className: 'md:min-h-[30rem] min-h-[20rem] items-end'
-		},
-		experience: {
-			title: 'Experienced',
-			subtitle: 'In designing app and web interfaces.',
-			className: 'md:min-h-[40rem] min-h-[30rem] sm:w-1/2'
-		},
-		career: {
-			title: 'UI/UX Designer',
-			subtitle: 'With an emphasis on UX Design.',
-			className: 'md:min-h-[40rem] min-h-[30rem] sm:w-1/2'
-		},
-		languages: {
-			tagline: 'Fluent in',
-			title: 'English',
-			secondary: {
-				tagline: 'Native speaker of',
-				title: 'Vietnamese'
-			},
-			className: 'md:min-h-[15rem] min-h-[12rem] items-center'
-		},
-		specialty: {
-			tagline: 'Strong suit',
-			title: 'Integrating design with Operating System',
-			subtitle: 'I can design apps that fully utilizes the feature set of whatever system they’re on, like Adaptive Icon on Android to Focus Modes on iOS.',
-			className: 'md:min-h-[40rem] min-h-[40rem] sm:min-h-[30rem] items-end'
-		},
-		resume: {
-			title: 'My resume',
-			className: 'md:min-h-[30rem] min-h-[20rem]'
-		}
-	};
+	export let title = 'Title';
+	export let href = undefined;
+	export let tagline = undefined;
+	export let subtitle = undefined;
+	export let secondary = undefined;
+
+	let className = undefined;
+	export { className as class };
 </script>
 
-<!-- Card BG & layout -->
-<div class="{aboutData[data].className} flex bg-glass-gradient py-10 px-8 md:py-12 md:px-10">
-	<!-- Text elements -->
-	<div class={aboutData[data].secondary ? 'grid grow gap-12 sm:gap-4 grid-rows-2 grid-cols-1 sm:grid-rows-1 sm:grid-cols-2' : 'contents'}>
-		<!-- Main text elements -->
-		<div class="flex flex-col md:w-1/2 gap-2">
-			<!-- Tagline -->
-			{#if aboutData[data].tagline}
-				<Tagline>{aboutData[data].tagline}</Tagline>
-			{/if}
-			<!-- Title -->
-			<Title>{aboutData[data].title}</Title>
-			<!-- Subtitle -->
-			{#if aboutData[data].subtitle}
-				<Body class="opacity-50">{aboutData[data].subtitle}</Body>
+<a
+	{href}
+	class="contents">
+	<!-- Card BG & layout -->
+	<div class="{className} bg-glass-gradient flex py-10 px-8 md:py-12 md:px-10">
+		<!-- Text elements -->
+		<div class={secondary ? 'grid grow grid-cols-1 grid-rows-2 gap-12 sm:grid-cols-2 sm:grid-rows-1 sm:gap-4' : 'contents'}>
+			<!-- Main text elements -->
+			<div class="flex flex-col gap-2 md:w-1/2">
+				<!-- Tagline -->
+				{#if tagline}
+					<Tagline>{tagline}</Tagline>
+				{/if}
+				<!-- Title -->
+				<Title class="flex items-center gap-3">
+					{title}
+					{#if href}
+						<Icon
+							name="arrow_right_solid"
+							size="w-8 h-8 md:w-10 md:h-10"
+							type="fill"
+							class="inline-block" />
+					{/if}
+				</Title>
+				<!-- Subtitle -->
+				{#if subtitle}
+					<Body class="opacity-50">{subtitle}</Body>
+				{/if}
+			</div>
+
+			<!-- Secondary text elements -->
+			{#if secondary}
+				<div>
+					<Tagline>{secondary.tagline}</Tagline>
+					<Title>{secondary.title}</Title>
+				</div>
 			{/if}
 		</div>
-
-		<!-- Secondary text elements -->
-		{#if aboutData[data].secondary}
-			<div>
-				<Tagline>{aboutData[data].secondary.tagline}</Tagline>
-				<Title>{aboutData[data].secondary.title}</Title>
-			</div>
-		{/if}
 	</div>
-</div>
+</a>

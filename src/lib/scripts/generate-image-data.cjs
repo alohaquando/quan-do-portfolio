@@ -44,7 +44,7 @@ async function generateImageDataFiles() {
         // Alt text
         export let alt = '${imageAlt}';
         // Lazy / eager loading 
-        export let eager;
+        export let eager = undefined;
 
         // Metadata
         import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?metadata"
@@ -70,8 +70,7 @@ async function generateImageDataFiles() {
           webpSrcDark
         }
 
-        let className;
-        // noinspection ReservedWordAsName
+        let className = undefined;
         export {className as class};
       </script>
 
@@ -93,7 +92,7 @@ async function generateImageDataFiles() {
         // Alt text
         export let alt = '${imageAlt}';
         // Lazy / eager loading
-        export let eager;
+        export let eager = undefined;
 
         // Metadata
         import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?metadata"
@@ -113,8 +112,7 @@ async function generateImageDataFiles() {
           webpSrc,
         }
 
-        let className;
-        // noinspection ReservedWordAsName
+        let className = undefined;
         export {className as class};
       </script>
 

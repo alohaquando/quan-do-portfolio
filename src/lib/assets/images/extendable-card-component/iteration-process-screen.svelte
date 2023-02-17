@@ -4,7 +4,7 @@
         // Alt text
         export let alt = 'Iteration process screen';
         // Lazy / eager loading 
-        export let eager;
+        export let eager = undefined;
 
         // Metadata
         import {width, height} from "$lib/assets/images/extendable-card-component/iteration-process-screen-L.png?metadata"
@@ -30,8 +30,7 @@
           webpSrcDark
         }
 
-        let className;
-        // noinspection ReservedWordAsName
+        let className = undefined;
         export {className as class};
       </script>
 

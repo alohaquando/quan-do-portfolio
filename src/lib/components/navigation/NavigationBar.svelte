@@ -92,7 +92,7 @@
 	<!-- Blur and darken BG -->
 	<div class="pointer-events-none absolute -top-12 bottom-0 left-0 right-0 touch-none md:top-0 md:-bottom-12">
 		<div
-			class="blur-fix absolute h-full w-full backdrop-blur-xl backdrop-brightness-90
+			class=" {scrollY < innerHeight / 2 ? '' : 'backdrop-brightness-90'}  blur-fix absolute h-full w-full backdrop-blur-xl
 		[mask-image:linear-gradient(to_top,black,black,transparent)] md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
 		<div class="{$readerMode ? 'from-zinc-900/20' : 'from-black/20'} {scrollY < innerHeight / 2 ? 'opacity-0' : 'opacity-100'} blur-fix absolute h-full w-full bg-gradient-to-t md:bg-gradient-to-b transition-all" />
 		<!--	TODO: Fix weird color blur line in Edge	-->
