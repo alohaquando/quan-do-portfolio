@@ -42,7 +42,7 @@
 </script>
 
 <!-- Card BG & layout -->
-<div class="{aboutData[data].className} flex bg-glass py-10 px-8 md:py-12 md:px-10">
+<div class="{aboutData[data].className} flex bg-glass-gradient py-10 px-8 md:py-12 md:px-10">
 	<!-- Text elements -->
 	<div class={aboutData[data].secondary ? 'grid grow gap-12 sm:gap-4 grid-rows-2 grid-cols-1 sm:grid-rows-1 sm:grid-cols-2' : 'contents'}>
 		<!-- Main text elements -->

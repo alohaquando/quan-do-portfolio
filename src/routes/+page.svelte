@@ -1,17 +1,15 @@
 <script>
-	import Landing from "$lib/sections/Landing.svelte";
-	import Work from "$lib/sections/Work.svelte";
-	import About from "$lib/sections/About.svelte";
-	import Contact from "$lib/sections/Contact.svelte";
+	import Landing from '$lib/sections/Landing.svelte';
+	import Work from '$lib/sections/Work.svelte';
+	import About from '$lib/sections/About.svelte';
+	import Contact from '$lib/sections/Contact.svelte';
 </script>
 
 <svelte:head>
-  <title>Quân Đỗ | Portfolio</title>
+	<title>Quân Đỗ | Portfolio</title>
 </svelte:head>
 
-<Landing/>
-<Work/>
-<About/>
-<Contact/>
-
-
+<Landing />
+<Work />
+<About />
+<Contact />

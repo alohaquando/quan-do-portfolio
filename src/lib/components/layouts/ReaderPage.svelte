@@ -81,7 +81,7 @@
 		<!-- Hero Image -->
 		{#if $$slots.hero_img}
 			<!-- Hero Image -->
-			<div class="mx-auto max-w-screen-lg rounded-3xl bg-white/20 p-1.5 backdrop-saturate-150 sm:p-2 [&_img]:rounded-[1.2rem] sm:[&_img]:rounded-2xl ">
+			<div class="mx-auto max-w-screen-lg bg-glass">
 				<slot name="hero_img" />
 			</div>
 		{/if}

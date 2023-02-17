@@ -84,8 +84,12 @@
 		@apply text-[3.125rem] leading-relaxed md:text-[5.25rem] md:leading-relaxed;
 	}
 
-	.bg-glass {
+	.bg-glass-gradient {
 		@apply blur-fix backdrop-blur-2xl backdrop-saturate-150 rounded-[2.5rem] bg-gradient-to-b from-white/10 to-white/5;
+	}
+
+	.bg-glass {
+		@apply rounded-3xl bg-white/20 p-1.5 backdrop-saturate-150 sm:p-2 [&_img]:rounded-[1.2rem] sm:[&_img]:rounded-2xl;
 	}
 }
 
@@ -108,5 +112,14 @@
 		-moz-backface-visibility: hidden;
 		-webkit-transform: translate3d(0, 0, 0);
 		-moz-transform: translate3d(0, 0, 0);
+	}
+
+	.scrollbar-none::-webkit-scrollbar {
+		display: none;
+	}
+
+	.scrollbar-none {
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
 	}
 }
