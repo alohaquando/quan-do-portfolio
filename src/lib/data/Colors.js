@@ -7,7 +7,8 @@ export const readerGradients = {
 export const solidColors = {
 	red: 'bg-red-500',
 	blue: 'bg-sky-900',
-	green: 'bg-emerald-900'
+	green: 'bg-emerald-900',
+	monochrome: 'bg-zinc-800'
 };
 
 export const solidColorsHex = {

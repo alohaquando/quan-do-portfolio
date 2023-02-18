@@ -13,7 +13,7 @@
 
 <a
 	{href}
-	class="contents group">
+	class="group contents">
 	<div class="{className} relative flex basis-full flex-col place-content-center items-center gap-0.5 sm:flex-row sm:gap-3 sm:py-2 sm:px-5">
 		<!-- Icon and Icon BG -->
 		<div class="relative px-3.5 py-1 sm:p-0 md:hidden">
@@ -21,7 +21,10 @@
 				name={icon}
 				class="{active ? 'opacity-100' : 'opacity-70'} md:hidden" />
 			<!-- Active and Hover BG mobile-only -->
-			<div class="{active ? 'opacity-100 ring-1 ring-inset ring-white/30' : 'opacity-0'} absolute top-0 left-0 right-0 bottom-0 rounded-full backdrop-brightness-150 bg-white/20 backdrop-saturate-200 transition-all group-hover:opacity-100 group-hover:opacity-100 sm:hidden" />
+			<div
+				class="{active
+					? 'opacity-100 ring-opacity-100'
+					: 'opacity-0 ring-opacity-0'} absolute top-0 left-0 right-0 bottom-0 rounded-full bg-white/20 ring-1 ring-inset ring-white/30 backdrop-brightness-150 backdrop-saturate-200 transition-all group-hover:opacity-100 group-hover:opacity-100 sm:hidden" />
 			<!-- /Active and Hover BG mobile-only -->
 		</div>
 		<!-- /Icon and Icon BG -->

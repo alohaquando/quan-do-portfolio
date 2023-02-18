@@ -3,4 +3,3 @@
 
 import { writable } from 'svelte/store';
 export let themeStore = writable('dark');
-export let readerMode = writable(false);

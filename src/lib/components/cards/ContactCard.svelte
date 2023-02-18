@@ -31,6 +31,8 @@
 
 <a
 	href={contactData[data].href}
+	target="_blank"
+	rel="noopener noreferrer"
 	class="contents">
 	<!-- Card BG & layout -->
 	<div class="{className} bg-glass-gradient relative flex flex-col gap-8 py-10 px-8 md:gap-12 md:py-12 md:px-10">

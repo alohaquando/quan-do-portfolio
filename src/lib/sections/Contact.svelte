@@ -7,8 +7,8 @@
 </script>
 
 <Section
-	section="contact"
-	class="flex flex-col items-center items-stretch gap-20 pt-[12rem] md:gap-40 md:pt-[22.5rem]">
+	id="contact"
+	class="pb-16 flex flex-col items-center items-stretch gap-20 pt-[6rem] md:gap-40 md:pt-[14rem]">
 	<!-- Section title -->
 	<Display class="text-center">Let's work together</Display>
 

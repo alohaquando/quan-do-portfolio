@@ -5,7 +5,7 @@
 </script>
 
 <Section
-	section="landing"
+	id="landing"
 	class="flex h-[70vh] md:pt-16 flex-col place-content-center items-center gap-10 sm:h-[75vh] md:h-[90vh]">
 	<Title class="font-medium md:hidden">Quan Do</Title>
 

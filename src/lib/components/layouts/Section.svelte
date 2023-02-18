@@ -1,27 +1,22 @@
 <script>
 	let className = undefined;
 	export { className as class };
-	export let section = undefined;
+	export let id = undefined;
 	import { inview } from 'svelte-inview';
-	import { sectionInView, prevSectionInView } from '$lib/data/sectionInView.js';
+	import { sectionInView } from '$lib/data/sectionInView.js';
+	import { beforeNavigate } from '$app/navigation';
+
+	beforeNavigate(() => {
+		sectionInView.set('');
+	});
 </script>
 
-<!-- TODO: Fix mobile auto scroll height	-->
-
 <section
-	use:inview={{ threshold: 0.1 }}
+	use:inview={{ rootMargin: '-50%' }}
 	on:enter={() => {
-		prevSectionInView.set($sectionInView);
-		if ($sectionInView !== '') {
-			sectionInView.set(section);
-		}
+		sectionInView.set(id);
 	}}
-	on:leave={() => {
-		if (section !== $prevSectionInView) {
-			sectionInView.set($prevSectionInView);
-		}
-	}}
-	id={section}
-	class="{className}">
+	{id}
+	class={className}>
 	<slot />
 </section>

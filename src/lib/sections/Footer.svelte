@@ -1,9 +1,9 @@
 <script>
 	import Body from '$lib/components/typography/Body.svelte';
-	import Section from '$lib/components/layouts/Section.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	import Button from '$lib/components/buttons/Button.svelte';
 	import A from '$lib/components/navigation/A.svelte';
+	import Section from "$lib/components/layouts/Section.svelte";
 
 	let footerLinks = {
 		landing: {
@@ -65,7 +65,7 @@
 
 <svelte:window bind:scrollY />
 
-<Section class="relative my-24 sm:mt-64">
+<Section id="footer" class="relative my-24 sm:mt-64">
 	<!-- Divider -->
 	<div class="mx-6 flex h-px grow bg-white/10 md:mx-10 lg:mx-32" />
 	<!-- /Divider -->

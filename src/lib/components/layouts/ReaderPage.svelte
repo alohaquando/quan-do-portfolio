@@ -1,39 +1,39 @@
 <script>
 	import BodyLarge from '$lib/components/typography/BodyLarge.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
+	import A from '$lib/components/navigation/A.svelte';
+	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
+	import Title from '$lib/components/typography/Title.svelte';
+	import TaglineTitle from '$lib/components/typography/TaglineTitle.svelte';
+
 	export let title = 'Title';
 	export let subtitle = 'Subtitle';
 	export let highlight = 'Highlight';
 	export let color = 'blue';
 
 	import { solidColors, readerGradients, solidColorsHex } from '$lib/data/Colors.js';
-	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
-	import Title from '$lib/components/typography/Title.svelte';
+
+	// Setting :root color on load
 	import { onMount } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
-	import TaglineTitle from '$lib/components/typography/TaglineTitle.svelte';
-
-	import { readerMode } from '$lib/data/colorScheme.js';
-
 	let root;
 	onMount(() => {
 		root = document.getElementsByTagName('html')[0];
 		root?.classList.remove('dark:bg-black');
 		root?.classList.add('dark:bg-zinc-900');
-		readerMode.set(true);
 	});
 	beforeNavigate(() => {
 		root?.classList.remove('dark:bg-zinc-900');
 		root?.classList.add('dark:bg-black');
-		readerMode.set(false);
 	});
 
+	// For navigating back to right location
+	import { page } from '$app/stores';
+	export let pathBack = '/#' + $page.route.id;
+
+	// Set Browser color
 	let scrollY;
 	let innerHeight;
-
-	import { page } from '$app/stores';
-	import A from "$lib/components/navigation/A.svelte";
-	export let pathBack = '/#' + $page.route.id;
 </script>
 
 <svelte:window
@@ -55,14 +55,14 @@
 </svelte:head>
 
 <!-- Reader Page -->
-<div class="mx-auto flex w-full flex-col place-content-center gap-24 px-6 pt-8 sm:pt-16 sm:px-16 md:pt-[12rem]">
+<div class="mx-auto flex w-full flex-col place-content-center gap-24 px-6 pt-8 sm:px-16 sm:pt-16 md:pt-[12rem]">
 	<!-- Heading Block -->
 	<div class="flex flex-col gap-12 md:gap-16">
 		<!-- Text -->
 		<div class="mx-auto flex w-full max-w-screen-md flex-col gap-6">
 			<!-- Back -->
 			<A
-				class="!px-3 border border-white/20"
+				class="border border-white/20 !px-3"
 				href={pathBack}>
 				<Icon
 					name="arrow_left"

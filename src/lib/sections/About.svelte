@@ -36,14 +36,14 @@
 		resume: {
 			title: 'My resume',
 			class: 'md:min-h-[30rem] min-h-[20rem]',
-			href: '/',
+			href: '/'
 		}
 	};
 </script>
 
 <Section
-	section="about"
-	class="flex flex-col items-center items-stretch gap-20 pt-[12rem] md:gap-40 md:pt-[22.5rem]">
+	id="about"
+	class="pb-16 flex flex-col items-center items-stretch gap-20 pt-[6rem] md:gap-40 md:pt-[14rem]">
 	<!-- Section title -->
 	<Display class="text-center">A bit about me</Display>
 

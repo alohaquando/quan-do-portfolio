@@ -1,13 +1,12 @@
 <script>
 	import Section from '$lib/components/layouts/Section.svelte';
 	import LargeWorkCard from '$lib/components/cards/LargeWorkCard.svelte';
-	import SmallWorkCard from '$lib/components/cards/SmallWorkCard.svelte';
 
 	const works = {
 		grove: {
 			href: '/work/grove',
 			title: 'GroveHR',
-			subtitle: 'Subtitle',
+			subtitle: 'Subtitle'
 		},
 		case_studies: {
 			title: 'Case studies',
@@ -52,20 +51,11 @@
 		}
 	};
 
-	import IMG from "$lib/assets/images/work/grove.svelte";
 </script>
 
-<Section section="work">
-<!--	TODO: Add snap	-->
+<Section id="work" class="pb-16">
+	<!--	TODO: Add snap	-->
 	{#each Object.values(works) as work}
-		<LargeWorkCard {...work}>
-			{#if work.secondaryWorks}
-				{#each Object.values(work.secondaryWorks) as secondaryWork}
-					<SmallWorkCard {...secondaryWork} >
-						<IMG/>
-					</SmallWorkCard>
-				{/each}
-			{/if}
-		</LargeWorkCard>
+		<LargeWorkCard {...work} />
 	{/each}
 </Section>

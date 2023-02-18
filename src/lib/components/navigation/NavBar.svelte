@@ -37,7 +37,6 @@
 	let innerWidth = 0;
 	let showNavBG;
 
-	// TODO: FIX HIGHLIGHT!!!
 	$: {
 		hideNav = !usedNav && scrollY > 0 && scrollY - prevY > 0;
 		showNavBG = scrollY > 100 || innerWidth < 768;
@@ -53,24 +52,21 @@
 
 	// Highlight section in view
 	import { sectionInView } from '$lib/data/sectionInView.js';
-	import { beforeNavigate } from '$app/navigation';
-
-	beforeNavigate(() => {
-		sectionInView.set('');
-	});
 </script>
 
-<svelte:window bind:scrollY bind:innerWidth />
+<svelte:window
+	bind:scrollY
+	bind:innerWidth />
 
 <nav
-	class="{showNavBG ? '[padding-bottom:max(env(safe-area-inset-bottom),24px)] max-sm:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)]' : '[padding-bottom:env(safe-area-inset-bottom)]'}
-{hideNav ? 'translate-y-[180%] md:-translate-y-[180%]' : ''} fixed bottom-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out sm:px-4 md:top-0 md:h-fit md:px-10 md:py-10 lg:px-32">
+	class="{hideNav ? 'translate-y-[180%] md:-translate-y-[180%]' : ''} fixed
+ bottom-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24">
 	<!-- Foreground -->
-	<div class="flex md:place-content-between" on:click={handleNavUse}>
+	<div
+		class="flex md:place-content-between"
+		on:click={handleNavUse}>
 		<!-- Logo -->
-		<NavBlock
-			{showNavBG}
-			class="max-md:hidden">
+		<NavBlock class="max-md:hidden">
 			<NavLink
 				title="Quan Do"
 				href="/"
@@ -79,7 +75,7 @@
 		<!-- /Logo -->
 
 		<!-- Links Bar -->
-		<NavBlock {showNavBG}>
+		<NavBlock>
 			{#each Object.values(navLinks) as link, i}
 				<NavLink
 					{...link}
@@ -90,9 +86,7 @@
 		<!-- /Links Bar -->
 
 		<!-- Resume -->
-		<NavBlock
-			{showNavBG}
-			class="max-md:hidden">
+		<NavBlock class="max-md:hidden">
 			<NavLink
 				{...navLinks.resume}
 				class=""
@@ -105,10 +99,8 @@
 	<!-- Background -->
 	<div class="{showNavBG ? 'opacity-100' : 'md:opacity-0'} pointer-events-none absolute -top-20 bottom-0 left-0 right-0 -z-20 touch-none md:top-0 md:-bottom-12">
 		<div
-			class="blur-fix absolute h-full w-full backdrop-blur backdrop-brightness-50 sm:backdrop-brightness-75 md:backdrop-blur-xl
-		[mask-image:linear-gradient(to_top,black,black,transparent)] md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
+			class="blur-fix absolute h-full w-full backdrop-blur backdrop-brightness-50 [mask-image:linear-gradient(to_top,black,black,transparent)] sm:backdrop-brightness-75
+		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
 	</div>
 	<!-- /Background -->
 </nav>
-
-

@@ -3,7 +3,10 @@
 
 	export let title = 'Title';
 	export let href = '/';
-	export let color = 'blue';
+	export let color = 'monochrome';
+
+	let className;
+	export { className as class };
 
 	import { solidColors } from '$lib/data/Colors.js';
 	import Title from '$lib/components/typography/Title.svelte';
@@ -16,9 +19,9 @@
 	<!-- Card -->
 	<div
 		id={href}
-		class="{solidColors[color]} relative flex w-64 flex-col rounded-3xl max-lg:shrink-0 md:w-80 lg:w-auto">
+		class="{solidColors[color]} {className} relative isolate flex w-64 shrink-0 flex-col overflow-clip rounded-3xl sm:w-auto">
 		<!-- Title and Arrow -->
-		<div class="flex basis-3/5 p-8 z-10 pointer-events-none">
+		<div class="pointer-events-none z-10 flex p-6  md:p-8">
 			<Title>
 				{title}
 				<Icon
@@ -31,8 +34,8 @@
 		<!-- /Title and Arrow -->
 
 		<!-- Image -->
-		<div class="relative isolate grow overflow-hidden rounded-b-3xl z-10 pointer-events-none">
-			<div class="bg-glass absolute top-0 -right-12 w-5/6">
+		<div class="relative grow">
+			<div class="bg-glass pointer-events-none absolute top-0 -bottom-6 -right-6 z-10  w-3/4 rounded-b-3xl [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
 				<slot />
 			</div>
 		</div>
@@ -40,7 +43,6 @@
 
 		<!-- Glow on hover -->
 		<HoverGlow
-			{color}
 			class="rounded-3xl" />
 		<!-- /Glow on hover -->
 	</div>
