@@ -7,7 +7,7 @@
 		grove: {
 			href: '/work/grove',
 			title: 'GroveHR',
-			subtitle: 'Subtitle'
+			subtitle: 'Subtitle',
 		},
 		case_studies: {
 			title: 'Case studies',
@@ -56,6 +56,7 @@
 </script>
 
 <Section section="work">
+<!--	TODO: Add snap	-->
 	{#each Object.values(works) as work}
 		<LargeWorkCard {...work}>
 			{#if work.secondaryWorks}

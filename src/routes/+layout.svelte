@@ -5,7 +5,7 @@
 	// Smooth scroll enabled after load
 	import { onMount } from 'svelte';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	import NavigationBar from "$lib/components/navigation/NavigationBar.svelte";
+	import NavigationBar from "$lib/components/navigation/NavBar.svelte";
   import Footer from "$lib/sections/Footer.svelte";
 
 	let root;

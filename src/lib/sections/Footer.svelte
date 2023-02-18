@@ -1,16 +1,13 @@
 <script>
 	import Body from '$lib/components/typography/Body.svelte';
-	import NavigationLink from '$lib/components/navigation/NavigationLink.svelte';
 	import Section from '$lib/components/layouts/Section.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
+	import Button from '$lib/components/buttons/Button.svelte';
+	import A from '$lib/components/navigation/A.svelte';
 
 	let footerLinks = {
 		landing: {
 			title: 'Quan Do',
-			href: '/#'
-		},
-		to_top: {
-			title: 'Back to top',
 			href: '/#'
 		},
 		work: {
@@ -19,11 +16,11 @@
 			subLinks: {
 				grove: {
 					title: 'groveHR',
-					href: '/work/grovehr'
+					href: '/work/grove'
 				},
 				ux_projects: {
 					title: 'ux projects',
-					href: '/#ux_projects'
+					href: '/#Case studies'
 				},
 				concept: {
 					title: 'concept',
@@ -31,7 +28,7 @@
 				},
 				external_projects: {
 					title: 'external projects',
-					href: '/#external_projects'
+					href: '/#External projects'
 				}
 			}
 		},
@@ -68,8 +65,10 @@
 
 <svelte:window bind:scrollY />
 
-<Section class="relative mt-24 sm:mt-64">
+<Section class="relative my-24 sm:mt-64">
+	<!-- Divider -->
 	<div class="mx-6 flex h-px grow bg-white/10 md:mx-10 lg:mx-32" />
+	<!-- /Divider -->
 
 	<!-- Elements -->
 	<div class="flex flex-col place-content-between gap-10 px-6 py-24 sm:flex-row md:gap-24 md:px-10 lg:px-32">
@@ -77,49 +76,58 @@
 		<div class="flex flex-col place-content-between gap-10">
 			<!-- Top Left -->
 			<div class="flex flex-col">
-				<a href={footerLinks.landing.href}>
+				<A href={footerLinks.landing.href}>
 					<Body class="whitespace-nowrap py-2 font-medium">{footerLinks.landing.title}</Body>
-				</a>
+				</A>
 			</div>
 
 			<!-- Back to top -->
-			<!--	TODO: Add hover state		-->
-			<button
-				class="flex items-center gap-2"
+			<Button
 				on:click={() => {
 					scrollY = 0;
 				}}>
-				<Body class="whitespace-nowrap py-2 font-medium">{footerLinks.to_top.title}</Body>
+				<Body class="whitespace-nowrap py-2 font-medium">Back to top</Body>
 				<Icon
 					name="arrow_up"
+					type="outline"
 					stroke_width="1.75" />
-			</button>
+			</Button>
 			<!-- /Back to top -->
 		</div>
 
 		<!--	Right container	-->
-		<div class="grid max-w-screen-md grow place-content-between gap-12 sm:grid-cols-2 md:grid-cols-4">
+		<div class="grid  max-w-screen-md grow place-content-between gap-12 sm:grid-cols-2 md:grid-cols-4">
+			<!-- Link group -->
 			{#each Object.values(footerLinks) as link, i}
-				<!--	Individual link group	-->
-				{#if Object.keys(footerLinks)[i] !== 'landing' && Object.keys(footerLinks)[i] !== 'to_top'}
-					<div class="flex grow flex-col">
-						<NavigationLink
-							class="place-content-start [&_p]:opacity-100"
-							{...link} />
+				{#if Object.keys(footerLinks)[i] !== 'landing'}
+					<ul class="flex grow flex-col gap-4">
+						<!-- Heading link -->
+						<li>
+							<A href={link.href}>
+								<Body>{link.title}</Body>
+							</A>
+						</li>
+						<!-- /Heading link -->
 
-						<!--	Sub-links	-->
+						<!-- Sub link group -->
 						{#if link.subLinks}
-							<div>
+							<ul class="flex flex-col gap-2">
 								{#each Object.values(link.subLinks) as subLink, i}
-									<NavigationLink
-										class="place-content-start [&_p]:opacity-50"
-										{...subLink} />
+									<li>
+										<A
+											href={subLink.href}
+											class="group">
+											<Body class="opacity-50 transition-all group-hover:opacity-100">{subLink.title}</Body>
+										</A>
+									</li>
 								{/each}
-							</div>
+							</ul>
 						{/if}
-					</div>
+						<!-- /Sub link group -->
+					</ul>
 				{/if}
 			{/each}
+			<!-- /Link group -->
 		</div>
 	</div>
 </Section>

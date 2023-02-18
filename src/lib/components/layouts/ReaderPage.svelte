@@ -1,13 +1,12 @@
 <script>
 	import BodyLarge from '$lib/components/typography/BodyLarge.svelte';
-	import Tagline from '$lib/components/typography/Tagline.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	export let title = 'Title';
 	export let subtitle = 'Subtitle';
 	export let highlight = 'Highlight';
 	export let color = 'blue';
 
-	import { solidColors, linearGradients, solidColorsHex } from '$lib/data/Colors.js';
+	import { solidColors, readerGradients, solidColorsHex } from '$lib/data/Colors.js';
 	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
 	import Title from '$lib/components/typography/Title.svelte';
 	import { onMount } from 'svelte';
@@ -33,6 +32,7 @@
 	let innerHeight;
 
 	import { page } from '$app/stores';
+	import A from "$lib/components/navigation/A.svelte";
 	export let pathBack = '/#' + $page.route.id;
 </script>
 
@@ -55,21 +55,19 @@
 </svelte:head>
 
 <!-- Reader Page -->
-<div class="mx-auto flex w-full flex-col place-content-center gap-24 px-6 pt-[4rem] sm:px-16 md:pt-[12rem]">
+<div class="mx-auto flex w-full flex-col place-content-center gap-24 px-6 pt-8 sm:pt-16 sm:px-16 md:pt-[12rem]">
 	<!-- Heading Block -->
 	<div class="flex flex-col gap-12 md:gap-16">
 		<!-- Text -->
-		<div class="mx-auto flex w-full max-w-screen-md flex-col gap-2">
+		<div class="mx-auto flex w-full max-w-screen-md flex-col gap-6">
 			<!-- Back -->
-			<!-- TODO: Add hover state -->
-			<a
-				href={pathBack}
-				class="flex items-center gap-2">
+			<A
+				class="!px-3 border border-white/20"
+				href={pathBack}>
 				<Icon
-					name="chevron_left"
-					stroke_width="1.2" />
-				<Tagline>Work</Tagline>
-			</a>
+					name="arrow_left"
+					type="fill" />
+			</A>
 			<!-- /Back -->
 			<!-- Title and Subtitle -->
 			<div>
@@ -109,7 +107,7 @@
 	<!-- /Slot -->
 
 	<!-- Color BG -->
-	<div class="{linearGradients[color]} min-h-screen-safe absolute top-0 left-0 right-0 -z-10" />
+	<div class="{readerGradients[color]} min-h-screen-safe absolute top-0 left-0 right-0 -z-10" />
 	<!-- /Color BG -->
 </div>
 <!-- /Reader Page -->

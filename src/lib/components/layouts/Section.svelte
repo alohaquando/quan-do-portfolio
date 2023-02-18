@@ -6,6 +6,8 @@
 	import { sectionInView, prevSectionInView } from '$lib/data/sectionInView.js';
 </script>
 
+<!-- TODO: Fix mobile auto scroll height	-->
+
 <section
 	use:inview={{ threshold: 0.1 }}
 	on:enter={() => {

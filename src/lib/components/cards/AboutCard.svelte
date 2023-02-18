@@ -3,6 +3,7 @@
 	import Title from '$lib/components/typography/Title.svelte';
 	import Tagline from '$lib/components/typography/Tagline.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
+	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
 
 	export let title = 'Title';
 	export let href = undefined;
@@ -22,7 +23,7 @@
 		<!-- Text elements -->
 		<div class={secondary ? 'grid grow grid-cols-1 grid-rows-2 gap-12 sm:grid-cols-2 sm:grid-rows-1 sm:gap-4' : 'contents'}>
 			<!-- Main text elements -->
-			<div class="flex flex-col gap-2 md:w-1/2">
+			<div class="pointer-events-none z-10 flex flex-col gap-2 md:w-1/2">
 				<!-- Tagline -->
 				{#if tagline}
 					<Tagline>{tagline}</Tagline>
@@ -51,6 +52,13 @@
 					<Title>{secondary.title}</Title>
 				</div>
 			{/if}
+			<!-- /Secondary text elements -->
+
+			<!-- Glow on hover -->
+			{#if href}
+				<HoverGlow class="rounded-[2.5rem]" />
+			{/if}
+			<!-- /Glow on hover -->
 		</div>
 	</div>
 </a>

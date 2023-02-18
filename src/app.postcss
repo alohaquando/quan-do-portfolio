@@ -45,19 +45,25 @@
 
 	:root {
 		/* Text color */
-		@apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white overscroll-x-none overflow-x-hidden;
+		@apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white overflow-x-hidden cursor-pointer;
+
+		/* Hide tap color */
+		-webkit-tap-highlight-color: transparent;
 
 		/* Font antialiasing */
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-
 }
 
 @layer components {
 	/* Text scaling (mobile - 1.2) - (desktop - 1.333) */
+	.text-extra-small {
+		@apply text-[0.8rem] md:text-[0.9375rem];
+	}
+
 	.text-small {
-		@apply text-[1.0625rem] leading-relaxed md:text-[0.9375rem];
+		@apply text-[1.0625rem] leading-relaxed md:text-[0.9375rem] md:leading-relaxed;
 	}
 
 	.text-1x {
@@ -104,6 +110,18 @@
 		.min-h-screen-safe {
 			/* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
 			min-height: -webkit-fill-available;
+		}
+	}
+
+	.min-h-80vh-safe {
+		min-height: calc(80vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
+	}
+
+	@supports (-webkit-touch-callout: none) {
+		/*noinspection CssInvalidPropertyValue*/
+		.min-h-90vh-safe {
+			/* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
+			min-height: calc(-webkit-fill-available + 900);
 		}
 	}
 
