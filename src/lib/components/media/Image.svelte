@@ -5,13 +5,13 @@
 	let className;
 	export { className as class };
 
-	import { themeStore } from '$lib/data/colorScheme.js';
+	import { colorScheme } from '$lib/data/colorScheme.js';
 
 	const lightDarkImageClass = 'rounded-2xl md:max-w-screen-sm md:mx-auto';
 </script>
 
 {#if imageData.lightDark}
-	{#if $themeStore === 'light'}
+	{#if $colorScheme === 'light'}
 		<picture>
 			<source
 				srcset={imageData.avifSrcLight}

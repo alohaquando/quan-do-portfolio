@@ -37,7 +37,7 @@
 	<!-- Card BG & layout -->
 	<div class="{className} bg-glass-gradient relative flex flex-col gap-8 py-10 px-8 md:gap-12 md:py-12 md:px-10">
 		<!-- Icon -->
-		<div class="pointer-events-none z-10 flex h-12 w-12 place-content-center items-center rounded-xl bg-white/10 p-2 md:h-14 md:w-14">
+		<div class="bg-glass pointer-events-none z-10 flex h-12 w-12 place-content-center items-center rounded-xl p-2 md:h-14 md:w-14">
 			<Icon
 				name={contactData[data].icon}
 				type="fill"

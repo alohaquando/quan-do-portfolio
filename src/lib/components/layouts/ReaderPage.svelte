@@ -13,19 +13,7 @@
 
 	import { solidColors, readerGradients, solidColorsHex } from '$lib/data/Colors.js';
 
-	// Setting :root color on load
-	import { onMount } from 'svelte';
-	import { beforeNavigate } from '$app/navigation';
-	let root;
-	onMount(() => {
-		root = document.getElementsByTagName('html')[0];
-		root?.classList.remove('dark:bg-black');
-		root?.classList.add('dark:bg-zinc-900');
-	});
-	beforeNavigate(() => {
-		root?.classList.remove('dark:bg-zinc-900');
-		root?.classList.add('dark:bg-black');
-	});
+	import ReaderModeBackgroundHandler from "$lib/utilities/ReaderModeBackgroundHandler.svelte";
 
 	// For navigating back to right location
 	import { page } from '$app/stores';
@@ -35,6 +23,8 @@
 	let scrollY;
 	let innerHeight;
 </script>
+
+<ReaderModeBackgroundHandler/>
 
 <svelte:window
 	bind:scrollY
@@ -62,7 +52,7 @@
 		<div class="mx-auto flex w-full max-w-screen-md flex-col gap-6">
 			<!-- Back -->
 			<A
-				class="border border-white/20 !px-3"
+				class="ring-1 ring-gray-900/20 dark:ring-white/20 !px-3"
 				href={pathBack}>
 				<Icon
 					name="arrow_left"

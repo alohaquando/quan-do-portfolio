@@ -24,23 +24,26 @@
 			<div
 				class="{active
 					? 'opacity-100 ring-opacity-100'
-					: 'opacity-0 ring-opacity-0'} absolute top-0 left-0 right-0 bottom-0 rounded-full bg-white/20 ring-1 ring-inset ring-white/30 backdrop-brightness-150 backdrop-saturate-200 transition-all group-hover:opacity-100 group-hover:opacity-100 sm:hidden" />
+					: 'opacity-0 ring-opacity-0'} absolute top-0 left-0 right-0 bottom-0 -z-10 rounded-full bg-white/20 ring-1 ring-inset ring-gray-900/20 dark:ring-white/30 backdrop-brightness-150 backdrop-saturate-200 transition-all group-hover:opacity-100 group-hover:opacity-100 sm:hidden" />
 			<!-- /Active and Hover BG mobile-only -->
 		</div>
 		<!-- /Icon and Icon BG -->
 
 		<!-- Text -->
-		<p class="{active ? 'font-medium opacity-100' : 'opacity-90'} text-extra-small md:text-1x group-hover:opacity-100">
+		<p class="{active ? 'font-medium opacity-100' : 'opacity-90'} text-extra-small md:text-1x pointer-events-none z-50 group-hover:font-medium group-hover:opacity-100  dark:group-hover:font-normal">
 			{title}
 		</p>
 		<!-- /Text -->
 
 		<!-- Active BG -->
-		<div class="{active ? 'ring-1 ring-inset ring-white/30 backdrop-brightness-150 backdrop-saturate-200' : 'opacity-70 '} absolute top-0 left-0 right-0 bottom-0 rounded-full transition-all max-sm:hidden" />
+		<div
+			class="{active
+				? 'bg-white shadow-lg ring-1 backdrop-saturate-200 dark:bg-white/0 dark:backdrop-brightness-150'
+				: 'opacity-70 '}  absolute top-0 left-0 right-0 bottom-0 -z-10 rounded-full ring-gray-900/20 transition-all group-hover:shadow-xl group-hover:ring-1 dark:ring-white/30 dark:group-hover:ring-opacity-0 max-sm:hidden" />
 		<!-- /Active BG -->
 
 		<!-- Hover BG -->
-		<HoverGlow class="rounded-full max-sm:hidden" />
+		<HoverGlow class="rounded-full max-sm:hidden " />
 		<!-- /Hover BG -->
 	</div>
 </a>

@@ -21,7 +21,7 @@
 		id={href}
 		class="{solidColors[color]} {className} relative isolate flex w-64 shrink-0 flex-col overflow-clip rounded-3xl sm:w-auto">
 		<!-- Title and Arrow -->
-		<div class="pointer-events-none z-10 flex p-6  md:p-8">
+		<div class="pointer-events-none z-10 flex p-6 md:p-8">
 			<Title>
 				{title}
 				<Icon
@@ -36,6 +36,7 @@
 		<!-- Image -->
 		<div class="relative grow">
 			<div class="bg-glass pointer-events-none absolute top-0 -bottom-6 -right-6 z-10  w-3/4 rounded-b-3xl [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
+<!--	Figure out how to conditionally pass images	-->
 				<slot />
 			</div>
 		</div>

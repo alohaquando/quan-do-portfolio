@@ -1,23 +1,43 @@
 <script>
-	let m = { x: 0, y: 0 };
-	let mouseX;
-	let mouseY;
+  let questions = [
+    { id: 1, text: `Where did you go to school?` },
+    { id: 2, text: `What is your mother's name?` },
+    { id: 3, text: `What is another personal fact that an attacker could easily find with Google?` }
+  ];
 
-	function trackMouse(event) {
-		const rect = event.currentTarget.getBoundingClientRect();
-		m.x = Math.round(event.clientX - rect.x);
-		m.y = Math.round(event.clientY - rect.y);
-	}
+  let selected;
 
-  $: {
-    mouseX = m.x + 'px';
-    mouseY = m.y + 'px';
+  let answer = '';
+
+  function handleSubmit() {
+    alert(`answered question ${selected.id} (${selected.text}) with "${answer}"`);
   }
 </script>
 
-<div
-	on:mousemove={trackMouse}
-  class="rounded-full border border-white/30 bg-gradient-to-r from-[#D7EDEA] to-[#F4FBDF] transition-all duration-300 opacity-0 [mask-image:radial-gradient(180px_at_var(--mouseX)_var(--mouseY),white,transparent)] hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428]"
-  style="--mouseX: {mouseX}; --mouseY: {mouseY}">
-  {mouseX} {mouseY}
-</div>
+<h2>Insecurity questions</h2>
+
+<form on:submit|preventDefault={handleSubmit}>
+  <select bind:value={selected} on:change="{() => answer = ''}">
+    {#each questions as question}
+      <option value={question}>
+        {question.text}
+      </option>
+    {/each}
+  </select>
+
+  <input bind:value={answer}>
+
+  <button disabled={!answer} type=submit>
+    Submit
+  </button>
+</form>
+
+<p>selected question {selected ? selected.id : '[waiting...]'}</p>
+
+<style>
+    input {
+        display: block;
+        width: 500px;
+        max-width: 100%;
+    }
+</style>

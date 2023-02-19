@@ -1,8 +1,9 @@
 const config = {
   content: ["./src/**/*.{html,js,svelte,ts}"],
 
-  theme: {
+  darkMode: 'class',
 
+  theme: {
     fontFamily: {
       sans: [
         "Strawford, system-ui",
@@ -12,7 +13,6 @@ const config = {
         "Inter, system-ui"
       ]
     },
-
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

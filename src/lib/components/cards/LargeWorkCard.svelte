@@ -22,7 +22,7 @@
 	<a
 		href={href || null}
 		class="contents">
-		<div class="relative flex w-full flex-col place-content-between items-start gap-12 rounded-[2.5rem] bg-zinc-900 px-12 py-16 md:px-20 lg:py-24">
+		<div class="relative flex w-full flex-col place-content-between items-start gap-12 rounded-[2.5rem] bg-zinc-100 dark:bg-zinc-900 px-12 py-16 md:px-20 lg:py-24">
 			<!-- Secondary cards -->
 			<div class="relative flex min-h-fit grow self-stretch">
 				<div

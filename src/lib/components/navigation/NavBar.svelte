@@ -35,11 +35,11 @@
 	let scrollY = 0;
 	let prevY = 0;
 	let innerWidth = 0;
-	let showNavBG;
+	let showNavShadow;
 
 	$: {
 		hideNav = !usedNav && scrollY > 0 && scrollY - prevY > 0;
-		showNavBG = scrollY > 100 || innerWidth < 768;
+		showNavShadow = scrollY > 100 || innerWidth < 768;
 		prevY = scrollY;
 	}
 
@@ -47,7 +47,7 @@
 		usedNav = true;
 		setTimeout(() => {
 			usedNav = false;
-		}, 500);
+		}, 800);
 	}
 
 	// Highlight section in view
@@ -97,9 +97,9 @@
 	<!-- /Foreground -->
 
 	<!-- Background -->
-	<div class="{showNavBG ? 'opacity-100' : 'md:opacity-0'} pointer-events-none absolute -top-20 bottom-0 left-0 right-0 -z-20 touch-none md:top-0 md:-bottom-12">
+	<div class="{showNavShadow ? 'opacity-100' : 'md:opacity-0'} pointer-events-none absolute -top-20 bottom-0 left-0 right-0 -z-20 touch-none md:top-0 md:-bottom-12">
 		<div
-			class="blur-fix absolute h-full w-full backdrop-blur backdrop-brightness-50 [mask-image:linear-gradient(to_top,black,black,transparent)] sm:backdrop-brightness-75
+			class="blur-fix absolute h-full w-full backdrop-blur [mask-image:linear-gradient(to_top,black,black,transparent)] backdrop-brightness-[98%] dark:backdrop-brightness-50 sm:dark:backdrop-brightness-75
 		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
 	</div>
 	<!-- /Background -->

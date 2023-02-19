@@ -67,7 +67,7 @@
 
 <Section id="footer" class="relative my-24 sm:mt-64">
 	<!-- Divider -->
-	<div class="mx-6 flex h-px grow bg-white/10 md:mx-10 lg:mx-32" />
+	<div class="mx-6 flex h-px grow bg-gray-900/10 dark:bg-white/10 md:mx-10 lg:mx-32" />
 	<!-- /Divider -->
 
 	<!-- Elements -->

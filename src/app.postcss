@@ -45,7 +45,7 @@
 
 	:root {
 		/* Text color */
-		@apply bg-zinc-50/50 text-zinc-900 dark:bg-black dark:text-white overflow-x-hidden cursor-pointer;
+		@apply overflow-x-hidden;
 
 		/* Hide tap color */
 		-webkit-tap-highlight-color: transparent;
@@ -53,6 +53,10 @@
 		/* Font antialiasing */
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+	}
+
+	body {
+		@apply overflow-x-hidden bg-white text-zinc-900 dark:bg-black dark:text-white;
 	}
 }
 
@@ -91,11 +95,11 @@
 	}
 
 	.bg-glass-gradient {
-		@apply blur-fix backdrop-blur-2xl backdrop-saturate-150 rounded-[2.5rem] bg-gradient-to-b from-white/10 to-white/5;
+		@apply blur-fix rounded-[2.5rem] bg-gradient-to-b from-gray-900/[3%] to-gray-900/[1%] dark:from-white/10 dark:to-white/5 backdrop-blur-2xl backdrop-saturate-150;
 	}
 
 	.bg-glass {
-		@apply rounded-3xl bg-white/20 p-1.5 backdrop-saturate-150 sm:p-2 [&_img]:rounded-[1.2rem] sm:[&_img]:rounded-2xl;
+		@apply rounded-3xl bg-white/50 p-1.5 ring ring-1 ring-zinc-900/10 backdrop-saturate-150 dark:bg-white/20 dark:ring-0 sm:p-2 [&_img]:rounded-[1.2rem] sm:[&_img]:rounded-2xl;
 	}
 }
 
@@ -137,7 +141,7 @@
 	}
 
 	.scrollbar-none {
-		-ms-overflow-style: none;  /* IE and Edge */
-		scrollbar-width: none;  /* Firefox */
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
 	}
 }

@@ -3,24 +3,16 @@
 	import '../app.postcss';
 
 	// Smooth scroll enabled after load
-	import { onMount } from 'svelte';
-	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	import NavigationBar from "$lib/components/navigation/NavBar.svelte";
-  import Footer from "$lib/sections/Footer.svelte";
+	import NavigationBar from '$lib/components/navigation/NavBar.svelte';
+	import Footer from '$lib/sections/Footer.svelte';
 
-	let root;
-	onMount(() => {
-		root = document.getElementsByTagName('html')[0];
-		root?.classList.add('scroll-smooth');
-	});
-	beforeNavigate(() => {
-		root?.classList.remove('scroll-smooth');
-	});
-	afterNavigate(() => {
-		root?.classList.add('scroll-smooth');
-	});
+	import SmoothScrollHandler from '$lib/utilities/SmoothScrollHandler.svelte';
+	import ColorSchemeHandler from '$lib/utilities/ColorSchemeHandler.svelte';
 </script>
 
-<NavigationBar/>
+<ColorSchemeHandler />
+<SmoothScrollHandler />
+
+<NavigationBar />
 <slot />
-<Footer/>
+<Footer />
