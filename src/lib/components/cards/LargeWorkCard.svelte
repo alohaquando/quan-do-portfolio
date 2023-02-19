@@ -49,7 +49,6 @@
 						<Icon
 							name="arrow_right_solid"
 							size="w-10 h-10 md:w-12 md:h-12"
-							type="fill"
 							class="mb-3 inline-block md:mb-4" />
 					{/if}
 				</DisplaySmall>

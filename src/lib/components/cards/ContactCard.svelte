@@ -40,7 +40,6 @@
 		<div class="bg-glass pointer-events-none z-10 flex h-12 w-12 place-content-center items-center rounded-xl p-2 md:h-14 md:w-14">
 			<Icon
 				name={contactData[data].icon}
-				type="fill"
 				size="w-7 md:w-8" />
 		</div>
 		<!-- /Icon -->
@@ -54,7 +53,6 @@
 					name="arrow_up_right"
 					stroke_width="1.5"
 					size="w-7 md:w-8"
-					type="outline"
 					class="mb-0.5 inline-block" />
 			</Title>
 			<!-- /Title -->

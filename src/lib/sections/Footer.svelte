@@ -1,11 +1,12 @@
 <script>
 	import Body from '$lib/components/typography/Body.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
-	import Button from '$lib/components/buttons/Button.svelte';
+	import Button from '$lib/components/inputs/Button.svelte';
 	import A from '$lib/components/navigation/A.svelte';
-	import Section from "$lib/components/layouts/Section.svelte";
+	import Section from '$lib/components/layouts/Section.svelte';
+	import ColorSchemeSelect from '$lib/components/inputs/ColorSchemeSelect.svelte';
 
-	let footerLinks = {
+	const footerLinks = {
 		landing: {
 			title: 'Quan Do',
 			href: '/#'
@@ -60,12 +61,22 @@
 		}
 	};
 
+	const colorSchemeOptions = {
+		light: { value: 'light', title: 'Light theme' },
+		dark: { value: 'dark', title: 'Dark theme' },
+		system: { value: 'system', title: 'System theme' }
+	};
+
+	import { colorSchemePreference } from '$lib/data/colorScheme.js';
+
 	let scrollY;
 </script>
 
 <svelte:window bind:scrollY />
 
-<Section id="footer" class="relative my-24 sm:mt-64">
+<Section
+	id="footer"
+	class="relative my-24 sm:mt-64">
 	<!-- Divider -->
 	<div class="mx-6 flex h-px grow bg-gray-900/10 dark:bg-white/10 md:mx-10 lg:mx-32" />
 	<!-- /Divider -->
@@ -82,16 +93,22 @@
 			</div>
 
 			<!-- Back to top -->
-			<Button
-				on:click={() => {
-					scrollY = 0;
-				}}>
-				<Body class="whitespace-nowrap py-2 font-medium">Back to top</Body>
-				<Icon
-					name="arrow_up"
-					type="outline"
-					stroke_width="1.75" />
-			</Button>
+			<div class="contents">
+				<ColorSchemeSelect
+					bind:value={$colorSchemePreference}
+					name="colorSchemePreference"
+					id="colorSchemePreference"
+					options={colorSchemeOptions} />
+				<Button
+					on:click={() => {
+						scrollY = 0;
+					}}>
+					<Icon
+						name="arrow_up"
+						stroke_width="1.75" />
+					<Body class="whitespace-nowrap py-2 font-medium">Back to top</Body>
+				</Button>
+			</div>
 			<!-- /Back to top -->
 		</div>
 

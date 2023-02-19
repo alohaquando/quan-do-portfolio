@@ -13,18 +13,24 @@
 
 	import { solidColors, readerGradients, solidColorsHex } from '$lib/data/Colors.js';
 
-	import ReaderModeBackgroundHandler from "$lib/utilities/ReaderModeBackgroundHandler.svelte";
-
 	// For navigating back to right location
 	import { page } from '$app/stores';
 	export let pathBack = '/#' + $page.route.id;
+
+	import { readerMode } from '$lib/data/colorScheme.js';
+	import { onMount } from 'svelte';
+	import { beforeNavigate } from '$app/navigation';
+	onMount(() => {
+		readerMode.set(true);
+	});
+	beforeNavigate(() => {
+		readerMode.set(false);
+	});
 
 	// Set Browser color
 	let scrollY;
 	let innerHeight;
 </script>
-
-<ReaderModeBackgroundHandler/>
 
 <svelte:window
 	bind:scrollY
@@ -36,11 +42,20 @@
 		<meta
 			name="theme-color"
 			media="(prefers-color-scheme: dark)"
-			content={solidColorsHex[color]} />
+			content={solidColorsHex.dark[color]} />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content={solidColorsHex.light[color]} />
 	{:else}
 		<meta
 			name="theme-color"
-			content="#18181b" />
+			media="(prefers-color-scheme: dark)"
+			content={solidColorsHex.dark.reader} />
+		<meta
+			name="theme-color"
+			media="(prefers-color-scheme: dark)"
+			content={solidColorsHex.light.reader} />
 	{/if}
 </svelte:head>
 
@@ -52,11 +67,10 @@
 		<div class="mx-auto flex w-full max-w-screen-md flex-col gap-6">
 			<!-- Back -->
 			<A
-				class="ring-1 ring-gray-900/20 dark:ring-white/20 !px-3"
+				class="!px-3 ring-1 ring-gray-900/20 dark:ring-white/20"
 				href={pathBack}>
 				<Icon
-					name="arrow_left"
-					type="fill" />
+					name="arrow_left" />
 			</A>
 			<!-- /Back -->
 			<!-- Title and Subtitle -->
