@@ -1,6 +1,6 @@
 export const readerGradients = {
 	red: 'bg-gradient-to-b from-red-500',
-	blue: 'bg-gradient-to-b from-blue-300 dark:from-sky-900',
+	blue: 'bg-gradient-to-b from-sky-200 dark:from-sky-900',
 	green: 'bg-gradient-to-b from-emerald-300 dark:from-emerald-900'
 };
 
@@ -13,9 +13,9 @@ export const solidColors = {
 
 export const solidColorsHex = {
 	light: {
-		blue: '#0c4a6e',
-		green: '#064e3b',
-		reader: '#f4f4f5'
+		blue: '#bae6fd',
+		green: '#6ee7b7',
+		reader: '#fafafa'
 	},
 	dark: {
 		blue: '#0c4a6e',

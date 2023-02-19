@@ -18,7 +18,7 @@
 	<IMG_Hero
 		eager
 		slot="hero_img"
-		class="max-h-[32rem] h-12 bg-red-600" />
+		class="max-h-[32rem] h-12" />
 
 	<div slot="highlight">
 		<Body>

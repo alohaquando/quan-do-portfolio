@@ -60,7 +60,13 @@
 
 <nav
 	class="{hideNav ? 'translate-y-[180%] md:-translate-y-[180%]' : ''} fixed
- bottom-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24">
+ bottom-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24"
+	on:mouseenter={() => {
+		usedNav = true;
+	}}
+	on:mouseleave={() => {
+		usedNav = false;
+	}}>
 	<!-- Foreground -->
 	<div
 		class="flex md:place-content-between"
@@ -99,7 +105,7 @@
 	<!-- Background -->
 	<div class="{showNavShadow ? 'opacity-100' : 'md:opacity-0'} pointer-events-none absolute -top-20 bottom-0 left-0 right-0 -z-20 touch-none md:top-0 md:-bottom-12">
 		<div
-			class="blur-fix absolute h-full w-full backdrop-blur [mask-image:linear-gradient(to_top,black,black,transparent)] backdrop-brightness-[98%] dark:backdrop-brightness-50 sm:dark:backdrop-brightness-75
+			class="blur-fix absolute h-full w-full backdrop-blur backdrop-brightness-[98%] [mask-image:linear-gradient(to_top,black,black,transparent)] dark:backdrop-brightness-50 sm:dark:backdrop-brightness-75
 		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
 	</div>
 	<!-- /Background -->

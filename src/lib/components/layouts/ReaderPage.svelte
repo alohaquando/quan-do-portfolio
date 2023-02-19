@@ -17,7 +17,7 @@
 	import { page } from '$app/stores';
 	export let pathBack = '/#' + $page.route.id;
 
-	import { readerMode } from '$lib/data/colorScheme.js';
+	import { colorScheme, readerMode } from '$lib/data/colorScheme.js';
 	import { onMount } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
 	onMount(() => {
@@ -39,23 +39,25 @@
 <svelte:head>
 	<title>{title} | Quân Đỗ | Portfolio</title>
 	{#if scrollY < innerHeight / 2}
-		<meta
-			name="theme-color"
-			media="(prefers-color-scheme: dark)"
-			content={solidColorsHex.dark[color]} />
-		<meta
-			name="theme-color"
-			media="(prefers-color-scheme: dark)"
-			content={solidColorsHex.light[color]} />
+		{#if $colorScheme === 'dark'}
+			<meta
+				name="theme-color"
+				content={solidColorsHex.dark[color]} />
+		{:else}
+			<meta
+				name="theme-color"
+				content={solidColorsHex.light[color]} />
+		{/if}
 	{:else}
-		<meta
-			name="theme-color"
-			media="(prefers-color-scheme: dark)"
-			content={solidColorsHex.dark.reader} />
-		<meta
-			name="theme-color"
-			media="(prefers-color-scheme: dark)"
-			content={solidColorsHex.light.reader} />
+		{#if $colorScheme === 'dark'}
+			<meta
+				name="theme-color"
+				content={solidColorsHex.dark.reader} />
+		{:else}
+			<meta
+				name="theme-color"
+				content={solidColorsHex.light.reader} />
+		{/if}
 	{/if}
 </svelte:head>
 
@@ -69,8 +71,7 @@
 			<A
 				class="!px-3 ring-1 ring-gray-900/20 dark:ring-white/20"
 				href={pathBack}>
-				<Icon
-					name="arrow_left" />
+				<Icon name="arrow_left" />
 			</A>
 			<!-- /Back -->
 			<!-- Title and Subtitle -->
