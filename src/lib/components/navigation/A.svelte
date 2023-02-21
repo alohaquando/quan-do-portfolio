@@ -4,7 +4,6 @@
 	let className = undefined;
 	export { className as class };
 	export let href = '/#';
-	export let title = 'title';
 </script>
 
 <a

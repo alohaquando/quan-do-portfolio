@@ -31,8 +31,9 @@
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
 
 	// Auto hide Navigation Bar
+
 	let hideNav, usedNav;
-	import { scrollY } from "$lib/data/scrollY.js";
+	import { scrollY } from '$lib/data/scrollY.js';
 	let prevY = 0;
 	let showNavShadow;
 
@@ -88,8 +89,7 @@
 
 		<!-- Resume -->
 		<NavBlock class="max-md:hidden">
-			<NavLink
-				{...navLinks.resume} />
+			<NavLink {...navLinks.resume} />
 		</NavBlock>
 		<!-- /Resume -->
 	</div>

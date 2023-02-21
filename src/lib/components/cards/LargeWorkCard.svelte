@@ -17,20 +17,26 @@
 	let element;
 	let elementStart = 0;
 	let elementEnd = 0;
-	const offset = 300;
+	let offset = 0;
 	import { debounce } from 'lodash';
 	import { beforeNavigate } from '$app/navigation';
+	import { inview } from 'svelte-inview';
 
 	const snapToCard = debounce(() => {
-		scrollY.set(elementStart);
+		document.body.parentNode.scrollTo({
+			top: elementStart,
+			left: 0,
+			behavior: 'smooth'
+		});
 	}, 500);
 
 	$: if (element) {
-		elementStart = element.getBoundingClientRect().y + $scrollY;
+		offset = element.getBoundingClientRect().height / 2;
+		elementStart = element.getBoundingClientRect().y + $scrollY ;
 		elementEnd = elementStart + element.getBoundingClientRect().height;
 	}
 
-	$: if ($scrollY > elementStart - offset && $scrollY < elementEnd - offset) {
+	$: if ($scrollY > elementStart - offset && $scrollY < elementEnd  - offset) {
 		snapToCard();
 	} else {
 		snapToCard.cancel();
@@ -43,6 +49,13 @@
 
 <!-- Outer BG -->
 <div
+	use:inview={{ rootMargin: '-50%' }}
+	on:touchmove={() => {
+		snapToCard();
+	}}
+	on:mousewheel={() => {
+		snapToCard();
+	}}
 	bind:this={element}
 	id={href ? href : title}
 	class="flex min-h-screen w-full p-4 md:p-6">
