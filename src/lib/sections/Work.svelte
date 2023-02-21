@@ -58,8 +58,7 @@
 	<!-- Cards -->
 	{#each Object.values(works) as work}
 		<LargeWorkCard
-			{...work}
-			class="snap-start" />
+			{...work} />
 	{/each}
 	<!-- /Cards -->
 </Section>

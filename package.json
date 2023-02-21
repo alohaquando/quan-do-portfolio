@@ -41,6 +41,7 @@
   "type": "module",
   "dependencies": {
     "@sveltejs/adapter-cloudflare": "^1.1.0",
+    "lodash": "^4.17.21",
     "svelte-inview": "^3.0.2"
   }
 }

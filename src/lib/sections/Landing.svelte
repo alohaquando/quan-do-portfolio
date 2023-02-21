@@ -12,6 +12,5 @@
 
 	<div class="flex max-w-screen-lg px-6 text-center">
 		<Display>Designer <br /> + <br /> problem solver</Display>
-		<!--		<Display>With a knack for making designs that works</Display>-->
 	</div>
 </Section>

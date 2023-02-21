@@ -10,10 +10,40 @@
 	export let subtitle = 'Subtitle';
 	export let href = undefined;
 	export let secondaryWorks = undefined;
+
+	import { scrollY } from '$lib/data/scrollY.js';
+
+	// Snap
+	let element;
+	let elementStart = 0;
+	let elementEnd = 0;
+	const offset = 300;
+	import { debounce } from 'lodash';
+	import { beforeNavigate } from '$app/navigation';
+
+	const snapToCard = debounce(() => {
+		scrollY.set(elementStart);
+	}, 500);
+
+	$: if (element) {
+		elementStart = element.getBoundingClientRect().y + $scrollY;
+		elementEnd = elementStart + element.getBoundingClientRect().height;
+	}
+
+	$: if ($scrollY > elementStart - offset && $scrollY < elementEnd - offset) {
+		snapToCard();
+	} else {
+		snapToCard.cancel();
+	}
+
+	beforeNavigate(() => {
+		snapToCard.cancel();
+	});
 </script>
 
 <!-- Outer BG -->
 <div
+	bind:this={element}
 	id={href ? href : title}
 	class="flex min-h-screen w-full p-4 md:p-6">
 	<!--	Card	-->
