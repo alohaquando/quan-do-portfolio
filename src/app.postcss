@@ -44,9 +44,6 @@
 	}
 
 	:root {
-		/* Text color */
-		@apply overflow-x-hidden;
-
 		/* Hide tap color */
 		-webkit-tap-highlight-color: transparent;
 
@@ -54,7 +51,6 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
-
 }
 
 @layer components {
@@ -92,7 +88,7 @@
 	}
 
 	.bg-glass-gradient {
-		@apply blur-fix rounded-[2.5rem] bg-gradient-to-b from-gray-900/[3%] to-gray-900/[1%] dark:from-white/10 dark:to-white/5 backdrop-blur-2xl backdrop-saturate-150;
+		@apply blur-fix rounded-[2.5rem] bg-gradient-to-b from-gray-900/[3%] to-gray-900/[1%] backdrop-blur-2xl backdrop-saturate-150 dark:from-white/10 dark:to-white/5;
 	}
 
 	.bg-glass {

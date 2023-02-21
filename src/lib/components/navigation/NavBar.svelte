@@ -32,15 +32,14 @@
 
 	// Auto hide Navigation Bar
 	let hideNav, usedNav;
-	let scrollY = 0;
+	import { scrollY } from "$lib/data/scrollY.js";
 	let prevY = 0;
-	let innerWidth = 0;
 	let showNavShadow;
 
 	$: {
-		hideNav = !usedNav && scrollY > 0 && scrollY - prevY > 0;
-		showNavShadow = scrollY > 100 || innerWidth < 768;
-		prevY = scrollY;
+		hideNav = !usedNav && $scrollY > 0 && $scrollY - prevY > 0;
+		showNavShadow = $scrollY > 100;
+		prevY = $scrollY;
 	}
 
 	function handleNavUse() {
@@ -53,10 +52,6 @@
 	// Highlight section in view
 	import { sectionInView } from '$lib/data/sectionInView.js';
 </script>
-
-<svelte:window
-	bind:scrollY
-	bind:innerWidth />
 
 <nav
 	class="{hideNav ? 'translate-y-[180%] md:-translate-y-[180%]' : ''} fixed
@@ -94,9 +89,7 @@
 		<!-- Resume -->
 		<NavBlock class="max-md:hidden">
 			<NavLink
-				{...navLinks.resume}
-				class=""
-				active={$sectionInView === 'resume'} />
+				{...navLinks.resume} />
 		</NavBlock>
 		<!-- /Resume -->
 	</div>

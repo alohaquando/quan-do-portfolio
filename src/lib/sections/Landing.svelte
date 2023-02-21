@@ -6,9 +6,8 @@
 
 <Section
 	id="landing"
-	class="flex h-[70vh] md:pt-16 flex-col place-content-center items-center gap-10 sm:h-[75vh] md:h-[90vh]">
-
-<!--	TODO: Add landing animations	-->
+	class="flex h-[70vh] flex-col place-content-center items-center gap-10 sm:h-[75vh] md:h-[90vh] md:pt-16">
+	<!--	TODO: Add landing animations	-->
 	<Title class="font-medium md:hidden">Quan Do</Title>
 
 	<div class="flex max-w-screen-lg px-6 text-center">

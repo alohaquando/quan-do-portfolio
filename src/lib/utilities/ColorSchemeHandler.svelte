@@ -1,20 +1,22 @@
 <script>
-	import { colorScheme, colorSchemePreference, readerMode, systemColorScheme } from '$lib/data/colorScheme.js';
+	import { colorScheme, colorSchemePreference, readerMode } from '$lib/data/colorScheme.js';
 
 	import { colorSchemeColors } from '$lib/data/Colors.js';
 
+	let systemColorScheme;
+
 	function handleSystemColorSchemeChange() {
 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			systemColorScheme.set('dark');
+			systemColorScheme = 'dark';
 		} else {
-			systemColorScheme.set('light');
+			systemColorScheme = 'light';
 		}
 		setColorScheme();
 	}
 
 	function setColorScheme() {
 		if ($colorSchemePreference === 'system') {
-			colorScheme.set($systemColorScheme);
+			colorScheme.set(systemColorScheme);
 		} else {
 			colorScheme.set($colorSchemePreference);
 		}
@@ -24,13 +26,7 @@
 	let root;
 	export function setTailwindColorScheme() {
 		root = document.getElementsByTagName('html')[0];
-		root?.classList.remove('dark');
-		root?.classList.remove(colorSchemeColors.light.text);
-		root?.classList.remove(colorSchemeColors.light.bg);
-		root?.classList.remove(colorSchemeColors.light.readerBG);
-		root?.classList.remove(colorSchemeColors.dark.text);
-		root?.classList.remove(colorSchemeColors.dark.bg);
-		root?.classList.remove(colorSchemeColors.dark.readerBG);
+		root?.classList.remove('dark', colorSchemeColors.light.text, colorSchemeColors.light.bg, colorSchemeColors.light.readerBG, colorSchemeColors.dark.text, colorSchemeColors.dark.bg, colorSchemeColors.dark.readerBG);
 
 		switch ($colorScheme) {
 			case 'dark': {

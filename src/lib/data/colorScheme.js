@@ -2,7 +2,6 @@ import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
 export let colorSchemePreference = writable('');
-export let systemColorScheme = writable('');
 export let colorScheme = writable('');
 export let readerMode = writable(false);
 

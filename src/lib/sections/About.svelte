@@ -43,7 +43,7 @@
 
 <Section
 	id="about"
-	class="pb-16 flex flex-col items-center items-stretch gap-20 pt-[6rem] md:gap-40 md:pt-[14rem]">
+	class=" flex flex-col items-center items-stretch gap-20 pb-16 pt-[6rem] md:gap-40 md:pt-[14rem]">
 	<!-- Section title -->
 	<Display class="text-center">A bit about me</Display>
 

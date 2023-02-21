@@ -50,12 +50,16 @@
 			}
 		}
 	};
-
 </script>
 
-<Section id="work" class="pb-16">
-	<!--	TODO: Add snap	-->
+<Section
+	id="work"
+	class="relative pb-16 ">
+	<!-- Cards -->
 	{#each Object.values(works) as work}
-		<LargeWorkCard {...work} />
+		<LargeWorkCard
+			{...work}
+			class="snap-start" />
 	{/each}
+	<!-- /Cards -->
 </Section>

@@ -4,17 +4,15 @@
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
 	import SmallWorkCard from '$lib/components/cards/SmallWorkCard.svelte';
+	import IMG from '$lib/assets/images/work/grove.svelte';
 
 	export let title = 'Title';
 	export let subtitle = 'Subtitle';
 	export let href = undefined;
-
 	export let secondaryWorks = undefined;
-
-	import IMG from '$lib/assets/images/work/grove.svelte';
 </script>
 
-<!-- Outer black BG -->
+<!-- Outer BG -->
 <div
 	id={href ? href : title}
 	class="flex min-h-screen w-full p-4 md:p-6">
@@ -22,7 +20,7 @@
 	<a
 		href={href || null}
 		class="contents">
-		<div class="relative flex w-full flex-col place-content-between items-start gap-12 rounded-[2.5rem] bg-zinc-100 dark:bg-zinc-900 px-12 py-16 md:px-20 lg:py-24">
+		<div class="relative flex w-full flex-col place-content-between items-start gap-12 rounded-[2.5rem] bg-zinc-100 px-12 py-16 dark:bg-zinc-900 md:px-20 lg:py-24">
 			<!-- Secondary cards -->
 			<div class="relative flex min-h-fit grow self-stretch">
 				<div
@@ -41,7 +39,7 @@
 			<!-- /Secondary cards -->
 
 			<!-- Title and subtitle -->
-			<div class="pointer-events-none z-10 flex flex-col gap-2 self-stretch">
+			<div class="pointer-events-none z-10 flex flex-col gap-2 self-stretch max-md:order-first">
 				<!-- Title and Arrow -->
 				<DisplaySmall>
 					{title}
