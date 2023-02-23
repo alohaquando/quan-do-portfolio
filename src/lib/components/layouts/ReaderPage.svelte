@@ -20,6 +20,7 @@
 	import { colorScheme, readerMode } from '$lib/data/colorScheme.js';
 	import { onMount } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
+	import Animate from '$lib/utilities/Animate.svelte';
 	onMount(() => {
 		readerMode.set(true);
 	});
@@ -48,16 +49,14 @@
 				name="theme-color"
 				content={solidColorsHex.light[color]} />
 		{/if}
+	{:else if $colorScheme === 'dark'}
+		<meta
+			name="theme-color"
+			content={solidColorsHex.dark.reader} />
 	{:else}
-		{#if $colorScheme === 'dark'}
-			<meta
-				name="theme-color"
-				content={solidColorsHex.dark.reader} />
-		{:else}
-			<meta
-				name="theme-color"
-				content={solidColorsHex.light.reader} />
-		{/if}
+		<meta
+			name="theme-color"
+			content={solidColorsHex.light.reader} />
 	{/if}
 </svelte:head>
 
@@ -68,16 +67,22 @@
 		<!-- Text -->
 		<div class="mx-auto flex w-full max-w-screen-md flex-col gap-6">
 			<!-- Back -->
-			<A
-				class="!px-3 ring-1 ring-gray-900/20 dark:ring-white/20"
-				href={pathBack}>
-				<Icon name="arrow_left" />
-			</A>
+			<Animate>
+				<A
+					class="!px-3 ring-1 ring-gray-900/20 dark:ring-white/20"
+					href={pathBack}>
+					<Icon name="arrow_left" />
+				</A>
+			</Animate>
 			<!-- /Back -->
 			<!-- Title and Subtitle -->
 			<div>
-				<DisplaySmall>{title}</DisplaySmall>
-				<BodyLarge class="opacity-50 ">{subtitle}</BodyLarge>
+				<Animate>
+					<DisplaySmall>{title}</DisplaySmall>
+				</Animate>
+				<Animate>
+					<BodyLarge class="opacity-50">{subtitle}</BodyLarge>
+				</Animate>
 			</div>
 			<!-- /Title and Subtitle -->
 		</div>
@@ -86,29 +91,35 @@
 		<!-- Hero Image -->
 		{#if $$slots.hero_img}
 			<!-- Hero Image -->
-			<div class="bg-glass mx-auto max-w-screen-lg">
-				<slot name="hero_img" />
-			</div>
+			<Animate class="mx-auto max-w-screen-lg">
+				<div class="bg-glass ">
+					<slot name="hero_img" />
+				</div>
+			</Animate>
 		{/if}
 		<!-- /Hero Image -->
 	</div>
 	<!-- /Heading Block -->
 
-	<!-- Highlight Block -->
-	{#if $$slots.highlight}
-		<div class="{solidColors[color]} mx-auto flex w-full max-w-screen-md flex-col gap-6 rounded-3xl bg-opacity-50 py-10 px-8 md:gap-8 md:py-16 md:px-12">
-			<TaglineTitle
-				tagline="Highlight"
-				title={highlight} />
-			<slot name="highlight" />
-		</div>
-	{/if}
-	<!-- /Highlight Block -->
+	<Animate>
+		<!-- Highlight Block -->
+		{#if $$slots.highlight}
+			<div class="{solidColors[color]} mx-auto flex w-full max-w-screen-md flex-col gap-6 rounded-3xl bg-opacity-50 py-10 px-8 md:gap-8 md:py-16 md:px-12">
+				<TaglineTitle
+					tagline="Highlight"
+					title={highlight} />
+				<slot name="highlight" />
+			</div>
+		{/if}
+		<!-- /Highlight Block -->
+	</Animate>
 
 	<!-- Slot -->
-	<div class="mx-auto flex max-w-screen-md flex-col gap-10">
-		<slot />
-	</div>
+	<Animate>
+		<div class="mx-auto flex max-w-screen-md flex-col gap-10">
+			<slot />
+		</div>
+	</Animate>
 	<!-- /Slot -->
 
 	<!-- Color BG -->

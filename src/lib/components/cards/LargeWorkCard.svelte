@@ -25,7 +25,6 @@
 	const snapToCard = debounce(() => {
 		document.body.parentNode.scrollTo({
 			top: elementStart,
-			left: 0,
 			behavior: 'smooth'
 		});
 	}, 500);

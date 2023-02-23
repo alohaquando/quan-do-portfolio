@@ -15,7 +15,7 @@ export const solidColorsHex = {
 	light: {
 		blue: '#bae6fd',
 		green: '#6ee7b7',
-		reader: '#fafafa'
+		reader: '#f4f4f5'
 	},
 	dark: {
 		blue: '#0c4a6e',

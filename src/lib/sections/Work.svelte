@@ -50,15 +50,43 @@
 			}
 		}
 	};
+
+	let firstCard;
+	let topToFirstCard;
+	let distanceLeftToFirstCard;
+	let distancePercentage;
+	let initialScale = 80;
+	let scalePercentage;
+	import { scrollY } from '$lib/data/scrollY.js';
+
+	$: if (firstCard) {
+		topToFirstCard = firstCard.getBoundingClientRect().y + $scrollY;
+		distanceLeftToFirstCard = topToFirstCard - $scrollY;
+		distancePercentage = (($scrollY / topToFirstCard) * 100) / 5;
+		scalePercentage = `${initialScale + distancePercentage}%`;
+		console.log('topToFirstCard', topToFirstCard, 'distanceLeftToFirstCard', distanceLeftToFirstCard, 'distancePercentage', distancePercentage);
+	}
 </script>
 
 <Section
 	id="work"
 	class="relative pb-16 ">
 	<!-- Cards -->
-	{#each Object.values(works) as work}
-		<LargeWorkCard
-			{...work} />
+
+	<div
+		bind:this={firstCard}
+		class=" ">
+		<div
+			class="scale-[var(--scalePercentage)] "
+			style="--scalePercentage: {scalePercentage}">
+			<LargeWorkCard {...works.grove} />
+		</div>
+	</div>
+
+	{#each Object.values(works) as work, i}
+		{#if i !== 0}
+			<LargeWorkCard {...work} />
+		{/if}
 	{/each}
 	<!-- /Cards -->
 </Section>

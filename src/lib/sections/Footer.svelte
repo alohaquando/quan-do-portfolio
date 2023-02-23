@@ -67,84 +67,86 @@
 		system: { value: 'system', title: 'System theme' }
 	};
 
-	import { colorSchemePreference } from '$lib/data/colorScheme.js';
+	function scrollTop() {
+		document.body.parentNode.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	}
 
-	let scrollY;
+	import { colorSchemePreference } from '$lib/data/colorScheme.js';
 </script>
 
-<svelte:window bind:scrollY />
+<footer>
+	<Section
+		id="footer"
+		class="relative my-24 sm:mt-64">
+		<!-- Divider -->
+		<div class="mx-6 flex h-px grow bg-gray-900/10 dark:bg-white/10 md:mx-10 lg:mx-32" />
+		<!-- /Divider -->
 
-<Section
-	id="footer"
-	class="relative my-24 sm:mt-64">
-	<!-- Divider -->
-	<div class="mx-6 flex h-px grow bg-gray-900/10 dark:bg-white/10 md:mx-10 lg:mx-32" />
-	<!-- /Divider -->
+		<!-- Elements -->
+		<div class="flex flex-col place-content-between gap-10 px-6 py-24 sm:flex-row md:gap-24 md:px-10 lg:px-32">
+			<!-- Left container -->
+			<div class="flex flex-col place-content-between gap-10">
+				<!-- Top Left -->
+				<div class="flex flex-col">
+					<A href={footerLinks.landing.href}>
+						<Body class="whitespace-nowrap py-2 font-medium">{footerLinks.landing.title}</Body>
+					</A>
+				</div>
 
-	<!-- Elements -->
-	<div class="flex flex-col place-content-between gap-10 px-6 py-24 sm:flex-row md:gap-24 md:px-10 lg:px-32">
-		<!-- Left container -->
-		<div class="flex flex-col place-content-between gap-10">
-			<!-- Top Left -->
-			<div class="flex flex-col">
-				<A href={footerLinks.landing.href}>
-					<Body class="whitespace-nowrap py-2 font-medium">{footerLinks.landing.title}</Body>
-				</A>
+				<!-- Back to top -->
+				<div class="contents">
+					<ColorSchemeSelect
+						bind:value={$colorSchemePreference}
+						name="colorSchemePreference"
+						id="colorSchemePreference"
+						options={colorSchemeOptions} />
+					<Button on:click={() => scrollTop()}>
+						<Icon
+							name="arrow_up"
+							stroke_width="1.75" />
+						<Body class="whitespace-nowrap py-2 font-medium">Back to top</Body>
+					</Button>
+				</div>
+				<!-- /Back to top -->
 			</div>
 
-			<!-- Back to top -->
-			<div class="contents">
-				<ColorSchemeSelect
-					bind:value={$colorSchemePreference}
-					name="colorSchemePreference"
-					id="colorSchemePreference"
-					options={colorSchemeOptions} />
-				<Button
-					on:click={() => {
-						scrollY = 0;
-					}}>
-					<Icon
-						name="arrow_up"
-						stroke_width="1.75" />
-					<Body class="whitespace-nowrap py-2 font-medium">Back to top</Body>
-				</Button>
+			<!--	Right container	-->
+			<div class="grid  max-w-screen-md grow place-content-between gap-12 sm:grid-cols-2 md:grid-cols-4">
+				<!-- Link group -->
+				{#each Object.values(footerLinks) as link, i}
+					{#if Object.keys(footerLinks)[i] !== 'landing'}
+						<ul class="flex grow flex-col gap-4">
+							<!-- Heading link -->
+							<li>
+								<A href={link.href}>
+									<Body>{link.title}</Body>
+								</A>
+							</li>
+							<!-- /Heading link -->
+
+							<!-- Sub link group -->
+							{#if link.subLinks}
+								<ul class="flex flex-col gap-2">
+									{#each Object.values(link.subLinks) as subLink, i}
+										<li>
+											<A
+												href={subLink.href}
+												class="group">
+												<Body class="opacity-50 transition-all group-hover:opacity-100">{subLink.title}</Body>
+											</A>
+										</li>
+									{/each}
+								</ul>
+							{/if}
+							<!-- /Sub link group -->
+						</ul>
+					{/if}
+				{/each}
+				<!-- /Link group -->
 			</div>
-			<!-- /Back to top -->
 		</div>
-
-		<!--	Right container	-->
-		<div class="grid  max-w-screen-md grow place-content-between gap-12 sm:grid-cols-2 md:grid-cols-4">
-			<!-- Link group -->
-			{#each Object.values(footerLinks) as link, i}
-				{#if Object.keys(footerLinks)[i] !== 'landing'}
-					<ul class="flex grow flex-col gap-4">
-						<!-- Heading link -->
-						<li>
-							<A href={link.href}>
-								<Body>{link.title}</Body>
-							</A>
-						</li>
-						<!-- /Heading link -->
-
-						<!-- Sub link group -->
-						{#if link.subLinks}
-							<ul class="flex flex-col gap-2">
-								{#each Object.values(link.subLinks) as subLink, i}
-									<li>
-										<A
-											href={subLink.href}
-											class="group">
-											<Body class="opacity-50 transition-all group-hover:opacity-100">{subLink.title}</Body>
-										</A>
-									</li>
-								{/each}
-							</ul>
-						{/if}
-						<!-- /Sub link group -->
-					</ul>
-				{/if}
-			{/each}
-			<!-- /Link group -->
-		</div>
-	</div>
-</Section>
+	</Section>
+</footer>

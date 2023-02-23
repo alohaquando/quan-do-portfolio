@@ -56,7 +56,7 @@
 
 <nav
 	class="{hideNav ? 'translate-y-[180%] md:-translate-y-[180%]' : ''} fixed
- bottom-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24"
+ bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24"
 	on:mouseenter={() => {
 		usedNav = true;
 	}}
@@ -68,7 +68,7 @@
 		class="flex md:place-content-between"
 		on:click={handleNavUse}>
 		<!-- Logo -->
-		<NavBlock class="max-md:hidden">
+		<NavBlock class="{hideNav ? 'blur' : ''} transform-gpu max-md:hidden">
 			<NavLink
 				title="Quan Do"
 				href="/"
@@ -77,7 +77,7 @@
 		<!-- /Logo -->
 
 		<!-- Links Bar -->
-		<NavBlock>
+		<NavBlock class="{hideNav ? 'blur' : ''} transform-gpu">
 			{#each Object.values(navLinks) as link, i}
 				<NavLink
 					{...link}
@@ -88,7 +88,7 @@
 		<!-- /Links Bar -->
 
 		<!-- Resume -->
-		<NavBlock class="max-md:hidden">
+		<NavBlock class="{hideNav ? 'blur' : ''} transform-gpu max-md:hidden">
 			<NavLink {...navLinks.resume} />
 		</NavBlock>
 		<!-- /Resume -->
