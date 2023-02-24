@@ -4,7 +4,7 @@
 	import Tagline from '$lib/components/typography/Tagline.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
-	import Animate from '$lib/utilities/Animate.svelte';
+	import Animate from '$lib/components/visuals/Animate.svelte';
 
 	export let title = 'Title';
 	export let href = undefined;

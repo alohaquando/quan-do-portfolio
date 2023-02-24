@@ -1,5 +1,5 @@
 <script>
-	import { scrollY } from '$lib/data/scrollY.js';
+	import { scrollY, innerHeight } from '$lib/data/window.js';
 </script>
 
-<svelte:window bind:scrollY={$scrollY} />
+<svelte:window bind:scrollY={$scrollY} bind:innerHeight={$innerHeight}   />

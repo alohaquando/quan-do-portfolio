@@ -11,7 +11,7 @@
 	export let href = undefined;
 	export let secondaryWorks = undefined;
 
-	import { scrollY } from '$lib/data/scrollY.js';
+	import { scrollY } from '$lib/data/window.js';
 
 	// Snap
 	let element;
@@ -21,6 +21,8 @@
 	import { debounce } from 'lodash';
 	import { beforeNavigate } from '$app/navigation';
 	import { inview } from 'svelte-inview';
+	import Animate from "$lib/components/visuals/Animate.svelte";
+	import ScrollScale from "$lib/components/visuals/ScrollScale.svelte";
 
 	const snapToCard = debounce(() => {
 		document.body.parentNode.scrollTo({
@@ -31,11 +33,11 @@
 
 	$: if (element) {
 		offset = element.getBoundingClientRect().height / 2;
-		elementStart = element.getBoundingClientRect().y + $scrollY ;
+		elementStart = element.getBoundingClientRect().y + $scrollY;
 		elementEnd = elementStart + element.getBoundingClientRect().height;
 	}
 
-	$: if ($scrollY > elementStart - offset && $scrollY < elementEnd  - offset) {
+	$: if ($scrollY > elementStart - offset && $scrollY < elementEnd - offset) {
 		snapToCard();
 	} else {
 		snapToCard.cancel();
@@ -47,64 +49,66 @@
 </script>
 
 <!-- Outer BG -->
-<div
-	use:inview={{ rootMargin: '-50%' }}
-	on:touchmove={() => {
-		snapToCard();
-	}}
-	on:mousewheel={() => {
-		snapToCard();
-	}}
-	bind:this={element}
-	id={href ? href : title}
-	class="flex min-h-screen w-full p-4 md:p-6">
-	<!--	Card	-->
-	<a
-		href={href || null}
-		class="contents">
-		<div class="relative flex w-full flex-col place-content-between items-start gap-12 rounded-[2.5rem] bg-zinc-100 px-12 py-16 dark:bg-zinc-900 md:px-20 lg:py-24">
-			<!-- Secondary cards -->
-			<div class="relative flex min-h-fit grow self-stretch">
-				<div
-					class="scrollbar-none absolute top-0 bottom-0 -left-16 isolate w-screen grow scroll-px-16 gap-6 self-stretch px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-2 sm:grid-rows-2 sm:px-0 md:gap-8 ">
-					{#if secondaryWorks}
-						{#each Object.values(secondaryWorks) as secondaryWork}
-							<SmallWorkCard
-								{...secondaryWork}
-								class="max-sm:snap-start">
-								<IMG />
-							</SmallWorkCard>
-						{/each}
-					{/if}
-				</div>
-			</div>
-			<!-- /Secondary cards -->
+<!-- TODO: Debounce touch until stop (iOS mobile jag based on previous finger position) -->
+<!-- TODO: Fix hijacking of manual scrolling exactly during move -->
+<!-- TODO: Calculate snap distance -->
 
-			<!-- Title and subtitle -->
-			<div class="pointer-events-none z-10 flex flex-col gap-2 self-stretch max-md:order-first">
-				<!-- Title and Arrow -->
-				<DisplaySmall>
-					{title}
+<Animate rootMargin="-50%">
+	<ScrollScale>
+		<div
+			use:inview={{ rootMargin: '-50%' }}
+			bind:this={element}
+			id={href ? href : title}
+			class="flex min-h-screen w-full p-4 md:p-6">
+			<!--	Card	-->
+			<a
+				href={href || null}
+				class="contents">
+				<div class="relative flex w-full flex-col place-content-between items-start gap-12 rounded-[2.5rem] bg-zinc-100 px-12 py-16 dark:bg-zinc-900 md:px-20 lg:py-24">
+					<!-- Secondary cards -->
+					<div class="relative flex min-h-fit grow self-stretch">
+						<div
+							class="scrollbar-none absolute top-0 bottom-0 -left-16 isolate w-screen grow scroll-px-16 gap-6 self-stretch px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-2 sm:grid-rows-2 sm:px-0 md:gap-8 ">
+							{#if secondaryWorks}
+								{#each Object.values(secondaryWorks) as secondaryWork}
+									<SmallWorkCard
+										{...secondaryWork}
+										class="max-sm:snap-start">
+										<IMG />
+									</SmallWorkCard>
+								{/each}
+							{/if}
+						</div>
+					</div>
+					<!-- /Secondary cards -->
+
+					<!-- Title and subtitle -->
+					<div class="pointer-events-none z-10 flex flex-col gap-2 self-stretch max-md:order-first">
+						<!-- Title and Arrow -->
+						<DisplaySmall>
+							{title}
+							{#if href}
+								<Icon
+									name="arrow_right_solid"
+									size="w-10 h-10 md:w-12 md:h-12"
+									class="mb-3 inline-block md:mb-4" />
+							{/if}
+						</DisplaySmall>
+						<!-- /Title and Arrow -->
+
+						<BodyLarge class="opacity-80">
+							{subtitle}
+						</BodyLarge>
+					</div>
+					<!-- /Title and subtitle -->
+
+					<!-- Glow on hover -->
 					{#if href}
-						<Icon
-							name="arrow_right_solid"
-							size="w-10 h-10 md:w-12 md:h-12"
-							class="mb-3 inline-block md:mb-4" />
+						<HoverGlow class="rounded-[2.5rem]" />
 					{/if}
-				</DisplaySmall>
-				<!-- /Title and Arrow -->
-
-				<BodyLarge class="opacity-80">
-					{subtitle}
-				</BodyLarge>
-			</div>
-			<!-- /Title and subtitle -->
-
-			<!-- Glow on hover -->
-			{#if href}
-				<HoverGlow class="rounded-[2.5rem]" />
-			{/if}
-			<!-- /Glow on hover -->
+					<!-- /Glow on hover -->
+				</div>
+			</a>
 		</div>
-	</a>
-</div>
+	</ScrollScale>
+</Animate>

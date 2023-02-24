@@ -11,7 +11,7 @@
 	import { solidColors } from '$lib/data/Colors.js';
 	import Title from '$lib/components/typography/Title.svelte';
 	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
-	import Animate from '$lib/utilities/Animate.svelte';
+	import Animate from '$lib/components/visuals/Animate.svelte';
 </script>
 
 <Animate

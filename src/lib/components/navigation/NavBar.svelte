@@ -33,7 +33,7 @@
 	// Auto hide Navigation Bar
 
 	let hideNav, usedNav;
-	import { scrollY } from '$lib/data/scrollY.js';
+	import { scrollY } from '$lib/data/window.js';
 	let prevY = 0;
 	let showNavShadow;
 

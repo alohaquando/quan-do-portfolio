@@ -2,9 +2,11 @@
 	let className = undefined;
 	export { className as class };
 
+	export let rootMargin = '-20%';
+
 	import { inview } from 'svelte-inview';
 	const options = {
-		rootMargin: '-20%',
+		rootMargin: rootMargin,
 		unobserveOnEnter: true
 	};
 	let inView = false;
@@ -13,6 +15,8 @@
 	let preAnimation = `blur-lg opacity-0 ${preAnimationLocation}`;
 	let anchor = 'top-0';
 </script>
+
+<!-- TODO: Animate delay -->
 
 <div
 	use:inview

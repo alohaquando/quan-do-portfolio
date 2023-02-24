@@ -20,7 +20,7 @@
 	import { colorScheme, readerMode } from '$lib/data/colorScheme.js';
 	import { onMount } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
-	import Animate from '$lib/utilities/Animate.svelte';
+	import Animate from '$lib/components/visuals/Animate.svelte';
 	onMount(() => {
 		readerMode.set(true);
 	});
@@ -28,18 +28,15 @@
 		readerMode.set(false);
 	});
 
-	// Set Browser color
-	let scrollY;
-	let innerHeight;
+
+	import {scrollY, innerHeight} from "$lib/data/window.js";
 </script>
 
-<svelte:window
-	bind:scrollY
-	bind:innerHeight />
+
 
 <svelte:head>
 	<title>{title} | Quân Đỗ | Portfolio</title>
-	{#if scrollY < innerHeight / 2}
+	{#if $scrollY < $innerHeight / 2}
 		{#if $colorScheme === 'dark'}
 			<meta
 				name="theme-color"
