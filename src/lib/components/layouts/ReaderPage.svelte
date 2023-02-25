@@ -117,7 +117,9 @@
 	<!-- /Slot -->
 
 	<!-- Color BG -->
-	<div class="{readerGradients[color]} min-h-screen-safe absolute top-0 left-0 right-0 -z-10" />
+	{#if $colorScheme !== ''}
+		<div class="{readerGradients[color]} min-h-screen-safe absolute top-0 left-0 right-0 -z-10" />
+	{/if}
 	<!-- /Color BG -->
 </div>
 <!-- /Reader Page -->

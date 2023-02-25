@@ -1,7 +1,7 @@
 export const readerGradients = {
 	red: 'bg-gradient-to-b from-red-500',
-	blue: 'bg-gradient-to-b from-sky-200 dark:from-sky-900',
-	green: 'bg-gradient-to-b from-emerald-300 dark:from-emerald-900'
+	blue: 'bg-gradient-to-b dark:from-sky-900 from-sky-200',
+	green: 'bg-gradient-to-b dark:from-emerald-900 from-emerald-300 '
 };
 
 export const solidColors = {

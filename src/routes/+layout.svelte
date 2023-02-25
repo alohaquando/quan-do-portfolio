@@ -6,12 +6,15 @@
 	import SmoothScrollHandler from '$lib/utilities/SmoothScrollHandler.svelte';
 	import ColorSchemeHandler from '$lib/utilities/ColorSchemeHandler.svelte';
 	import ScrollController from '$lib/utilities/ScrollController.svelte';
+
+	import { colorScheme } from '$lib/data/colorScheme.js';
 </script>
 
-<ScrollController />
 <ColorSchemeHandler />
 <SmoothScrollHandler />
-
-<NavigationBar />
-<slot />
-<Footer />
+<ScrollController />
+{#if $colorScheme !== ''}
+	<NavigationBar />
+	<slot />
+	<Footer />
+{/if}

@@ -25,8 +25,8 @@
 
 	// Scaling variables
 	let distancePercentage;
-	let scalePercentage = `80%`;
-	let translatePercentage = initialOffsetY;
+	let scalePercentage = `${initialScale}%`;
+	let translatePercentage = `${initialOffsetY}%`;
 
 	// Scaling function
 	const scale = throttle(() => {
@@ -59,7 +59,7 @@
 
 	// Snapping function
 	const snapToCard = debounce(() => {
-		setTimeout(function() {
+		setTimeout(function () {
 			window.scrollTo({
 				top: elementTop,
 				left: 0,
@@ -79,10 +79,11 @@
 	});
 </script>
 
-<SlideIn rootMargin="-15%">
-	<div
-		class="translate-y-[var(--translatePercentage)] scale-[var(--scalePercentage)] transform-gpu"
-		style="--scalePercentage: {scalePercentage}; --translatePercentage: {translatePercentage}">
+<div
+	class="translate-y-[var(--translatePercentage)] scale-[var(--scalePercentage)] transform-gpu"
+	style="--scalePercentage: {scalePercentage}; --translatePercentage: {translatePercentage}"
+	bind:this={element}>
+	<SlideIn rootMargin="-10%">
 		<slot />
-	</div>
-</SlideIn>
+	</SlideIn>
+</div>
