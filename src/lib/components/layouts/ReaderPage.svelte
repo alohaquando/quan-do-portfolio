@@ -20,7 +20,7 @@
 	import { colorScheme, readerMode } from '$lib/data/colorScheme.js';
 	import { onMount } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
-	import Animate from '$lib/components/visuals/Animate.svelte';
+	import Animate from '$lib/components/visuals/SlideIn.svelte';
 	onMount(() => {
 		readerMode.set(true);
 	});
@@ -28,11 +28,8 @@
 		readerMode.set(false);
 	});
 
-
-	import {scrollY, innerHeight} from "$lib/data/window.js";
+	import { scrollY, innerHeight } from '$lib/data/window.js';
 </script>
-
-
 
 <svelte:head>
 	<title>{title} | Quân Đỗ | Portfolio</title>

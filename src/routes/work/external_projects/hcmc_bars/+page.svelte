@@ -1,5 +1,15 @@
 <script>
   import ReaderPage from "$lib/components/layouts/ReaderPage.svelte";
+  import WIP from "$lib/components/_extras/WIP.svelte";
+
+  const data = {
+    title: 'HCMC Bars',
+    subtitle: 'An interesting tagline.',
+    color: 'blue',
+    pathBack: "/#External projects"
+  };
 </script>
 
-<ReaderPage pathBack="/#External projects"></ReaderPage>
+<ReaderPage {...data}>
+  <WIP/>
+</ReaderPage>

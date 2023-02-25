@@ -1,4 +1,7 @@
 <script>
+	// Data
+	import Logo from '$lib/components/iconography/Logo.svelte';
+
 	let navLinks = {
 		landing: {
 			title: 'Home',
@@ -27,11 +30,11 @@
 		}
 	};
 
+	// Imports
 	import NavBlock from '$lib/components/navigation/NavBlock.svelte';
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
 
-	// Auto hide Navigation Bar
-
+	// Auto hide
 	let hideNav, usedNav;
 	import { scrollY } from '$lib/data/window.js';
 	let prevY = 0;
@@ -55,14 +58,14 @@
 </script>
 
 <nav
-	class="{hideNav ? 'translate-y-[180%] md:-translate-y-[180%]' : ''} fixed
- bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24"
 	on:mouseenter={() => {
 		usedNav = true;
 	}}
 	on:mouseleave={() => {
 		usedNav = false;
-	}}>
+	}}
+	class="{hideNav ? 'translate-y-[180%] md:-translate-y-[180%]' : ''} fixed
+ bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24">
 	<!-- Foreground -->
 	<div
 		class="flex md:place-content-between"
@@ -70,9 +73,8 @@
 		<!-- Logo -->
 		<NavBlock class="{hideNav ? 'blur' : ''} transform-gpu max-md:hidden">
 			<NavLink
-				title="Quan Do"
 				href="/"
-				class="font-medium" />
+				class="font-medium"><Logo /></NavLink>
 		</NavBlock>
 		<!-- /Logo -->
 

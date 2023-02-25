@@ -55,9 +55,7 @@
 <Section
 	id="work"
 	class="relative pb-16 ">
-	<!-- Cards -->
 	{#each Object.values(works) as work, i}
-		<LargeWorkCard {...work} />
+			<LargeWorkCard {...work} />
 	{/each}
-	<!-- /Cards -->
 </Section>

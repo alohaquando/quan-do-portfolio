@@ -75,6 +75,7 @@
 	}
 
 	import { colorSchemePreference } from '$lib/data/colorScheme.js';
+	import Logo from "$lib/components/iconography/Logo.svelte";
 </script>
 
 <footer>
@@ -91,8 +92,8 @@
 			<div class="flex flex-col place-content-between gap-10">
 				<!-- Top Left -->
 				<div class="flex flex-col">
-					<A href={footerLinks.landing.href}>
-						<Body class="whitespace-nowrap py-2 font-medium">{footerLinks.landing.title}</Body>
+					<A href="/">
+						<Logo class="py-1"/>
 					</A>
 				</div>
 

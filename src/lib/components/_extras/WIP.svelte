@@ -1,8 +1,5 @@
 <script>
-  import Icon from '$lib/components/iconography/Icon.svelte';
+  import Body from "$lib/components/typography/Body.svelte";
 </script>
 
-<div class="flex flex-col grow w-full h-full place-content-center items-center opacity-50 py-12">
-  <Icon name="sparkles" />
-  <p>Work in progress</p>
-</div>
+<Body class="opacity-50">This page is still being written. <br />Please check back soon.</Body>

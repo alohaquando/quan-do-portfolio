@@ -3,7 +3,7 @@
 	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
 
 	export let href = '/#';
-	export let title = 'title';
+	export let title = undefined;
 	export let icon = 'home';
 	export let active = false;
 
@@ -28,10 +28,11 @@
 			<!-- /Active and Hover BG mobile-only -->
 		</div>
 		<!-- /Icon and Icon BG -->
+		<slot/>
 
 		<!-- Text -->
 		<p class="{active ? 'font-medium opacity-100' : 'opacity-90'} text-extra-small md:text-1x pointer-events-none z-50 group-hover:font-medium group-hover:opacity-100  dark:group-hover:font-normal">
-			{title}
+			{title ? title : ''}
 		</p>
 		<!-- /Text -->
 

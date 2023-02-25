@@ -1,4 +1,5 @@
 <script>
+	// Component imports
 	import BodyLarge from '$lib/components/typography/BodyLarge.svelte';
 	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
@@ -6,60 +7,20 @@
 	import SmallWorkCard from '$lib/components/cards/SmallWorkCard.svelte';
 	import IMG from '$lib/assets/images/work/grove.svelte';
 
+	// Animation imports
+	import SlideScaleSnap from '$lib/components/visuals/SlideScaleSnap.svelte';
+
+	// Exports
 	export let title = 'Title';
 	export let subtitle = 'Subtitle';
 	export let href = undefined;
 	export let secondaryWorks = undefined;
-
-	import { scrollY } from '$lib/data/window.js';
-
-	// Snap
-	let element;
-	let elementStart = 0;
-	let elementEnd = 0;
-	let offset = 0;
-	import { debounce } from 'lodash';
-	import { beforeNavigate } from '$app/navigation';
-	import { inview } from 'svelte-inview';
-	import Animate from "$lib/components/visuals/Animate.svelte";
-	import ScrollScale from "$lib/components/visuals/ScrollScale.svelte";
-
-	const snapToCard = debounce(() => {
-		document.body.parentNode.scrollTo({
-			top: elementStart,
-			behavior: 'smooth'
-		});
-	}, 500);
-
-	$: if (element) {
-		offset = element.getBoundingClientRect().height / 2;
-		elementStart = element.getBoundingClientRect().y + $scrollY;
-		elementEnd = elementStart + element.getBoundingClientRect().height;
-	}
-
-	$: if ($scrollY > elementStart - offset && $scrollY < elementEnd - offset) {
-		snapToCard();
-	} else {
-		snapToCard.cancel();
-	}
-
-	beforeNavigate(() => {
-		snapToCard.cancel();
-	});
 </script>
 
-<!-- Outer BG -->
-<!-- TODO: Debounce touch until stop (iOS mobile jag based on previous finger position) -->
-<!-- TODO: Fix hijacking of manual scrolling exactly during move -->
-<!-- TODO: Calculate snap distance -->
-
-<Animate rootMargin="-50%">
-	<ScrollScale>
-		<div
-			use:inview={{ rootMargin: '-50%' }}
-			bind:this={element}
-			id={href ? href : title}
-			class="flex min-h-screen w-full p-4 md:p-6">
+<div id={href ? href : title}>
+	<SlideScaleSnap>
+		<!-- Outer BG -->
+		<div class="flex min-h-screen w-full p-4 md:p-6">
 			<!--	Card	-->
 			<a
 				href={href || null}
@@ -110,5 +71,5 @@
 				</div>
 			</a>
 		</div>
-	</ScrollScale>
-</Animate>
+	</SlideScaleSnap>
+</div>
