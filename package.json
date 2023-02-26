@@ -11,7 +11,9 @@
     "test:unit": "vitest",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
-    "generate-image-data": "node src/lib/scripts/generate-image-data.cjs"
+    "generate-image-data": "node src/lib/scripts/generate-image-data.cjs",
+    "optimize-image": "node src/lib/scripts/optimize-images.cjs"
+
   },
   "devDependencies": {
     "@sveltejs/kit": "^1.5.5",
@@ -27,6 +29,7 @@
     "prettier": "^2.8.4",
     "prettier-plugin-svelte": "^2.9.0",
     "prettier-plugin-tailwindcss": "^0.2.2",
+    "sharp": "^0.31.3",
     "svelte": "^3.55.1",
     "svelte-check": "^2.10.3",
     "svelte-preprocess": "^5.0.1",

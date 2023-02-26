@@ -2,18 +2,18 @@
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = 'Me';
+        export let alt = 'Concept bg';
         // Lazy / eager loading
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/about/me.avif?metadata"
+        import {width, height} from "$lib/assets/images/work/concept-bg.avif?metadata"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/about/me.avif?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+          from "$lib/assets/images/work/concept-bg.avif?width=3200&format=avif&quality=100&srcset";
         import webpSrc
-          from "$lib/assets/images/about/me.avif?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+          from "$lib/assets/images/work/concept-bg.avif?width=3200&format=webp&quality=100&srcset";
 
         const imageData = {
           lightDark: false,

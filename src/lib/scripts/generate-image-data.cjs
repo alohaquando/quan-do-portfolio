@@ -19,21 +19,21 @@ async function generateImageDataFiles() {
 		// Get images
 		for (let imageName of images) {
 			if (
-				!uniqueLightDarkImages.includes(imageName.replace(/-[LD]\.png/g, '')) &&
-				imageName.match(/-[LD]\.png/g)
+				!uniqueLightDarkImages.includes(imageName.replace(/-[LD]\.avif/g, '')) &&
+				imageName.match(/-[LD]\.avif/g)
 			) {
-				imageName = imageName.replace(/-[LD]\.png/g, '');
+				imageName = imageName.replace(/-[LD]\.avif/g, '');
 				uniqueLightDarkImages.push(imageName);
-			} else if (imageName.match(/[^LD]\.png/g)) {
-				uniqueImages.push(imageName.replace(/\.png/g, ''));
+			} else if (imageName.match(/[^LD]\.avif/g)) {
+				uniqueImages.push(imageName.replace(/\.avif/g, ''));
 			}
 		}
 
 		// Write data files for light dark images
 		for (const imageName of uniqueLightDarkImages) {
 			let imageDataFileName = `${folderPath}/${imageName}.svelte`;
-			let imageDataLightName = imageName + '-L.png';
-			let imageDataDarkName = imageName + '-D.png';
+			let imageDataLightName = imageName + '-L.avif';
+			let imageDataDarkName = imageName + '-D.avif';
 			let imageAlt = imageName.replace(/-/g, ' ');
 			imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
 
@@ -81,7 +81,7 @@ async function generateImageDataFiles() {
 
 		for (const imageName of uniqueImages) {
 			let imageDataFileName = `${folderPath}/${imageName}.svelte`;
-			let imageDataName = imageName + '.png';
+			let imageDataName = imageName + '.avif';
 			let imageAlt = imageName.replace(/-/g, ' ');
 			imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
 

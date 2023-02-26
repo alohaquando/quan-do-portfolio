@@ -7,13 +7,13 @@
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/work/grove.png?metadata"
+        import {width, height} from "$lib/assets/images/work/grove.avif?metadata"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/work/grove.png?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+          from "$lib/assets/images/work/grove.avif?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
         import webpSrc
-          from "$lib/assets/images/work/grove.png?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+          from "$lib/assets/images/work/grove.avif?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         const imageData = {
           lightDark: false,

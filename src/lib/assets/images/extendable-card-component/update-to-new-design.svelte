@@ -7,17 +7,17 @@
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/extendable-card-component/update-to-new-design-L.png?metadata"
+        import {width, height} from "$lib/assets/images/extendable-card-component/update-to-new-design-L.avif?metadata"
 
         // Light image
         import avifSrcLight
-          from "$lib/assets/images/extendable-card-component/update-to-new-design-L.png?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+          from "$lib/assets/images/extendable-card-component/update-to-new-design-L.avif?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
         import webpSrcLight
-          from "$lib/assets/images/extendable-card-component/update-to-new-design-L.png?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+          from "$lib/assets/images/extendable-card-component/update-to-new-design-L.avif?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         // Dark image
-        import avifSrcDark from "$lib/assets/images/extendable-card-component/update-to-new-design-D.png?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
-        import webpSrcDark from "$lib/assets/images/extendable-card-component/update-to-new-design-D.png?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+        import avifSrcDark from "$lib/assets/images/extendable-card-component/update-to-new-design-D.avif?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+        import webpSrcDark from "$lib/assets/images/extendable-card-component/update-to-new-design-D.avif?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         const imageData = {
           lightDark: true,

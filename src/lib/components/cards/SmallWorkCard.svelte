@@ -23,7 +23,7 @@
 		<!-- Card -->
 		<div
 			id={href}
-			class="{solidColors[color]} relative isolate grow flex flex-col overflow-clip rounded-3xl">
+			class="  bg-black/20 relative isolate grow flex flex-col overflow-clip rounded-3xl">
 			<!-- Title and Arrow -->
 			<div class="pointer-events-none z-10 flex p-6  md:p-8">
 				<Title>

@@ -10,6 +10,8 @@
 	// Animation imports
 	import SlideScaleSnap from '$lib/components/visuals/SlideScaleSnap.svelte';
 
+	import BG from "$lib/assets/images/work/concept-bg.svelte"
+
 	// Exports
 	export let title = 'Title';
 	export let subtitle = 'Subtitle';
@@ -25,9 +27,9 @@
 			<a
 				href={href || null}
 				class="contents">
-				<div class="relative flex w-full flex-col place-content-between items-start gap-12 rounded-[2.5rem] bg-zinc-100 px-12 py-16 dark:bg-zinc-900 md:px-20 lg:py-24">
+				<div class="relative flex w-full flex-col place-content-between items-start gap-12 rounded-[2.5rem] bg-zinc-100 px-12 py-16 dark:bg-zinc-900 md:px-20 lg:py-24 ">
 					<!-- Secondary cards -->
-					<div class="relative flex min-h-fit grow self-stretch">
+					<div class="relative flex min-h-fit grow self-stretch z-10">
 						<div
 							class="scrollbar-none absolute top-0 bottom-0 -left-16 isolate w-screen grow scroll-px-16 gap-6 self-stretch px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-2 sm:grid-rows-2 sm:px-0 md:gap-8 ">
 							{#if secondaryWorks}
@@ -63,11 +65,16 @@
 					</div>
 					<!-- /Title and subtitle -->
 
+					<div class="absolute top-0 left-0 right-0 bottom-0 rounded-[2.5rem] overflow-hidden z-0">						<BG class="h-full w-full object-cover object-left-top"/>
+					</div>
+
 					<!-- Glow on hover -->
 					{#if href}
 						<HoverGlow class="rounded-[2.5rem]" />
 					{/if}
 					<!-- /Glow on hover -->
+
+
 				</div>
 			</a>
 		</div>
