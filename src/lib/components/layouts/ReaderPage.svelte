@@ -29,6 +29,7 @@
 	});
 
 	import { scrollY, innerHeight } from '$lib/data/window.js';
+	import Noise from "$lib/components/visuals/Noise.svelte";
 </script>
 
 <svelte:head>
@@ -86,7 +87,7 @@
 		{#if $$slots.hero_img}
 			<!-- Hero Image -->
 			<Animate class="mx-auto max-w-screen-lg">
-				<div class="bg-glass ">
+				<div class="bg-glass">
 					<slot name="hero_img" />
 				</div>
 			</Animate>
@@ -118,7 +119,8 @@
 
 	<!-- Color BG -->
 	{#if $colorScheme !== ''}
-		<div class="{readerGradients[color]} min-h-screen-safe absolute top-0 left-0 right-0 -z-10" />
+		<Noise class="[mask-image:linear-gradient(to_bottom,black,black,black,transparent)] -z-10"/>
+		<div class="{readerGradients[color]} min-h-screen-safe absolute top-0 left-0 right-0 -z-20" />
 	{/if}
 	<!-- /Color BG -->
 </div>

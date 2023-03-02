@@ -7,7 +7,7 @@
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/extendable-card-component/1st-iteration-designs-L.avif?metadata"
+        import {width, height} from "$lib/assets/images/extendable-card-component/1st-iteration-designs-L.avif?meta=width;height"
 
         // Light image
         import avifSrcLight
@@ -20,15 +20,18 @@
         import webpSrcDark from "$lib/assets/images/extendable-card-component/1st-iteration-designs-D.avif?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         const imageData = {
-          lightDark: true,
           alt,
           width,
           height,
-          avifSrcLight,
-          webpSrcLight,
-          avifSrcDark,
-          webpSrcDark
-        }
+          avifSrc: {
+						light: avifSrcLight,
+						dark: avifSrcDark
+					},
+					webpSrc: {
+						light: webpSrcLight,
+						dark: webpSrcDark
+					}
+        };
 
         let className = undefined;
         export {className as class};

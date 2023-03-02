@@ -18,10 +18,7 @@ async function generateImageDataFiles() {
 
 		// Get images
 		for (let imageName of images) {
-			if (
-				!uniqueLightDarkImages.includes(imageName.replace(/-[LD]\.avif/g, '')) &&
-				imageName.match(/-[LD]\.avif/g)
-			) {
+			if (!uniqueLightDarkImages.includes(imageName.replace(/-[LD]\.avif/g, '')) && imageName.match(/-[LD]\.avif/g)) {
 				imageName = imageName.replace(/-[LD]\.avif/g, '');
 				uniqueLightDarkImages.push(imageName);
 			} else if (imageName.match(/[^LD]\.avif/g)) {
@@ -37,7 +34,6 @@ async function generateImageDataFiles() {
 			let imageAlt = imageName.replace(/-/g, ' ');
 			imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
 
-			// noinspection JSUnresolvedVariable
 			let imageData = `<script>
         import Image from "$lib/components/media/Image.svelte";
 
@@ -47,7 +43,7 @@ async function generateImageDataFiles() {
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?metadata"
+        import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?meta=width;height"
 
         // Light image
         import avifSrcLight
@@ -60,15 +56,18 @@ async function generateImageDataFiles() {
         import webpSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         const imageData = {
-          lightDark: true,
           alt,
           width,
           height,
-          avifSrcLight,
-          webpSrcLight,
-          avifSrcDark,
-          webpSrcDark
-        }
+          avifSrc: {
+						light: avifSrcLight,
+						dark: avifSrcDark
+					},
+					webpSrc: {
+						light: webpSrcLight,
+						dark: webpSrcDark
+					}
+        };
 
         let className = undefined;
         export {className as class};
@@ -79,13 +78,13 @@ async function generateImageDataFiles() {
 			await fs.promises.writeFile(imageDataFileName, imageData);
 		}
 
+		// Write data for non light-dark images
 		for (const imageName of uniqueImages) {
 			let imageDataFileName = `${folderPath}/${imageName}.svelte`;
 			let imageDataName = imageName + '.avif';
 			let imageAlt = imageName.replace(/-/g, ' ');
 			imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
 
-			// noinspection JSUnresolvedVariable
 			let imageData = `<script>
         import Image from "$lib/components/media/Image.svelte";
 
@@ -95,16 +94,15 @@ async function generateImageDataFiles() {
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?metadata"
+        import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?meta=width;height"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920;2048;2600&format=avif&quality=100&srcset";
         import webpSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920;2048;2600&format=webp&quality=100&srcset";
 
         const imageData = {
-          lightDark: false,
           alt,
           width,
           height,

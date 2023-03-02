@@ -2,21 +2,20 @@
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = 'Concept bg';
+        export let alt = '2';
         // Lazy / eager loading
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/work/concept-bg.avif?metadata"
+        import {width, height} from "$lib/assets/images/bg/2.avif?meta=width;height"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/work/concept-bg.avif?width=3200&format=avif&quality=100&srcset";
+          from "$lib/assets/images/bg/2.avif?width=360;640;768;1024;1366;1600;1920;2048;2600&format=avif&quality=100&srcset";
         import webpSrc
-          from "$lib/assets/images/work/concept-bg.avif?width=3200&format=webp&quality=100&srcset";
+          from "$lib/assets/images/bg/2.avif?width=360;640;768;1024;1366;1600;1920;2048;2600&format=webp&quality=100&srcset";
 
         const imageData = {
-          lightDark: false,
           alt,
           width,
           height,

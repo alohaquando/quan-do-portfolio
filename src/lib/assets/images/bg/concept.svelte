@@ -7,16 +7,15 @@
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/work/concept.avif?metadata"
+        import {width, height} from "$lib/assets/images/bg/concept.avif?meta=width;height"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/work/concept.avif?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+          from "$lib/assets/images/bg/concept.avif?width=360;640;768;1024;1366;1600;1920;2048;2600&format=avif&quality=100&srcset";
         import webpSrc
-          from "$lib/assets/images/work/concept.avif?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+          from "$lib/assets/images/bg/concept.avif?width=360;640;768;1024;1366;1600;1920;2048;2600&format=webp&quality=100&srcset";
 
         const imageData = {
-          lightDark: false,
           alt,
           width,
           height,

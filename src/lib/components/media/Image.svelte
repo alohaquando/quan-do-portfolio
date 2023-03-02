@@ -1,63 +1,25 @@
+<!--suppress HtmlWrongAttributeValue -->
 <script>
-	export let imageData;
-	export let eager;
+	import { colorScheme } from '$lib/data/colorScheme.js';
 
 	let className;
 	export { className as class };
-
-	import { colorScheme } from '$lib/data/colorScheme.js';
-
-	const lightDarkImageClass = 'rounded-2xl md:max-w-screen-sm md:mx-auto';
+	export let imageData = undefined;
+	export let eager = undefined;
 </script>
 
-{#if imageData.lightDark}
-	{#if $colorScheme === 'light'}
-		<picture>
-			<source
-				srcset={imageData.avifSrcLight}
-				type="image/avif" />
-			<source
-				srcset={imageData.webpSrcLight}
-				type="image/webp" />
-			<!--suppress HtmlWrongAttributeValue -->
-			<img
-				loading={eager ? 'eager' : 'lazy'}
-				sizes="auto"
-				width={imageData.width}
-				height={imageData.height}
-				class="{className} {lightDarkImageClass}"
-				alt={imageData.alt} />
-		</picture>
-	{:else}
-		<picture>
-			<source
-				srcset={imageData.avifSrcDark}
-				type="image/avif" />
-			<source
-				srcset={imageData.webpSrcDark}
-				type="image/webp" />
-			<!--suppress HtmlWrongAttributeValue -->
-			<img
-				loading={eager ? 'eager' : 'lazy'}
-				sizes="auto"
-				width={imageData.width}
-				height={imageData.height}
-				class="{className} {lightDarkImageClass}"
-				alt={imageData.alt} />
-		</picture>
-	{/if}
-{:else}
-	<picture>
-		<source
-			srcset={imageData.avifSrc}
-			type="image/avif" />
-		<source
-			srcset={imageData.webpSrc}
-			type="image/webp" />
-		<!--suppress HtmlWrongAttributeValue -->
-		<img
-			loading={eager ? 'eager' : 'lazy'}
-			class="{className} h-auto"
-			alt={imageData.alt} />
-	</picture>
-{/if}
+<picture>
+	<source
+		srcset={imageData.avifSrc.light ? ($colorScheme === 'light' ? imageData.avifSrc.light : imageData.avifSrc.dark) : imageData.avifSrc}
+		type="image/avif" />
+	<source
+		srcset={imageData.webpSrc.light ? ($colorScheme === 'light' ? imageData.webpSrc.light : imageData.webpSrc.dark) : imageData.webpSrc}
+		type="image/webp" />
+	<img
+		src={undefined}
+		alt={imageData.alt}
+		width={imageData.width}
+		height={imageData.height}
+		loading={eager ? 'eager' : 'lazy'}
+		class="{className} {imageData.avifSrc.light || imageData.webpSrc.light ? 'rounded-2xl md:mx-auto md:max-w-screen-sm' : ''}" />
+</picture>

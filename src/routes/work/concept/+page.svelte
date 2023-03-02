@@ -3,7 +3,7 @@
 	import Body from '$lib/components/typography/Body.svelte';
 	import BodyReader from '$lib/components/typography/BodyReader.svelte';
 
-	import IMG_Hero from '$lib/assets/images/work/concept.svelte';
+	import IMG_Hero from '$lib/assets/images/bg/concept.svelte';
 	import IMG_1 from '$lib/assets/images/extendable-card-component/idea-exploration.svelte';
 	import TaglineTitle from '$lib/components/typography/TaglineTitle.svelte';
 	import Spacer from '$lib/components/layouts/Spacer.svelte';

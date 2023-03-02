@@ -6,6 +6,8 @@
 	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
 	import Animate from '$lib/components/visuals/SlideIn.svelte';
 
+	import imgQuan from '$lib/assets/images/bg/quan.svelte';
+
 	export let title = 'Title';
 	export let href = undefined;
 	export let tagline = undefined;
@@ -21,7 +23,7 @@
 		{href}
 		class="contents">
 		<!-- Card BG & layout -->
-		<div class="{className} bg-glass-gradient grow flex py-10 px-8 md:py-12 md:px-10">
+		<div class="{className} bg-glass-gradient flex grow py-10 px-8 md:py-12 md:px-10">
 			<!-- Text elements -->
 			<div class={secondary ? 'grid grow grid-cols-1 grid-rows-2 gap-12 sm:grid-cols-2 sm:grid-rows-1 sm:gap-4' : 'contents'}>
 				<!-- Main text elements -->
@@ -55,9 +57,20 @@
 				{/if}
 				<!-- /Secondary text elements -->
 
+				<!-- Background Image -->
+				{#if title === 'Quan Do'}
+					<div class="absolute top-0 left-0 right-0 bottom-0 z-0 overflow-hidden rounded-[2.5rem] ">
+						<div class="absolute h-full w-full bg-gradient-to-t from-black/80 via-transparent  z-50" />
+						<svelte:component
+							this={imgQuan}
+							class="h-full w-full object-cover object-center" />
+					</div>
+				{/if}
+				<!-- /Background Image -->
+
 				<!-- Glow on hover -->
 				{#if href}
-					<HoverGlow class="rounded-[2.5rem]" />
+					<HoverGlow class="rounded-[2.5rem] " />
 				{/if}
 				<!-- /Glow on hover -->
 			</div>

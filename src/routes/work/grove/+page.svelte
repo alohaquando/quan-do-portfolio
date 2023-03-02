@@ -2,7 +2,7 @@
 	import ReaderPage from '$lib/components/layouts/ReaderPage.svelte';
 	import Body from '$lib/components/typography/Body.svelte';
 	import BodyReader from '$lib/components/typography/BodyReader.svelte';
-	import IMG_Hero from '$lib/assets/images/work/grove.svelte';
+	import IMG_Hero from '$lib/assets/images/bg/grove.svelte';
 	import IMG_1 from '$lib/assets/images/extendable-card-component/idea-exploration.svelte';
 	import TaglineTitle from '$lib/components/typography/TaglineTitle.svelte';
 	import Spacer from '$lib/components/layouts/Spacer.svelte';
@@ -18,7 +18,7 @@
 	<IMG_Hero
 		eager
 		slot="hero_img"
-		class="max-h-[32rem] h-12" />
+		class="max-h-[32rem] h-12 h-full w-auto" />
 
 	<div slot="highlight">
 		<Body>

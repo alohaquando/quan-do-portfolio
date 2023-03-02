@@ -69,7 +69,8 @@
 	<!-- Foreground -->
 	<div
 		class="flex md:place-content-between"
-		on:click={handleNavUse}>
+		on:click={handleNavUse}
+		on:keypress={handleNavUse}>
 		<!-- Logo -->
 		<NavBlock class="{hideNav ? 'blur' : ''} transform-gpu max-md:hidden">
 			<NavLink
