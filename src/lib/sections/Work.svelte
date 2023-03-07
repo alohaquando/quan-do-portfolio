@@ -48,17 +48,20 @@
 				movieNow: {
 					href: '/work/external_projects/movieNow',
 					title: 'movieNow App',
-					demo: 'movieNow'
+					demo: 'movieNow',
+					color: 'red'
 				},
 				hcmc_bars: {
 					href: '/work/external_projects/hcmc_bars',
 					title: 'HCMC Bars App',
-					demo: 'hcmc_bars'
+					demo: 'hcmc_bars',
+					color: 'red'
 				},
 				task_calendar_dashboard: {
 					href: '/work/external_projects/task_calendar_dashboard',
 					title: 'Task Calendar Dashboard',
-					demo: 'task_calendar_dashboard'
+					demo: 'task_calendar_dashboard',
+					color: 'red'
 				}
 			}
 		}

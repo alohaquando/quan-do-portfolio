@@ -48,12 +48,12 @@
 				href={href || null}
 				class="contents">
 				<!-- Card Content -->
-				<div class="relative flex {demo ? 'flex-col overflow-clip md:flex-row md:items-end' : ''} {secondaryWorks ? 'flex-col' : ''} w-full gap-12 rounded-[2.5rem] px-12 py-16 md:px-20">
+				<div class="{demo ? 'flex-col overflow-clip md:flex-row md:items-end' : ''} {secondaryWorks ? 'flex-col' : ''} relative flex w-full gap-12 rounded-[2.5rem] px-8 py-10 md:p-16 lg:px-20">
 					<!-- Secondary cards -->
 					{#if secondaryWorks}
 						<div class="relative z-10 flex min-h-fit grow self-stretch">
 							<div
-								class="scrollbar-none absolute top-0 bottom-0 -left-16 isolate w-screen grow scroll-px-16 gap-6 self-stretch px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-2 sm:grid-rows-2 sm:px-0 md:gap-8">
+								class="scrollbar-none absolute top-0 bottom-0 -left-16 -right-16 isolate grow scroll-px-16 gap-6 self-stretch px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-1 sm:grid-rows-3 md:grid-cols-3 md:grid-rows-1 sm:px-0 md:gap-8">
 								{#each Object.values(secondaryWorks) as secondaryWork}
 									<SmallWorkCard
 										{...secondaryWork}
@@ -65,7 +65,7 @@
 					<!-- /Secondary cards -->
 
 					<!-- Title and subtitle -->
-					<div class="pointer-events-none z-10 flex flex-col gap-2 max-md:order-first {demo ? 'md:basis-full' : ''} md:justify-end">
+					<div class="{demo ? 'md:basis-full' : ''} pointer-events-none z-10 flex flex-col gap-2 max-md:order-first md:justify-end">
 						<!-- Title and Arrow -->
 						<DisplaySmall>
 							{title}
@@ -85,7 +85,7 @@
 
 					<!-- Demo image -->
 					{#if demo}
-						<div class="pointer-events-none relative z-10 flex basis-full self-stretch">
+						<div class="pointer-events-none relative z-0 flex basis-full self-stretch">
 							<div class="absolute {demoImg[demo].class}">
 								<svelte:component this={demoImg[demo].img} />
 							</div>
@@ -94,11 +94,9 @@
 					<!-- /Demo image -->
 
 					<!-- Background Illustration -->
-					<div class="absolute top-0 left-0 right-0 bottom-0 z-0 overflow-hidden rounded-[2.5rem]">
+					<div class="absolute top-0 left-0 right-0 bottom-0 -z-10 overflow-hidden rounded-[2.5rem]">
 						<Noise />
-						<svelte:component
-							this={bgImg[bg - 1]}
-							class="h-full w-full object-cover object-left-top" />
+						<svelte:component this={bgImg[bg-1]} class="h-full w-full object-cover object-left-top"/>
 					</div>
 					<!-- /Background Illustration -->
 

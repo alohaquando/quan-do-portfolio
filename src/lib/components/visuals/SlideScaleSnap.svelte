@@ -1,9 +1,10 @@
 <script>
 	// Functional imports
-	import { scrollY, innerHeight, scrollYBottom } from '$lib/data/window.js';
+	import { scrollY, innerHeight, innerWidth, scrollYBottom, userScroll } from '$lib/data/window.js';
 	import { throttle, debounce } from 'lodash';
 	import { beforeNavigate } from '$app/navigation';
 	import SlideIn from '$lib/components/visuals/SlideIn.svelte';
+	import { inview } from 'svelte-inview';
 
 	// Functions
 	function limitRange(number) {
@@ -43,7 +44,8 @@
 		scale();
 	}
 
-	$: if ($innerHeight) {
+	// Recalculate if window size changes
+	$: if ($innerHeight || $innerWidth) {
 		elementPositionCalculated = false;
 	}
 
@@ -53,26 +55,19 @@
 	}
 
 	// SNAPPING	------------
-	// Snapping variables
-	let offset;
-	$: offset = $innerHeight / 2;
-
 	// Snapping function
 	const snapToCard = debounce(() => {
-		setTimeout(function () {
-			window.scrollTo({
-				top: elementTop,
-				left: 0,
-				behavior: 'smooth'
-			});
-		}, 1);
-	}, 500);
+		userScroll.set(false);
+		element.scrollIntoView();
+		snapCorrection();
+	}, 800);
 
-	$: if ($scrollY > elementTop - offset && $scrollY < elementBottom - offset) {
-		snapToCard();
-	} else {
-		snapToCard.cancel();
-	}
+	const snapCorrection = debounce(() => {
+		if ($scrollY !== elementTop) {
+			console.log('correction called');
+			element.scrollIntoView();
+		}
+	}, 900);
 
 	beforeNavigate(() => {
 		snapToCard.cancel();
@@ -80,6 +75,8 @@
 </script>
 
 <div
+	use:inview={{ rootMargin: '-50%' }}
+	on:enter={snapToCard}
 	class="translate-y-[var(--translatePercentage)] scale-[var(--scalePercentage)] transform-gpu"
 	style="--scalePercentage: {scalePercentage}; --translatePercentage: {translatePercentage}"
 	bind:this={element}>

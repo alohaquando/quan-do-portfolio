@@ -36,12 +36,12 @@
 
 	// Auto hide
 	let hideNav, usedNav;
-	import { scrollY } from '$lib/data/window.js';
+	import { scrollY, userScroll } from '$lib/data/window.js';
 	let prevY = 0;
 	let showNavShadow;
 
 	$: {
-		hideNav = !usedNav && $scrollY > 0 && $scrollY - prevY > 0;
+		hideNav = !$userScroll || (!usedNav && $scrollY > 0 && $scrollY - prevY > 0);
 		showNavShadow = $scrollY > 100;
 		prevY = $scrollY;
 	}
