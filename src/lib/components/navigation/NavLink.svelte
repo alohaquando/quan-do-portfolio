@@ -39,8 +39,7 @@
 		<!-- Active BG -->
 		<div
 			class="{active
-				? 'bg-white shadow-lg ring-1 backdrop-saturate-200 dark:bg-white/0 dark:backdrop-brightness-150'
-				: 'opacity-70 '}  absolute top-0 left-0 right-0 bottom-0 -z-10 rounded-full ring-gray-900/20 transition-all group-hover:shadow-xl group-hover:ring-1 dark:ring-white/30 dark:group-hover:ring-opacity-0 max-sm:hidden" />
+				? 'bg-white shadow-lg ring-1 backdrop-saturate-200 dark:bg-white/0'	: 'opacity-70 '}  absolute top-0 left-0 right-0 bottom-0 -z-10 rounded-full ring-gray-900/20 transition-all group-hover:shadow-xl group-hover:ring-1 dark:ring-white/30 dark:group-hover:ring-opacity-0 max-sm:hidden" />
 		<!-- /Active BG -->
 
 		<!-- Hover BG -->

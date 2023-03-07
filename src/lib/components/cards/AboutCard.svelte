@@ -33,7 +33,7 @@
 						<Tagline>{tagline}</Tagline>
 					{/if}
 					<!-- Title -->
-					<Title class="flex items-center gap-3">
+					<Title class="flex items-center gap-3 {title === 'Quan Do' ? '!text-white' : ''}">
 						{title}
 						{#if href}
 							<Icon
@@ -60,7 +60,7 @@
 				<!-- Background Image -->
 				{#if title === 'Quan Do'}
 					<div class="absolute top-0 left-0 right-0 bottom-0 z-0 overflow-hidden rounded-[2.5rem] ">
-						<div class="absolute h-full w-full bg-gradient-to-t from-black/80 via-transparent  z-50" />
+						<div class="absolute z-50 h-full w-full bg-gradient-to-t from-black/80  via-transparent" />
 						<svelte:component
 							this={imgQuan}
 							class="h-full w-full object-cover object-center" />

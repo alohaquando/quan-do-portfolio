@@ -35,23 +35,28 @@
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
 
 	// Auto hide
-	let hideNav, usedNav;
 	import { scrollY, userScroll } from '$lib/data/window.js';
+	import { readerMode } from '$lib/data/colorScheme.js';
+	import { debounce } from 'lodash';
+	let hideNav;
+	let usedNav = false;
 	let prevY = 0;
 	let showNavShadow;
 
 	$: {
-		hideNav = !$userScroll || (!usedNav && $scrollY > 0 && $scrollY - prevY > 0);
+		hideNav = (!$userScroll && $scrollY > 0) || (!usedNav && $scrollY - prevY > 0);
 		showNavShadow = $scrollY > 100;
 		prevY = $scrollY;
 	}
 
 	function handleNavUse() {
 		usedNav = true;
-		setTimeout(() => {
-			usedNav = false;
-		}, 800);
+		resetNavUse();
 	}
+
+	const resetNavUse = debounce(() => {
+		usedNav = false;
+	}, 800);
 
 	// Highlight section in view
 	import { sectionInView } from '$lib/data/sectionInView.js';
@@ -64,6 +69,8 @@
 	on:mouseleave={() => {
 		usedNav = false;
 	}}
+	on:touchmove={handleNavUse}
+	on:touchstart={handleNavUse}
 	class="{hideNav ? 'translate-y-[180%] md:-translate-y-[180%]' : ''} fixed
  bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24">
 	<!-- Foreground -->
@@ -101,8 +108,9 @@
 	<!-- Background -->
 	<div class="{showNavShadow ? 'opacity-100' : 'md:opacity-0'} pointer-events-none absolute -top-20 bottom-0 left-0 right-0 -z-20 touch-none md:top-0 md:-bottom-12">
 		<div
-			class="blur-fix absolute h-full w-full backdrop-blur backdrop-brightness-[98%] [mask-image:linear-gradient(to_top,black,black,transparent)] dark:backdrop-brightness-50 sm:dark:backdrop-brightness-75
+			class="blur-fix absolute h-full w-full backdrop-blur [mask-image:linear-gradient(to_top,black,black,transparent)]
 		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
+		<div class=" absolute h-full w-full bg-gradient-to-t  md:bg-gradient-to-b from-white via-white/70  {$readerMode ? 'dark:from-zinc-900/70 dark:via-zinc-900/70' : 'dark:from-black/70 dark:via-black/70'}" />
 	</div>
 	<!-- /Background -->
 </nav>

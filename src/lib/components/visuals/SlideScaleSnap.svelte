@@ -55,19 +55,19 @@
 	}
 
 	// SNAPPING	------------
+	let isInView = false;
+
 	// Snapping function
 	const snapToCard = debounce(() => {
 		userScroll.set(false);
 		element.scrollIntoView();
-		snapCorrection();
 	}, 800);
 
-	const snapCorrection = debounce(() => {
-		if ($scrollY !== elementTop) {
-			console.log('correction called');
-			element.scrollIntoView();
-		}
-	}, 900);
+	$: if (isInView && $scrollY) {
+		snapToCard();
+	} else {
+		snapToCard.cancel();
+	}
 
 	beforeNavigate(() => {
 		snapToCard.cancel();
@@ -76,7 +76,10 @@
 
 <div
 	use:inview={{ rootMargin: '-50%' }}
-	on:enter={snapToCard}
+	on:change={(e) => {
+		const { inView } = e.detail;
+		isInView = inView;
+	}}
 	class="translate-y-[var(--translatePercentage)] scale-[var(--scalePercentage)] transform-gpu"
 	style="--scalePercentage: {scalePercentage}; --translatePercentage: {translatePercentage}"
 	bind:this={element}>
