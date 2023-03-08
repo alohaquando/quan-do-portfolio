@@ -1,6 +1,6 @@
 <script>
 	// Functional imports
-	import { scrollY, innerHeight, innerWidth, scrollYBottom, userScroll } from '$lib/data/window.js';
+	import { scrollY, innerHeight, innerWidth, scrollYBottom, userScroll, isTouching } from '$lib/data/window.js';
 	import { throttle, debounce } from 'lodash';
 	import { beforeNavigate } from '$app/navigation';
 	import SlideIn from '$lib/components/visuals/SlideIn.svelte';
@@ -56,14 +56,23 @@
 
 	// SNAPPING	------------
 	let isInView = false;
+	let snapInProgress = false;
 
 	// Snapping function
 	const snapToCard = debounce(() => {
-		userScroll.set(false);
-		element.scrollIntoView();
+		if (!snapInProgress) {
+			snapInProgress = true;
+			userScroll.set(false);
+			element.scrollIntoView();
+			resetSnapProgress();
+		}
+	}, 100);
+
+	const resetSnapProgress = debounce(() => {
+		snapInProgress = false;
 	}, 800);
 
-	$: if (isInView && $scrollY) {
+	$: if (isInView && $scrollY && !$isTouching) {
 		snapToCard();
 	} else {
 		snapToCard.cancel();

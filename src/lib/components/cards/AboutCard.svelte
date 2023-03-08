@@ -19,8 +19,9 @@
 </script>
 
 <Animate class="flex basis-full">
-	<a
-		{href}
+	<svelte:element
+		this={href ? 'a' : 'div'}
+		href={href || null}
 		class="contents">
 		<!-- Card BG & layout -->
 		<div class="{className} bg-glass-gradient flex grow py-10 px-8 md:py-12 md:px-10">
@@ -75,5 +76,5 @@
 				<!-- /Glow on hover -->
 			</div>
 		</div>
-	</a>
+	</svelte:element>
 </Animate>

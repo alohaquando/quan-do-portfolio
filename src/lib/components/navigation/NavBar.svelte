@@ -1,6 +1,16 @@
 <script>
 	// Data
 	import Logo from '$lib/components/iconography/Logo.svelte';
+	// Imports
+	import NavBlock from '$lib/components/navigation/NavBlock.svelte';
+	import NavLink from '$lib/components/navigation/NavLink.svelte';
+
+	// Auto hide
+	import { innerHeight, scrollY, userScroll } from '$lib/data/window.js';
+	import { readerMode } from '$lib/data/colorScheme.js';
+	// Highlight section in view
+	import { sectionInView } from '$lib/data/sectionInView.js';
+	import { debounce } from 'lodash';
 
 	let navLinks = {
 		landing: {
@@ -30,64 +40,55 @@
 		}
 	};
 
-	// Imports
-	import NavBlock from '$lib/components/navigation/NavBlock.svelte';
-	import NavLink from '$lib/components/navigation/NavLink.svelte';
-
-	// Auto hide
-	import { scrollY, userScroll } from '$lib/data/window.js';
-	import { readerMode } from '$lib/data/colorScheme.js';
-	import { debounce } from 'lodash';
-	let hideNav;
-	let usedNav = false;
+	let showNav;
+	let forceShowNav;
+	let navInteracting = false;
 	let prevY = 0;
 	let showNavShadow;
 
 	$: {
-		hideNav = (!$userScroll && $scrollY > 0) || (!usedNav && $scrollY - prevY > 0);
-		showNavShadow = $scrollY > 100;
+		forceShowNav = getNavInteraction();
+		showNav = forceShowNav || $scrollY <= 0 || ($scrollY - prevY < 0 && $userScroll);
+		showNavShadow = !$readerMode || $scrollY > $innerHeight / 3;
 		prevY = $scrollY;
 	}
 
-	function handleNavUse() {
-		usedNav = true;
-		resetNavUse();
+	function getNavInteraction() {
+		return navInteracting;
 	}
 
-	const resetNavUse = debounce(() => {
-		usedNav = false;
-	}, 800);
+	function handleNavInteractStart() {
+		console.log('start');
+		navInteracting = true;
+	}
 
-	// Highlight section in view
-	import { sectionInView } from '$lib/data/sectionInView.js';
+	const handleNavInteractEnd = debounce(() => {
+		navInteracting = false;
+	}, 500);
 </script>
 
 <nav
-	on:mouseenter={() => {
-		usedNav = true;
-	}}
-	on:mouseleave={() => {
-		usedNav = false;
-	}}
-	on:touchmove={handleNavUse}
-	on:touchstart={handleNavUse}
-	class="{hideNav ? 'translate-y-[180%] md:-translate-y-[180%]' : ''} fixed
- bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24">
+	class="{showNav ? '' : 'translate-y-[180%] md:-translate-y-[180%]'} fixed
+ bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24"
+	on:mouseenter={handleNavInteractStart}
+	on:mouseleave={handleNavInteractEnd}
+	on:touchmove={handleNavInteractStart}
+	on:touchstart={handleNavInteractStart}
+	on:touchend={handleNavInteractEnd}>
 	<!-- Foreground -->
-	<div
-		class="flex md:place-content-between"
-		on:click={handleNavUse}
-		on:keypress={handleNavUse}>
+	<div class="flex md:place-content-between">
 		<!-- Logo -->
-		<NavBlock class="{hideNav ? 'blur' : ''} transform-gpu max-md:hidden">
+		<NavBlock class="{showNav ? '' : 'blur'} transform-gpu max-md:hidden">
 			<NavLink
-				href="/"
-				class="font-medium"><Logo /></NavLink>
+				class="font-medium"
+				href="/">
+				<Logo />
+			</NavLink>
 		</NavBlock>
 		<!-- /Logo -->
 
 		<!-- Links Bar -->
-		<NavBlock class="{hideNav ? 'blur' : ''} transform-gpu">
+		<NavBlock class="{showNav ? '' : 'blur opacity-0'} transform-gpu">
 			{#each Object.values(navLinks) as link, i}
 				<NavLink
 					{...link}
@@ -98,7 +99,7 @@
 		<!-- /Links Bar -->
 
 		<!-- Resume -->
-		<NavBlock class="{hideNav ? 'blur' : ''} transform-gpu max-md:hidden">
+		<NavBlock class="{showNav ? '' : 'blur'} transform-gpu max-md:hidden">
 			<NavLink {...navLinks.resume} />
 		</NavBlock>
 		<!-- /Resume -->
@@ -106,11 +107,11 @@
 	<!-- /Foreground -->
 
 	<!-- Background -->
-	<div class="{showNavShadow ? 'opacity-100' : 'md:opacity-0'} pointer-events-none absolute -top-20 bottom-0 left-0 right-0 -z-20 touch-none md:top-0 md:-bottom-12">
+	<div class="{showNavShadow ? 'opacity-100' : 'md:opacity-0'} pointer-events-none absolute -top-20 bottom-0 left-0 right-0 -z-20 touch-none transition-all md:top-0 md:-bottom-12">
 		<div
 			class="blur-fix absolute h-full w-full backdrop-blur [mask-image:linear-gradient(to_top,black,black,transparent)]
 		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
-		<div class=" absolute h-full w-full bg-gradient-to-t  md:bg-gradient-to-b from-white via-white/70  {$readerMode ? 'dark:from-zinc-900/70 dark:via-zinc-900/70' : 'dark:from-black/70 dark:via-black/70'}" />
+		<div class="absolute h-full w-full bg-gradient-to-t from-white via-white/70 md:bg-gradient-to-b dark:from-black/40" />
 	</div>
 	<!-- /Background -->
 </nav>
