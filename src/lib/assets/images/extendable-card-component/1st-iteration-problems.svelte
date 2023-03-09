@@ -16,7 +16,7 @@
           from "$lib/assets/images/extendable-card-component/1st-iteration-problems-L.avif?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         // Dark image
-        import avifSrcDark from "$lib/assets/images/extendable-card-component/1st-iteration-problems-D.avif?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+        import avifSrcDark from "$lib/assets/images/extendable-card-component/1st-iteration-problems-D.avif?width=360;640;768;1024;1366;1600;1920&srcset";
         import webpSrcDark from "$lib/assets/images/extendable-card-component/1st-iteration-problems-D.avif?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
 
         const imageData = {

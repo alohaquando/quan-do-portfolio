@@ -116,10 +116,10 @@
 			</svelte:element>
 		</div>
 	</SlideScaleSnap>
-	<div class=" absolute -top-8 -left-8 -right-8 -bottom-8 -z-10 overflow-hidden ">
+	<div class=" fixed -top-8 -left-8 -right-8 -bottom-8 -z-10 overflow-hidden ">
 		<svelte:component
 			this={bgImg[bg - 1]}
-			class="h-full w-full object-cover object-left-top  {snapDone ? 'opacity-70' : 'opacity-0'} blur-fix blur-xl  transition-all duration-300" />
+			class="h-full w-full object-cover object-left-top {snapDone ? 'opacity-70' : 'opacity-0'} blur-fix blur-xl  transition-all duration-300" />
 		<div class="absolute top-0 -z-20 h-full w-full bg-black {snapDone ? 'opacity-100' : 'opacity-0'} transition-all duration-300" />
 	</div>
 </article>

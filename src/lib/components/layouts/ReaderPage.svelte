@@ -6,34 +6,37 @@
 	import Title from '$lib/components/typography/Title.svelte';
 	import TaglineTitle from '$lib/components/typography/TaglineTitle.svelte';
 
+	// Color and visual
+	import { scrollY, innerHeight } from '$lib/data/window.js';
+	import { solidColors, readerGradients, solidColorsHex } from '$lib/data/Colors.js';
+	import { colorScheme, readerMode } from '$lib/data/colorScheme.js';
+	import Noise from "$lib/components/visuals/Noise.svelte";
+	import { onMount } from 'svelte';
+	import { beforeNavigate } from '$app/navigation';
+	import Animate from '$lib/components/visuals/SlideIn.svelte';
+
 	export let title = 'Title';
 	export let subtitle = 'Subtitle';
 	export let highlight = 'Highlight';
 	export let color = 'blue';
 
-	import { solidColors, readerGradients, solidColorsHex } from '$lib/data/Colors.js';
-
 	// For navigating back to right location
 	import { page } from '$app/stores';
 	export let pathBack = '/#' + $page.route.id;
 
-	import { colorScheme, readerMode } from '$lib/data/colorScheme.js';
-	import { onMount } from 'svelte';
-	import { beforeNavigate } from '$app/navigation';
-	import Animate from '$lib/components/visuals/SlideIn.svelte';
+	// Setting browser color
 	onMount(() => {
 		readerMode.set(true);
 	});
 	beforeNavigate(() => {
 		readerMode.set(false);
 	});
-
-	import { scrollY, innerHeight } from '$lib/data/window.js';
-	import Noise from "$lib/components/visuals/Noise.svelte";
 </script>
 
 <svelte:head>
 	<title>{title} | Quân Đỗ | Portfolio</title>
+	<meta name="description" content="{title}">
+
 	{#if $scrollY < $innerHeight / 2}
 		{#if $colorScheme === 'dark'}
 			<meta

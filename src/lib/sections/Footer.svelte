@@ -9,7 +9,8 @@
 	const footerLinks = {
 		landing: {
 			title: 'Quan Do',
-			href: '/#'
+			href: '/#',
+			ariaLabel: 'Link to Home page'
 		},
 		work: {
 			title: 'work',
@@ -43,21 +44,25 @@
 			subLinks: {
 				email: {
 					title: 'email',
-					href: 'mailto:work@quanhdo.com'
+					href: 'mailto:work@quanhdo.com',
+					ariaLabel: 'Link to emailing work@quanhdo.com'
 				},
 				github: {
 					title: 'github',
-					href: 'https://github.com/alohaquando'
+					href: 'https://github.com/alohaquando',
+					ariaLabel: `Link to Quân's GitHub`
 				},
 				linkedin: {
 					title: 'linkedin',
-					href: 'https://www.linkedin.com/in/quanhoangdo'
+					href: 'https://www.linkedin.com/in/quanhoangdo',
+					ariaLabel: `Link to Quân's LinkedIn`
 				}
 			}
 		},
 		resume: {
 			title: 'resume',
-			href: '#'
+			href: '#',
+			ariaLabel: `Link to download resume`
 		}
 	};
 
@@ -75,13 +80,13 @@
 	}
 
 	import { colorSchemePreference } from '$lib/data/colorScheme.js';
-	import Logo from "$lib/components/iconography/Logo.svelte";
+	import Logo from '$lib/components/iconography/Logo.svelte';
 </script>
 
 <footer>
 	<Section
 		id="footer"
-		class="relative my-24 sm:mt-64">
+		class="relative">
 		<!-- Divider -->
 		<div class="mx-6 flex h-px grow bg-gray-900/10 dark:bg-white/10 md:mx-10 lg:mx-32" />
 		<!-- /Divider -->
@@ -92,8 +97,10 @@
 			<div class="flex flex-col place-content-between gap-10">
 				<!-- Top Left -->
 				<div class="flex flex-col">
-					<A href="/">
-						<Logo class="py-1"/>
+					<A
+						href="/"
+						ariaLabel="Link to Home page">
+						<Logo class="py-1" />
 					</A>
 				</div>
 
@@ -122,7 +129,7 @@
 						<ul class="flex grow flex-col gap-4">
 							<!-- Heading link -->
 							<li>
-								<A href={link.href}>
+								<A href={link.href} ariaLabel={link.ariaLabel}>
 									<Body>{link.title}</Body>
 								</A>
 							</li>
@@ -130,17 +137,16 @@
 
 							<!-- Sub link group -->
 							{#if link.subLinks}
-								<ul class="flex flex-col gap-2">
-									{#each Object.values(link.subLinks) as subLink, i}
-										<li>
-											<A
-												href={subLink.href}
-												class="group">
-												<Body class="opacity-50 transition-all group-hover:opacity-100">{subLink.title}</Body>
-											</A>
-										</li>
-									{/each}
-								</ul>
+								{#each Object.values(link.subLinks) as subLink, i}
+									<li>
+										<A
+											href={subLink.href}
+											ariaLabel={subLink.ariaLabel}
+											class="group">
+											<Body class="opacity-70 transition-all group-hover:opacity-100">{subLink.title}</Body>
+										</A>
+									</li>
+								{/each}
 							{/if}
 							<!-- /Sub link group -->
 						</ul>

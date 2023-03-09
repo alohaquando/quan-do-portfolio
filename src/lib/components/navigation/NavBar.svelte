@@ -7,7 +7,7 @@
 
 	// Auto hide
 	import { innerHeight, scrollY } from '$lib/data/window.js';
-	import { readerMode } from '$lib/data/colorScheme.js';
+	import { readerMode, colorScheme } from '$lib/data/colorScheme.js';
 	// Highlight section in view
 	import { sectionInView } from '$lib/data/sectionInView.js';
 	import { debounce } from 'lodash';
@@ -111,7 +111,7 @@
 		<div
 			class="blur-fix absolute h-full w-full backdrop-blur [mask-image:linear-gradient(to_top,black,black,transparent)]
 		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
-		<div class="absolute h-full w-full bg-gradient-to-t from-white via-white/70 md:bg-gradient-to-b dark:from-black/40" />
+		<div class="absolute h-full w-full bg-gradient-to-t {$colorScheme === 'light' ? 'from-white via-white/70' : 'md:bg-gradient-to-b dark:from-black/40'} " />
 	</div>
 	<!-- /Background -->
 </nav>

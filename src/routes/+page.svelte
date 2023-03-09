@@ -7,6 +7,7 @@
 
 <svelte:head>
 	<title>Quân Đỗ | Portfolio</title>
+	<meta name="description" content="Portfolio of UI/UX Designer Quân Đỗ (Quan Do)">
 </svelte:head>
 
 <Landing />

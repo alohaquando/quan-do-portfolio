@@ -13,6 +13,7 @@
 
 <a
 	{href}
+	aria-label="Link to {title}"
 	class="group contents">
 	<div class="{className} relative flex basis-full flex-col place-content-center items-center gap-0.5 sm:flex-row sm:gap-3 sm:py-2 sm:px-5">
 		<!-- Icon and Icon BG -->

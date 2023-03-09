@@ -20,7 +20,9 @@
 		} else {
 			colorScheme.set($colorSchemePreference);
 		}
-		setTailwindColorScheme();
+		if (browser) {
+      setTailwindColorScheme();
+    }
 	}
 
 	let root;
