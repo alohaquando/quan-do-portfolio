@@ -81,6 +81,9 @@
 	beforeNavigate(() => {
 		snapToCard.cancel();
 	});
+
+	export let snapDone;
+	$: snapDone = Math.abs($scrollY - elementTop) < 5;
 </script>
 
 <div

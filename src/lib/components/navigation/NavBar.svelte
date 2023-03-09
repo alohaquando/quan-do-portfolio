@@ -6,7 +6,7 @@
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
 
 	// Auto hide
-	import { innerHeight, scrollY, userScroll } from '$lib/data/window.js';
+	import { innerHeight, scrollY } from '$lib/data/window.js';
 	import { readerMode } from '$lib/data/colorScheme.js';
 	// Highlight section in view
 	import { sectionInView } from '$lib/data/sectionInView.js';
@@ -48,7 +48,8 @@
 
 	$: {
 		forceShowNav = getNavInteraction();
-		showNav = forceShowNav || $scrollY <= 0 || ($scrollY - prevY < 0 && $userScroll);
+		showNav = forceShowNav || $scrollY <= 0 || ($scrollY - prevY < 0);
+		// showNav = forceShowNav || $scrollY <= 0 || ($scrollY - prevY < 0 && $userScroll);
 		showNavShadow = !$readerMode || $scrollY > $innerHeight / 3;
 		prevY = $scrollY;
 	}
@@ -58,13 +59,12 @@
 	}
 
 	function handleNavInteractStart() {
-		console.log('start');
 		navInteracting = true;
 	}
 
 	const handleNavInteractEnd = debounce(() => {
 		navInteracting = false;
-	}, 500);
+	}, 1000);
 </script>
 
 <nav

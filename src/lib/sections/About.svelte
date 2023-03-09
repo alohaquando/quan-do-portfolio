@@ -43,9 +43,9 @@
 
 <Section
 	id="about"
-	class=" flex flex-col items-center items-stretch gap-20 pb-16 pt-[6rem] md:gap-40 md:pt-[14rem]">
+	class="relative flex flex-col items-center items-stretch gap-20 pb-16 pt-[6rem] md:gap-40 md:pt-[14rem]">
 	<!-- Section title -->
-	<Display class="text-center">A bit about me</Display>
+	<Display class="bg-gradient-to-r from-white via-white to-[#fb923c_70.53%] bg-clip-text text-center text-transparent">A bit about me</Display>
 
 	<!-- Cards -->
 	<div class="mx-auto flex w-full max-w-screen-md flex-col gap-6 px-6">
@@ -58,4 +58,11 @@
 		<AboutCard {...aboutData.specialty} />
 		<AboutCard {...aboutData.resume} />
 	</div>
+
+	<!-- Colors -->
+	<div class="absolute top-0 left-0 right-0 bottom-0">
+		<div class="blur-fix pointer-events-none -z-10 mx-auto aspect-square h-[60vw] w-auto select-none rounded-full bg-gradient-radial from-amber-900/50 mix-blend-screen blur-3xl" />
+		<div class="blur-fix pointer-events-none absolute -top-24 right-0 -z-10 mx-auto aspect-square h-[40vw] w-auto select-none rounded-full bg-gradient-radial from-rose-800/20 mix-blend-screen blur-3xl" />
+	</div>
+	<!-- /Colors -->
 </Section>

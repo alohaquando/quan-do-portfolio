@@ -36,19 +36,23 @@
 	export let bg = 1;
 	export let href = undefined;
 	export let secondaryWorks = undefined;
+
+	let snapDone;
 </script>
 
-<article id={href ? href : title}>
-	<SlideScaleSnap>
+<article
+	id={href ? href : title}
+	class="relative">
+	<SlideScaleSnap bind:snapDone>
 		<!-- Outer BG -->
-		<div class="flex min-h-screen w-full p-4 !text-white md:p-6">
+		<div class="flex min-h-screen w-full p-4 !text-white md:p-6 ">
 			<!--	Card Link	-->
 			<svelte:element
 				this={href ? 'a' : 'div'}
 				href={href || null}
 				class="contents">
 				<!-- Card Content -->
-				<div class="{demo ? 'flex-col overflow-clip md:flex-row md:items-end' : ''} {secondaryWorks ? 'flex-col' : ''} relative flex w-full gap-12 rounded-[2.5rem] px-8 py-10 md:p-16 lg:px-20">
+				<div class="{demo ? 'flex-col overflow-clip md:flex-row md:items-end' : ''} {secondaryWorks ? 'flex-col' : ''} relative flex w-full gap-12 rounded-[2.5rem] px-8 py-10 shadow-xl md:p-16 lg:px-20">
 					<!-- Secondary cards -->
 					{#if secondaryWorks}
 						<div class="relative z-10 flex min-h-fit grow self-stretch">
@@ -112,4 +116,10 @@
 			</svelte:element>
 		</div>
 	</SlideScaleSnap>
+	<div class=" absolute -top-8 -left-8 -right-8 -bottom-8 -z-10 overflow-hidden ">
+		<svelte:component
+			this={bgImg[bg - 1]}
+			class="h-full w-full object-cover object-left-top  {snapDone ? 'opacity-70' : 'opacity-0'} blur-fix blur-xl  transition-all duration-300" />
+		<div class="absolute top-0 -z-20 h-full w-full bg-black {snapDone ? 'opacity-100' : 'opacity-0'} transition-all duration-300" />
+	</div>
 </article>
