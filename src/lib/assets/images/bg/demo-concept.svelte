@@ -11,7 +11,7 @@
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/demo-concept.avif?width=360;640;768;1024;1366;1600;1920;2048&srcset";
+          from "$lib/assets/images/bg/demo-concept.avif?width=360;640;768;1024;1366;1600;1920;2048&format=avif&srcset";
         import webpSrc
           from "$lib/assets/images/bg/demo-concept.avif?width=360;640;768;1024;1366;1600;1920;2048&format=webp&srcset";
 

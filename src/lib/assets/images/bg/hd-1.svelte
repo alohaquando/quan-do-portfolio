@@ -2,18 +2,18 @@
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = '2';
+        export let alt = 'Hd 1';
         // Lazy / eager loading
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/bg/2.avif?meta=width;height"
+        import {width, height} from "$lib/assets/images/bg/hd-1.avif?meta=width;height"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/2.avif?width=360;640;768;1024;1366;1600;1920;2048&srcset";
+          from "$lib/assets/images/bg/hd-1.avif?width=360;640;768;1024;1366;1600;1920;2048&format=avif&quality=95&srcset";
         import webpSrc
-          from "$lib/assets/images/bg/2.avif?width=360;640;768;1024;1366;1600;1920;2048&format=webp&srcset";
+          from "$lib/assets/images/bg/hd-1.avif?width=360;640;768;1024;1366;1600;1920;2048&format=webp&quality=95&srcset";
 
         const imageData = {
           alt,

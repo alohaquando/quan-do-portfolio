@@ -60,7 +60,7 @@
 	</div>
 
 	<!-- Colors -->
-	<div class="absolute top-0 left-0 right-0 bottom-0">
+	<div class="absolute top-0 left-0 right-0 bottom-0 select-none pointer-events-none">
 		<div class="blur-fix pointer-events-none -z-10 mx-auto aspect-square h-[60vw] w-auto select-none rounded-full bg-gradient-radial from-amber-900/50 mix-blend-screen blur-3xl" />
 		<div class="blur-fix pointer-events-none absolute -top-24 right-0 -z-10 mx-auto aspect-square h-[40vw] w-auto select-none rounded-full bg-gradient-radial from-rose-800/20 mix-blend-screen blur-3xl" />
 	</div>

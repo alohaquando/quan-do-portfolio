@@ -11,13 +11,30 @@
 
 	// Background Illustrations imports
 	import Noise from '$lib/components/visuals/Noise.svelte';
-	import BG1 from '$lib/assets/images/bg/1.svelte';
-	import BG2 from '$lib/assets/images/bg/2.svelte';
-	import BG3 from '$lib/assets/images/bg/3.svelte';
-	import BG4 from '$lib/assets/images/bg/4.svelte';
+	import BG1 from '$lib/assets/images/bg/hd-1.svelte';
+	import BG2 from '$lib/assets/images/bg/hd-2.svelte';
+	import BG3 from '$lib/assets/images/bg/hd-3.svelte';
+	import BG4 from '$lib/assets/images/bg/hd-4.svelte';
 	import DemoGrove from '$lib/assets/images/bg/demo-grove.svelte';
 	import DemoConcept from '$lib/assets/images/bg/demo-concept.svelte';
-	const bgImg = [BG1, BG2, BG3, BG4];
+	const bgImg = {
+		1: {
+			bg: BG1,
+			focus: 'object-left-top'
+		},
+		2: {
+			bg: BG2,
+			focus: 'object-right-top'
+		},
+		3: {
+			bg: BG3,
+			focus: 'object-left-top'
+		},
+		4: {
+			bg: BG4,
+			focus: 'object-center'
+		}
+	};
 	const demoImg = {
 		grove: {
 			img: DemoGrove,
@@ -98,11 +115,11 @@
 					<!-- /Demo image -->
 
 					<!-- Background Illustration -->
-					<div class="absolute top-0 left-0 right-0 bottom-0 -z-10 overflow-hidden rounded-[2.5rem]">
-						<Noise />
+					<div class="pointer-events-none absolute top-0 left-0 right-0  bottom-0 select-none overflow-hidden rounded-[2.5rem]">
 						<svelte:component
-							this={bgImg[bg - 1]}
-							class="h-full w-full object-cover object-left-top" />
+							this={bgImg[bg].bg}
+							class="h-full w-full object-cover {bgImg[bg].focus}" />
+						<Noise class="!opacity-20" />
 					</div>
 					<!-- /Background Illustration -->
 
@@ -118,7 +135,7 @@
 	</SlideScaleSnap>
 	<div class=" fixed -top-8 -left-8 -right-8 -bottom-8 -z-10 overflow-hidden ">
 		<svelte:component
-			this={bgImg[bg - 1]}
+			this={bgImg[bg].bg}
 			class="h-full w-full object-cover object-left-top {snapDone ? 'opacity-70' : 'opacity-0'} blur-fix blur-xl  transition-all duration-300" />
 		<div class="absolute top-0 -z-20 h-full w-full bg-black {snapDone ? 'opacity-100' : 'opacity-0'} transition-all duration-300" />
 	</div>

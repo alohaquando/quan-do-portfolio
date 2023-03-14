@@ -83,6 +83,8 @@ async function generateImageDataFiles() {
 			let imageDataFileName = `${folderPath}/${imageName}.svelte`;
 			let imageDataName = imageName + '.avif';
 			let imageAlt = imageName.replace(/-/g, ' ');
+			let highQualityDirective = '';
+			if (imageName.match(/hd-/g)) highQualityDirective = '&quality=95'
 			imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
 
 			let imageData = `<script>
@@ -98,9 +100,9 @@ async function generateImageDataFiles() {
 
         // Image
         import avifSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920;2048&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920;2048&format=avif${highQualityDirective}&srcset";
         import webpSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920;2048&format=webp&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920;2048&format=webp${highQualityDirective}&srcset";
 
         const imageData = {
           alt,
