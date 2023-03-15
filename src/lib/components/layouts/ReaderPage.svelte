@@ -121,10 +121,8 @@
 	<!-- /Slot -->
 
 	<!-- Color BG -->
-	{#if $colorScheme !== ''}
-		<Noise class="[mask-image:linear-gradient(to_bottom,black,black,black,transparent)] opacity-5 -z-10"/>
+		<Noise class="[mask-image:linear-gradient(to_bottom,black,black,black,transparent)] -z-10 opacity-30"/>
 		<div class="{readerGradients[color]} min-h-screen-safe absolute top-0 left-0 right-0 -z-20" />
-	{/if}
 	<!-- /Color BG -->
 </div>
 <!-- /Reader Page -->

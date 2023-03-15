@@ -9,58 +9,58 @@
 	const footerLinks = {
 		landing: {
 			title: 'Quan Do',
-			href: '/#',
+			href: '/#landing',
 			ariaLabel: 'Link to Home page'
 		},
 		work: {
-			title: 'work',
+			title: 'Work',
 			href: '/#work',
 			subLinks: {
 				grove: {
-					title: 'groveHR',
+					title: 'GroveHR',
 					href: '/work/grove'
 				},
 				ux_projects: {
-					title: 'ux projects',
+					title: 'Case studies',
 					href: '/#Case studies'
 				},
 				concept: {
-					title: 'concept',
+					title: 'Concept D.S.',
 					href: '/work/concept'
 				},
 				external_projects: {
-					title: 'external projects',
+					title: 'External projects',
 					href: '/#External projects'
 				}
 			}
 		},
 		about: {
-			title: 'about',
+			title: 'About',
 			href: '/#about'
 		},
 		contact: {
-			title: 'contact',
+			title: 'Contact',
 			href: '/#contact',
 			subLinks: {
 				email: {
-					title: 'email',
+					title: 'Email',
 					href: 'mailto:work@quanhdo.com',
 					ariaLabel: 'Link to emailing work@quanhdo.com'
 				},
 				github: {
-					title: 'github',
+					title: 'GitHub',
 					href: 'https://github.com/alohaquando',
 					ariaLabel: `Link to Quân's GitHub`
 				},
 				linkedin: {
-					title: 'linkedin',
+					title: 'LinkedIn',
 					href: 'https://www.linkedin.com/in/quanhoangdo',
 					ariaLabel: `Link to Quân's LinkedIn`
 				}
 			}
 		},
 		resume: {
-			title: 'resume',
+			title: 'Resume',
 			href: '#',
 			ariaLabel: `Link to download resume`
 		}
@@ -86,7 +86,7 @@
 <footer>
 	<Section
 		id="footer"
-		class="relative">
+		class="relative mt-16 md:mt-24">
 		<!-- Divider -->
 		<div class="mx-6 flex h-px grow bg-gray-900/10 dark:bg-white/10 md:mx-10 lg:mx-32" />
 		<!-- /Divider -->
@@ -98,8 +98,8 @@
 				<!-- Top Left -->
 				<div class="flex flex-col">
 					<A
-						href="/"
-						ariaLabel="Link to Home page">
+						href={footerLinks.landing.href}
+						ariaLabel={footerLinks.landing.ariaLabel}>
 						<Logo class="py-1" />
 					</A>
 				</div>
@@ -143,7 +143,7 @@
 											href={subLink.href}
 											ariaLabel={subLink.ariaLabel}
 											class="group">
-											<Body class="opacity-70 transition-all group-hover:opacity-100">{subLink.title}</Body>
+											<Body class="opacity-70 transition-all group-hover:opacity-100 whitespace-nowrap ">{subLink.title}</Body>
 										</A>
 									</li>
 								{/each}

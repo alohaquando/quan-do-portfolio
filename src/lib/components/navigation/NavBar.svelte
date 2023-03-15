@@ -15,8 +15,9 @@
 	let navLinks = {
 		landing: {
 			title: 'Home',
-			href: '/#',
-			icon: 'home'
+			href: '/#landing',
+			icon: 'home',
+			ariaLabel: 'Link to Home page'
 		},
 		work: {
 			title: 'Work',
@@ -76,19 +77,19 @@
 	on:touchstart={handleNavInteractStart}
 	on:touchend={handleNavInteractEnd}>
 	<!-- Foreground -->
-	<div class="flex md:place-content-between">
+	<div class="{showNav ? '' : 'blur max-sm:opacity-0'} transition-all transform-gpu flex md:place-content-between">
 		<!-- Logo -->
-		<NavBlock class="{showNav ? '' : 'blur'} transform-gpu max-md:hidden">
+		<NavBlock class="max-md:hidden">
 			<NavLink
-				class="font-medium"
-				href="/">
+				class="font-medium [&_p]:hidden"
+				{...navLinks.landing}>
 				<Logo />
 			</NavLink>
 		</NavBlock>
 		<!-- /Logo -->
 
 		<!-- Links Bar -->
-		<NavBlock class="{showNav ? '' : 'blur opacity-0'} transform-gpu">
+		<NavBlock class="transform-gpu">
 			{#each Object.values(navLinks) as link, i}
 				<NavLink
 					{...link}
@@ -99,7 +100,7 @@
 		<!-- /Links Bar -->
 
 		<!-- Resume -->
-		<NavBlock class="{showNav ? '' : 'blur'} transform-gpu max-md:hidden">
+		<NavBlock class="max-md:hidden">
 			<NavLink {...navLinks.resume} />
 		</NavBlock>
 		<!-- /Resume -->

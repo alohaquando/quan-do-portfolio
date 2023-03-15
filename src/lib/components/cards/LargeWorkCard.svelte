@@ -50,7 +50,7 @@
 	export let title = 'Title';
 	export let subtitle = 'Subtitle';
 	export let demo = undefined;
-	export let bg = 1;
+	export let bg = '1';
 	export let href = undefined;
 	export let secondaryWorks = undefined;
 
@@ -115,13 +115,17 @@
 					<!-- /Demo image -->
 
 					<!-- Background Illustration -->
-					<div class="pointer-events-none absolute top-0 left-0 right-0  bottom-0 select-none overflow-hidden rounded-[2.5rem]">
+					<div class="pointer-events-none absolute top-0 left-0 right-0 bottom-0 -z-10 select-none select-none overflow-hidden rounded-[2.5rem]">
 						<svelte:component
 							this={bgImg[bg].bg}
+							eager={bg === '1' ? true : null}
 							class="h-full w-full object-cover {bgImg[bg].focus}" />
-						<Noise class="!opacity-20" />
 					</div>
 					<!-- /Background Illustration -->
+
+					<!-- Noise -->
+					<Noise class="z-20 rounded-[2.5rem] opacity-50" />
+					<!-- /Noise -->
 
 					<!-- Glow on hover -->
 					{#if href}

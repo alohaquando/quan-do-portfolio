@@ -2,18 +2,18 @@
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = 'Landing bg';
+        export let alt = 'Hd landing bg';
         // Lazy / eager loading
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/bg/landing-bg.avif?meta=width;height"
+        import {width, height} from "$lib/assets/images/bg/hd-landing-bg.avif?meta=width;height"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/landing-bg.avif?width=360;640;768;1024;1366;1600;1920;2048&format=avif&srcset";
+          from "$lib/assets/images/bg/hd-landing-bg.avif?width=360;640;768;1024;1366;1600;1920;2048&format=avif&quality=95&srcset";
         import webpSrc
-          from "$lib/assets/images/bg/landing-bg.avif?width=360;640;768;1024;1366;1600;1920;2048&format=webp&srcset";
+          from "$lib/assets/images/bg/hd-landing-bg.avif?width=360;640;768;1024;1366;1600;1920;2048&format=webp&quality=95&srcset";
 
         const imageData = {
           alt,

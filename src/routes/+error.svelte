@@ -3,7 +3,7 @@
 	import Body from '$lib/components/typography/Body.svelte';
 	import A from '$lib/components/navigation/A.svelte';
 	import Noise from '$lib/components/visuals/Noise.svelte';
-	import BG from '$lib/assets/images/bg/landing-bg.svelte';
+	import BG from '$lib/assets/images/bg/hd-landing-bg.svelte';
 </script>
 
 <section class="min-h-screen-safe flex flex-col place-content-center items-center gap-12">

@@ -2,7 +2,7 @@
 	import Section from '$lib/components/layouts/Section.svelte';
 	import Display from '$lib/components/typography/Display.svelte';
 
-	import BG from '$lib/assets/images/bg/landing-bg.svelte';
+	import BG from '$lib/assets/images/bg/hd-landing-bg.svelte';
 	import Noise from '$lib/components/visuals/Noise.svelte';
 	import Logo from '$lib/components/iconography/Logo.svelte';
 </script>
