@@ -6,17 +6,20 @@
 	const aboutData = {
 		me: {
 			title: 'Quan Do',
-			class: 'md:min-h-[30rem] min-h-[20rem] items-end'
+			class: 'md:min-h-[30rem] min-h-[20rem] items-end',
+			illustration: 'profile_picture'
 		},
 		experience: {
 			title: 'Experienced',
 			subtitle: 'In designing app and web interfaces.',
-			class: 'md:min-h-[40rem] min-h-[30rem] sm:w-1/2'
+			class: 'md:min-h-[40rem] min-h-[30rem] sm:w-1/2',
+			illustration: 'experience'
 		},
 		career: {
 			title: 'UI/UX Designer',
 			subtitle: 'With an emphasis on UX Design.',
-			class: 'md:min-h-[40rem] min-h-[30rem] sm:w-1/2'
+			class: 'md:min-h-[40rem] min-h-[30rem] sm:w-1/2',
+			illustration: 'flowchart'
 		},
 		languages: {
 			tagline: 'Fluent in',
@@ -31,7 +34,8 @@
 			tagline: 'Strong suit',
 			title: 'Integrating design with Operating System',
 			subtitle: 'I can design apps that fully utilizes the feature set of whatever system they’re on, like Adaptive Icon on Android to Focus Modes on iOS.',
-			class: 'md:min-h-[40rem] min-h-[40rem] sm:min-h-[30rem] items-end'
+			class: 'md:min-h-[40rem] min-h-[40rem] sm:min-h-[30rem] items-end',
+			illustration: 'operating-systems'
 		},
 		resume: {
 			title: 'My resume',
@@ -44,6 +48,7 @@
 <Section
 	id="about"
 	class="relative flex flex-col items-center items-stretch gap-20 pb-16 pt-[6rem] md:gap-40 md:pt-[14rem]">
+
 	<!-- Section title -->
 	<Display class="bg-gradient-to-r from-white via-white to-[#fb923c_70.53%] bg-clip-text text-center text-transparent">A bit about me</Display>
 
@@ -59,10 +64,5 @@
 		<AboutCard {...aboutData.resume} />
 	</div>
 
-	<!-- Colors -->
-	<div class="absolute top-0 left-0 right-0 bottom-0 select-none pointer-events-none">
-		<div class="blur-fix pointer-events-none -z-10 mx-auto aspect-square h-[60vw] w-auto select-none rounded-full bg-gradient-radial from-amber-900/50 mix-blend-screen blur-3xl" />
-		<div class="blur-fix pointer-events-none absolute -top-24 right-0 -z-10 mx-auto aspect-square h-[40vw] w-auto select-none rounded-full bg-gradient-radial from-rose-800/20 mix-blend-screen blur-3xl" />
-	</div>
-	<!-- /Colors -->
+
 </Section>

@@ -1,10 +1,8 @@
 <script>
 	// Functional imports
-	import { scrollY, innerHeight, innerWidth, scrollYBottom, userScroll, isTouching } from '$lib/data/window.js';
-	import { throttle, debounce } from 'lodash';
-	import { beforeNavigate } from '$app/navigation';
+	import { scrollY, innerHeight, innerWidth, scrollYBottom } from '$lib/data/window.js';
+	import { throttle } from 'lodash';
 	import SlideIn from '$lib/components/visuals/SlideIn.svelte';
-	import { inview } from 'svelte-inview';
 
 	// Functions
 	function limitRange(number) {
@@ -50,52 +48,19 @@
 	}
 
 	// SCALING ANIMATION	------------
-	$: if (elementPositionCalculated || $scrollY || true) {
+	$: if (elementPositionCalculated || $scrollY) {
 		scale();
 	}
 
-	// SNAPPING	------------
-	let isInView = false;
-	let snapInProgress = false;
-
-	// Snapping function
-	const snapToCard = debounce(() => {
-		if (!snapInProgress) {
-			snapInProgress = true;
-			userScroll.set(false);
-			element.scrollIntoView();
-			resetSnapProgress();
-		}
-	}, 100);
-
-	const resetSnapProgress = debounce(() => {
-		snapInProgress = false;
-	}, 800);
-
-	$: if (isInView && $scrollY && !$isTouching) {
-		snapToCard();
-	} else {
-		snapToCard.cancel();
-	}
-
-	beforeNavigate(() => {
-		snapToCard.cancel();
-	});
-
 	export let snapDone;
-	$: snapDone = Math.abs($scrollY - elementTop) < 5;
+	$: snapDone = Math.abs($scrollY - elementTop) < 50;
 </script>
 
 <div
-	use:inview={{ rootMargin: '-50%' }}
-	on:change={(e) => {
-		const { inView } = e.detail;
-		isInView = inView;
-	}}
 	class="translate-y-[var(--translatePercentage)] scale-[var(--scalePercentage)] transform-gpu"
 	style="--scalePercentage: {scalePercentage}; --translatePercentage: {translatePercentage}"
 	bind:this={element}>
-	<SlideIn rootMargin="-10%">
+	<SlideIn rootMargin="-5%">
 		<slot />
 	</SlideIn>
 </div>

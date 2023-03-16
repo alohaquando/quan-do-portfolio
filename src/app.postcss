@@ -77,7 +77,7 @@
 	}
 
 	.text-6x {
-		@apply text-[3.125rem] leading-relaxed md:text-[5.25rem] md:leading-relaxed;
+		@apply text-[3.125rem] leading-relaxed sm:text-[3.75rem] md:text-[5.25rem] md:leading-relaxed;
 	}
 
 	.bg-glass-gradient {
@@ -95,11 +95,31 @@
 		min-height: calc(100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
 	}
 
+	.min-h-sm-screen-safe {
+		min-height: calc(80vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
+	}
+
+	.min-h-md-screen-safe {
+		min-height: calc(80vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
+	}
+
+	.pb-safe {
+		padding-bottom: max(env(safe-area-inset-bottom) + 12px, 12px);
+	}
+
 	@supports (-webkit-touch-callout: none) {
 		/*noinspection CssInvalidPropertyValue*/
 		.min-h-screen-safe {
 			/* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
 			min-height: -webkit-fill-available;
+		}
+
+		.min-h-sm-screen-safe {
+			min-height: calc(70vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
+		}
+
+		.min-h-md-screen-safe {
+			min-height: calc(82vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
 		}
 	}
 

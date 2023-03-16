@@ -1,16 +1,16 @@
 <script>
-	// Data
-	import Logo from '$lib/components/iconography/Logo.svelte';
 	// Imports
 	import NavBlock from '$lib/components/navigation/NavBlock.svelte';
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
+	import Logo from '$lib/components/iconography/Logo.svelte';
 
 	// Auto hide
 	import { innerHeight, scrollY } from '$lib/data/window.js';
-	import { readerMode, colorScheme } from '$lib/data/colorScheme.js';
+	import { readerMode } from '$lib/data/colorScheme.js';
+	import { debounce, throttle } from 'lodash';
+
 	// Highlight section in view
 	import { sectionInView } from '$lib/data/sectionInView.js';
-	import { debounce } from 'lodash';
 
 	let navLinks = {
 		landing: {
@@ -42,25 +42,26 @@
 	};
 
 	let showNav;
-	let forceShowNav;
 	let navInteracting = false;
 	let prevY = 0;
 	let showNavShadow;
 
-	$: {
-		forceShowNav = getNavInteraction();
-		showNav = forceShowNav || $scrollY <= 0 || ($scrollY - prevY < 0);
-		// showNav = forceShowNav || $scrollY <= 0 || ($scrollY - prevY < 0 && $userScroll);
-		showNavShadow = !$readerMode || $scrollY > $innerHeight / 3;
-		prevY = $scrollY;
-	}
+	const handleNavVisibility = throttle(
+		() => {
+			showNav = navInteracting || $scrollY <= 0 || $scrollY - prevY < 0;
+			showNavShadow = !$readerMode || $scrollY > $innerHeight / 3;
+			prevY = $scrollY;
+		},
+		100,
+		{ leading: true }
+	);
 
-	function getNavInteraction() {
-		return navInteracting;
-	}
+	$: handleNavVisibility() || $scrollY;
+
 
 	function handleNavInteractStart() {
 		navInteracting = true;
+		handleNavInteractEnd();
 	}
 
 	const handleNavInteractEnd = debounce(() => {
@@ -70,14 +71,12 @@
 
 <nav
 	class="{showNav ? '' : 'translate-y-[180%] md:-translate-y-[180%]'} fixed
- bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out max-md:[padding-bottom:max(env(safe-area-inset-bottom)+12px,12px)] md:top-0 md:h-fit md:p-10 lg:px-24"
-	on:mouseenter={handleNavInteractStart}
-	on:mouseleave={handleNavInteractEnd}
-	on:touchmove={handleNavInteractStart}
+ bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out max-md:pb-safe md:top-0 md:h-fit md:p-10 lg:px-24"
+	on:mouseover={handleNavInteractStart}
 	on:touchstart={handleNavInteractStart}
-	on:touchend={handleNavInteractEnd}>
+	on:touchmove={handleNavInteractStart}>
 	<!-- Foreground -->
-	<div class="{showNav ? '' : 'blur max-sm:opacity-0'} transition-all transform-gpu flex md:place-content-between">
+	<div class="{showNav ? '' : 'blur max-sm:opacity-0'} flex transform-gpu transition-all md:place-content-between">
 		<!-- Logo -->
 		<NavBlock class="max-md:hidden">
 			<NavLink
@@ -112,7 +111,7 @@
 		<div
 			class="blur-fix absolute h-full w-full backdrop-blur [mask-image:linear-gradient(to_top,black,black,transparent)]
 		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
-		<div class="absolute h-full w-full bg-gradient-to-t {$colorScheme === 'light' ? 'from-white via-white/70' : 'md:bg-gradient-to-b dark:from-black/40'} " />
+		<div class="absolute h-full w-full bg-gradient-to-t from-white via-white/70 dark:from-black/40 md:bg-gradient-to-b  " />
 	</div>
 	<!-- /Background -->
 </nav>

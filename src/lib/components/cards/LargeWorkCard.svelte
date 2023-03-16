@@ -42,7 +42,7 @@
 		},
 		concept: {
 			img: DemoConcept,
-			class: 'top-0 bottom-0 left-0 right-0 md:-right-20 max-md:flex max-md:items-center max-md:justify-center [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top'
+			class: '-top-[10%] -bottom-[10%] -left-[10%] -right-[30%] sm:-top-[0%] sm:-bottom-[0%] sm:-left-[5%] sm:-right-[5%] overflow-visible md:left-0 md:top-0 md:bottom-0 md:-right-20 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top'
 		}
 	};
 
@@ -62,7 +62,7 @@
 	class="relative">
 	<SlideScaleSnap bind:snapDone>
 		<!-- Outer BG -->
-		<div class="flex min-h-screen w-full p-4 !text-white md:p-6 ">
+		<div class="pb-safe flex min-h-screen w-full p-4 !text-white md:p-6 ">
 			<!--	Card Link	-->
 			<svelte:element
 				this={href ? 'a' : 'div'}
@@ -72,13 +72,13 @@
 				<div class="{demo ? 'flex-col overflow-clip md:flex-row md:items-end' : ''} {secondaryWorks ? 'flex-col' : ''} relative flex w-full gap-12 rounded-[2.5rem] px-8 py-10 shadow-xl md:p-16 lg:px-20">
 					<!-- Secondary cards -->
 					{#if secondaryWorks}
-						<div class="relative z-10 flex min-h-fit grow self-stretch">
+						<div class="relative z-30 flex min-h-fit grow self-stretch max-lg:order-2">
 							<div
-								class="scrollbar-none absolute top-0 bottom-0 -left-12 -right-12 isolate grow scroll-px-12 gap-6 self-stretch overflow-x-visible px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-1 sm:grid-rows-3 sm:px-0 md:grid-cols-2 md:grid-rows-2 md:gap-8 lg:grid-cols-3 lg:grid-rows-1">
+								class="scrollbar-none absolute top-0 bottom-0 -left-12 -right-12 isolate grow scroll-px-12 gap-6 self-stretch overflow-x-visible px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-1 sm:grid-rows-3 sm:px-0 md:gap-8 lg:grid-cols-3 lg:grid-rows-1">
 								{#each Object.values(secondaryWorks) as secondaryWork}
 									<SmallWorkCard
 										{...secondaryWork}
-										class="max-sm:snap-start" />
+										class="snap-always max-sm:snap-start" />
 								{/each}
 							</div>
 						</div>
@@ -86,7 +86,7 @@
 					<!-- /Secondary cards -->
 
 					<!-- Title and subtitle -->
-					<div class="{demo ? 'md:basis-full' : ''} pointer-events-none z-10 flex flex-col gap-2 max-md:order-first md:justify-end">
+					<div class="{demo ? 'md:basis-full' : ''} pointer-events-none z-10 flex flex-col gap-2 md:justify-end">
 						<!-- Title and Arrow -->
 						<DisplaySmall>
 							{title}
@@ -98,9 +98,12 @@
 							{/if}
 						</DisplaySmall>
 						<!-- /Title and Arrow -->
-						<BodyLarge class="opacity-80">
+
+						<!-- Subtitle -->
+						<BodyLarge class="opacity-80 line-clamp-3">
 							{subtitle}
 						</BodyLarge>
+						<!-- /Subtitle -->
 					</div>
 					<!-- /Title and subtitle -->
 
@@ -137,10 +140,4 @@
 			</svelte:element>
 		</div>
 	</SlideScaleSnap>
-	<div class=" fixed -top-8 -left-8 -right-8 -bottom-8 -z-10 overflow-hidden ">
-		<svelte:component
-			this={bgImg[bg].bg}
-			class="h-full w-full object-cover object-left-top {snapDone ? 'opacity-70' : 'opacity-0'} blur-fix blur-xl  transition-all duration-300" />
-		<div class="absolute top-0 -z-20 h-full w-full bg-black {snapDone ? 'opacity-100' : 'opacity-0'} transition-all duration-300" />
-	</div>
 </article>

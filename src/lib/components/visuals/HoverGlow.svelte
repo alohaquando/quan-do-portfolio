@@ -22,6 +22,7 @@
 
 <div
 	on:mousemove={trackPointer}
+	on:touch={trackPointer}
 	aria-hidden="true"
-	class="{colorfulGradients.monochrome} {className} backdrop-saturate-125 absolute top-0 bottom-0 right-0 left-0 z-0 select-none opacity-0 ring-1 ring-inset ring-white/60 backdrop-brightness-125 transition-all duration-300 [mask-image:radial-gradient(180px_at_var(--pointerX)_var(--pointerY),white,transparent)] hover:opacity-30"
+	class="{colorfulGradients.monochrome} {className} backdrop-saturate-125 absolute top-0 bottom-0 right-0 left-0 z-0 select-none opacity-0 ring-1 ring-inset ring-white/80 transition-all duration-300 [mask-image:radial-gradient(180px_at_var(--pointerX)_var(--pointerY),white,transparent)] hover:opacity-30"
 	style="--pointerX: {pointerX}; --pointerY: {pointerY}" />

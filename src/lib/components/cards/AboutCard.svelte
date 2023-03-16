@@ -1,4 +1,5 @@
 <script>
+	// Imports
 	import Body from '$lib/components/typography/Body.svelte';
 	import Title from '$lib/components/typography/Title.svelte';
 	import Tagline from '$lib/components/typography/Tagline.svelte';
@@ -6,16 +7,14 @@
 	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
 	import Animate from '$lib/components/visuals/SlideIn.svelte';
 
-	import imgQuan from '$lib/assets/images/bg/quan.svelte';
-
+	// Props
+	let className = undefined;
+	export { className as class };
 	export let title = 'Title';
 	export let href = undefined;
 	export let tagline = undefined;
 	export let subtitle = undefined;
 	export let secondary = undefined;
-
-	let className = undefined;
-	export { className as class };
 </script>
 
 <Animate class="flex basis-full">
@@ -23,58 +22,53 @@
 		this={href ? 'a' : 'div'}
 		href={href || null}
 		class="contents">
-		<!-- Card BG & layout -->
-		<div class="{className} bg-glass-gradient flex grow py-10 px-8 md:py-12 md:px-10">
-			<!-- Text elements -->
-			<div class={secondary ? 'grid grow grid-cols-1 grid-rows-2 gap-12 sm:grid-cols-2 sm:grid-rows-1 sm:gap-4' : 'contents'}>
-				<!-- Main text elements -->
-				<div class="pointer-events-none z-10 flex flex-col gap-2 md:w-1/2">
-					<!-- Tagline -->
-					{#if tagline}
-						<Tagline>{tagline}</Tagline>
+		<!-- Card -->
+		<div class="{className} {secondary ? 'grid grid-cols-1 grid-rows-2 gap-12 sm:grid-cols-2 sm:grid-rows-1 sm:gap-4' : ''} bg-glass-gradient flex grow py-10 px-8 md:py-12 md:px-10">
+			<!-- Primary text -->
+			<div class="pointer-events-none z-10 flex flex-col gap-2 md:w-1/2">
+				<!-- Tagline -->
+				{#if tagline}
+					<Tagline>{tagline}</Tagline>
+				{/if}
+				<!-- /Tagline -->
+
+				<!-- Title and Icon -->
+				<Title class="flex items-center gap-3">
+					{title}
+					<!-- Icon -->
+					{#if href}
+						<Icon
+							name="arrow_right_solid"
+							size="w-8 h-8 md:w-10 md:h-10"
+							class="inline-block" />
 					{/if}
-					<!-- Title -->
-					<Title class="flex items-center gap-3 {title === 'Quan Do' ? '!text-white' : ''}">
-						{title}
-						{#if href}
-							<Icon
-								name="arrow_right_solid"
-								size="w-8 h-8 md:w-10 md:h-10"
-								class="inline-block" />
-						{/if}
-					</Title>
-					<!-- Subtitle -->
-					{#if subtitle}
-						<Body class="opacity-50">{subtitle}</Body>
-					{/if}
-				</div>
+					<!-- /Icon -->
+				</Title>
+				<!-- /Title and Icon -->
 
-				<!-- Secondary text elements -->
-				{#if secondary}
-					<div>
-						<Tagline>{secondary.tagline}</Tagline>
-						<Title>{secondary.title}</Title>
-					</div>
+				<!-- Subtitle -->
+				{#if subtitle}
+					<Body class="opacity-50">{subtitle}</Body>
 				{/if}
-				<!-- /Secondary text elements -->
-
-				<!-- Background Image -->
-				{#if title === 'Quan Do'}
-					<div class="absolute top-0 left-0 right-0 bottom-0 z-0 overflow-hidden rounded-[2.5rem] ">
-						<div class="absolute z-50 h-full w-full bg-gradient-to-t from-black/80  via-transparent" />
-						<svelte:component
-							this={imgQuan}
-							class="h-full w-full object-cover object-center" />
-					</div>
-				{/if}
-				<!-- /Background Image -->
-
-				<!-- Glow on hover -->
-				{#if href}
-					<HoverGlow class="rounded-[2.5rem] " />
-				{/if}
-				<!-- /Glow on hover -->
+				<!-- /Subtitle -->
 			</div>
+			<!-- /Primary text -->
+
+			<!-- Secondary text  -->
+			{#if secondary}
+				<div class="flex flex-col gap-2">
+					<Tagline>{secondary.tagline}</Tagline>
+					<Title>{secondary.title}</Title>
+				</div>
+			{/if}
+			<!-- /Secondary text  -->
+
+			<!-- Glow on hover -->
+			{#if href}
+				<HoverGlow class="rounded-[2.5rem] " />
+			{/if}
+			<!-- /Glow on hover -->
 		</div>
+		<!-- /Card -->
 	</svelte:element>
 </Animate>

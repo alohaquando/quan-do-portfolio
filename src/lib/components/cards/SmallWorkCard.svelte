@@ -41,13 +41,13 @@
 		<!-- Card -->
 		<div
 			id={href}
-			class="{solidColors[color]} relative isolate flex grow flex-col overflow-clip rounded-3xl !text-white sm:flex-row md:flex-col">
+			class="{solidColors[color]} relative isolate flex grow flex-col bg-opacity-10 overflow-clip rounded-3xl !text-white sm:flex-row lg:flex-col">
 			<!-- Noise -->
-			<Noise class="!opacity-[5%]" />
+			<Noise class="!opacity-[30%]" />
 			<!-- /Noise -->
 
 			<!-- Title and Arrow -->
-			<div class="pointer-events-none z-10 flex p-6 sm:basis-full md:p-10">
+			<div class="pointer-events-none z-10 flex p-6 basis-full md:p-8">
 				<Title>
 					{title}
 					<Icon
@@ -59,7 +59,7 @@
 			<!-- /Title and Arrow -->
 
 			<!-- Image -->
-			<div class="relative flex grow self-stretch sm:basis-full">
+			<div class="relative flex grow self-stretch basis-full max-h-[50%] sm:max-h-full lg:max-h-[30%]">
 				<div class="bg-glass pointer-events-none absolute top-0 -bottom-6 -right-6 w-[95%] rounded-b-3xl sm:top-6 lg:top-0 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
 					<svelte:component
 						this={demoImg[demo]}

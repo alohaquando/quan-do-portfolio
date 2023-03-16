@@ -1,70 +1,49 @@
 <script>
 	import { colorScheme, colorSchemePreference, readerMode } from '$lib/data/colorScheme.js';
-
 	import { colorSchemeColors } from '$lib/data/Colors.js';
+	import { browser } from '$app/environment';
 
-	let systemColorScheme;
-
-	function handleSystemColorSchemeChange() {
-    console.log("handleSystemColorSchemeChange");
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			systemColorScheme = 'dark';
-		} else {
-			systemColorScheme = 'light';
-		}
-		setColorScheme();
-	}
+	let root;
 
 	function setColorScheme() {
-    console.log('setColorScheme');
-    if ($colorSchemePreference === 'system') {
-			colorScheme.set(systemColorScheme);
+		if ($colorSchemePreference === 'system') {
+			if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+				colorScheme.set('light');
+			} else {
+				colorScheme.set('dark');
+			}
 		} else {
 			colorScheme.set($colorSchemePreference);
 		}
-		if (browser) {
-      setTailwindColorScheme();
-    }
 	}
 
-	let root;
-	export function setTailwindColorScheme() {
-    console.log('setTailwindColorScheme');
-		root = document.getElementsByTagName('html')[0];
-		root?.classList.remove('dark', colorSchemeColors.light.text, colorSchemeColors.light.bg, colorSchemeColors.light.readerBG, colorSchemeColors.dark.text, colorSchemeColors.dark.bg, colorSchemeColors.dark.readerBG);
+	function setTailwindColorScheme() {
+		if ($colorScheme === 'light') {
+			root?.classList.remove('dark', colorSchemeColors.dark.text, colorSchemeColors.dark.bg, colorSchemeColors.dark.readerBG);
+		} else {
+			root?.classList.remove('light', colorSchemeColors.light.text, colorSchemeColors.light.bg, colorSchemeColors.light.readerBG);
+		}
+		root?.classList.add($colorScheme, colorSchemeColors[$colorScheme].text);
+	}
 
-		switch ($colorScheme) {
-			case 'dark': {
-				root?.classList.add('dark');
-				root?.classList.add(colorSchemeColors.dark.text);
-				if ($readerMode) {
-					root?.classList.add(colorSchemeColors.dark.readerBG);
-				} else {
-					root?.classList.add(colorSchemeColors.dark.bg);
-				}
-				break;
-			}
-			case 'light': {
-				root?.classList.add(colorSchemeColors.light.text);
-				if ($readerMode) {
-					root?.classList.add(colorSchemeColors.light.readerBG);
-				} else {
-					root?.classList.add(colorSchemeColors.light.bg);
-				}
-				break;
-			}
+	function setBG() {
+		if ($readerMode) {
+			root?.classList.remove(colorSchemeColors[$colorScheme].bg);
+			root?.classList.add(colorSchemeColors[$colorScheme].readerBG);
+		} else {
+			root?.classList.remove(colorSchemeColors[$colorScheme].readerBG);
+			root?.classList.add(colorSchemeColors[$colorScheme].bg);
 		}
 	}
 
-	import { browser } from '$app/environment';
-
 	if (browser) {
-    console.log("Browser ready");
-		handleSystemColorSchemeChange();
-		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', handleSystemColorSchemeChange);
+		root = document.getElementsByTagName('html')[0];
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setColorScheme);
 	}
 
-	$: browser && ($readerMode || !$readerMode) && setTailwindColorScheme();
+	$: setColorScheme() || $colorSchemePreference;
 
-	$: $colorSchemePreference && setColorScheme();
+	$: setTailwindColorScheme() || setBG() || $colorScheme;
+
+	$: setBG() || $readerMode;
 </script>

@@ -8,23 +8,27 @@
 	import ScrollController from '$lib/utilities/ScrollController.svelte';
 
 	import { colorScheme } from '$lib/data/colorScheme.js';
+
+	import faviconSVG from '$lib/assets/favicons/favicon.svg';
+	import faviconPNG from '$lib/assets/favicons/favicon.png';
+	import faviconApple from '$lib/assets/favicons/apple-touch-icon.png';
 </script>
 
 <svelte:head>
 	<!--	Favicons	-->
 	<link
 		rel="shortcut icon"
-		href="$lib/assets/favicons/favicon.svg"
+		href={faviconSVG}
 		type="image/svg+xml" />
 	<link
 		rel="alternate icon"
-		href="$lib/assets/favicons/favicon.png"
+		href={faviconPNG}
 		type="image/png"
 		sizes="any" />
 	<link
 		rel="apple-touch-icon"
 		sizes="180x180"
-		href="$lib/assets/favicons/apple-touch-icon.png?v=2" />
+		href={faviconApple} />
 </svelte:head>
 
 <ColorSchemeHandler />
