@@ -73,6 +73,7 @@
 	class="{showNav ? '' : 'translate-y-[180%] md:-translate-y-[180%]'} fixed
  bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out max-md:pb-safe md:top-0 md:h-fit md:p-10 lg:px-24"
 	on:mouseover={handleNavInteractStart}
+	on:focus={handleNavInteractStart}
 	on:touchstart={handleNavInteractStart}
 	on:touchmove={handleNavInteractStart}>
 	<!-- Foreground -->
