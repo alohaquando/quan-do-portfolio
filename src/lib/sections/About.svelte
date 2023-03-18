@@ -54,7 +54,7 @@
 
 <Section
 	id="about"
-	class="max-w- relative flex flex-col items-center items-stretch gap-20 pb-16 pt-[6rem] md:gap-40 md:pt-[14rem] ">
+	class="max-w- relative flex flex-col items-center items-stretch gap-20 pb-16 pt-[6rem] md:gap-40 md:pt-[14rem]">
 	<!-- Section title -->
 	<Display class="bg-gradient-to-r from-zinc-900 to-[#fb923c_70.53%] bg-clip-text text-center !text-transparent dark:from-white dark:via-white dark:to-[#fb923c_70.53%]">A bit about me</Display>
 
