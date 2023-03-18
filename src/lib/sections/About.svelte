@@ -3,8 +3,6 @@
 	import Display from '$lib/components/typography/Display.svelte';
 	import AboutCard from '$lib/components/cards/AboutCard.svelte';
 
-	import ResumeFile from '$lib/assets/files/Quan-Hoang-Do-Portfolio.pdf';
-
 	const aboutData = {
 		me: {
 			title: 'Quân Hoàng Đỗ',
@@ -48,7 +46,7 @@
 		resume: {
 			title: 'My resume',
 			class: 'md:min-h-[30rem] min-h-[20rem] flex-col',
-			href: ResumeFile,
+			href: '/#',
 			image: 'resume'
 		}
 	};
