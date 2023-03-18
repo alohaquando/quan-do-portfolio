@@ -11,9 +11,9 @@
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/hd-2.avif?width=;640;768;1024;1366;1600;1920;2048&format=avif&quality=95&srcset";
+          from "$lib/assets/images/bg/hd-2.avif?width=1024;1920&format=avif&quality=95&srcset";
         import webpSrc
-          from "$lib/assets/images/bg/hd-2.avif?width=;640;768;1024;1366;1600;1920;2048&format=webp&quality=95&srcset";
+          from "$lib/assets/images/bg/hd-2.avif?width=1024;1920&format=webp&quality=95&srcset";
 
         const imageData = {
           alt,

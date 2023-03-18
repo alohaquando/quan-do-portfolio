@@ -2,18 +2,18 @@
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = 'Demo grove';
+        export let alt = 'Device grove';
         // Lazy / eager loading
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/bg/demo-grove.avif?meta=width;height"
+        import {width, height} from "$lib/assets/images/bg/device-grove.avif?meta=width;height"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/demo-grove.avif?width=360;640;768;1024;1366;1600;1920;2048&format=avif&srcset";
+          from "$lib/assets/images/bg/device-grove.avif?width=640;1024;1920&format=avif&srcset";
         import webpSrc
-          from "$lib/assets/images/bg/demo-grove.avif?width=360;640;768;1024;1366;1600;1920;2048&format=webp&srcset";
+          from "$lib/assets/images/bg/device-grove.avif?width=640;1024;1920&format=webp&srcset";
 
         const imageData = {
           alt,

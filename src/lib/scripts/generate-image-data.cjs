@@ -47,13 +47,13 @@ async function generateImageDataFiles() {
 
         // Light image
         import avifSrcLight
-          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=360;640;768;1024;1366;1600;1920&format=avif&quality=95&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=760&format=avif&srcset";
         import webpSrcLight
-          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=760&format=webp&srcset";
 
         // Dark image
-        import avifSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=360;640;768;1024;1366;1600;1920&srcset";
-        import webpSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=360;640;768;1024;1366;1600;1920&format=webp&quality=95&srcset";
+        import avifSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=760&format=avif&srcset";
+        import webpSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=760&format=webp&srcset";
 
         const imageData = {
           alt,
@@ -84,7 +84,15 @@ async function generateImageDataFiles() {
 			let imageDataName = imageName + '.avif';
 			let imageAlt = imageName.replace(/-/g, ' ');
 			let highQuality = false;
-			if (imageName.match(/hd-/g)) highQuality = true;
+			let sizes = '640;1024;1920'
+			if (imageName.match(/hd-/g)) {
+				highQuality = true;
+				sizes = '1024;1920'
+			}
+			if (imageName.match(/demo-/g)) {
+				highQuality = true;
+				sizes = '640'
+			}
 			imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
 
 			let imageData = `<script>
@@ -100,9 +108,9 @@ async function generateImageDataFiles() {
 
         // Image
         import avifSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=${highQuality ? '' : '360'};640;768;1024;1366;1600;1920;2048&format=avif${highQuality ? '&quality=95' : ''}&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=${sizes}&format=avif${highQuality ? '&quality=95' : ''}&srcset";
         import webpSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=${highQuality ? '' : '360'};640;768;1024;1366;1600;1920;2048&format=webp${highQuality ? '&quality=95' : ''}&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=${sizes}&format=webp${highQuality ? '&quality=95' : ''}&srcset";
 
         const imageData = {
           alt,

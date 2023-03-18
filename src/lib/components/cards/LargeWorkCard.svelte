@@ -15,8 +15,8 @@
 	import BG2 from '$lib/assets/images/bg/hd-2.svelte';
 	import BG3 from '$lib/assets/images/bg/hd-3.svelte';
 	import BG4 from '$lib/assets/images/bg/hd-4.svelte';
-	import DemoGrove from '$lib/assets/images/bg/demo-grove.svelte';
-	import DemoConcept from '$lib/assets/images/bg/demo-concept.svelte';
+	import DemoGrove from '$lib/assets/images/bg/device-grove.svelte';
+	import DemoConcept from '$lib/assets/images/bg/device-concept.svelte';
 	const bgImg = {
 		1: {
 			bg: BG1,
