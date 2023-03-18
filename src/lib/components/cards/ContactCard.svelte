@@ -30,7 +30,7 @@
 	};
 </script>
 
-<Animate class="{className}">
+<Animate class={className}>
 	<a
 		href={contactData[data].href}
 		target="_blank"

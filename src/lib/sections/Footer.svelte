@@ -99,7 +99,8 @@
 			<!-- Left container -->
 			<div class="flex flex-col place-content-between gap-10">
 				<!-- Logo -->
-				<A class="sm:order-2"
+				<A
+					class="sm:order-2"
 					href={footerLinks.landing.href}
 					ariaLabel={footerLinks.landing.ariaLabel}>
 					<Logo class="py-1" />

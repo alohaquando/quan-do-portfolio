@@ -84,7 +84,7 @@ async function generateImageDataFiles() {
 			let imageDataName = imageName + '.avif';
 			let imageAlt = imageName.replace(/-/g, ' ');
 			let highQualityDirective = '';
-			if (imageName.match(/hd-/g)) highQualityDirective = '&quality=95'
+			if (imageName.match(/hd-/g)) highQualityDirective = '&quality=95';
 			imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
 
 			let imageData = `<script>

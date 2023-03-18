@@ -2,7 +2,7 @@
 	viewBox="0 0 2916 1822"
 	fill="none"
 	xmlns="http://www.w3.org/2000/svg"
-class="w-[120vw]">
+	class="w-[120vw]">
 	<g
 		opacity="0.2"
 		filter="url(#filter0_f_678_15858)">

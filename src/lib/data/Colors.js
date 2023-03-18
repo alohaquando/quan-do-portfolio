@@ -27,11 +27,11 @@ export const solidColorsHex = {
 export const colorSchemeColors = {
 	light: {
 		readerBG: 'bg-zinc-100',
-		bg: 'bg-white',
+		bg: 'bg-white'
 	},
 	dark: {
 		readerBG: 'bg-zinc-900',
-		bg: 'bg-black',
+		bg: 'bg-black'
 	}
 };
 

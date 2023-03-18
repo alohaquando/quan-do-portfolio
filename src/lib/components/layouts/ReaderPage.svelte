@@ -3,14 +3,13 @@
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	import A from '$lib/components/navigation/A.svelte';
 	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
-	import Title from '$lib/components/typography/Title.svelte';
 	import TaglineTitle from '$lib/components/typography/TaglineTitle.svelte';
 
 	// Color and visual
 	import { scrollY, innerHeight } from '$lib/data/window.js';
 	import { solidColors, readerGradients, solidColorsHex } from '$lib/data/Colors.js';
 	import { colorScheme, readerMode } from '$lib/data/colorScheme.js';
-	import Noise from "$lib/components/visual-effects/Noise.svelte";
+	import Noise from '$lib/components/visual-effects/Noise.svelte';
 	import { onMount } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
 	import Animate from '$lib/components/visual-effects/SlideIn.svelte';
@@ -35,7 +34,9 @@
 
 <svelte:head>
 	<title>{title} | Quân Đỗ | Portfolio</title>
-	<meta name="description" content="{title}">
+	<meta
+		name="description"
+		content={title} />
 
 	{#if $scrollY < $innerHeight / 2}
 		{#if $colorScheme === 'dark'}
@@ -121,8 +122,8 @@
 	<!-- /Slot -->
 
 	<!-- Color BG -->
-		<Noise class="[mask-image:linear-gradient(to_bottom,black,black,black,transparent)] -z-10 opacity-30"/>
-		<div class="{readerGradients[color]} min-h-screen-safe absolute top-0 left-0 right-0 -z-20" />
+	<Noise class="-z-10 opacity-30 [mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
+	<div class="{readerGradients[color]} min-h-screen-safe absolute top-0 left-0 right-0 -z-20" />
 	<!-- /Color BG -->
 </div>
 <!-- /Reader Page -->

@@ -3,8 +3,8 @@
 	import Display from '$lib/components/typography/Display.svelte';
 	import ContactCard from '$lib/components/cards/ContactCard.svelte';
 
-	import ColorBlurSVG from '$lib/assets/images/bg/lol.svelte'
-	import SlideIn from "$lib/components/visual-effects/SlideIn.svelte";
+	import ColorBlurSVG from '$lib/assets/images/bg/lol.svelte';
+	import SlideIn from '$lib/components/visual-effects/SlideIn.svelte';
 
 	const contactData = ['email', 'github', 'linkedin'];
 </script>
@@ -14,7 +14,7 @@
 	class="flex flex-col items-center items-stretch gap-20 pb-16 pt-[6rem] md:gap-40 md:pt-[14rem]">
 	<div class="relative">
 		<SlideIn>
-			<ColorBlurSVG/>
+			<ColorBlurSVG />
 		</SlideIn>
 		<Display class="text-center">Let's work together</Display>
 	</div>

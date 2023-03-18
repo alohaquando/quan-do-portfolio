@@ -5,7 +5,6 @@
 
 	import ResumeFile from '$lib/assets/files/Quan-Hoang-Do-Portfolio.pdf';
 
-
 	const aboutData = {
 		me: {
 			title: 'Quân Hoàng Đỗ',
@@ -70,6 +69,9 @@
 		</div>
 		<AboutCard {...aboutData.languages} />
 		<AboutCard {...aboutData.specialty} />
-		<AboutCard {...aboutData.resume} download="Quan Hoang Do Portfolio" target="_blank" />
+		<AboutCard
+			{...aboutData.resume}
+			download="Quan Hoang Do Portfolio"
+			target="_blank" />
 	</div>
 </Section>

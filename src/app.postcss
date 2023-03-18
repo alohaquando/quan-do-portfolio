@@ -39,9 +39,9 @@
 
 	:root {
 		@apply overflow-x-hidden overflow-x-clip overscroll-x-none;
-		touch-action: manipulation; /* Faster tap register */
-		-webkit-tap-highlight-color: transparent; /* Hide tap color */
-		-webkit-font-smoothing: antialiased; /* Font antialiasing */
+		touch-action: manipulation;
+		-webkit-tap-highlight-color: transparent;
+		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
 }
@@ -95,7 +95,6 @@
 
 @layer utilities {
 	.min-h-screen-safe {
-		/* equivalent to 100dvh in major browsers */
 		min-height: calc(100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
 	}
 
@@ -114,7 +113,6 @@
 	@supports (-webkit-touch-callout: none) {
 		/*noinspection CssInvalidPropertyValue*/
 		.min-h-screen-safe {
-			/* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
 			min-height: -webkit-fill-available;
 		}
 

@@ -11,7 +11,7 @@
 	id="landing"
 	class="min-h-sm-screen-safe sm:min-h-md-screen-safe md:min-h-screen-safe relative flex">
 	<!-- Foreground elements -->
-	<div class="flex grow flex-col place-content-between md:place-content-center items-center gap-10 md:pt-16 pt-12 sm:pt-20">
+	<div class="flex grow flex-col place-content-between items-center gap-10 pt-12 sm:pt-20 md:place-content-center md:pt-16">
 		<!-- Logo -->
 		<Logo class="md:hidden" />
 		<!-- /Logo -->
@@ -29,9 +29,9 @@
 	<!-- /Foreground elements -->
 
 	<!-- Background -->
-	<div class="absolute top-0 left-0 right-0 -z-10 h-[200%] overflow-hidden [mask-image:linear-gradient(to_bottom,black,black,transparent)] dark:backdrop-contrast-125 backdrop-saturate-200">
+	<div class="absolute top-0 left-0 right-0 -z-10 h-[200%] overflow-hidden backdrop-saturate-200 [mask-image:linear-gradient(to_bottom,black,black,transparent)] dark:backdrop-contrast-125">
 		<Noise class="!opacity-30" />
-		<div class="absolute dark:-z-50 h-full w-full bg-gradient-to-b from-white/80 via-transparent dark:from-black dark:via-black/50 " />
+		<div class="absolute h-full w-full bg-gradient-to-b from-white/80 via-transparent dark:-z-50 dark:from-black dark:via-black/50 " />
 		<BG
 			class="h-full w-full object-cover object-top"
 			eager />

@@ -20,7 +20,7 @@ async function optimizeImages() {
 		for (let imageName of images) {
 			if (imageName.match(/\.png/g)) {
 				await sharp(`${folderPath}/${imageName}`)
-					.avif({effort: 1, lossless: true})
+					.avif({ effort: 1, lossless: true })
 					.toFile(`${folderPath}/${imageName.replace(/\.png/g, '')}.avif`, () => {
 						fs.unlink(`${folderPath}/${imageName}`, () => {});
 					});

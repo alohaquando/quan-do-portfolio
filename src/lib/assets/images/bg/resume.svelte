@@ -1,30 +1,31 @@
 <script>
-        import Image from "$lib/components/media/Image.svelte";
+	import Image from '$lib/components/media/Image.svelte';
 
-        // Alt text
-        export let alt = 'Resume';
-        // Lazy / eager loading
-        export let eager = undefined;
+	// Alt text
+	export let alt = 'Resume';
+	// Lazy / eager loading
+	export let eager = undefined;
 
-        // Metadata
-        import {width, height} from "$lib/assets/images/bg/resume.avif?meta=width;height"
+	// Metadata
+	import { width, height } from '$lib/assets/images/bg/resume.avif?meta=width;height';
 
-        // Image
-        import avifSrc
-          from "$lib/assets/images/bg/resume.avif?width=360;640;768;1024;1366;1600;1920;2048;2500&format=avif&srcset";
-        import webpSrc
-          from "$lib/assets/images/bg/resume.avif?width=360;640;768;1024;1366;1600;1920;2048;2500&format=webp&srcset";
+	// Image
+	import avifSrc from '$lib/assets/images/bg/resume.avif?width=360;640;768;1024;1366;1600;1920;2048;2500&format=avif&srcset';
+	import webpSrc from '$lib/assets/images/bg/resume.avif?width=360;640;768;1024;1366;1600;1920;2048;2500&format=webp&srcset';
 
-        const imageData = {
-          alt,
-          width,
-          height,
-          avifSrc,
-          webpSrc,
-        }
+	const imageData = {
+		alt,
+		width,
+		height,
+		avifSrc,
+		webpSrc
+	};
 
-        let className = undefined;
-        export {className as class};
-      </script>
+	let className = undefined;
+	export { className as class };
+</script>
 
-      <Image {imageData} {eager} class={className}/>
+<Image
+	{imageData}
+	{eager}
+	class={className} />

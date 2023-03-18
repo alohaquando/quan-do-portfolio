@@ -51,7 +51,7 @@
 		this={href ? 'a' : 'div'}
 		href={href || null}
 		download={download || null}
-		target='{target || null}'
+		target={target || null}
 		class="contents">
 		<!-- Card -->
 		<div class="{className} {secondary ? 'grid grid-cols-1 grid-rows-2 sm:grid-cols-2 sm:grid-rows-1' : ''} bg-glass-gradient relative flex grow overflow-clip">
@@ -99,9 +99,9 @@
 						name={illustration}
 						class="h-full w-full {illustrationClass}" />
 					{#if illustrationSecondary}
-							<Illustration
-								name={illustrationSecondary}
-								class="h-full w-full {illustrationSecondaryClass}" />
+						<Illustration
+							name={illustrationSecondary}
+							class="h-full w-full {illustrationSecondaryClass}" />
 					{/if}
 				</div>
 			{/if}
@@ -121,7 +121,7 @@
 			<!-- Image -->
 			{#if image}
 				<div class="relative flex max-h-full grow basis-full self-stretch ">
-					<div class="bg-glass pointer-events-none absolute top-8 -bottom-6 -right-32 w-[120%] sm:-right-6 sm:w-[85%] rounded-b-3xl [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
+					<div class="bg-glass pointer-events-none absolute top-8 -bottom-6 -right-32 w-[120%] rounded-b-3xl sm:-right-6 sm:w-[85%] [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
 						<svelte:component this={images[image].bg} />
 					</div>
 				</div>

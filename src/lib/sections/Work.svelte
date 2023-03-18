@@ -24,7 +24,6 @@
 					href: '/work/case_studies/people_select_modal',
 					title: 'People select modal',
 					demo: 'people_select_modal'
-
 				},
 				create_new_flow: {
 					href: '/work/case_studies/create_new_flow',
@@ -72,7 +71,6 @@
 	id="work"
 	class="relative pb-16 md:-translate-y-16">
 	{#each Object.values(works) as work, i}
-			<LargeWorkCard {...work} />
+		<LargeWorkCard {...work} />
 	{/each}
 </Section>
-

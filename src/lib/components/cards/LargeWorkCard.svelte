@@ -100,7 +100,7 @@
 						<!-- /Title and Arrow -->
 
 						<!-- Subtitle -->
-						<BodyLarge class="opacity-80 line-clamp-3 !text-white">
+						<BodyLarge class="!text-white opacity-80 line-clamp-3">
 							{subtitle}
 						</BodyLarge>
 						<!-- /Subtitle -->
