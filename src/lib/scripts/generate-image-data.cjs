@@ -100,9 +100,9 @@ async function generateImageDataFiles() {
 
         // Image
         import avifSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920;2048&format=avif${highQualityDirective}&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920;2048;2500&format=avif${highQualityDirective}&srcset";
         import webpSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920;2048&format=webp${highQualityDirective}&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=360;640;768;1024;1366;1600;1920;2048;2500&format=webp${highQualityDirective}&srcset";
 
         const imageData = {
           alt,

@@ -4,7 +4,7 @@
 	import ContactCard from '$lib/components/cards/ContactCard.svelte';
 
 	import ColorBlurSVG from '$lib/assets/images/bg/lol.svelte'
-	import SlideIn from "$lib/components/visuals/SlideIn.svelte";
+	import SlideIn from "$lib/components/visual-effects/SlideIn.svelte";
 
 	const contactData = ['email', 'github', 'linkedin'];
 </script>

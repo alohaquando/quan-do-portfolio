@@ -2,18 +2,18 @@
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = 'Demo task calendar dashboard';
+        export let alt = 'Resume';
         // Lazy / eager loading
         export let eager = undefined;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/bg/demo-task-calendar-dashboard.avif?meta=width;height"
+        import {width, height} from "$lib/assets/images/bg/resume.avif?meta=width;height"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/demo-task-calendar-dashboard.avif?width=360;640;768;1024;1366;1600;1920;2048;2500&format=avif&srcset";
+          from "$lib/assets/images/bg/resume.avif?width=360;640;768;1024;1366;1600;1920;2048;2500&format=avif&srcset";
         import webpSrc
-          from "$lib/assets/images/bg/demo-task-calendar-dashboard.avif?width=360;640;768;1024;1366;1600;1920;2048;2500&format=webp&srcset";
+          from "$lib/assets/images/bg/resume.avif?width=360;640;768;1024;1366;1600;1920;2048;2500&format=webp&srcset";
 
         const imageData = {
           alt,

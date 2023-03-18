@@ -2,7 +2,7 @@
 	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
 	import Body from '$lib/components/typography/Body.svelte';
 	import A from '$lib/components/navigation/A.svelte';
-	import Noise from '$lib/components/visuals/Noise.svelte';
+	import Noise from '$lib/components/visual-effects/Noise.svelte';
 	import BG from '$lib/assets/images/bg/hd-landing-bg.svelte';
 </script>
 

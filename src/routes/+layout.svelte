@@ -23,8 +23,7 @@
 	<link
 		rel="alternate icon"
 		href={faviconPNG}
-		type="image/png"
-		sizes="any" />
+		type="image/png" />
 	<link
 		rel="apple-touch-icon"
 		sizes="180x180"

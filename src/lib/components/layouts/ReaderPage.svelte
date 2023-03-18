@@ -10,10 +10,10 @@
 	import { scrollY, innerHeight } from '$lib/data/window.js';
 	import { solidColors, readerGradients, solidColorsHex } from '$lib/data/Colors.js';
 	import { colorScheme, readerMode } from '$lib/data/colorScheme.js';
-	import Noise from "$lib/components/visuals/Noise.svelte";
+	import Noise from "$lib/components/visual-effects/Noise.svelte";
 	import { onMount } from 'svelte';
 	import { beforeNavigate } from '$app/navigation';
-	import Animate from '$lib/components/visuals/SlideIn.svelte';
+	import Animate from '$lib/components/visual-effects/SlideIn.svelte';
 
 	export let title = 'Title';
 	export let subtitle = 'Subtitle';

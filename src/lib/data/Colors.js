@@ -28,12 +28,10 @@ export const colorSchemeColors = {
 	light: {
 		readerBG: 'bg-zinc-100',
 		bg: 'bg-white',
-		text: 'text-zinc-900'
 	},
 	dark: {
 		readerBG: 'bg-zinc-900',
 		bg: 'bg-black',
-		text: 'text-white'
 	}
 };
 
@@ -41,5 +39,5 @@ export const colorfulGradients = {
 	red: 'bg-gradient-to-r from-red-500',
 	blue: 'bg-gradient-to-r from-sky-500 to-blue-400',
 	green: 'bg-gradient-to-r from-emerald-900 to-teal-900',
-	monochrome: 'bg-gradient-to-r from-gray-400 to-gray-400 dark:from-white/30 dark:to-white/30'
+	monochrome: 'bg-gradient-to-r from-zinc-100 to-zinc-200 dark:from-white/30 dark:to-white/30'
 };

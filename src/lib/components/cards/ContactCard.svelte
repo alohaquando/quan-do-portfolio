@@ -2,8 +2,8 @@
 	import Body from '$lib/components/typography/Body.svelte';
 	import Title from '$lib/components/typography/Title.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
-	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
-	import Animate from '$lib/components/visuals/SlideIn.svelte';
+	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
+	import Animate from '$lib/components/visual-effects/SlideIn.svelte';
 	export let data = 'email';
 	let className = undefined;
 	export { className as class };

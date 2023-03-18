@@ -1,5 +1,5 @@
 <script>
-	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
+	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 </script>
 
 <button

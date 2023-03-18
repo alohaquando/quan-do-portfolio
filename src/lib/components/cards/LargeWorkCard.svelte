@@ -3,14 +3,14 @@
 	import BodyLarge from '$lib/components/typography/BodyLarge.svelte';
 	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
-	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
+	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 	import SmallWorkCard from '$lib/components/cards/SmallWorkCard.svelte';
 
 	// Animation imports
-	import SlideScaleSnap from '$lib/components/visuals/SlideScaleSnap.svelte';
+	import SlideScaleSnap from '$lib/components/visual-effects/SlideScaleSnap.svelte';
 
 	// Background Illustrations imports
-	import Noise from '$lib/components/visuals/Noise.svelte';
+	import Noise from '$lib/components/visual-effects/Noise.svelte';
 	import BG1 from '$lib/assets/images/bg/hd-1.svelte';
 	import BG2 from '$lib/assets/images/bg/hd-2.svelte';
 	import BG3 from '$lib/assets/images/bg/hd-3.svelte';
@@ -62,14 +62,14 @@
 	class="relative">
 	<SlideScaleSnap bind:snapDone>
 		<!-- Outer BG -->
-		<div class="pb-safe flex min-h-screen w-full p-4 !text-white md:p-6 ">
+		<div class="pb-safe flex min-h-screen w-full p-4 md:p-6 ">
 			<!--	Card Link	-->
 			<svelte:element
 				this={href ? 'a' : 'div'}
 				href={href || null}
 				class="contents">
 				<!-- Card Content -->
-				<div class="{demo ? 'flex-col overflow-clip md:flex-row md:items-end' : ''} {secondaryWorks ? 'flex-col' : ''} relative flex w-full gap-12 rounded-[2.5rem] px-8 py-10 shadow-xl md:p-16 lg:px-20">
+				<div class="{demo ? 'flex-col overflow-clip md:flex-row md:items-end' : ''} {secondaryWorks ? 'flex-col' : ''} relative flex w-full gap-12 rounded-[2.5rem] px-8 py-10 shadow-xl md:p-16">
 					<!-- Secondary cards -->
 					{#if secondaryWorks}
 						<div class="relative z-30 flex min-h-fit grow self-stretch max-lg:order-2">
@@ -88,7 +88,7 @@
 					<!-- Title and subtitle -->
 					<div class="{demo ? 'md:basis-full' : ''} pointer-events-none z-10 flex flex-col gap-2 md:justify-end">
 						<!-- Title and Arrow -->
-						<DisplaySmall>
+						<DisplaySmall class="!text-white">
 							{title}
 							{#if href}
 								<Icon
@@ -100,7 +100,7 @@
 						<!-- /Title and Arrow -->
 
 						<!-- Subtitle -->
-						<BodyLarge class="opacity-80 line-clamp-3">
+						<BodyLarge class="opacity-80 line-clamp-3 !text-white">
 							{subtitle}
 						</BodyLarge>
 						<!-- /Subtitle -->
@@ -118,7 +118,7 @@
 					<!-- /Demo image -->
 
 					<!-- Background Illustration -->
-					<div class="pointer-events-none absolute top-0 left-0 right-0 bottom-0 -z-10 select-none select-none overflow-hidden rounded-[2.5rem]">
+					<div class="pointer-events-none absolute top-0 left-0 right-0 bottom-0 -z-10 select-none overflow-clip rounded-[2.5rem]">
 						<svelte:component
 							this={bgImg[bg].bg}
 							eager={bg === '1' ? true : null}

@@ -3,7 +3,7 @@
 	import Display from '$lib/components/typography/Display.svelte';
 
 	import BG from '$lib/assets/images/bg/hd-landing-bg.svelte';
-	import Noise from '$lib/components/visuals/Noise.svelte';
+	import Noise from '$lib/components/visual-effects/Noise.svelte';
 	import Logo from '$lib/components/iconography/Logo.svelte';
 </script>
 
@@ -29,9 +29,9 @@
 	<!-- /Foreground elements -->
 
 	<!-- Background -->
-	<div class="absolute top-0 left-0 right-0 -z-10 h-[200%] overflow-hidden [mask-image:linear-gradient(to_bottom,black,black,transparent)]">
+	<div class="absolute top-0 left-0 right-0 -z-10 h-[200%] overflow-hidden [mask-image:linear-gradient(to_bottom,black,black,transparent)] dark:backdrop-contrast-125 backdrop-saturate-200">
 		<Noise class="!opacity-30" />
-		<div class="absolute z-0 h-full w-full bg-gradient-to-b from-black via-black/10 " />
+		<div class="absolute dark:-z-50 h-full w-full bg-gradient-to-b from-white/80 via-transparent dark:from-black dark:via-black/50 " />
 		<BG
 			class="h-full w-full object-cover object-top"
 			eager />

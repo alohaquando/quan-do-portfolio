@@ -49,7 +49,7 @@
 	const handleNavVisibility = throttle(
 		() => {
 			showNav = navInteracting || $scrollY <= 0 || $scrollY - prevY < 0;
-			showNavShadow = !$readerMode || $scrollY > $innerHeight / 3;
+			showNavShadow = $scrollY > $innerHeight / 5;
 			prevY = $scrollY;
 		},
 		100,
@@ -57,7 +57,6 @@
 	);
 
 	$: handleNavVisibility() || $scrollY;
-
 
 	function handleNavInteractStart() {
 		navInteracting = true;
@@ -70,16 +69,17 @@
 </script>
 
 <nav
-	class="{showNav ? '' : 'translate-y-[180%] md:-translate-y-[180%]'} fixed
- bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out max-md:pb-safe md:top-0 md:h-fit md:p-10 lg:px-24"
+	class="{showNav ? '' : 'translate-y-[220%] md:-translate-y-[180%]'} max-md:pb-safe
+ fixed bottom-0 left-0 right-0 z-50 transform-gpu transition-all duration-500 ease-in-out md:top-0 md:h-fit md:p-10 lg:px-24"
 	on:mouseover={handleNavInteractStart}
+	on:mousemove={handleNavInteractStart}
 	on:focus={handleNavInteractStart}
 	on:touchstart={handleNavInteractStart}
 	on:touchmove={handleNavInteractStart}>
 	<!-- Foreground -->
 	<div class="{showNav ? '' : 'blur max-sm:opacity-0'} flex transform-gpu transition-all md:place-content-between">
 		<!-- Logo -->
-		<NavBlock class="max-md:hidden">
+		<NavBlock class="max-md:hidden ">
 			<NavLink
 				class="font-medium [&_p]:hidden"
 				{...navLinks.landing}>
@@ -110,9 +110,12 @@
 	<!-- Background -->
 	<div class="{showNavShadow ? 'opacity-100' : 'md:opacity-0'} pointer-events-none absolute -top-20 bottom-0 left-0 right-0 -z-20 touch-none transition-all md:top-0 md:-bottom-12">
 		<div
-			class="blur-fix absolute h-full w-full backdrop-blur [mask-image:linear-gradient(to_top,black,black,transparent)]
-		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
-		<div class="absolute h-full w-full bg-gradient-to-t from-white via-white/70 dark:from-black/40 md:bg-gradient-to-b  " />
+			class="blur-fix absolute h-full w-full backdrop-blur [mask-image:linear-gradient(to_top,black,black,transparent)] dark:backdrop-brightness-75
+		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)] " />
+		<div
+			class="absolute bottom-0 -z-10 h-[105%] w-full bg-gradient-to-t from-white via-white/[85%] md:via-white {$readerMode
+				? 'dark:from-zinc-900/50'
+				: 'dark:from-black/60'} [mask-image:linear-gradient(to_top,black,black,transparent)] md:top-0 md:bg-gradient-to-b md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]  " />
 	</div>
 	<!-- /Background -->
 </nav>

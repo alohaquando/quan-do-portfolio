@@ -19,11 +19,11 @@
 
 	function setTailwindColorScheme() {
 		if ($colorScheme === 'light') {
-			root?.classList.remove('dark', colorSchemeColors.dark.text, colorSchemeColors.dark.bg, colorSchemeColors.dark.readerBG);
+			root?.classList.remove('dark', colorSchemeColors.dark.bg, colorSchemeColors.dark.readerBG);
 		} else {
-			root?.classList.remove('light', colorSchemeColors.light.text, colorSchemeColors.light.bg, colorSchemeColors.light.readerBG);
+			root?.classList.remove('light', colorSchemeColors.light.bg, colorSchemeColors.light.readerBG);
 		}
-		root?.classList.add($colorScheme, colorSchemeColors[$colorScheme].text);
+		root?.classList.add($colorScheme);
 	}
 
 	function setBG() {

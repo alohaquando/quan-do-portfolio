@@ -36,7 +36,7 @@
 		viewBox="0 0 {logo.text.width} {logo.text.height}"
 		width={logo.text.width}
 		height={logo.text.height}
-		class="translate-y-[0.075rem] fill-black transition-colors duration-500 dark:fill-white">
+		class="translate-y-[0.075rem] transition-all duration-500 fill-black dark:fill-white">
 		{@html logo.text.path}
 	</svg>
 </div>

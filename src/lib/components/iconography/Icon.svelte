@@ -63,22 +63,17 @@
 	};
 
 	let className = undefined;
-	// noinspection ReservedWordAsName
 	export { className as class };
-	export let name = 'system';
+	export let name = undefined;
 	export let stroke_width = '1.5';
 	export let size = 'w-6 h-6';
 </script>
 
-{#if icons[name] !== undefined}
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		viewBox="0 0 24 24"
-		fill={icons[name].type === 'stroke' ? 'none' : 'currentColor'}
-		stroke-width={icons[name].type === 'stroke' ? stroke_width : '0'}
-		class="{size} {icons[name].type === 'stroke' ? 'stroke-zinc-900 dark:stroke-white' : 'fill-zinc-900 dark:fill-white'} {className}">
-		{@html icons[name].path}
-	</svg>
-{/if}
-
-
+<svg
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="0 0 24 24"
+	fill={icons[name].type === 'stroke' ? 'none' : 'currentColor'}
+	stroke-width={icons[name].type === 'stroke' ? stroke_width : '0'}
+	class="{size} {icons[name].type === 'stroke' ? 'stroke-zinc-900 dark:stroke-white' : 'fill-zinc-900 dark:fill-white'} {className}">
+	{@html icons[name].path}
+</svg>

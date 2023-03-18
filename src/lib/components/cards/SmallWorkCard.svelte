@@ -1,8 +1,8 @@
 <script>
 	// Component imports
 	import Title from '$lib/components/typography/Title.svelte';
-	import HoverGlow from '$lib/components/visuals/HoverGlow.svelte';
-	import Animate from '$lib/components/visuals/SlideIn.svelte';
+	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
+	import Animate from '$lib/components/visual-effects/SlideIn.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	import { solidColors } from '$lib/data/Colors.js';
 
@@ -13,7 +13,7 @@
 	import DemoMovie from '$lib/assets/images/bg/demo-movieNow.svelte';
 	import DemoHCMC from '$lib/assets/images/bg/demo-hcmc-bars.svelte';
 	import DemoTask from '$lib/assets/images/bg/demo-task-calendar-dashboard.svelte';
-	import Noise from '$lib/components/visuals/Noise.svelte';
+	import Noise from '$lib/components/visual-effects/Noise.svelte';
 
 	const demoImg = {
 		extendable_card_component: DemoExtendable,
@@ -47,8 +47,8 @@
 			<!-- /Noise -->
 
 			<!-- Title and Arrow -->
-			<div class="pointer-events-none z-10 flex p-6 basis-full md:p-8">
-				<Title>
+			<div class="pointer-events-none z-10 flex p-6 basis-full md:p-8 ">
+				<Title class="!text-white">
 					{title}
 					<Icon
 						name="arrow_right_solid"

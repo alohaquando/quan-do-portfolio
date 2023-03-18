@@ -2,7 +2,7 @@
 	// Functional imports
 	import { scrollY, innerHeight, innerWidth, scrollYBottom } from '$lib/data/window.js';
 	import { throttle } from 'lodash';
-	import SlideIn from '$lib/components/visuals/SlideIn.svelte';
+	import SlideIn from '$lib/components/visual-effects/SlideIn.svelte';
 
 	// Functions
 	function limitRange(number) {
