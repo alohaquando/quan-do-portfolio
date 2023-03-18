@@ -108,7 +108,7 @@
 				<!-- /Logo -->
 
 				<!-- Function group -->
-				<div class="flex flex-col gap-8 ring-2 max-sm:contents">
+				<div class="flex flex-col gap-8 max-sm:contents">
 					<!-- Change colorScheme -->
 					<ColorSchemeSelect
 						bind:value={$colorSchemePreference}
