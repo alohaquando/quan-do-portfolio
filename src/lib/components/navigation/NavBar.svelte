@@ -7,7 +7,8 @@
 	// Auto hide
 	import { innerHeight, scrollY } from '$lib/data/window.js';
 	import { readerMode } from '$lib/data/colorScheme.js';
-	import { debounce, throttle } from "lodash";
+	import lodash from 'lodash';
+	const { throttle, debounce } = lodash;
 
 	// Highlight section in view
 	import { sectionInView } from '$lib/data/sectionInView.js';
