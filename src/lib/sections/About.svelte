@@ -2,6 +2,7 @@
 	import Section from '$lib/components/layouts/Section.svelte';
 	import Display from '$lib/components/typography/Display.svelte';
 	import AboutCard from '$lib/components/cards/AboutCard.svelte';
+	import Resume from '$lib/assets/files/Quan-Hoang-Do-Resume.pdf'
 
 	const aboutData = {
 		me: {
@@ -46,7 +47,7 @@
 		resume: {
 			title: 'My resume',
 			class: 'md:min-h-[30rem] min-h-[20rem] flex-col',
-			href: '/#',
+			href: Resume,
 			image: 'resume'
 		}
 	};
