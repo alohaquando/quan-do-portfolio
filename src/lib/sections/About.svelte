@@ -3,7 +3,7 @@
 	import Display from '$lib/components/typography/Display.svelte';
 	import AboutCard from '$lib/components/cards/AboutCard.svelte';
 
-	import ResumeFile from '$lib/assets/files/Quan Hoang Do Resume.pdf';
+	import ResumeFile from '$lib/assets/files/Quan-Hoang-Do-Portfolio.pdf';
 
 
 	const aboutData = {
