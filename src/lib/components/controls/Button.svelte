@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 </script>
 

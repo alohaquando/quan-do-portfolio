@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = 'Iteration process screen';
+        export let alt: string = 'Iteration process screen';
         // Lazy / eager loading 
-        export let eager = undefined;
+        export let eager: boolean = false;
 
         // Metadata
         import {width, height} from "$lib/assets/images/extendable-card-component/iteration-process-screen-L.avif?meta=width;height"
@@ -33,7 +33,7 @@
 					}
         };
 
-        let className = undefined;
+        let className: string = '';
         export {className as class};
       </script>
 

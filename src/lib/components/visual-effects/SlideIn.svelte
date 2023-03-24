@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
 	// Classes for layout
-	let className = undefined;
+	let className: string = '';
 	export { className as class };
 
 	// SLIDE-IN ANIMATION	------------

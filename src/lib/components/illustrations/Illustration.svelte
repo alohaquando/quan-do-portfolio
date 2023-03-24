@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { colorScheme } from '$lib/data/colorScheme.js';
 
 	const illustrations = {
@@ -36,7 +36,7 @@
 		}
 	};
 
-	let className = undefined;
+	let className: string = '';
 	export { className as class };
 	export let name = undefined;
 </script>

@@ -34,13 +34,13 @@ async function generateImageDataFiles() {
 			let imageAlt = imageName.replace(/-/g, ' ');
 			imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
 
-			let imageData = `<script>
+			let imageData = `<script lang="ts">
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = '${imageAlt}';
+        export let alt: string = '${imageAlt}';
         // Lazy / eager loading 
-        export let eager = undefined;
+        export let eager: boolean = false;
 
         // Metadata
         import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?meta=width;height"
@@ -69,7 +69,7 @@ async function generateImageDataFiles() {
 					}
         };
 
-        let className = undefined;
+        let className: string = '';
         export {className as class};
       </script>
 
@@ -103,13 +103,13 @@ async function generateImageDataFiles() {
 			}
 			imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
 
-			let imageData = `<script>
+			let imageData = `<script lang="ts">
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = '${imageAlt}';
+        export let alt: string = '${imageAlt}';
         // Lazy / eager loading
-        export let eager = undefined;
+        export let eager: boolean = false;
 
         // Metadata
         import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?meta=width;height"
@@ -128,7 +128,7 @@ async function generateImageDataFiles() {
           webpSrc,
         }
 
-        let className = undefined;
+        let className: string = '';
         export {className as class};
       </script>
 

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// Component imports
 	import Title from '$lib/components/typography/Title.svelte';
 	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
@@ -24,12 +24,12 @@
 		task_calendar_dashboard: DemoTask
 	};
 
-	let className;
+	let className: string = '';
 	export { className as class };
-	export let title = 'Title';
-	export let href = '/';
-	export let color = 'blue';
-	export let demo;
+	export let title: string = 'Title';
+	export let href: string = '/';
+	export let color: string = 'blue';
+	export let demo: object;
 </script>
 
 <Animate
@@ -41,7 +41,7 @@
 		<!-- Card -->
 		<div
 			id={href}
-			class="{solidColors[color]} relative isolate flex grow flex-col overflow-clip rounded-3xl bg-opacity-10 !text-white sm:flex-row lg:flex-col">
+			class="{solidColors[color]} relative isolate flex grow flex-col overflow-clip rounded-3xl !text-white sm:flex-row lg:flex-col">
 			<!-- Noise -->
 			<Noise class="!opacity-[30%]" />
 			<!-- /Noise -->

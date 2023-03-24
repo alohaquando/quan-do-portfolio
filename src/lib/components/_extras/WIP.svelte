@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Body from '$lib/components/typography/Body.svelte';
 </script>
 

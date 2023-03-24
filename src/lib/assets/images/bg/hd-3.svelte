@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = 'Hd 3';
+        export let alt: string = 'Hd 3';
         // Lazy / eager loading
-        export let eager = undefined;
+        export let eager: boolean = false;
 
         // Metadata
         import {width, height} from "$lib/assets/images/bg/hd-3.avif?meta=width;height"
@@ -23,7 +23,7 @@
           webpSrc,
         }
 
-        let className = undefined;
+        let className: string = '';
         export {className as class};
       </script>
 

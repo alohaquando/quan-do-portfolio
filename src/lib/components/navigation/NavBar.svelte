@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// Imports
 	import NavBlock from '$lib/components/navigation/NavBlock.svelte';
 	import NavLink from '$lib/components/navigation/NavLink.svelte';
@@ -42,10 +42,10 @@
 		}
 	};
 
-	let showNav;
-	let navInteracting = false;
-	let prevY = 0;
-	let showNavShadow;
+	let showNav: boolean;
+	let navInteracting: boolean = false;
+	let prevY: number = 0;
+	let showNavShadow: boolean;
 
 	const handleNavVisibility = throttle(
 		() => {
@@ -57,7 +57,7 @@
 		{ leading: true }
 	);
 
-	$: handleNavVisibility() || $scrollY;
+	$: $scrollY, handleNavVisibility();
 
 	function handleNavInteractStart() {
 		navInteracting = true;

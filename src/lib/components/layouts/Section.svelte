@@ -1,7 +1,7 @@
-<script>
-	let className = undefined;
+<script lang="ts">
+	let className: string = '';
 	export { className as class };
-	export let id = undefined;
+	export let id: string = '';
 	import { inview } from 'svelte-inview';
 	import { sectionInView } from '$lib/data/sectionInView.js';
 	import { beforeNavigate } from '$app/navigation';

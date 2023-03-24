@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// Imports
 	import Body from '$lib/components/typography/Body.svelte';
 	import Title from '$lib/components/typography/Title.svelte';
@@ -28,22 +28,22 @@
 	};
 
 	// Props
-	let className = undefined;
+	let className: string = '';
 	export { className as class };
-	export let title = 'Title';
-	export let href = undefined;
-	export let download = undefined;
-	export let target = undefined;
-	export let tagline = undefined;
-	export let subtitle = undefined;
-	export let illustration = undefined;
-	export let illustrationGroupClass = undefined;
-	export let illustrationClass = undefined;
-	export let illustrationSecondary = undefined;
-	export let illustrationSecondaryClass = undefined;
-	export let bg = undefined;
-	export let secondary = undefined;
-	export let image = undefined;
+	export let title: string = 'Title';
+	export let href: string | undefined = undefined;
+	export let download: string | undefined = undefined;
+	export let target: string | undefined = undefined;
+	export let tagline: string | undefined = undefined;
+	export let subtitle: string | undefined = undefined;
+	export let illustration: object | undefined = undefined;
+	export let illustrationGroupClass: string | undefined = undefined;
+	export let illustrationClass: string | undefined = undefined;
+	export let illustrationSecondary: string | undefined = undefined;
+	export let illustrationSecondaryClass: string | undefined = undefined;
+	export let bg: string | undefined = undefined;
+	export let secondary: object | undefined = undefined;
+	export let image: string | undefined = undefined;
 </script>
 
 <Animate class="flex basis-full">

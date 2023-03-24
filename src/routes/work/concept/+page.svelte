@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import ReaderPage from '$lib/components/layouts/ReaderPage.svelte';
 	import Body from '$lib/components/typography/Body.svelte';
 	import BodyReader from '$lib/components/typography/BodyReader.svelte';

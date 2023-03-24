@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = 'Device grove';
+        export let alt: string = 'Device grove';
         // Lazy / eager loading
-        export let eager = undefined;
+        export let eager: boolean = false;
 
         // Metadata
         import {width, height} from "$lib/assets/images/bg/device-grove.avif?meta=width;height"
@@ -23,7 +23,7 @@
           webpSrc,
         }
 
-        let className = undefined;
+        let className: string = '';
         export {className as class};
       </script>
 

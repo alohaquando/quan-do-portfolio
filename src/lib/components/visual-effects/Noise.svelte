@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import avifSrc from '$lib/assets/images/bg/noise.avif';
 	import webpSrc from '$lib/assets/images/bg/noise.webp';
 
-	let className = undefined;
+	let className: string = '';
 	export { className as class };
 </script>
 

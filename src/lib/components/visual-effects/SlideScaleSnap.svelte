@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// Functional imports
 	import { scrollY, innerHeight, innerWidth, scrollYBottom } from '$lib/data/window.js';
 	import lodash from 'lodash';
@@ -6,27 +6,27 @@
 	import SlideIn from '$lib/components/visual-effects/SlideIn.svelte';
 
 	// Functions
-	function limitRange(number) {
+	function limitRange(number: number) {
 		return Math.min(Math.max(number, 0), 100);
 	}
 
 	// ELEMENT
 	// Element size bindings
-	let element;
-	let elementTop;
-	let elementBottom;
-	let elementPositionCalculated;
+	let element: object;
+	let elementTop: number;
+	let elementBottom: number;
+	let elementPositionCalculated: boolean;
 
 	// Initial scale and constants
-	const initialScale = 80;
-	const remainingScaleRatio = 100 / (100 - initialScale);
-	const initialOffsetY = (100 - initialScale) / 2;
-	const remainingOffsetYRatio = 100 / initialOffsetY;
+	const initialScale: number = 80;
+	const remainingScaleRatio: number = 100 / (100 - initialScale);
+	const initialOffsetY: number = (100 - initialScale) / 2;
+	const remainingOffsetYRatio: number = 100 / initialOffsetY;
 
 	// Scaling variables
-	let distancePercentage;
-	let scalePercentage = `${initialScale}%`;
-	let translatePercentage = `${initialOffsetY}%`;
+	let distancePercentage: number;
+	let scalePercentage: string = `${initialScale}%`;
+	let translatePercentage: string = `${initialOffsetY}%`;
 
 	// Scaling function
 	const scale = throttle(() => {
@@ -52,9 +52,6 @@
 	$: if (elementPositionCalculated || $scrollY) {
 		scale();
 	}
-
-	export let snapDone;
-	$: snapDone = Math.abs($scrollY - elementTop) < 50;
 </script>
 
 <div

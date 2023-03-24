@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	const logo = {
 		iconForeground: {
 			height: `24`,
@@ -17,7 +17,7 @@
 		}
 	};
 
-	let className = undefined;
+	let className: string = '';
 	export { className as class };
 </script>
 

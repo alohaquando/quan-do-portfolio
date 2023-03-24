@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = 'Final version design';
+        export let alt: string = 'Final version design';
         // Lazy / eager loading 
-        export let eager = undefined;
+        export let eager: boolean = false;
 
         // Metadata
         import {width, height} from "$lib/assets/images/extendable-card-component/final-version-design-L.avif?meta=width;height"
@@ -33,7 +33,7 @@
 					}
         };
 
-        let className = undefined;
+        let className: string = '';
         export {className as class};
       </script>
 

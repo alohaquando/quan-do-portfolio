@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
 	import Body from '$lib/components/typography/Body.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
-	export let value;
-	export let options;
-	export let name;
-	export let id;
+	export let value: string;
+	export let options: string = '';
+	export let name: string = '';
+	export let id: string = '';
 </script>
 
 <div class="relative w-fit rounded-full transition hover:bg-gray-400/10 dark:hover:bg-white/10">

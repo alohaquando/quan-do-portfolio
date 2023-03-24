@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// Component imports
 	import BodyLarge from '$lib/components/typography/BodyLarge.svelte';
 	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
@@ -47,20 +47,18 @@
 	};
 
 	// Exports
-	export let title = 'Title';
-	export let subtitle = 'Subtitle';
-	export let demo = undefined;
-	export let bg = '1';
-	export let href = undefined;
-	export let secondaryWorks = undefined;
-
-	let snapDone;
+	export let title: string = 'Title';
+	export let subtitle: string = 'Subtitle';
+	export let demo: string | undefined = undefined;
+	export let bg: string = '1';
+	export let href: string | undefined = undefined;
+	export let secondaryWorks: object | undefined = undefined;
 </script>
 
 <article
 	id={href ? href : title}
 	class="relative">
-	<SlideScaleSnap bind:snapDone>
+	<SlideScaleSnap>
 		<!-- Outer BG -->
 		<div class="pb-safe flex min-h-screen w-full p-4 md:p-6 ">
 			<!--	Card Link	-->
@@ -74,7 +72,7 @@
 					{#if secondaryWorks}
 						<div class="relative z-30 flex min-h-fit grow self-stretch max-lg:order-2">
 							<div
-								class="scrollbar-none absolute top-0 bottom-0 -left-12 -right-12 isolate grow scroll-px-12 gap-6 self-stretch overflow-x-visible px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-1 sm:grid-rows-3 sm:px-0 md:gap-8 lg:grid-cols-3 lg:grid-rows-1">
+								class="scrollbar-none absolute top-0 bottom-0 -left-12 -right-12 isolate grow scroll-px-12 gap-6 self-stretch px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-1 sm:grid-rows-3 sm:px-0 md:gap-8 lg:grid-cols-3 lg:grid-rows-1">
 								{#each Object.values(secondaryWorks) as secondaryWork}
 									<SmallWorkCard
 										{...secondaryWork}

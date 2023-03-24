@@ -1,11 +1,11 @@
 <!--suppress HtmlWrongAttributeValue -->
-<script>
+<script lang="ts">
 	import { colorScheme } from '$lib/data/colorScheme.js';
 
-	let className;
+	let className: string = '';
 	export { className as class };
-	export let imageData = undefined;
-	export let eager = undefined;
+	export let imageData: object;
+	export let eager: boolean;
 </script>
 
 <picture>

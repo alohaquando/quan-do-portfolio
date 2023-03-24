@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Body from '$lib/components/typography/Body.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	import Button from '$lib/components/controls/Button.svelte';
@@ -74,9 +74,15 @@
 		dark: { value: 'dark', title: 'Dark theme' },
 		system: { value: 'system', title: 'System theme' }
 	};
+	
+	let root: any;
 
+	onMount(() => {
+		root = document.body.parentNode;
+	})
+	
 	function scrollTop() {
-		document.body.parentNode.scrollTo({
+		root.scrollTo({
 			top: 0,
 			behavior: 'smooth'
 		});
@@ -84,6 +90,7 @@
 
 	import { colorSchemePreference } from '$lib/data/colorScheme.js';
 	import Logo from '$lib/components/iconography/Logo.svelte';
+	import { onMount } from "svelte";
 </script>
 
 <footer>

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Landing from '$lib/sections/Landing.svelte';
 	import Work from '$lib/sections/Work.svelte';
 	import About from '$lib/sections/About.svelte';

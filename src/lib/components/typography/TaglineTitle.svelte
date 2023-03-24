@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Tagline from '$lib/components/typography/Tagline.svelte';
 	import Title from '$lib/components/typography/Title.svelte';
 

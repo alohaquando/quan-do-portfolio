@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import Animate from '$lib/components/visual-effects/SlideIn.svelte';
 
-	let className = undefined;
+	let className: string = '';
 	export { className as class };
 </script>
 

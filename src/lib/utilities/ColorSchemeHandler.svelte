@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
 	import { colorScheme, colorSchemePreference, readerMode } from '$lib/data/colorScheme.js';
 	import { colorSchemeColors } from '$lib/data/Colors.js';
 	import { browser } from '$app/environment';
 
-	let root;
+	let root: any;
 
 	function setColorScheme() {
 		if ($colorSchemePreference === 'system') {
@@ -37,13 +37,13 @@
 	}
 
 	if (browser) {
-		root = document.getElementsByTagName('html')[0];
+		root = document.getElementsByTagName('html')[0] as HTMLElement;
 		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setColorScheme);
 	}
 
-	$: setColorScheme() || $colorSchemePreference;
+	$: $colorSchemePreference, setColorScheme();
 
-	$: setTailwindColorScheme() || setBG() || $colorScheme;
+	$: $colorScheme, setTailwindColorScheme(), setBG();
 
-	$: setBG() || $readerMode;
+	$: $readerMode, setBG();
 </script>

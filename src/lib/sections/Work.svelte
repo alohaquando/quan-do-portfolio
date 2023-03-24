@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Section from '$lib/components/layouts/Section.svelte';
 	import LargeWorkCard from '$lib/components/cards/LargeWorkCard.svelte';
 

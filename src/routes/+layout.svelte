@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// Import CSS
 	import '../app.postcss';
 	import NavigationBar from '$lib/components/navigation/NavBar.svelte';

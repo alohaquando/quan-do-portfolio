@@ -1,7 +1,7 @@
-<script>
-	let p = { x: 0, y: 0 };
-	let pointerX;
-	let pointerY;
+<script lang="ts">
+	let p: { x: number; y: number } = { x: 0, y: 0 };
+	let pointerX: string;
+	let pointerY: string;
 
 	function trackPointer(event) {
 		const rect = event.currentTarget.getBoundingClientRect();
@@ -16,7 +16,7 @@
 
 	import { colorfulGradients } from '$lib/data/Colors.js';
 
-	let className = undefined;
+	let className: string = '';
 	export { className as class };
 </script>
 

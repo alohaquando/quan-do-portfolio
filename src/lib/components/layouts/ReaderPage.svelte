@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import BodyLarge from '$lib/components/typography/BodyLarge.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	import A from '$lib/components/navigation/A.svelte';

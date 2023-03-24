@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import ReaderPage from '$lib/components/layouts/ReaderPage.svelte';
 	import IMGHero from '$lib/assets/images/bg/demo-people-select-modal.svelte';
 
