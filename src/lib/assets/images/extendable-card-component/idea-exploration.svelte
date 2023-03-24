@@ -7,19 +7,19 @@
         export let eager: boolean = false;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/extendable-card-component/idea-exploration-L.avif?meta=width;height"
+        import {width, height} from "$lib/assets/images/extendable-card-component/idea-exploration-L.avif?meta=width;height&imagetools"
 
         // Light image
         import avifSrcLight
-          from "$lib/assets/images/extendable-card-component/idea-exploration-L.avif?width=1024&format=avif&srcset";
+          from "$lib/assets/images/extendable-card-component/idea-exploration-L.avif?width=1024&format=avif&srcset&imagetools";
         import webpSrcLight
-          from "$lib/assets/images/extendable-card-component/idea-exploration-L.avif?width=1024&format=webp&srcset";
+          from "$lib/assets/images/extendable-card-component/idea-exploration-L.avif?width=1024&format=webp&srcset&imagetools";
 
         // Dark image
-        import avifSrcDark from "$lib/assets/images/extendable-card-component/idea-exploration-D.avif?width=1024&format=avif&srcset";
-        import webpSrcDark from "$lib/assets/images/extendable-card-component/idea-exploration-D.avif?width=1024&format=webp&srcset";
+        import avifSrcDark from "$lib/assets/images/extendable-card-component/idea-exploration-D.avif?width=1024&format=avif&srcset&imagetools";
+        import webpSrcDark from "$lib/assets/images/extendable-card-component/idea-exploration-D.avif?width=1024&format=webp&srcset&imagetools";
 
-        const imageData = {
+        const imageData: { webpSrc: { light: any; dark: any }; alt: string; width: any; avifSrc: { light: any; dark: any }; height: any } = {
           alt,
           width,
           height,

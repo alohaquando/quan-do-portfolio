@@ -4,7 +4,7 @@
 	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 	import Animate from '$lib/components/visual-effects/SlideIn.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
-	import { solidColors } from '$lib/data/Colors.js';
+	import { solidColors } from '$lib/data/Colors';
 
 	// Images imports
 	import DemoExtendable from '$lib/assets/images/bg/demo-extendable-card-component.svelte';
@@ -15,7 +15,10 @@
 	import DemoTask from '$lib/assets/images/bg/demo-task-calendar-dashboard.svelte';
 	import Noise from '$lib/components/visual-effects/Noise.svelte';
 
-	const demoImg = {
+	interface Img {
+		[key: string]: any
+	}
+	const demoImg: Img = {
 		extendable_card_component: DemoExtendable,
 		people_select_modal: DemoPeople,
 		create_new_flow: DemoCreate,
@@ -29,7 +32,7 @@
 	export let title: string = 'Title';
 	export let href: string = '/';
 	export let color: string = 'blue';
-	export let demo: object;
+	export let demo: string;
 </script>
 
 <Animate

@@ -4,7 +4,7 @@
 
 	let className: string = '';
 	export { className as class };
-	export let imageData: object;
+	export let imageData: { webpSrc: { light: any; dark: any }; alt: string; width: any; avifSrc: { light: any; dark: any }; height: any };
 	export let eager: boolean;
 </script>
 

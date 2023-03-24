@@ -13,7 +13,7 @@
 
 <section
 	use:inview={{ rootMargin: '-50%' }}
-	on:enter={() => {
+	on:inview_enter={() => {
 		sectionInView.set(id);
 	}}
 	{id}

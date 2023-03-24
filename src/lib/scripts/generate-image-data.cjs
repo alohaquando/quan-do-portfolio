@@ -43,17 +43,17 @@ async function generateImageDataFiles() {
         export let eager: boolean = false;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?meta=width;height"
+        import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?meta=width;height&imagetools"
 
         // Light image
         import avifSrcLight
-          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=1024&format=avif&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=1024&format=avif&srcset&imagetools";
         import webpSrcLight
-          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=1024&format=webp&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=1024&format=webp&srcset&imagetools";
 
         // Dark image
-        import avifSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=1024&format=avif&srcset";
-        import webpSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=1024&format=webp&srcset";
+        import avifSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=1024&format=avif&srcset&imagetools";
+        import webpSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=1024&format=webp&srcset&imagetools";
 
         const imageData = {
           alt,
@@ -112,13 +112,13 @@ async function generateImageDataFiles() {
         export let eager: boolean = false;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?meta=width;height"
+        import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?meta=width;height&imagetools"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=${sizes}&format=avif${quality ? `&quality=${quality}` : ''}&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=${sizes}&format=avif${quality ? `&quality=${quality}` : ''}&srcset&imagetools";
         import webpSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=${sizes}&format=webp${quality ? `&quality=${quality}` : ''}&srcset";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=${sizes}&format=webp${quality ? `&quality=${quality}` : ''}&srcset&imagetools";
 
         const imageData = {
           alt,

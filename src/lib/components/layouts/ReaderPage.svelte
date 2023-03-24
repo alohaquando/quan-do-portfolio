@@ -7,7 +7,7 @@
 
 	// Color and visual
 	import { scrollY, innerHeight } from '$lib/data/window.js';
-	import { solidColors, readerGradients, solidColorsHex } from '$lib/data/Colors.js';
+	import { solidColors, readerGradients, solidColorsHex } from '$lib/data/Colors';
 	import { colorScheme, readerMode } from '$lib/data/colorScheme.js';
 	import Noise from '$lib/components/visual-effects/Noise.svelte';
 	import { onMount } from 'svelte';

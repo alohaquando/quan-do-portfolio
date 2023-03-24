@@ -8,7 +8,16 @@
 	let className: string = '';
 	export { className as class };
 
-	const contactData = {
+	interface Contact {
+		[key: string]: {
+			subtitle: string;
+			icon: string;
+			href: string;
+			title: string;
+		}
+	}
+
+	const contactData: Contact = {
 		email: {
 			title: 'Email',
 			subtitle: 'work@quanhdo.com',

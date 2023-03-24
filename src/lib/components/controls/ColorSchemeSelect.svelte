@@ -2,9 +2,13 @@
 	import Body from '$lib/components/typography/Body.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	export let value: string;
-	export let options: string = '';
 	export let name: string = '';
 	export let id: string = '';
+	const options = {
+		light: { value: 'light', title: 'Light theme' },
+		dark: { value: 'dark', title: 'Dark theme' },
+		system: { value: 'system', title: 'System theme' }
+	};
 </script>
 
 <div class="relative w-fit rounded-full transition hover:bg-gray-400/10 dark:hover:bg-white/10">

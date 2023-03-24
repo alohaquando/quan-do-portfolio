@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { colorScheme, colorSchemePreference, readerMode } from '$lib/data/colorScheme.js';
-	import { colorSchemeColors } from '$lib/data/Colors.js';
+	import { colorSchemeColors } from '$lib/data/Colors';
 	import { browser } from '$app/environment';
 
 	let root: any;

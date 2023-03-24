@@ -7,13 +7,13 @@
         export let eager: boolean = false;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/bg/grove.avif?meta=width;height"
+        import {width, height} from "$lib/assets/images/bg/grove.avif?meta=width;height&imagetools"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/grove.avif?width=720;1024&format=avif&srcset";
+          from "$lib/assets/images/bg/grove.avif?width=720;1024&format=avif&srcset&imagetools";
         import webpSrc
-          from "$lib/assets/images/bg/grove.avif?width=720;1024&format=webp&srcset";
+          from "$lib/assets/images/bg/grove.avif?width=720;1024&format=webp&srcset&imagetools";
 
         const imageData = {
           alt,

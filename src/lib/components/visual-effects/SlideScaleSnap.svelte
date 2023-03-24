@@ -12,7 +12,7 @@
 
 	// ELEMENT
 	// Element size bindings
-	let element: object;
+	let element: any;
 	let elementTop: number;
 	let elementBottom: number;
 	let elementPositionCalculated: boolean;

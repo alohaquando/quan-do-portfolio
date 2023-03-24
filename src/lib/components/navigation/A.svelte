@@ -8,10 +8,9 @@
 	export let ariaLabel: string = `Link to ${generateAriaLabel()}`;
 
 	function generateAriaLabel() {
-		const hrefWords = href.match(/[a-zA-Z]+/g);
 		let label = '';
-		if (hrefWords) {
-			href.match(/[a-zA-Z]+/g).forEach((word) => {
+		if (href.match(/[a-zA-Z]+/g)) {
+			href.match(/[a-zA-Z]+/g)!.forEach((word) => {
 				label += `${word} `;
 			});
 		}

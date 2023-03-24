@@ -1,7 +1,18 @@
 <script lang="ts">
 	import { colorScheme } from '$lib/data/colorScheme.js';
 
-	const illustrations = {
+	interface Illustration {
+		[key: string]: {
+			width: number,
+			height: number,
+			path: any | {
+				light: string;
+				dark: string;
+			}
+		}
+	}
+
+	const illustrations: Illustration = {
 		experience: {
 			width: 295,
 			height: 195,
@@ -38,7 +49,7 @@
 
 	let className: string = '';
 	export { className as class };
-	export let name = undefined;
+	export let name: string | undefined = undefined;
 </script>
 
 {#if name}

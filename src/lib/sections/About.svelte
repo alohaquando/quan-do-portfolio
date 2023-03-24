@@ -4,7 +4,7 @@
 	import AboutCard from '$lib/components/cards/AboutCard.svelte';
 	import Resume from '$lib/assets/files/Quan-Hoang-Do-Resume.pdf'
 
-	const aboutData = {
+	const aboutData: { resume: { image: string; href: any; title: string; class: string }; career: { illustrationGroupClass: string; subtitle: string; illustration: string; title: string; class: string }; specialty: { illustrationGroupClass: string; illustrationSecondary: string; subtitle: string; illustrationSecondaryClass: string; tagline: string; illustration: string; illustrationClass: string; title: string; class: string }; languages: { secondary: { tagline: string; title: string }; tagline: string; title: string; class: string }; me: { bg: string; title: string; class: string }; experience: { illustrationGroupClass: string; subtitle: string; illustration: string; title: string; class: string } } = {
 		me: {
 			title: 'Quân Hoàng Đỗ',
 			class: 'md:min-h-[30rem] min-h-[20rem] items-end',

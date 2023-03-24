@@ -10,77 +10,92 @@
 		landing: {
 			title: 'Quan Do',
 			href: '/#landing',
-			ariaLabel: 'Link to Home page'
+			ariaLabel: 'Link to Home page',
+			subLinks: null
 		},
 		work: {
 			title: 'Work',
 			href: '/#work',
+			ariaLabel: 'Link to Work section',
 			subLinks: {
 				grove: {
 					title: 'GroveHR',
-					href: '/work/grove'
+					href: '/work/grove',
+					target: null,
+					ariaLabel: 'Link to GroveHR Case Study page',
+					subLinks: null
 				},
 				ux_projects: {
 					title: 'Case studies',
-					href: '/#Case studies'
+					href: '/#Case studies',
+					target: null,
+					ariaLabel: 'Link to UX Project section',
+					subLinks: null
 				},
 				concept: {
 					title: 'Concept D.S.',
-					href: '/work/concept'
+					href: '/work/concept',
+					target: null,
+					ariaLabel: 'Link to Concept Design System Case Study page',
+					subLinks: null
 				},
 				external_projects: {
 					title: 'External projects',
-					href: '/#External projects'
+					href: '/#External projects',
+					target: null,
+					ariaLabel: 'Link to External Project section',
+					subLinks: null
 				}
 			}
 		},
 		about: {
 			title: 'About',
-			href: '/#about'
+			href: '/#about',
+			ariaLabel: 'Link to About section',
+			subLinks: null
 		},
 		contact: {
 			title: 'Contact',
 			href: '/#contact',
+			ariaLabel: 'Link to Contact section',
 			subLinks: {
 				email: {
 					title: 'Email',
 					href: 'mailto:work@quanhoangdo.com',
 					target: '_blank',
-					ariaLabel: 'Link to emailing work@quanhdo.com'
+					ariaLabel: 'Link to emailing work@quanhdo.com',
+					subLinks: null
 				},
 				github: {
 					title: 'GitHub',
 					href: 'https://github.com/alohaquando',
 					target: '_blank',
-					ariaLabel: `Link to Quân's GitHub`
+					ariaLabel: `Link to Quân's GitHub`,
+					subLinks: null
 				},
 				linkedin: {
 					title: 'LinkedIn',
 					href: 'https://www.linkedin.com/in/quanhoangdo',
 					target: '_blank',
-					ariaLabel: `Link to Quân's LinkedIn`
+					ariaLabel: `Link to Quân's LinkedIn`,
+					subLinks: null
 				}
 			}
 		},
 		resume: {
 			title: 'Resume',
 			href: '#',
-			ariaLabel: `Link to download resume`
+			ariaLabel: `Link to download resume`,
+			subLinks: null
 		}
 	};
 
-	const colorSchemeOptions = {
-		light: { value: 'light', title: 'Light theme' },
-		dark: { value: 'dark', title: 'Dark theme' },
-		system: { value: 'system', title: 'System theme' }
-	};
-	
 	let root: any;
 
 	onMount(() => {
 		root = document.body.parentNode;
-	})
-	
+	});
+
 	function scrollTop() {
 		root.scrollTo({
 			top: 0,
@@ -90,7 +105,7 @@
 
 	import { colorSchemePreference } from '$lib/data/colorScheme.js';
 	import Logo from '$lib/components/iconography/Logo.svelte';
-	import { onMount } from "svelte";
+	import { onMount } from 'svelte';
 </script>
 
 <footer>
@@ -120,8 +135,7 @@
 					<ColorSchemeSelect
 						bind:value={$colorSchemePreference}
 						name="colorSchemePreference"
-						id="colorSchemePreference"
-						options={colorSchemeOptions} />
+						id="colorSchemePreference" />
 					<!-- /Change colorScheme -->
 					<!-- Back to top -->
 					<Button on:click={() => scrollTop()}>

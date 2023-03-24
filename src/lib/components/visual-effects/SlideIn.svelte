@@ -19,7 +19,7 @@
 
 <div
 	use:inview={{ rootMargin: rootMargin, unobserveOnEnter: true }}
-	on:enter={() => {
+	on:inview_enter={() => {
 		isInView = true;
 	}}
 	class="{className} relative">

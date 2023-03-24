@@ -17,25 +17,31 @@
 	import BG4 from '$lib/assets/images/bg/hd-4.svelte';
 	import DemoGrove from '$lib/assets/images/bg/device-grove.svelte';
 	import DemoConcept from '$lib/assets/images/bg/device-concept.svelte';
-	const bgImg = {
+	interface ImgAndClass {
+		[key: string]: {
+			img: any;
+			class: string;
+		};
+	}
+	const bgImg: ImgAndClass= {
 		1: {
-			bg: BG1,
-			focus: 'object-left-top'
+			img: BG1,
+			class: 'object-left-top'
 		},
 		2: {
-			bg: BG2,
-			focus: 'object-right-top'
+			img: BG2,
+			class: 'object-right-top'
 		},
 		3: {
-			bg: BG3,
-			focus: 'object-left-top'
+			img: BG3,
+			class: 'object-left-top'
 		},
 		4: {
-			bg: BG4,
-			focus: 'object-center'
+			img: BG4,
+			class: 'object-center'
 		}
 	};
-	const demoImg = {
+	const demoImg: ImgAndClass = {
 		grove: {
 			img: DemoGrove,
 			class: 'top-0 -bottom-1/4 left-0 right-0 md:-right-20 max-md:flex max-md:items-start [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top'
@@ -118,9 +124,9 @@
 					<!-- Background Illustration -->
 					<div class="pointer-events-none absolute top-0 left-0 right-0 bottom-0 -z-10 select-none overflow-clip rounded-[2.5rem]">
 						<svelte:component
-							this={bgImg[bg].bg}
+							this={bgImg[bg].img}
 							eager={bg === '1' ? true : null}
-							class="h-full w-full object-cover {bgImg[bg].focus}" />
+							class="h-full w-full object-cover {bgImg[bg].class}" />
 					</div>
 					<!-- /Background Illustration -->
 
