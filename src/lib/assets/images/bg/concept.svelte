@@ -2,9 +2,9 @@
 	import Image from '$lib/components/media/Image.svelte';
 
 	// Alt text
-	export let alt: string = 'Concept';
+	export let alt = 'Concept';
 	// Lazy / eager loading
-	export let eager: boolean = false;
+	export let eager = false;
 
 	// Metadata
 	import { width, height } from '$lib/assets/images/bg/concept.avif?meta=width;height&imagetools';
@@ -21,7 +21,7 @@
 		webpSrc
 	};
 
-	let className: string = '';
+	let className = '';
 	export { className as class };
 </script>
 

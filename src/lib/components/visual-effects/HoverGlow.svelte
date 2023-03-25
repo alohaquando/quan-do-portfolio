@@ -3,10 +3,13 @@
 	let pointerX: string;
 	let pointerY: string;
 
-	function trackPointer(event: any) {
-		const rect = event.currentTarget.getBoundingClientRect();
-		p.x = Math.round(event.clientX - rect.x);
-		p.y = Math.round(event.clientY - rect.y);
+	function trackPointer(event: MouseEvent | TouchEvent) {
+		const rect = event.currentTarget as HTMLElement;
+		const rectPos = rect.getBoundingClientRect();
+		if ('clientX' in event && 'clientY' in event) {
+			p.x = Math.round(event.clientX - rectPos.x);
+			p.y = Math.round(event.clientY - rectPos.y);
+		}
 	}
 
 	$: {
@@ -16,7 +19,7 @@
 
 	import { colorfulGradients } from '$lib/data/Colors';
 
-	let className: string = '';
+	let className = '';
 	export { className as class };
 </script>
 

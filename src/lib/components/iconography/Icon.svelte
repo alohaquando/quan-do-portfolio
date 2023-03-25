@@ -3,7 +3,7 @@
 		[key: string]: {
 			path: string;
 			type: string;
-		}
+		};
 	}
 
 	const icons: Icon = {
@@ -69,11 +69,11 @@
 		}
 	};
 
-	let className: string = '';
+	let className = '';
 	export { className as class };
 	export let name: string;
-	export let stroke_width: string = '1.5';
-	export let size: string = 'w-6 h-6';
+	export let stroke_width = '1.5';
+	export let size = 'w-6 h-6';
 </script>
 
 <svg

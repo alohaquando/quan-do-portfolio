@@ -12,21 +12,21 @@
 
 	// ELEMENT
 	// Element size bindings
-	let element: any;
+	let element: HTMLElement;
 	let elementTop: number;
 	let elementBottom: number;
 	let elementPositionCalculated: boolean;
 
 	// Initial scale and constants
-	const initialScale: number = 80;
+	const initialScale = 80;
 	const remainingScaleRatio: number = 100 / (100 - initialScale);
 	const initialOffsetY: number = (100 - initialScale) / 2;
 	const remainingOffsetYRatio: number = 100 / initialOffsetY;
 
 	// Scaling variables
 	let distancePercentage: number;
-	let scalePercentage: string = `${initialScale}%`;
-	let translatePercentage: string = `${initialOffsetY}%`;
+	let scalePercentage = `${initialScale}%`;
+	let translatePercentage = `${initialOffsetY}%`;
 
 	// Scaling function
 	const scale = throttle(() => {

@@ -90,10 +90,10 @@
 		}
 	};
 
-	let root: any;
+	let root: HTMLElement;
 
 	onMount(() => {
-		root = document.body.parentNode;
+		root = document.body.parentNode as HTMLElement;
 	});
 
 	function scrollTop() {

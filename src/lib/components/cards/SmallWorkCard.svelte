@@ -14,9 +14,10 @@
 	import DemoHCMC from '$lib/assets/images/bg/demo-hcmc-bars.svelte';
 	import DemoTask from '$lib/assets/images/bg/demo-task-calendar-dashboard.svelte';
 	import Noise from '$lib/components/visual-effects/Noise.svelte';
+	import type { SvelteComponent } from 'svelte';
 
 	interface Img {
-		[key: string]: any
+		[key: string]: typeof SvelteComponent;
 	}
 	const demoImg: Img = {
 		extendable_card_component: DemoExtendable,
@@ -27,11 +28,11 @@
 		task_calendar_dashboard: DemoTask
 	};
 
-	let className: string = '';
+	let className = '';
 	export { className as class };
-	export let title: string = 'Title';
-	export let href: string = '/';
-	export let color: string = 'blue';
+	export let title = 'Title';
+	export let href = '/';
+	export let color = 'blue';
 	export let demo: string;
 </script>
 

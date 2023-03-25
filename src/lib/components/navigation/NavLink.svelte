@@ -2,13 +2,13 @@
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 
-	export let href: string = '/#';
-	export let title: string = '';
-	export let icon:string = 'home';
-	export let ariaLabel: string = `Link to ${title} section of Home page`;
-	export let active: boolean = false;
+	export let href = '/#';
+	export let title = '';
+	export let icon = 'home';
+	export let ariaLabel = `Link to ${title} section of Home page`;
+	export let active = false;
 
-	let className: string = '';
+	let className = '';
 	export { className as class };
 </script>
 

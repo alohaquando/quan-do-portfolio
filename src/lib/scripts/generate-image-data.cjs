@@ -84,22 +84,22 @@ async function generateImageDataFiles() {
 			let imageDataName = imageName + '.avif';
 			let imageAlt = imageName.replace(/-/g, ' ');
 			let quality = '';
-			let sizes = '720;1024'
+			let sizes = '720;1024';
 			if (imageName.match(/hd-/g)) {
-				quality = '95'
-				sizes = '1024;1920;2500'
+				quality = '95';
+				sizes = '1024;1920;2500';
 			}
 			if (imageName.match(/demo-/g)) {
-				quality='90'
-				sizes = '480'
+				quality = '90';
+				sizes = '480';
 			}
 			if (imageName.match(/device-/g)) {
-				quality='90'
-				sizes = '720;1024'
+				quality = '90';
+				sizes = '720;1024';
 			}
 			if (imageName.match(/quan-/g)) {
-				quality='95'
-				sizes = '720;1024'
+				quality = '95';
+				sizes = '720;1024';
 			}
 			imageAlt = imageAlt.charAt(0).toUpperCase() + imageAlt.slice(1);
 

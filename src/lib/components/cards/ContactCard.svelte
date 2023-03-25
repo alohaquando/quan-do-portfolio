@@ -5,7 +5,7 @@
 	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 	import Animate from '$lib/components/visual-effects/SlideIn.svelte';
 	export let data = 'email';
-	let className: string = '';
+	let className = '';
 	export { className as class };
 
 	interface Contact {
@@ -14,7 +14,7 @@
 			icon: string;
 			href: string;
 			title: string;
-		}
+		};
 	}
 
 	const contactData: Contact = {

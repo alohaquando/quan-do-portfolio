@@ -1,16 +1,17 @@
 <script lang="ts">
 	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 
-	let className: string = '';
+	let className = '';
 	export { className as class };
-	export let href: string = '/#';
+	export let href = '/#';
 	export let target: string | undefined = undefined;
-	export let ariaLabel: string = `Link to ${generateAriaLabel()}`;
+	export let ariaLabel = `Link to ${generateAriaLabel()}`;
 
 	function generateAriaLabel() {
 		let label = '';
-		if (href.match(/[a-zA-Z]+/g)) {
-			href.match(/[a-zA-Z]+/g)!.forEach((word) => {
+		const matches = href.match(/[a-zA-Z]+/g);
+		if (matches) {
+			matches.forEach((word) => {
 				label += `${word} `;
 			});
 		}

@@ -1,7 +1,7 @@
 <script lang="ts">
-	let className: string = '';
+	let className = '';
 	export { className as class };
-	export let id: string = '';
+	export let id = '';
 	import { inview } from 'svelte-inview';
 	import { sectionInView } from '$lib/data/sectionInView.js';
 	import { beforeNavigate } from '$app/navigation';

@@ -2,18 +2,26 @@
 <script lang="ts">
 	import { colorScheme } from '$lib/data/colorScheme.js';
 
-	let className: string = '';
+	interface ImageData {
+		webpSrc: { light: string; dark: string };
+		avifSrc: { light: string; dark: string };
+		alt: string;
+		width: number;
+		height: number;
+	}
+
+	let className = '';
 	export { className as class };
-	export let imageData: { webpSrc: { light: any; dark: any }; alt: string; width: any; avifSrc: { light: any; dark: any }; height: any };
+	export let imageData: ImageData;
 	export let eager: boolean;
 </script>
 
 <picture>
 	<source
-		srcset={imageData.avifSrc.light ? ($colorScheme === 'light' ? imageData.avifSrc.light : imageData.avifSrc.dark) : imageData.avifSrc}
+		srcset={imageData.avifSrc.light && imageData.avifSrc.dark ? ($colorScheme === 'light' ? imageData.avifSrc.light : imageData.avifSrc.dark) : undefined}
 		type="image/avif" />
 	<source
-		srcset={imageData.webpSrc.light ? ($colorScheme === 'light' ? imageData.webpSrc.light : imageData.webpSrc.dark) : imageData.webpSrc}
+		srcset={imageData.webpSrc.light && imageData.webpSrc.dark ? ($colorScheme === 'light' ? imageData.webpSrc.light : imageData.webpSrc.dark) : undefined}
 		type="image/webp" />
 	<img
 		src={undefined}

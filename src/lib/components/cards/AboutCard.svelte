@@ -13,7 +13,7 @@
 	import profilePicture from '$lib/assets/images/bg/quan.svelte';
 	interface ImgAndClass {
 		[key: string]: {
-			img: any;
+			img: typeof SvelteComponent;
 			class: string;
 		};
 	}
@@ -27,6 +27,7 @@
 
 	// Image
 	import ResumeImg from '$lib/assets/images/bg/resume.svelte';
+	import type { SvelteComponent } from 'svelte';
 	const images: ImgAndClass = {
 		resume: {
 			img: ResumeImg,
@@ -35,9 +36,9 @@
 	};
 
 	// Props
-	let className: string = '';
+	let className = '';
 	export { className as class };
-	export let title: string = 'Title';
+	export let title = 'Title';
 	export let href: string | undefined = undefined;
 	export let download: string | undefined = undefined;
 	export let target: string | undefined = undefined;
@@ -49,7 +50,7 @@
 	export let illustrationSecondary: string | undefined = undefined;
 	export let illustrationSecondaryClass: string | undefined = undefined;
 	export let bg: string | undefined = undefined;
-	export let secondary:  { tagline: string; title: string } | undefined = undefined;
+	export let secondary: { tagline: string; title: string } | undefined = undefined;
 	export let image: string | undefined = undefined;
 </script>
 

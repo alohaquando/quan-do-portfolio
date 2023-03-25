@@ -2,8 +2,8 @@
 	import Body from '$lib/components/typography/Body.svelte';
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	export let value: string;
-	export let name: string = '';
-	export let id: string = '';
+	export let name = '';
+	export let id = '';
 	const options = {
 		light: { value: 'light', title: 'Light theme' },
 		dark: { value: 'dark', title: 'Dark theme' },

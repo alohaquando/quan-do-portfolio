@@ -1,5 +1,5 @@
 interface ReaderGradients {
-		[key: string]: string;
+	[key: string]: string;
 }
 
 export const readerGradients: ReaderGradients = {
@@ -18,7 +18,6 @@ export const solidColors: SolidColors = {
 	green: 'bg-green-200 dark:bg-emerald-900',
 	monochrome: 'bg-white dark:bg-zinc-800'
 };
-
 
 interface SolidColorsHex {
 	light: {

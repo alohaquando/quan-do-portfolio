@@ -1,15 +1,18 @@
 <script lang="ts">
 	import { colorScheme } from '$lib/data/colorScheme.js';
 
+	interface IllustrationPath {
+		[key: string]: string;
+		light: string;
+		dark: string;
+	}
+
 	interface Illustration {
 		[key: string]: {
-			width: number,
-			height: number,
-			path: any | {
-				light: string;
-				dark: string;
-			}
-		}
+			width: number;
+			height: number;
+			path: IllustrationPath;
+		};
 	}
 
 	const illustrations: Illustration = {
@@ -47,9 +50,9 @@
 		}
 	};
 
-	let className: string = '';
+	let className = '';
 	export { className as class };
-	export let name: string | undefined = undefined;
+	export let name: keyof typeof illustrations;
 </script>
 
 {#if name}

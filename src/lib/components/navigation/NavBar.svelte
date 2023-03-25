@@ -43,8 +43,8 @@
 	};
 
 	let showNav: boolean;
-	let navInteracting: boolean = false;
-	let prevY: number = 0;
+	let navInteracting = false;
+	let prevY = 0;
 	let showNavShadow: boolean;
 
 	const handleNavVisibility = throttle(

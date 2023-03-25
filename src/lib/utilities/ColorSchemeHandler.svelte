@@ -3,7 +3,7 @@
 	import { colorSchemeColors } from '$lib/data/Colors';
 	import { browser } from '$app/environment';
 
-	let root: any;
+	let root: HTMLElement;
 
 	function setColorScheme() {
 		if ($colorSchemePreference === 'system') {

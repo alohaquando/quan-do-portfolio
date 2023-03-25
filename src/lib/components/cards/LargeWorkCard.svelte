@@ -17,13 +17,14 @@
 	import BG4 from '$lib/assets/images/bg/hd-4.svelte';
 	import DemoGrove from '$lib/assets/images/bg/device-grove.svelte';
 	import DemoConcept from '$lib/assets/images/bg/device-concept.svelte';
+	import type { SvelteComponent } from 'svelte';
 	interface ImgAndClass {
 		[key: string]: {
-			img: any;
+			img: typeof SvelteComponent;
 			class: string;
 		};
 	}
-	const bgImg: ImgAndClass= {
+	const bgImg: ImgAndClass = {
 		1: {
 			img: BG1,
 			class: 'object-left-top'
@@ -53,10 +54,10 @@
 	};
 
 	// Exports
-	export let title: string = 'Title';
-	export let subtitle: string = 'Subtitle';
+	export let title = 'Title';
+	export let subtitle = 'Subtitle';
 	export let demo: string | undefined = undefined;
-	export let bg: string = '1';
+	export let bg = '1';
 	export let href: string | undefined = undefined;
 	export let secondaryWorks: object | undefined = undefined;
 </script>

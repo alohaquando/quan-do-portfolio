@@ -1,30 +1,31 @@
 <script lang="ts">
-        import Image from "$lib/components/media/Image.svelte";
+	import Image from '$lib/components/media/Image.svelte';
 
-        // Alt text
-        export let alt: string = 'Demo hcmc bars';
-        // Lazy / eager loading
-        export let eager: boolean = false;
+	// Alt text
+	export let alt = 'Demo hcmc bars';
+	// Lazy / eager loading
+	export let eager = false;
 
-        // Metadata
-        import {width, height} from "$lib/assets/images/bg/demo-hcmc-bars.avif?meta=width;height&imagetools"
+	// Metadata
+	import { width, height } from '$lib/assets/images/bg/demo-hcmc-bars.avif?meta=width;height&imagetools';
 
-        // Image
-        import avifSrc
-          from "$lib/assets/images/bg/demo-hcmc-bars.avif?width=480&format=avif&quality=90&srcset&imagetools";
-        import webpSrc
-          from "$lib/assets/images/bg/demo-hcmc-bars.avif?width=480&format=webp&quality=90&srcset&imagetools";
+	// Image
+	import avifSrc from '$lib/assets/images/bg/demo-hcmc-bars.avif?width=480&format=avif&quality=90&srcset&imagetools';
+	import webpSrc from '$lib/assets/images/bg/demo-hcmc-bars.avif?width=480&format=webp&quality=90&srcset&imagetools';
 
-        const imageData = {
-          alt,
-          width,
-          height,
-          avifSrc,
-          webpSrc,
-        }
+	const imageData = {
+		alt,
+		width,
+		height,
+		avifSrc,
+		webpSrc
+	};
 
-        let className: string = '';
-        export {className as class};
-      </script>
+	let className = '';
+	export { className as class };
+</script>
 
-      <Image {imageData} {eager} class={className}/>
+<Image
+	{imageData}
+	{eager}
+	class={className} />
