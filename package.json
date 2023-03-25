@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "vite dev -- --open --host",
 		"build": "vite build",
+		"build-and-publish": "vite build && wrangler pages publish --branch=main .svelte-kit/cloudflare --project-name \"quan-do-portfolio\"",
 		"preview": "vite preview --host",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

@@ -3,8 +3,8 @@
 	import { colorScheme } from '$lib/data/colorScheme.js';
 
 	interface ImageData {
-		webpSrc: { light: string; dark: string };
-		avifSrc: { light: string; dark: string };
+		webpSrc: string | { light: string; dark: string };
+		avifSrc: string | { light: string; dark: string };
 		alt: string;
 		width: number;
 		height: number;
@@ -18,10 +18,10 @@
 
 <picture>
 	<source
-		srcset={imageData.avifSrc.light && imageData.avifSrc.dark ? ($colorScheme === 'light' ? imageData.avifSrc.light : imageData.avifSrc.dark) : undefined}
+		srcset={typeof imageData.avifSrc === 'object' ? ($colorScheme === 'light' ? imageData.avifSrc.light : imageData.avifSrc.dark) : imageData.avifSrc || undefined}
 		type="image/avif" />
 	<source
-		srcset={imageData.webpSrc.light && imageData.webpSrc.dark ? ($colorScheme === 'light' ? imageData.webpSrc.light : imageData.webpSrc.dark) : undefined}
+		srcset={typeof imageData.webpSrc === 'object' ? ($colorScheme === 'light' ? imageData.webpSrc.light : imageData.webpSrc.dark) : imageData.webpSrc || undefined}
 		type="image/webp" />
 	<img
 		src={undefined}
@@ -29,5 +29,5 @@
 		width={imageData.width}
 		height={imageData.height}
 		loading={eager ? 'eager' : 'lazy'}
-		class="{className} {imageData.avifSrc.light || imageData.webpSrc.light ? 'rounded-2xl md:mx-auto md:max-w-screen-sm' : ''}" />
+		class="{className} {typeof imageData.avifSrc === 'object' ? 'rounded-2xl md:mx-auto md:max-w-screen-sm' : ''}" />
 </picture>
