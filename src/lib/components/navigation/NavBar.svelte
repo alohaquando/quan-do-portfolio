@@ -113,7 +113,7 @@
 			class="blur-fix absolute h-full w-full backdrop-blur-lg [mask-image:linear-gradient(to_top,black,black,transparent)] dark:backdrop-brightness-75
 		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)] " />
 		<div
-			class="absolute bottom-0 -z-10 h-[105%] w-full bg-gradient-to-t from-zinc-100/80 via-zinc-100/60 backdrop-brightness-110 backdrop-saturate-150 dark:backdrop-saturate-200 [mask-image:linear-gradient(to_top,black,black,transparent)] dark:from-zinc-700/50 dark:backdrop-brightness-100 dark:backdrop-saturate-200 md:top-0 md:bg-gradient-to-b md:from-white md:via-white/80 md:backdrop-brightness-100 md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]  " />
+			class="{showNavShadow ? 'opacity-100' : 'md:opacity-0'}  absolute bottom-0 -z-10 h-[105%] w-full bg-gradient-to-t from-zinc-100/80 via-zinc-100/60 backdrop-brightness-110 backdrop-saturate-150 dark:backdrop-saturate-200 [mask-image:linear-gradient(to_top,black,black,transparent)] dark:from-zinc-700/50 dark:backdrop-brightness-100 dark:backdrop-saturate-200 md:top-0 md:bg-gradient-to-b md:from-white md:via-white/80 md:backdrop-brightness-100 md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]  " />
 	</div>
 	<!-- /Background -->
 </nav>
