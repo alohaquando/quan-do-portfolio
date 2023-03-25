@@ -103,7 +103,7 @@
 		});
 	}
 
-	import { colorSchemePreference } from '$lib/data/colorScheme.js';
+	import { colorSchemePreference } from '$lib/data/colorScheme';
 	import Logo from '$lib/components/iconography/Logo.svelte';
 	import { onMount } from 'svelte';
 </script>

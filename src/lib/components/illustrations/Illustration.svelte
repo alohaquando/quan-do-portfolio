@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { colorScheme } from '$lib/data/colorScheme.js';
+	import { colorScheme } from '$lib/data/colorScheme';
 
 	interface IllustrationPath {
 		[key: string]: string;

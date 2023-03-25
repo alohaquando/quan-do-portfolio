@@ -7,7 +7,7 @@
 	import ColorSchemeHandler from '$lib/utilities/ColorSchemeHandler.svelte';
 	import ScrollController from '$lib/utilities/ScrollController.svelte';
 
-	import { colorScheme } from '$lib/data/colorScheme.js';
+	import { colorScheme } from '$lib/data/colorScheme';
 
 	import faviconSVG from '$lib/assets/favicons/favicon.svg';
 	import faviconPNG from '$lib/assets/favicons/favicon.png';

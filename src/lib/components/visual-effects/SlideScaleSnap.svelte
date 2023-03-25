@@ -1,6 +1,6 @@
 <script lang="ts">
 	// Functional imports
-	import { scrollY, innerHeight, innerWidth, scrollYBottom } from '$lib/data/window.js';
+	import { scrollY, innerHeight, innerWidth, scrollYBottom } from '$lib/data/window';
 	import lodash from 'lodash';
 	const { throttle } = lodash;
 	import SlideIn from '$lib/components/visual-effects/SlideIn.svelte';

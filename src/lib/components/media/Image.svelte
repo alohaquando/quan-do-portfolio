@@ -1,6 +1,6 @@
 <!--suppress HtmlWrongAttributeValue -->
 <script lang="ts">
-	import { colorScheme } from '$lib/data/colorScheme.js';
+	import { colorScheme } from '$lib/data/colorScheme';
 
 	interface ImageData {
 		webpSrc: string | { light: string; dark: string };

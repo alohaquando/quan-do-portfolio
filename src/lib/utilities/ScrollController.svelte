@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { scrollY, innerHeight, innerWidth, scrollYBottom } from '$lib/data/window.js';
+	import { scrollY, innerHeight, innerWidth, scrollYBottom } from '$lib/data/window';
 
 	$: {
 		scrollYBottom.set($scrollY + $innerHeight);

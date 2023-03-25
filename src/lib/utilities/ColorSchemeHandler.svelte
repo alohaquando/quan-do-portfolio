@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { colorScheme, colorSchemePreference, readerMode } from '$lib/data/colorScheme.js';
+	import { colorScheme, colorSchemePreference, readerMode } from '$lib/data/colorScheme';
 	import { colorSchemeColors } from '$lib/data/Colors';
 	import { browser } from '$app/environment';
 

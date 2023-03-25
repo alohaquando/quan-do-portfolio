@@ -5,12 +5,12 @@
 	import Logo from '$lib/components/iconography/Logo.svelte';
 
 	// Auto hide
-	import { innerHeight, scrollY } from '$lib/data/window.js';
+	import { innerHeight, scrollY } from '$lib/data/window';
 	import lodash from 'lodash';
 	const { throttle, debounce } = lodash;
 
 	// Highlight section in view
-	import { sectionInView } from '$lib/data/sectionInView.js';
+	import { sectionInView } from '$lib/data/sectionInView';
 
 	let navLinks = {
 		landing: {

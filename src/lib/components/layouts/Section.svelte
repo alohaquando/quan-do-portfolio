@@ -3,7 +3,7 @@
 	export { className as class };
 	export let id = '';
 	import { inview } from 'svelte-inview';
-	import { sectionInView } from '$lib/data/sectionInView.js';
+	import { sectionInView } from '$lib/data/sectionInView';
 	import { beforeNavigate } from '$app/navigation';
 
 	beforeNavigate(() => {
