@@ -17,11 +17,11 @@
 <svelte:head>
 	<!--	Favicons	-->
 	<link
-		rel="shortcut icon"
+		rel="icon"
 		href={faviconSVG}
 		type="image/svg+xml" />
 	<link
-		rel="alternate icon"
+		rel="icon"
 		href={faviconPNG}
 		type="image/png" />
 	<link

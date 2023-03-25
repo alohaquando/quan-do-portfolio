@@ -38,9 +38,9 @@ async function generateImageDataFiles() {
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt: string = '${imageAlt}';
+        export let alt = '${imageAlt}';
         // Lazy / eager loading 
-        export let eager: boolean = false;
+        export let eager = false;
 
         // Metadata
         import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?meta=width;height&imagetools"
@@ -69,7 +69,7 @@ async function generateImageDataFiles() {
 					}
         };
 
-        let className: string = '';
+        let className = '';
         export {className as class};
       </script>
 
@@ -107,9 +107,9 @@ async function generateImageDataFiles() {
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt: string = '${imageAlt}';
+        export let alt = '${imageAlt}';
         // Lazy / eager loading
-        export let eager: boolean = false;
+        export let eager = false;
 
         // Metadata
         import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?meta=width;height&imagetools"
@@ -128,7 +128,7 @@ async function generateImageDataFiles() {
           webpSrc,
         }
 
-        let className: string = '';
+        let className = '';
         export {className as class};
       </script>
 

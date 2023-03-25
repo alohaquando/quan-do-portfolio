@@ -38,7 +38,7 @@
 
 	if (browser) {
 		root = document.getElementsByTagName('html')[0] as HTMLElement;
-		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setColorScheme);
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setColorScheme, { passive: true });
 	}
 
 	$: $colorSchemePreference, setColorScheme();
