@@ -43,7 +43,8 @@ async function generateImageDataFiles() {
         export let eager = false;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?meta=width;height&imagetools"
+       	// noinspection TypeScriptCheckImport
+        import {width, height} from "$lib/assets/images/${folderName}/${imageDataLightName}?as=meta:width;height&imagetools"
 
         // Light image
         import avifSrcLight
@@ -112,7 +113,8 @@ async function generateImageDataFiles() {
         export let eager = false;
 
         // Metadata
-        import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?meta=width;height&imagetools"
+        // noinspection TypeScriptCheckImport
+        import {width, height} from "$lib/assets/images/${folderName}/${imageDataName}?as=meta:width;height&imagetools"
 
         // Image
         import avifSrc
