@@ -64,7 +64,7 @@
 		<!-- Card -->
 		<div class="{className} {secondary ? 'grid grid-cols-1 grid-rows-2 sm:grid-cols-2 sm:grid-rows-1' : ''} bg-glass-gradient relative flex grow overflow-clip">
 			<!-- Primary text -->
-			<div class="pointer-events-none z-10 flex flex-col gap-2 py-10 px-8 md:py-12 md:px-10">
+			<div class="pointer-events-none z-10 flex flex-col gap-2 px-8 py-10 md:px-10 md:py-12">
 				<!-- Tagline -->
 				{#if tagline}
 					<Tagline>{tagline}</Tagline>
@@ -117,7 +117,7 @@
 
 			<!-- Background Image -->
 			{#if bg}
-				<div class="pointer-events-none absolute top-0 left-0 right-0 bottom-0 -z-10 overflow-hidden">
+				<div class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 -z-10 overflow-hidden">
 					<div class="absolute h-full w-full bg-gradient-to-tr-alt from-zinc-100 via-[#F8F8F8CC_20%] to-[#F8F8F800_40%] dark:from-zinc-900 dark:via-[#151515CC_20%] dark:to-[#00000000_40%]" />
 					<svelte:component
 						this={bgImg[bg].img}
@@ -128,8 +128,8 @@
 
 			<!-- Image -->
 			{#if image}
-				<div class="relative flex max-h-full grow basis-full self-stretch ">
-					<div class="bg-glass pointer-events-none absolute top-8 -bottom-6 -right-32 w-[120%] rounded-b-3xl sm:-right-6 sm:w-[85%] [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
+				<div class="relative flex max-h-full grow basis-full self-stretch">
+					<div class="bg-glass pointer-events-none absolute -bottom-6 -right-32 top-8 w-[120%] rounded-b-3xl sm:-right-6 sm:w-[85%] [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
 						<svelte:component this={images[image].img} />
 					</div>
 				</div>
@@ -138,7 +138,7 @@
 
 			<!-- Secondary text  -->
 			{#if secondary}
-				<div class="flex flex-col gap-2 py-10 px-8 md:py-12 md:px-10">
+				<div class="flex flex-col gap-2 px-8 py-10 md:px-10 md:py-12">
 					<Tagline>{secondary.tagline}</Tagline>
 					<Title>{secondary.title}</Title>
 				</div>

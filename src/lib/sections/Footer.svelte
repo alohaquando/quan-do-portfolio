@@ -111,7 +111,7 @@
 <footer>
 	<Section
 		id="footer"
-		class="relative my-16 md:mt-24 md:mb-2">
+		class="relative my-16 md:mb-2 md:mt-24">
 		<!-- Divider -->
 		<div class="mx-6 flex h-px grow bg-gray-900/10 dark:bg-white/10 md:mx-10 lg:mx-32" />
 		<!-- /Divider -->
@@ -151,7 +151,7 @@
 			<!-- /Left container -->
 
 			<!--	Right container	-->
-			<div class="grid  max-w-screen-md grow place-content-between gap-12 sm:grid-cols-2 md:grid-cols-4">
+			<div class="grid max-w-screen-md grow place-content-between gap-12 sm:grid-cols-2 md:grid-cols-4">
 				<!-- Link group -->
 				{#each Object.values(footerLinks) as link, i}
 					{#if Object.keys(footerLinks)[i] !== 'landing'}

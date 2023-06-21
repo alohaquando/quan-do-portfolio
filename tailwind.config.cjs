@@ -14,7 +14,7 @@ const config = {
 				'gradient-to-tr-alt': 'linear-gradient(10deg, var(--tw-gradient-stops))'
 			}
 		}
-	},
+	}
 };
 
 module.exports = config;

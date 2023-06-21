@@ -18,7 +18,7 @@
 		on:change
 		{name}
 		{id}
-		class="absolute -top-2 -left-2 -right-2 -bottom-2 bg-white opacity-0 dark:bg-zinc-900">
+		class="absolute -bottom-2 -left-2 -right-2 -top-2 bg-white opacity-0 dark:bg-zinc-900">
 		{#each Object.values(options) as option}
 			<option value={option.value}>{option.title}</option>
 		{/each}

@@ -7,16 +7,11 @@ declare namespace App {
 	// interface PageData {}
 	// interface Platform {}
 
-	declare module '*&imagetools' {
-		/**
-		 * actual types
-		 * - code https://github.com/JonasKruckenberg/imagetools/blob/main/packages/core/src/output-formats.ts
-		 * - docs https://github.com/JonasKruckenberg/imagetools/blob/main/docs/guide/getting-started.md#metadata
-		 */
-		export const height;
-		export default out;
-		const out;
-		export const width;
+	declare module '*as=meta:width;height&imagetools' {
+		export const width: number, height: number;
+	}
 
+	declare module '*&imagetools' {
+		export default out;
 	}
 }

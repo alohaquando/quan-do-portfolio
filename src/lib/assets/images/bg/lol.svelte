@@ -2,7 +2,7 @@
 	xmlns="http://www.w3.org/2000/svg"
 	viewBox="0 0 2349 1072"
 	fill="none"
-	class="blur-fix absolute absolute left-0 right-0 top-12 bottom-0 m-auto w-screen opacity-30 blur-[80px]  saturate-150 md:blur-[120px] lg:blur-[150px]"
+	class="blur-fix absolute absolute bottom-0 left-0 right-0 top-12 m-auto w-screen opacity-30 blur-[80px] saturate-150 md:blur-[120px] lg:blur-[150px]"
 	><ellipse
 		cx="1302"
 		cy="468"

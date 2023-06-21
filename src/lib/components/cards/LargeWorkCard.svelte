@@ -67,7 +67,7 @@
 	class="relative">
 	<SlideScaleSnap>
 		<!-- Outer BG -->
-		<div class="pb-safe flex min-h-screen w-full p-4 md:p-6 ">
+		<div class="pb-safe flex min-h-screen w-full p-4 md:p-6">
 			<!--	Card Link	-->
 			<svelte:element
 				this={href ? 'a' : 'div'}
@@ -79,7 +79,7 @@
 					{#if secondaryWorks}
 						<div class="relative z-30 flex min-h-fit grow self-stretch max-lg:order-2">
 							<div
-								class="scrollbar-none absolute top-0 bottom-0 -left-12 -right-12 isolate grow scroll-px-12 gap-6 self-stretch px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-1 sm:grid-rows-3 sm:px-0 md:gap-8 lg:grid-cols-3 lg:grid-rows-1">
+								class="scrollbar-none absolute -left-12 -right-12 bottom-0 top-0 isolate grow scroll-px-12 gap-6 self-stretch px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-1 sm:grid-rows-3 sm:px-0 md:gap-8 lg:grid-cols-3 lg:grid-rows-1">
 								{#each Object.values(secondaryWorks) as secondaryWork}
 									<SmallWorkCard
 										{...secondaryWork}
@@ -105,7 +105,7 @@
 						<!-- /Title and Arrow -->
 
 						<!-- Subtitle -->
-						<BodyLarge class="!text-white opacity-80 line-clamp-3">
+						<BodyLarge class="line-clamp-3 !text-white opacity-80">
 							{subtitle}
 						</BodyLarge>
 						<!-- /Subtitle -->
@@ -123,7 +123,7 @@
 					<!-- /Demo image -->
 
 					<!-- Background Illustration -->
-					<div class="pointer-events-none absolute top-0 left-0 right-0 bottom-0 -z-10 select-none overflow-clip rounded-[2.5rem]">
+					<div class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 -z-10 select-none overflow-clip rounded-[2.5rem]">
 						<svelte:component
 							this={bgImg[bg].img}
 							eager={bg === '1' ? true : null}

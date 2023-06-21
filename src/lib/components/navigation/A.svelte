@@ -24,7 +24,7 @@
 	class="contents"
 	target={target || null}
 	aria-label={ariaLabel}>
-	<div class="relative flex w-fit place-content-center items-center gap-3 rounded-full py-2 px-6  {className}">
+	<div class="relative flex w-fit place-content-center items-center gap-3 rounded-full px-6 py-2 {className}">
 		<slot />
 		<HoverGlow class="rounded-3xl" />
 	</div>

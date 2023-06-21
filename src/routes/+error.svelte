@@ -18,9 +18,9 @@
 	</A>
 
 	<!-- BG -->
-	<div class="absolute top-0 left-0 right-0 -z-10 h-[150%] overflow-hidden [mask-image:linear-gradient(to_bottom,black,black,transparent)]">
+	<div class="absolute left-0 right-0 top-0 -z-10 h-[150%] overflow-hidden [mask-image:linear-gradient(to_bottom,black,black,transparent)]">
 		<Noise class="!opacity-30" />
-		<div class="absolute z-0 h-full w-full bg-gradient-to-b from-black via-black/10 " />
+		<div class="absolute z-0 h-full w-full bg-gradient-to-b from-black via-black/10" />
 		<BG
 			class="h-full w-full object-cover object-top"
 			eager />

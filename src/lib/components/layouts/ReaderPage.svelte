@@ -91,7 +91,7 @@
 		{#if $$slots.hero_img}
 			<!-- Hero Image -->
 			<Animate class="mx-auto max-w-screen-lg">
-				<div class="bg-glass [&_img]:h-auto ">
+				<div class="bg-glass [&_img]:h-auto">
 					<slot name="hero_img" />
 				</div>
 			</Animate>
@@ -103,7 +103,7 @@
 	<Animate>
 		<!-- Highlight Block -->
 		{#if $$slots.highlight}
-			<div class="{solidColors[color]} mx-auto flex w-full max-w-screen-md flex-col gap-6 rounded-3xl bg-opacity-50 py-10 px-8 md:gap-8 md:py-16 md:px-12">
+			<div class="{solidColors[color]} mx-auto flex w-full max-w-screen-md flex-col gap-6 rounded-3xl bg-opacity-50 px-8 py-10 md:gap-8 md:px-12 md:py-16">
 				<TaglineTitle
 					tagline="Highlight"
 					title={highlight} />
@@ -123,7 +123,7 @@
 
 	<!-- Color BG -->
 	<Noise class="-z-10 opacity-30 [mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
-	<div class="{readerGradients[color]} min-h-screen-safe absolute top-0 left-0 right-0 -z-20" />
+	<div class="{readerGradients[color]} min-h-screen-safe absolute left-0 right-0 top-0 -z-20" />
 	<!-- /Color BG -->
 </div>
 <!-- /Reader Page -->

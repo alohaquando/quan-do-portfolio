@@ -51,7 +51,7 @@
 			<!-- /Noise -->
 
 			<!-- Title and Arrow -->
-			<div class="pointer-events-none z-10 flex basis-full p-6 md:p-8 ">
+			<div class="pointer-events-none z-10 flex basis-full p-6 md:p-8">
 				<Title class="!text-white">
 					{title}
 					<Icon
@@ -64,7 +64,7 @@
 
 			<!-- Image -->
 			<div class="relative flex max-h-[50%] grow basis-full self-stretch sm:max-h-full lg:max-h-[30%]">
-				<div class="bg-glass pointer-events-none absolute top-0 -bottom-6 -right-6 w-[95%] rounded-b-3xl sm:top-6 lg:top-0 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
+				<div class="bg-glass pointer-events-none absolute -bottom-6 -right-6 top-0 w-[95%] rounded-b-3xl sm:top-6 lg:top-0 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
 					<svelte:component
 						this={demoImg[demo]}
 						eager />
