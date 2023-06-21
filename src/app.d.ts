@@ -13,9 +13,10 @@ declare namespace App {
 		 * - code https://github.com/JonasKruckenberg/imagetools/blob/main/packages/core/src/output-formats.ts
 		 * - docs https://github.com/JonasKruckenberg/imagetools/blob/main/docs/guide/getting-started.md#metadata
 		 */
-		const out;
-		export const width;
 		export const height;
 		export default out;
+		const out;
+		export const width;
+
 	}
 }

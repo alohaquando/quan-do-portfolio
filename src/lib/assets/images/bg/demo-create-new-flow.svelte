@@ -12,9 +12,9 @@
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/demo-create-new-flow.avif?width=480&format=avif&quality=90&srcset&imagetools";
+          from "$lib/assets/images/bg/demo-create-new-flow.avif?width=480&format=avif&quality=90&as=srcset&imagetools";
         import webpSrc
-          from "$lib/assets/images/bg/demo-create-new-flow.avif?width=480&format=webp&quality=90&srcset&imagetools";
+          from "$lib/assets/images/bg/demo-create-new-flow.avif?width=480&format=webp&quality=90&as=srcset&imagetools";
 
         const imageData = {
           alt,

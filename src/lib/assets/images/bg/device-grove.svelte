@@ -12,9 +12,9 @@
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/device-grove.avif?width=720;1024&format=avif&quality=90&srcset&imagetools";
+          from "$lib/assets/images/bg/device-grove.avif?width=720;1024&format=avif&quality=90&as=srcset&imagetools";
         import webpSrc
-          from "$lib/assets/images/bg/device-grove.avif?width=720;1024&format=webp&quality=90&srcset&imagetools";
+          from "$lib/assets/images/bg/device-grove.avif?width=720;1024&format=webp&quality=90&as=srcset&imagetools";
 
         const imageData = {
           alt,

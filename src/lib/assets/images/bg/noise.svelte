@@ -12,9 +12,9 @@
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/noise.avif?width=720;1024&format=avif&srcset&imagetools";
+          from "$lib/assets/images/bg/noise.avif?width=720;1024&format=avif&as=srcset&imagetools";
         import webpSrc
-          from "$lib/assets/images/bg/noise.avif?width=720;1024&format=webp&srcset&imagetools";
+          from "$lib/assets/images/bg/noise.avif?width=720;1024&format=webp&as=srcset&imagetools";
 
         const imageData = {
           alt,

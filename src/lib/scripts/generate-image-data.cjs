@@ -48,13 +48,13 @@ async function generateImageDataFiles() {
 
         // Light image
         import avifSrcLight
-          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=1024&format=avif&srcset&imagetools";
+          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=1024&format=avif&as=srcset&imagetools";
         import webpSrcLight
-          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=1024&format=webp&srcset&imagetools";
+          from "$lib/assets/images/${folderName}/${imageDataLightName}?width=1024&format=webp&as=srcset&imagetools";
 
         // Dark image
-        import avifSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=1024&format=avif&srcset&imagetools";
-        import webpSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=1024&format=webp&srcset&imagetools";
+        import avifSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=1024&format=avif&as=srcset&imagetools";
+        import webpSrcDark from "$lib/assets/images/${folderName}/${imageDataDarkName}?width=1024&format=webp&as=srcset&imagetools";
 
         const imageData = {
           alt,
@@ -118,9 +118,9 @@ async function generateImageDataFiles() {
 
         // Image
         import avifSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=${sizes}&format=avif${quality ? `&quality=${quality}` : ''}&srcset&imagetools";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=${sizes}&format=avif${quality ? `&quality=${quality}` : ''}&as=srcset&imagetools";
         import webpSrc
-          from "$lib/assets/images/${folderName}/${imageDataName}?width=${sizes}&format=webp${quality ? `&quality=${quality}` : ''}&srcset&imagetools";
+          from "$lib/assets/images/${folderName}/${imageDataName}?width=${sizes}&format=webp${quality ? `&quality=${quality}` : ''}&as=srcset&imagetools";
 
         const imageData = {
           alt,

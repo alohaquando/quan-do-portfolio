@@ -12,13 +12,13 @@
 
         // Light image
         import avifSrcLight
-          from "$lib/assets/images/extendable-card-component/1st-iteration-idea-L.avif?width=1024&format=avif&srcset&imagetools";
+          from "$lib/assets/images/extendable-card-component/1st-iteration-idea-L.avif?width=1024&format=avif&as=srcset&imagetools";
         import webpSrcLight
-          from "$lib/assets/images/extendable-card-component/1st-iteration-idea-L.avif?width=1024&format=webp&srcset&imagetools";
+          from "$lib/assets/images/extendable-card-component/1st-iteration-idea-L.avif?width=1024&format=webp&as=srcset&imagetools";
 
         // Dark image
-        import avifSrcDark from "$lib/assets/images/extendable-card-component/1st-iteration-idea-D.avif?width=1024&format=avif&srcset&imagetools";
-        import webpSrcDark from "$lib/assets/images/extendable-card-component/1st-iteration-idea-D.avif?width=1024&format=webp&srcset&imagetools";
+        import avifSrcDark from "$lib/assets/images/extendable-card-component/1st-iteration-idea-D.avif?width=1024&format=avif&as=srcset&imagetools";
+        import webpSrcDark from "$lib/assets/images/extendable-card-component/1st-iteration-idea-D.avif?width=1024&format=webp&as=srcset&imagetools";
 
         const imageData = {
           alt,
