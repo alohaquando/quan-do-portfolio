@@ -10,6 +10,13 @@
 			demo: 'grove',
 			bg: '1'
 		},
+		concept: {
+			href: '/work/concept',
+			title: 'Concept Design System',
+			subtitle: 'Feature-packed and robust component library for complex web dashboards',
+			demo: 'concept',
+			bg: '3'
+		},
 		case_studies: {
 			title: 'Case studies',
 			subtitle: 'Specialized UI and UX case studies while working on GroveHR',
@@ -32,13 +39,7 @@
 				}
 			}
 		},
-		concept: {
-			href: '/work/concept',
-			title: 'Concept Design System',
-			subtitle: 'Feature-packed and robust component library for complex web dashboards',
-			demo: 'concept',
-			bg: '3'
-		},
+
 		external: {
 			title: 'External projects',
 			subtitle: 'Front-end development and design projects for external uses',
@@ -70,7 +71,7 @@
 <Section
 	id="work"
 	class="relative pb-16 md:-translate-y-16">
-	{#each Object.values(works) as work, i}
+	{#each Object.values(works) as work}
 		<LargeWorkCard {...work} />
 	{/each}
 </Section>

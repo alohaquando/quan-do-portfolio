@@ -42,14 +42,14 @@
 	};
 
 	let showNav: boolean;
-	let navInteracting = false;
+	let navInteracting: boolean;
 	let prevY = 0;
 	let showNavShadow: boolean;
 
 	const handleNavVisibility = throttle(
 		() => {
 			showNav = navInteracting || $scrollY <= 0 || $scrollY - prevY < 0;
-			showNavShadow = $scrollY > $innerHeight / 5;
+			showNavShadow = $scrollY > 0;
 			prevY = $scrollY;
 		},
 		100,
@@ -76,7 +76,7 @@
 	on:focus={handleNavInteractStart}
 	on:touchstart={handleNavInteractStart}
 	on:touchmove={handleNavInteractStart}>
-	<!-- Foreground -->
+	<!--<editor-fold desc="Foreground">-->
 	<div class="{showNav ? '' : 'blur max-sm:opacity-0'} flex transform-gpu transition-all md:place-content-between">
 		<!-- Logo -->
 		<NavBlock class="max-md:hidden ">
@@ -105,17 +105,17 @@
 		</NavBlock>
 		<!-- /Resume -->
 	</div>
-	<!-- /Foreground -->
+	<!--</editor-fold>-->
 
-	<!-- Background -->
+	<!--<editor-fold desc="Background">-->
 	<div class="pointer-events-none absolute -bottom-1 -top-20 left-0 right-0 -z-20 touch-none transition-all md:-bottom-12 md:top-0">
 		<div
-			class="{showNavShadow ? 'opacity-100' : 'md:opacity-0'} blur-fix absolute h-full w-full backdrop-blur-lg [mask-image:linear-gradient(to_top,black,black,transparent)] dark:backdrop-brightness-75
+			class="{showNavShadow ? 'opacity-100' : 'md:opacity-0'} blur-fix absolute h-full w-full backdrop-blur-lg [mask-image:linear-gradient(to_top,black,black,transparent)]
 		md:backdrop-blur-xl md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
-		<div
+		<!--<div
 			class="{showNavShadow
 				? 'opacity-100'
-				: 'md:opacity-0'} absolute bottom-0 -z-10 h-[105%] w-full bg-gradient-to-t from-zinc-100/80 via-zinc-100/60 backdrop-brightness-110 backdrop-saturate-150 [mask-image:linear-gradient(to_top,black,black,transparent)] dark:from-zinc-700/50 dark:backdrop-brightness-100 dark:backdrop-saturate-200 dark:backdrop-saturate-200 md:top-0 md:bg-gradient-to-b md:from-white md:via-white/80 md:backdrop-brightness-100 md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />
+				: 'md:opacity-0'} absolute bottom-0 -z-10 h-[105%] w-full bg-gradient-to-t [mask-image:linear-gradient(to_top,black,black,transparent)] md:top-0 md:bg-gradient-to-b md:[mask-image:linear-gradient(to_bottom,black,black,black,transparent)]" />-->
 	</div>
-	<!-- /Background -->
+	<!--</editor-fold>-->
 </nav>

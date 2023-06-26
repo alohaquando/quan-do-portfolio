@@ -15,6 +15,8 @@
 	import DemoTask from '$lib/assets/images/bg/demo-task-calendar-dashboard.svelte';
 	import Noise from '$lib/components/visual-effects/Noise.svelte';
 	import type { SvelteComponent } from 'svelte';
+	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
+	import BodyLarge from '$lib/components/typography/BodyLarge.svelte';
 
 	interface Img {
 		[key: string]: typeof SvelteComponent;
@@ -45,26 +47,22 @@
 		<!-- Card -->
 		<div
 			id={href}
-			class="{solidColors[color]} relative isolate flex grow flex-col overflow-clip rounded-3xl !text-white sm:flex-row lg:flex-col">
+			class="{solidColors[color]} relative isolate flex grow flex-col overflow-clip rounded-3xl !text-white sm:flex-row">
 			<!-- Noise -->
 			<Noise class="!opacity-[30%]" />
 			<!-- /Noise -->
 
 			<!-- Title and Arrow -->
 			<div class="pointer-events-none z-10 flex basis-full p-6 md:p-8">
-				<Title class="!text-white">
+				<BodyLarge class="!text-white">
 					{title}
-					<Icon
-						name="arrow_right_solid"
-						size="w-8 h-8 md:w-10 md:h-10"
-						class="mb-2 inline-block !fill-white" />
-				</Title>
+				</BodyLarge>
 			</div>
 			<!-- /Title and Arrow -->
 
 			<!-- Image -->
-			<div class="relative flex max-h-[50%] grow basis-full self-stretch sm:max-h-full lg:max-h-[30%]">
-				<div class="bg-glass pointer-events-none absolute -bottom-6 -right-6 top-0 w-[95%] rounded-b-3xl sm:top-6 lg:top-0 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
+			<div class="relative flex max-h-[50%] grow basis-full self-stretch sm:max-h-full ">
+				<div class="bg-glass pointer-events-none absolute -bottom-6 -right-6 top-0 w-[95%] rounded-b-3xl sm:top-6 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
 					<svelte:component
 						this={demoImg[demo]}
 						eager />
