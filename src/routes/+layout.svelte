@@ -12,6 +12,7 @@
 	import faviconSVG from '$lib/assets/favicons/favicon.svg';
 	import faviconPNG from '$lib/assets/favicons/favicon.png';
 	import faviconApple from '$lib/assets/favicons/apple-touch-icon.png';
+	import FloatingDebug from '$lib/components/_extras/FloatingDebug.svelte';
 </script>
 
 <svelte:head>
@@ -29,6 +30,8 @@
 		sizes="180x180"
 		href={faviconApple} />
 </svelte:head>
+
+<FloatingDebug />
 
 <ColorSchemeHandler />
 <SmoothScrollHandler />
