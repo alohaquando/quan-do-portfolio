@@ -1,9 +1,7 @@
 <script lang="ts">
 	// Component imports
-	import Title from '$lib/components/typography/Title.svelte';
 	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 	import Animate from '$lib/components/visual-effects/SlideIn.svelte';
-	import Icon from '$lib/components/iconography/Icon.svelte';
 	import { solidColors } from '$lib/data/Colors';
 
 	// Images imports
@@ -14,14 +12,9 @@
 	import DemoHCMC from '$lib/assets/images/bg/demo-hcmc-bars.svelte';
 	import DemoTask from '$lib/assets/images/bg/demo-task-calendar-dashboard.svelte';
 	import Noise from '$lib/components/visual-effects/Noise.svelte';
-	import type { SvelteComponent } from 'svelte';
-	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
-	import BodyLarge from '$lib/components/typography/BodyLarge.svelte';
+	import { scrollY } from '$lib/data/window';
 
-	interface Img {
-		[key: string]: typeof SvelteComponent;
-	}
-	const demoImg: Img = {
+	const demoImgObject = {
 		extendable_card_component: DemoExtendable,
 		people_select_modal: DemoPeople,
 		create_new_flow: DemoCreate,
@@ -35,45 +28,54 @@
 	export let title = 'Title';
 	export let href = '/';
 	export let color = 'blue';
-	export let demo: string;
+	export let demo = '';
+
+	import { innerHeight } from '$lib/data/window';
+
+	let element: HTMLElement;
+	let compact = false;
+	// $: if (element && $innerHeight) {
+	// 	compact = element.getBoundingClientRect().height < 100;
+	// }
+
+	const demoImg = demoImgObject[demo as keyof typeof demoImgObject];
 </script>
 
-<Animate
-	class="{className} flex w-64 grow sm:w-auto"
-	preAnimationLocation="max-sm:translate-x-56 sm:translate-y-56">
+<Animate class="contents">
 	<a
 		{href}
 		class="contents">
-		<!-- Card -->
+		<!--<editor-fold desc="Card">-->
 		<div
 			id={href}
-			class="{solidColors[color]} relative isolate flex grow flex-col overflow-clip rounded-3xl !text-white sm:flex-row">
-			<!-- Noise -->
+			bind:this={element}
+			class="relative flex grow portrait:flex-col landscape:flex-row overflow-clip rounded-3xl {solidColors[color]}">
+			<!--<editor-fold desc="Noise overlay">-->
 			<Noise class="!opacity-[30%]" />
-			<!-- /Noise -->
+			<!--</editor-fold>-->
 
-			<!-- Title and Arrow -->
-			<div class="pointer-events-none z-10 flex basis-full p-6 md:p-8">
-				<BodyLarge class="!text-white">
+			<!--<editor-fold desc="Title">-->
+			<div class="pointer-events-none z-10 flex p-4 landscape:basis-1/3 ring ring-red-500 {compact ? '' : 'sm:p-6 lg:p-8'} grow">
+				<h2 class="sm:text-2x {compact ? 'flex grow place-items-center' : ''}" >
 					{title}
-				</BodyLarge>
+				</h2>
 			</div>
-			<!-- /Title and Arrow -->
+			<!--</editor-fold>-->
 
-			<!-- Image -->
-			<div class="relative flex max-h-[50%] grow basis-full self-stretch sm:max-h-full ">
-				<div class="bg-glass pointer-events-none absolute -bottom-6 -right-6 top-0 w-[95%] rounded-b-3xl sm:top-6 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
-					<svelte:component
-						this={demoImg[demo]}
-						eager />
+			<!--<editor-fold desc="Image">-->
+			{#if !compact}
+				<div class="relative flex grow portrait:basis-full self-stretch ring">
+					<div class="bg-glass pointer-events-none absolute -bottom-6 -right-6 landscape:left-0 portrait:top-0 landscape:top-6 rounded-b-3xl [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
+						<svelte:component this={demoImg} />
+					</div>
 				</div>
-			</div>
-			<!-- /Image -->
+			{/if}
+			<!--</editor-fold>-->
 
-			<!-- Glow on hover -->
+			<!--<editor-fold desc="Glow on hover">-->
 			<HoverGlow class="rounded-3xl" />
-			<!-- /Glow on hover -->
+			<!--</editor-fold>-->
 		</div>
-		<!-- /Card -->
+		<!--</editor-fold>-->
 	</a>
 </Animate>

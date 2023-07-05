@@ -18,6 +18,7 @@
 	import DemoGrove from '$lib/assets/images/bg/device-grove.svelte';
 	import DemoConcept from '$lib/assets/images/bg/device-concept.svelte';
 	import type { SvelteComponent } from 'svelte';
+	import Headline from '$lib/components/typography/Headline.svelte';
 
 	interface ImgAndClass {
 		[key: string]: {
@@ -72,35 +73,35 @@
 	id={href ? href : title}
 	class="sticky top-0 md:top-16">
 	<!--<editor-fold desc="Card outer area">-->
-	<div class="pb-safe mb-72 flex min-h-screen lg:h-screen w-full p-4 md:mb-96 md:p-6">
+	<div class="pb-safe mb-72 flex h-screen w-full p-4 md:mb-96 md:p-6">
 		<svelte:element
 			this={href ? 'a' : 'div'}
 			href={href || null}
 			class="contents">
+
 			<!--<editor-fold desc="Card content">-->
-			<div class="flex-col overflow-clip lg:landscape:flex-row  {secondaryWorks ? 'max-sm:flex-col' : ''} {$colorScheme === 'light' ? 'bg-white' : 'bg-black'} relative z-10 flex w-full gap-12 rounded-[2.5rem] px-8 py-10 md:p-16">
+			<div class="relative grid z-10 w-full gap-6 md:gap-8 portrait:grid-cols-1 portrait:grid-rows-3 landscape:grid-cols-3 landscape:grid-rows-1 overflow-clip rounded-[2.5rem] p-6 md:p-8 {$colorScheme === 'light' ? 'bg-white' : 'bg-black'}">
 
 				<!--<editor-fold desc="Title and Subtitle">-->
-				<div class="pointer-events-none flex flex-col gap-2 ring md:justify-end">
+				<div class="pointer-events-none flex flex-col gap-2 ring md:justify-end row-span-1">
 					<!-- Title and Arrow -->
-					<DisplaySmall class="!text-white">
+					<h1>
 						{title}
-					</DisplaySmall>
+					</h1>
 					<!-- /Title and Arrow -->
 
 					<!-- Subtitle -->
-					<BodyLarge class="line-clamp-3 !text-white opacity-80">
+					<h2 class="opacity-70">
 						{subtitle}
-					</BodyLarge>
+					</h2>
 					<!-- /Subtitle -->
 				</div>
 				<!--</editor-fold>-->
 
 				<!--<editor-fold desc="Secondary cards">-->
 				{#if secondaryWorks}
-					<div class="relative z-30 flex grow self-stretch ring">
-						<div
-							class="scrollbar-none absolute -left-12 -right-12 bottom-0 top-0 isolate grow scroll-px-12 gap-6 self-stretch px-16 max-sm:flex max-sm:snap-x max-sm:snap-mandatory max-sm:overflow-x-scroll sm:static sm:grid sm:w-full sm:scroll-px-28 sm:grid-flow-row sm:grid-cols-1 sm:grid-rows-3 sm:px-0 md:gap-8">
+					<div class="relative z-30 flex grow ring row-span-full " >
+						<div class="isolate w-full grid grid-cols-1 grid-rows-3 gap-6 self-stretch px-0 md:gap-8">
 							{#each Object.values(secondaryWorks) as secondaryWork}
 								<SmallWorkCard
 									{...secondaryWork}

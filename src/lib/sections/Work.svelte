@@ -3,20 +3,6 @@
 	import LargeWorkCard from '$lib/components/cards/LargeWorkCard.svelte';
 
 	const works = {
-		grove: {
-			href: '/work/grove',
-			title: 'GroveHR',
-			subtitle: 'HR app with 10k+ downloads. Let people easily manage time off requests, performance reviews, company news and more',
-			demo: 'grove',
-			bg: '1'
-		},
-		concept: {
-			href: '/work/concept',
-			title: 'Concept Design System',
-			subtitle: 'Feature-packed and robust component library for complex web dashboards',
-			demo: 'concept',
-			bg: '3'
-		},
 		case_studies: {
 			title: 'Case studies',
 			subtitle: 'Specialized UI and UX case studies while working on GroveHR',
@@ -39,7 +25,6 @@
 				}
 			}
 		},
-
 		external: {
 			title: 'External projects',
 			subtitle: 'Front-end development and design projects for external uses',
@@ -64,6 +49,20 @@
 					color: 'red'
 				}
 			}
+		},
+		grove: {
+			href: '/work/grove',
+			title: 'GroveHR',
+			subtitle: 'HR app with 10k+ downloads. Let people easily manage time off requests, performance reviews, company news and more',
+			demo: 'grove',
+			bg: '1'
+		},
+		concept: {
+			href: '/work/concept',
+			title: 'Concept Design System',
+			subtitle: 'Feature-packed and robust component library for complex web dashboards',
+			demo: 'concept',
+			bg: '3'
 		}
 	};
 </script>
