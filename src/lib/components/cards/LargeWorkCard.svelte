@@ -62,7 +62,7 @@
 
 <article
 	id={href ? href : title}
-	class="sticky top-0 md:top-16">
+	class="sticky top-0  md:top-[80px]">
 	<!--<editor-fold desc="Card outer area">-->
 	<div class="pb-safe mb-72 flex h-screen w-full p-2.5 md:mb-96 md:p-4 lg:p-6">
 		<svelte:element
@@ -81,7 +81,7 @@
 					<!-- /Title and Arrow -->
 
 					<!-- Subtitle -->
-					<h2 class="text-1x md:text-2x-large max-lg:landscape:text-1x font-light text-white/80 landscape:text-white/80">
+					<h2 class="text-1x  md:text-2x-large max-lg:landscape:text-1x font-light !text-white/80 landscape:text-white/80 ">
 						{subtitle}
 					</h2>
 					<!-- /Subtitle -->
@@ -91,7 +91,7 @@
 				<!--<editor-fold desc="Secondary cards">-->
 				{#if secondaryWorks}
 					<div class="relative z-30 flex grow landscape:col-span-2">
-						<div class="isolate grid w-full grid-cols-1 grid-rows-3 gap-6 self-stretch px-0 md:gap-8">
+						<div class="isolate grid w-full grid-cols-1 grid-rows-3 gap-6 self-stretch px-0 md:gap-5">
 							{#each Object.values(secondaryWorks) as secondaryWork}
 								<SmallWorkCard
 									{...secondaryWork}
