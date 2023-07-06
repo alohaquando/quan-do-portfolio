@@ -31,13 +31,11 @@
 		href={faviconApple} />
 </svelte:head>
 
-<FloatingDebug />
-
 <ColorSchemeHandler />
 <SmoothScrollHandler />
 <ScrollController />
 {#if $colorScheme !== ''}
-<!--	<NavigationBar />-->
+	<NavigationBar />
 	<slot />
 	<Footer />
 {/if}
