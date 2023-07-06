@@ -48,14 +48,14 @@
 		<div
 			id={href}
 			bind:this={element}
-			class="relative flex grow overflow-clip rounded-3xl portrait:flex-col landscape:flex-row {solidColors[color]}">
+			class="bg-glass-gradient relative flex grow overflow-clip rounded-3xl portrait:flex-col landscape:flex-row">
 			<!--<editor-fold desc="Noise overlay">-->
-			<Noise class="!opacity-[30%]" />
+			<Noise class="!opacity-[25%]" />
 			<!--</editor-fold>-->
 
 			<!--<editor-fold desc="Title">-->
-			<div class="pointer-events-none z-10 flex grow pl-6 sm:pl-6 landscape:basis-1/4 {compact ? 'place-items-center pr-4' : 'place-items-end p-4 md:p-8 md:pl-10'}">
-				<h2 class="text-2x md:text-2x-large max-lg:landscape:text-1x font-light max-md:landscape:flex max-md:landscape:grow max-md:landscape:place-items-center max-md:landscape:text-base">
+			<div class="pointer-events-none z-10 flex grow p-3.5 pl-4 md:p-6 md:pl-7 landscape:basis-1/4 {compact ? 'place-items-center pr-4' : 'place-items-end '}">
+				<h2 class="text-1x md:portrait:text-3x-large md:landscape:text-2x lg:landscape:text-2x-large max-lg:landscape:text-1x text-white/95 md:font-light landscape:whitespace-nowrap max-md:landscape:flex max-md:landscape:grow max-md:landscape:place-items-center max-md:landscape:text-base landscape:text-white/95">
 					{title}
 				</h2>
 			</div>
@@ -63,7 +63,7 @@
 
 			<!--<editor-fold desc="Image">-->
 			<div class="relative flex grow self-stretch portrait:basis-full">
-				<div class="bg-glass pointer-events-none absolute -bottom-6 -right-6 rounded-b-3xl portrait:top-0 landscape:left-0 landscape:top-5 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
+				<div class="pointer-events-none absolute -bottom-6 -right-6 portrait:top-0 landscape:left-0 landscape:top-5 [&_img]:h-full [&_img]:w-full [&_img]:rounded-lg [&_img]:object-cover [&_img]:object-left-top">
 					<svelte:component this={demoImg} />
 				</div>
 			</div>

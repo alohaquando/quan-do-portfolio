@@ -4,7 +4,6 @@
 
 	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 	import SmallWorkCard from '$lib/components/cards/SmallWorkCard.svelte';
-	import { colorScheme } from '$lib/data/colorScheme';
 	//</editor-fold>
 
 	//<editor-fold desc="Background illustrations">
@@ -72,19 +71,17 @@
 			class="contents">
 			<!--<editor-fold desc="Card content">-->
 			<div
-				class="relative z-10 grid min-h-[280px] w-full gap-6 overflow-clip rounded-[2.5rem] p-6 md:min-h-[16rem] md:gap-8 md:p-8 lg:min-h-[20rem] lg:gap-12 lg:p-16 portrait:flex portrait:flex-col landscape:min-w-[18rem] landscape:grid-cols-3 landscape:grid-rows-1 {$colorScheme === 'light'
-					? 'bg-white'
-					: 'bg-black'} {secondaryWorks == null ? ' portrait:grid-rows-3' : ' portrait:grid-rows-6'}">
+				class="relative z-10 grid min-h-[280px] w-full gap-6 overflow-clip rounded-[2.5rem] p-6 md:min-h-[16rem] md:gap-5 md:p-7 lg:min-h-[20rem] lg:gap-10 lg:p-14 portrait:flex portrait:flex-col landscape:min-w-[18rem] landscape:grid-cols-3 landscape:grid-rows-1 bg-black {secondaryWorks == null ? ' portrait:grid-rows-3' : ' portrait:grid-rows-6'}">
 				<!--<editor-fold desc="Title and Subtitle">-->
 				<div class="pointer-events-none flex flex-col gap-2 landscape:justify-end">
 					<!-- Title and Arrow -->
-					<h1 class="text-5x md:text-5x-large max-lg:landscape:text-4x font-light">
+					<h1 class="text-4x md:text-5x-large max-lg:landscape:text-4x font-light text-white landscape:text-white">
 						{title}
 					</h1>
 					<!-- /Title and Arrow -->
 
 					<!-- Subtitle -->
-					<h2 class="text-1x md:text-2x-large max-lg:landscape:text-1x font-light opacity-70">
+					<h2 class="text-1x md:text-2x-large max-lg:landscape:text-1x font-light text-white/80 landscape:text-white/80">
 						{subtitle}
 					</h2>
 					<!-- /Subtitle -->
