@@ -52,14 +52,14 @@
 			<!--<editor-fold desc="Title">-->
 			<div class="pointer-events-none z-10 flex p-4 pl-5 md:p-6 md:pl-7 landscape:grow md:portrait:grow {compact ? 'place-items-center pr-4' : 'landscape:place-items-end '}">
 				<h2
-					class="text-1x md:portrait:text-3x md:landscape:text-2x lg:landscape:text-4x max-lg:landscape:text-1x text-white/95 md:font-light max-md:landscape:whitespace-nowrap   max-md:landscape:place-items-center max-md:landscape:text-base !leading-snug">
+					class="text-1x md:portrait:text-3x md:landscape:text-2x lg:landscape:text-4x max-lg:landscape:text-1x !text-white/95 md:font-light max-lg:landscape:whitespace-nowrap   max-md:landscape:place-items-center max-md:landscape:text-base !leading-snug ">
 					{title}
 				</h2>
 			</div>
 			<!--</editor-fold>-->
 
 			<!--<editor-fold desc="Image">-->
-			<div class="relative flex max-md:portrait:grow md:portrait:w-1/3 landscape:w-1/3 lg:landscape:w-[40%]">
+			<div class="relative flex max-md:portrait:grow md:portrait:w-1/3 landscape:w-1/3 lg:landscape:w-[35%]">
 				<div class="pointer-events-none absolute -bottom-6 -right-6 portrait:top-0 md:portrait:top-5 landscape:top-5 portrait:left-[30%] sm:portrait:left-[50%] landscape:left-0 md:portrait:left-0">
 					<div class="h-full w-full [&_img]:h-full [&_img]:w-full [&_img]:rounded-lg [&_img]:object-cover [&_img]:object-left-top">
 						<svelte:component this={demoImg} />
