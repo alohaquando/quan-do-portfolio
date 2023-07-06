@@ -6,7 +6,7 @@
 </script>
 
 <Animate>
-	<h1 class="{className} text-6x font-light">
+	<h1 class="{className} text-6x md:text-6x-large  font-light">
 		<slot />
 	</h1>
 </Animate>

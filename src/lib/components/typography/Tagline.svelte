@@ -3,6 +3,6 @@
 	export { className as class };
 </script>
 
-<p class="{className} text-small font-light uppercase tracking-widest">
+<p class="{className} text-1x font-light uppercase tracking-widest">
 	<slot />
 </p>

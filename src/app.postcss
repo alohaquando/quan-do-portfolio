@@ -43,45 +43,68 @@
 		-webkit-tap-highlight-color: transparent;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		font-size: 20px;
 	}
 }
 
 @layer components {
 	/* Text scaling (mobile - 1.2) - (desktop - 1.333) */
-	.text-extra-small {
-		@apply text-color text-[0.8rem] md:text-[0.9375rem];
+	.-text-2x {
+		@apply text-color text-[0.8rem] leading-relaxed;
 	}
 
-	.text-small {
-		@apply text-color text-[1.0625rem] leading-relaxed md:text-[0.9375rem] md:leading-relaxed;
-	}
-
+	/* Body */
 	.text-1x {
-		@apply text-color text-[1.25rem] leading-relaxed md:leading-relaxed;
+		@apply text-color text-[1rem] leading-relaxed;
 	}
 
+	/* Body Large */
 	.text-2x {
-		@apply text-color text-[1.5rem] leading-relaxed md:text-[1.6875rem] md:leading-relaxed;
+		@apply text-color text-[1.2rem] leading-relaxed;
 	}
 
+	.text-2x-large {
+		@apply text-color text-[1.35rem] leading-relaxed;
+	}
+
+	/* Title */
 	.text-3x {
-		@apply text-color text-[1.8125rem] leading-relaxed md:text-[2.25rem] md:leading-relaxed;
+		@apply text-color text-[1.45rem] leading-relaxed;
 	}
 
+	.text-3x-large {
+		@apply text-color text-[1.8rem] leading-relaxed;
+	}
+
+	/* Headline */
 	.text-4x {
-		@apply text-color text-[2.1875rem] leading-relaxed md:text-[2.9375rem] md:leading-relaxed;
+		@apply text-color text-[1.75rem] leading-relaxed;
 	}
 
+	.text-4x-large {
+		@apply text-color text-[2.35rem] leading-relaxed;
+	}
+
+	/* Display Small */
 	.text-5x {
-		@apply text-color text-[2.5625rem] leading-relaxed md:text-[3.9375rem] md:leading-relaxed;
+		@apply text-color text-[2.05rem] leading-relaxed;
 	}
 
+	.text-5x-large {
+		@apply text-color text-[3.15rem] leading-relaxed;
+	}
+
+	/* Display */
 	.text-6x {
-		@apply text-color text-[3.125rem] leading-relaxed sm:text-[3.75rem] md:text-[5.25rem] md:leading-relaxed;
+		@apply text-color text-[2.5rem] leading-relaxed;
+	}
+
+	.text-6x-large {
+		@apply text-color text-[4.2rem] leading-relaxed;
 	}
 
 	.text-color {
-		@apply text-zinc-900 dark:text-white;
+		@apply text-zinc-900 dark:text-zinc-50;
 	}
 
 	.bg-glass-gradient {
@@ -89,7 +112,7 @@
 	}
 
 	.bg-glass {
-		@apply rounded-3xl bg-white/50 p-1.5 ring ring-1 ring-zinc-900/10 backdrop-saturate-150 dark:bg-white/20 dark:ring-0 sm:p-2 [&_img]:rounded-[1.2rem] sm:[&_img]:rounded-2xl;
+		@apply rounded-3xl bg-white/50 p-1.5 ring-1 ring-zinc-900/10 backdrop-saturate-150 dark:bg-white/20 dark:ring-0 [&_img]:rounded-[1.2rem] sm:[&_img]:rounded-2xl;
 	}
 }
 
