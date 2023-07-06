@@ -5,7 +5,7 @@
 	const works = {
 		case_studies: {
 			title: 'Case studies',
-			subtitle: 'Specialized UI and UX case studies while working on GroveHR',
+			subtitle: ' ',
 			bg: '2',
 			secondaryWorks: {
 				extendable_card_component: {
@@ -27,7 +27,7 @@
 		},
 		external: {
 			title: 'External projects',
-			subtitle: 'Front-end development and design projects for external uses',
+			subtitle: ' ',
 			bg: '4',
 			secondaryWorks: {
 				movieNow: {
@@ -53,14 +53,16 @@
 		grove: {
 			href: '/work/grove',
 			title: 'GroveHR',
-			subtitle: 'HR app with 10k+ downloads. Let people easily manage time off requests, performance reviews, company news and more',
+			subtitle: 'High-impact HR app.\n' +
+				'Effortlessly manage time off, reviews, news & more.\n' +
+				'10k+ downloads and counting.',
 			demo: 'grove',
 			bg: '1'
 		},
 		concept: {
 			href: '/work/concept',
 			title: 'Concept Design System',
-			subtitle: 'Feature-packed and robust component library for complex web dashboards',
+			subtitle: 'Comprehensive and powerful component library for responsive web dashboards.',
 			demo: 'concept',
 			bg: '3'
 		}

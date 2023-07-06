@@ -1,9 +1,7 @@
 <script lang="ts">
 	//<editor-fold desc="Imports">
 	//<editor-fold desc="Components">
-	import BodyLarge from '$lib/components/typography/BodyLarge.svelte';
-	import DisplaySmall from '$lib/components/typography/DisplaySmall.svelte';
-	import Icon from '$lib/components/iconography/Icon.svelte';
+
 	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 	import SmallWorkCard from '$lib/components/cards/SmallWorkCard.svelte';
 	import { colorScheme } from '$lib/data/colorScheme';
@@ -17,35 +15,27 @@
 	import BG4 from '$lib/assets/images/bg/hd-4.svelte';
 	import DemoGrove from '$lib/assets/images/bg/device-grove.svelte';
 	import DemoConcept from '$lib/assets/images/bg/device-concept.svelte';
-	import type { SvelteComponent } from 'svelte';
-	import Headline from '$lib/components/typography/Headline.svelte';
 
-	interface ImgAndClass {
-		[key: string]: {
-			img: typeof SvelteComponent;
-			class: string;
-		};
-	}
-
-	const bgImg: ImgAndClass = {
-		1: {
+	const bgImg = {
+		'1': {
 			img: BG1,
 			class: 'object-left-top'
 		},
-		2: {
+		'2': {
 			img: BG2,
 			class: 'object-right-top opacity-25'
 		},
-		3: {
+		'3': {
 			img: BG3,
 			class: 'object-left-top'
 		},
-		4: {
+		'4': {
 			img: BG4,
 			class: 'object-center opacity-50'
 		}
 	};
-	const demoImg: ImgAndClass = {
+
+	const demoImg = {
 		grove: {
 			img: DemoGrove,
 			class: 'top-0 -bottom-1/4 left-0 right-0 md:-right-20 max-md:flex max-md:items-start [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top'
@@ -61,37 +51,40 @@
 	//<editor-fold desc="Exports">
 	export let title = 'Title';
 	export let subtitle = 'Subtitle';
-	export let demo: string | undefined = undefined;
+	export let demo: string;
 	export let bg = '1';
-	export let href: string | undefined = undefined;
-	export let secondaryWorks: object | undefined = undefined;
-	export let z: string | undefined = undefined;
+	export let href: string;
+	export let secondaryWorks: object;
 	//</editor-fold>
+
+	const selectedDemo = demoImg[demo as keyof typeof demoImg];
+	const selectedBG = bgImg[bg as keyof typeof bgImg];
 </script>
 
 <article
 	id={href ? href : title}
 	class="sticky top-0 md:top-16">
 	<!--<editor-fold desc="Card outer area">-->
-	<div class="pb-safe mb-72 flex h-screen w-full p-4 md:mb-96 md:p-6">
+	<div class="pb-safe mb-72 flex h-screen w-full p-2.5 md:mb-96 md:p-4 lg:p-6">
 		<svelte:element
 			this={href ? 'a' : 'div'}
 			href={href || null}
 			class="contents">
-
 			<!--<editor-fold desc="Card content">-->
-			<div class="relative grid z-10 w-full gap-6 md:gap-8 portrait:grid-cols-1 portrait:grid-rows-3 landscape:grid-cols-3 landscape:grid-rows-1 overflow-clip rounded-[2.5rem] p-6 md:p-8 {$colorScheme === 'light' ? 'bg-white' : 'bg-black'}">
-
+			<div
+				class="relative z-10 grid min-h-[280px] w-full gap-6 overflow-clip rounded-[2.5rem] p-6 md:min-h-[16rem] md:gap-8 md:p-8 lg:min-h-[20rem] lg:gap-12 lg:p-16 portrait:flex portrait:flex-col landscape:min-w-[18rem] landscape:grid-cols-3 landscape:grid-rows-1 {$colorScheme === 'light'
+					? 'bg-white'
+					: 'bg-black'} {secondaryWorks == null ? ' portrait:grid-rows-3' : ' portrait:grid-rows-6'}">
 				<!--<editor-fold desc="Title and Subtitle">-->
-				<div class="pointer-events-none flex flex-col gap-2 ring md:justify-end row-span-1">
+				<div class="pointer-events-none flex flex-col gap-2 landscape:justify-end">
 					<!-- Title and Arrow -->
-					<h1>
+					<h1 class="text-5x md:text-5x-large max-lg:landscape:text-4x font-light">
 						{title}
 					</h1>
 					<!-- /Title and Arrow -->
 
 					<!-- Subtitle -->
-					<h2 class="opacity-70">
+					<h2 class="text-1x md:text-2x-large max-lg:landscape:text-1x font-light opacity-70">
 						{subtitle}
 					</h2>
 					<!-- /Subtitle -->
@@ -100,8 +93,8 @@
 
 				<!--<editor-fold desc="Secondary cards">-->
 				{#if secondaryWorks}
-					<div class="relative z-30 flex grow ring row-span-full " >
-						<div class="isolate w-full grid grid-cols-1 grid-rows-3 gap-6 self-stretch px-0 md:gap-8">
+					<div class="relative z-30 flex grow landscape:col-span-2">
+						<div class="isolate grid w-full grid-cols-1 grid-rows-3 gap-6 self-stretch px-0 md:gap-8">
 							{#each Object.values(secondaryWorks) as secondaryWork}
 								<SmallWorkCard
 									{...secondaryWork}
@@ -114,9 +107,9 @@
 
 				<!--<editor-fold desc="Demo image">-->
 				{#if demo}
-					<div class="pointer-events-none relative z-0 flex basis-full self-stretch ring">
-						<div class="absolute {demoImg[demo].class}">
-							<svelte:component this={demoImg[demo].img} />
+					<div class="pointer-events-none relative z-0 flex basis-full self-stretch portrait:row-span-2 landscape:col-span-2">
+						<div class="absolute {selectedDemo.class}">
+							<svelte:component this={selectedDemo.img} />
 						</div>
 					</div>
 				{/if}
@@ -125,9 +118,9 @@
 				<!--<editor-fold desc="Background illustration">-->
 				<div class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 -z-10 select-none overflow-clip rounded-[2.5rem]">
 					<svelte:component
-						this={bgImg[bg].img}
-						eager={bg === '1' ? true : null}
-						class="h-full w-full object-cover {bgImg[bg].class}" />
+						this={selectedBG.img}
+						eager={bg === '1'}
+						class="h-full w-full object-cover {selectedBG.class}" />
 				</div>
 				<!--</editor-fold>-->
 

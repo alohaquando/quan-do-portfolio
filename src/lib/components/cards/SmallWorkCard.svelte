@@ -12,7 +12,6 @@
 	import DemoHCMC from '$lib/assets/images/bg/demo-hcmc-bars.svelte';
 	import DemoTask from '$lib/assets/images/bg/demo-task-calendar-dashboard.svelte';
 	import Noise from '$lib/components/visual-effects/Noise.svelte';
-	import { scrollY } from '$lib/data/window';
 
 	const demoImgObject = {
 		extendable_card_component: DemoExtendable,
@@ -31,12 +30,12 @@
 	export let demo = '';
 
 	import { innerHeight } from '$lib/data/window';
-
 	let element: HTMLElement;
-	let compact = false;
-	// $: if (element && $innerHeight) {
-	// 	compact = element.getBoundingClientRect().height < 100;
-	// }
+	let compact: boolean;
+
+	$: if (element && $innerHeight) {
+		compact = element.getBoundingClientRect().height < 100;
+	}
 
 	const demoImg = demoImgObject[demo as keyof typeof demoImgObject];
 </script>
@@ -49,27 +48,25 @@
 		<div
 			id={href}
 			bind:this={element}
-			class="relative flex grow portrait:flex-col landscape:flex-row overflow-clip rounded-3xl {solidColors[color]}">
+			class="relative flex grow overflow-clip rounded-3xl portrait:flex-col landscape:flex-row {solidColors[color]}">
 			<!--<editor-fold desc="Noise overlay">-->
 			<Noise class="!opacity-[30%]" />
 			<!--</editor-fold>-->
 
 			<!--<editor-fold desc="Title">-->
-			<div class="pointer-events-none z-10 flex p-4 landscape:basis-1/3 ring ring-red-500 {compact ? '' : 'sm:p-6 lg:p-8'} grow">
-				<h2 class="sm:text-2x {compact ? 'flex grow place-items-center' : ''}" >
+			<div class="pointer-events-none z-10 flex grow pl-6 sm:pl-6 landscape:basis-1/4 {compact ? 'place-items-center pr-4' : 'place-items-end p-4 md:p-8 md:pl-10'}">
+				<h2 class="text-2x md:text-2x-large max-lg:landscape:text-1x font-light max-md:landscape:flex max-md:landscape:grow max-md:landscape:place-items-center max-md:landscape:text-base">
 					{title}
 				</h2>
 			</div>
 			<!--</editor-fold>-->
 
 			<!--<editor-fold desc="Image">-->
-			{#if !compact}
-				<div class="relative flex grow portrait:basis-full self-stretch ring">
-					<div class="bg-glass pointer-events-none absolute -bottom-6 -right-6 landscape:left-0 portrait:top-0 landscape:top-6 rounded-b-3xl [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
-						<svelte:component this={demoImg} />
-					</div>
+			<div class="relative flex grow self-stretch portrait:basis-full">
+				<div class="bg-glass pointer-events-none absolute -bottom-6 -right-6 rounded-b-3xl portrait:top-0 landscape:left-0 landscape:top-5 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
+					<svelte:component this={demoImg} />
 				</div>
-			{/if}
+			</div>
 			<!--</editor-fold>-->
 
 			<!--<editor-fold desc="Glow on hover">-->
