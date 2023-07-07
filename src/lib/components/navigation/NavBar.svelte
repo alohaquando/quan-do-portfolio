@@ -48,7 +48,7 @@
 
 	const handleNavVisibility = throttle(
 		() => {
-			showNav = navInteracting || $scrollY <= 0 || $scrollY - prevY < 0;
+			showNav = navInteracting || $scrollY <=0 || $scrollY - prevY < 0;
 			showNavShadow = $scrollY > 0;
 			prevY = $scrollY;
 		},
@@ -77,7 +77,7 @@
 	on:touchstart={handleNavInteractStart}
 	on:touchmove={handleNavInteractStart}>
 	<!--<editor-fold desc="Foreground">-->
-	<div class="{showNav ? '' : 'blur max-sm:opacity-0'} flex transform-gpu transition-all md:place-content-between">
+	<div class="{showNav ? '' : 'blur max-sm:opacity-0'} flex transform-gpu transition-all md:place-content-between ">
 		<!-- Logo -->
 		<NavBlock class="max-md:hidden ">
 			<NavLink

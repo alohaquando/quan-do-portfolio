@@ -111,13 +111,13 @@
 <footer>
 	<Section
 		id="footer"
-		class="relative my-16 md:mb-2 md:mt-24">
+		class="relative my-6 md:mb-2 md:mt-18">
 		<!-- Divider -->
 		<div class="mx-6 flex h-px grow bg-gray-900/10 dark:bg-white/10 md:mx-10 lg:mx-32" />
 		<!-- /Divider -->
 
 		<!-- Elements -->
-		<div class="flex flex-col place-content-between gap-10 px-6 py-24 sm:flex-row md:gap-24 md:px-10 lg:px-32">
+		<div class="flex flex-col place-content-between gap-10 px-6 py-20 sm:flex-row md:gap-18 md:px-10 lg:px-32">
 			<!-- Left container -->
 			<div class="flex flex-col place-content-between gap-10">
 				<!-- Logo -->
@@ -151,7 +151,7 @@
 			<!-- /Left container -->
 
 			<!--	Right container	-->
-			<div class="grid max-w-screen-md grow place-content-between gap-12 sm:grid-cols-2 md:grid-cols-4">
+			<div class="grid max-w-screen-md grow place-content-between gap-12 sm:grid-cols-2 lg:grid-cols-4">
 				<!-- Link group -->
 				{#each Object.values(footerLinks) as link, i}
 					{#if Object.keys(footerLinks)[i] !== 'landing'}
