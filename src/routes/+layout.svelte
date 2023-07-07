@@ -35,7 +35,7 @@
 <SmoothScrollHandler />
 <ScrollController />
 {#if $colorScheme !== ''}
-<!--	<NavigationBar />-->
+	<NavigationBar />
 	<slot />
 	<Footer />
 {/if}

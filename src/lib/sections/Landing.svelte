@@ -28,12 +28,20 @@
 	</div>
 	<!-- /Foreground elements -->
 
+	<!--<editor-fold desc="Background shadow">-->
+	<div class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 -z-10 flex select-none flex-col  overflow-clip">
+		<div class="grow " />
+
+		<div class="grow bg-gradient-to-t from-black" />
+	</div>
+	<!--</editor-fold>-->
+
 	<!-- Background -->
-	<div class="absolute left-0 right-0 top-0 -z-10 h-[200%] overflow-hidden backdrop-saturate-200 [mask-image:linear-gradient(to_bottom,black,black,transparent)] dark:backdrop-contrast-125">
+	<div class="absolute left-0 right-0 top-0 -z-20 h-[200%] overflow-hidden backdrop-saturate-200 [mask-image:linear-gradient(to_bottom,black,black,transparent)] dark:backdrop-contrast-125">
 		<Noise class="!opacity-30" />
 		<div class="absolute h-full w-full bg-gradient-to-b from-white/80 via-transparent dark:-z-50 dark:from-black dark:via-black/50" />
 		<BG
-			class="h-full w-full object-cover object-top"
+			class="h-full w-full object-cover object-top opacity-80"
 			eager />
 	</div>
 	<!-- /Background -->
