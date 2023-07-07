@@ -2,19 +2,19 @@
         import Image from "$lib/components/media/Image.svelte";
 
         // Alt text
-        export let alt = 'Hd 4';
+        export let alt = 'Device grove full';
         // Lazy / eager loading
         export let eager = false;
 
         // Metadata
         // noinspection TypeScriptCheckImport
-        import {width, height} from "$lib/assets/images/bg/hd-4.avif?as=meta:width;height&imagetools"
+        import {width, height} from "$lib/assets/images/bg/device-grove-full.avif?as=meta:width;height&imagetools"
 
         // Image
         import avifSrc
-          from "$lib/assets/images/bg/hd-4.avif?width=1024;1920;2500&format=avif&quality=95&as=srcset&imagetools";
+          from "$lib/assets/images/bg/device-grove-full.avif?width=720;1024&format=avif&quality=90&as=srcset&imagetools";
         import webpSrc
-          from "$lib/assets/images/bg/hd-4.avif?width=1024;1920;2500&format=webp&quality=95&as=srcset&imagetools";
+          from "$lib/assets/images/bg/device-grove-full.avif?width=720;1024&format=webp&quality=90&as=srcset&imagetools";
 
         const imageData = {
           alt,
