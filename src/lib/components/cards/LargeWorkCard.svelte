@@ -20,7 +20,7 @@
 	const bgImg = {
 		'1': {
 			img: BG1,
-			class: 'object-left-top'
+			class: 'object-left-top opacity-25'
 		},
 		'2': {
 			img: BG2,
@@ -62,32 +62,37 @@
 	const selectedBG = bgImg[bg as keyof typeof bgImg];
 </script>
 
-<Animate class='sticky top-0 md:top-[80px]'>
+<Animate>
 	<article
 		id={href ? href : title}
 		class="">
 		<!--<editor-fold desc="Card outer area">-->
-		<div class="pb-safe mb-24 flex h-screen w-full p-2.5 md:mb-40 md:p-4 lg:p-6">
+		<div class="pb-safe mb-24 flex h-screen w-full">
 			<svelte:element
 				this={href ? 'a' : 'div'}
 				href={href || null}
 				class="contents">
 				<!--<editor-fold desc="Card content">-->
 				<div
-					class="relative z-10 grid min-h-[280px] w-full gap-6 overflow-clip rounded-[2.5rem] p-6 md:min-h-[16rem] md:gap-5 md:p-7 lg:min-h-[20rem] lg:gap-10 lg:p-14 portrait:flex portrait:flex-col landscape:min-w-[18rem] landscape:grid-cols-3 landscape:grid-rows-1 bg-black {secondaryWorks == null ? ' portrait:grid-rows-3' : ' portrait:grid-rows-6'}">
-					<!--<editor-fold desc="Title and Subtitle">-->
-					<div class="pointer-events-none flex flex-col gap-2 landscape:justify-end">
-						<!-- Title and Arrow -->
-						<h1 class="text-4x md:text-5x-large max-lg:landscape:text-4x font-light !text-white  max-lg:landscape:!leading-snug">
-							{title}
-						</h1>
-						<!-- /Title and Arrow -->
+					class="relative z-10 grid min-h-[280px] w-full gap-6 overflow-clip bg-black p-6 md:min-h-[16rem] md:gap-5 md:p-7 lg:min-h-[20rem] lg:gap-10 lg:p-14 portrait:flex portrait:flex-col landscape:min-w-[18rem] landscape:grid-cols-3 landscape:grid-rows-1 {secondaryWorks == null
+						? ' portrait:grid-rows-3'
+						: ' portrait:grid-rows-6'}">
 
-						<!-- Subtitle -->
-						<h2 class="text-1x  md:text-2x-large max-lg:landscape:text-1x font-light !text-white/80 max-lg:landscape:!leading-snug max-md:landscape:line-clamp-7">
-							{subtitle}
-						</h2>
-						<!-- /Subtitle -->
+					<!--<editor-fold desc="Title and Subtitle">-->
+					<div class="pointer-events-none gap-2 landscape:justify-start">
+						<div class=' flex  shrink flex-col '>
+							<!-- Title and Arrow -->
+							<h1 class="text-4x md:text-5x-large max-lg:landscape:text-4x font-light !text-white max-lg:landscape:!leading-snug">
+								{title}
+							</h1>
+							<!-- /Title and Arrow -->
+
+							<!-- Subtitle -->
+							<h2 class="text-1x md:text-2x-large max-lg:landscape:text-1x max-md:landscape:line-clamp-7 font-light !text-white/80 max-lg:landscape:!leading-snug">
+								{subtitle}
+							</h2>
+							<!-- /Subtitle -->
+						</div>
 					</div>
 					<!--</editor-fold>-->
 
@@ -109,14 +114,16 @@
 					{#if demo}
 						<div class="pointer-events-none relative z-0 flex basis-full self-stretch portrait:row-span-2 landscape:col-span-2">
 							<div class="absolute {selectedDemo.class}">
-								<svelte:component this={selectedDemo.img} eager={bg === '1'}/>
+								<svelte:component
+									this={selectedDemo.img}
+									eager={bg === '1'} />
 							</div>
 						</div>
 					{/if}
 					<!--</editor-fold>-->
 
 					<!--<editor-fold desc="Background illustration">-->
-					<div class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 -z-10 select-none overflow-clip rounded-[2.5rem]">
+					<div class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 -z-20 select-none overflow-clip ">
 						<svelte:component
 							this={selectedBG.img}
 							eager={bg === '1'}
@@ -124,8 +131,16 @@
 					</div>
 					<!--</editor-fold>-->
 
+					<!--<editor-fold desc="Background shadow">-->
+					<div class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 -z-10 flex select-none flex-col overflow-clip">
+						<div class="grow bg-gradient-to-b from-black" />
+						<div class="grow" />
+						<div class="grow bg-gradient-to-t from-black" />
+					</div>
+					<!--</editor-fold>-->
+
 					<!--<editor-fold desc="Noise overlay">-->
-					<Noise class="z-20 rounded-[2.5rem] opacity-50" />
+					<Noise class="z-20 opacity-50" />
 					<!--</editor-fold>-->
 
 					<!--<editor-fold desc="Glow on hover">-->
@@ -139,5 +154,4 @@
 		</div>
 		<!--</editor-fold>-->
 	</article>
-
 </Animate>
