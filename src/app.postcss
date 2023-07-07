@@ -49,6 +49,10 @@
 
 @layer components {
 	/* Text scaling (mobile - 1.2) - (desktop - 1.333) */
+	.-text-3x {
+		@apply text-color text-[0.7rem] leading-relaxed;
+	}
+
 	.-text-2x {
 		@apply text-color text-[0.8rem] leading-relaxed;
 	}
@@ -108,7 +112,7 @@
 	}
 
 	.bg-glass-gradient {
-		@apply blur-fix rounded-[2.5rem] bg-gradient-to-b from-gray-900/[3%] to-gray-900/[1%] backdrop-blur-2xl backdrop-saturate-150 dark:from-white/10 dark:to-white/5;
+		@apply blur-fix rounded-3xl bg-gradient-to-b from-gray-900/[3%] to-gray-900/[1%] backdrop-blur-2xl backdrop-saturate-150 dark:from-white/10 dark:to-white/5;
 	}
 
 	.bg-glass {
