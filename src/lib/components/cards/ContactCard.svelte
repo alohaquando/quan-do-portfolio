@@ -4,6 +4,7 @@
 	import Icon from '$lib/components/iconography/Icon.svelte';
 	import HoverGlow from '$lib/components/visual-effects/HoverGlow.svelte';
 	import Animate from '$lib/components/visual-effects/SlideIn.svelte';
+	import Noise from '$lib/components/visual-effects/Noise.svelte';
 	export let data = 'email';
 	let className = '';
 	export { className as class };
@@ -46,12 +47,17 @@
 		rel="noopener noreferrer"
 		class="contents">
 		<!-- Card BG & layout -->
-		<div class="bg-glass-gradient relative flex flex-col gap-8 px-8 py-10 md:gap-12 md:px-10 md:py-12">
+		<div class="bg-glass-gradient relative flex flex-col gap-6 px-5 py-6 md:gap-8 md:px-8 md:py-8">
+
+			<!--<editor-fold desc="Noise overlay">-->
+			<Noise class="dark:!opacity-[10%] !opacity-[20%] rounded-3xl" />
+			<!--</editor-fold>-->
+
 			<!-- Icon -->
-			<div class="bg-glass pointer-events-none z-10 flex h-12 w-12 place-content-center items-center rounded-xl p-2 md:h-14 md:w-14">
+			<div class="bg-glass pointer-events-none z-10 flex h-10 w-10 place-content-center items-center rounded-xl p-2 md:h-14 md:w-14">
 				<Icon
 					name={contactData[data].icon}
-					size="w-7 md:w-8" />
+					size="w-6 md:w-8" />
 			</div>
 			<!-- /Icon -->
 

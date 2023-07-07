@@ -14,7 +14,7 @@
 	import BG2 from '$lib/assets/images/bg/hd-2.svelte';
 	import BG3 from '$lib/assets/images/bg/hd-3.svelte';
 	import BG4 from '$lib/assets/images/bg/hd-4.svelte';
-	import DemoGrove from '$lib/assets/images/bg/device-grove.svelte';
+	import DemoGrove from '$lib/assets/images/bg/device-grove-full.svelte';
 	import DemoConcept from '$lib/assets/images/bg/device-concept.svelte';
 
 	const bgImg = {
@@ -28,7 +28,7 @@
 		},
 		'3': {
 			img: BG3,
-			class: 'object-left-top'
+			class: 'object-left-top opacity-50'
 		},
 		'4': {
 			img: BG4,
@@ -39,11 +39,11 @@
 	const demoImg = {
 		grove: {
 			img: DemoGrove,
-			class: 'top-0 -bottom-1/4 left-0 right-0 md:-right-20 max-md:flex max-md:items-start [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top'
+			class: ''
 		},
 		concept: {
 			img: DemoConcept,
-			class: '-top-[10%] -bottom-[10%] -left-[10%] -right-[30%] sm:-top-[0%] sm:-bottom-[0%] sm:-left-[5%] sm:-right-[5%] overflow-visible md:left-0 md:top-0 md:bottom-0 md:-right-20 [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top'
+			class: ''
 		}
 	};
 	//</editor-fold>
@@ -62,24 +62,24 @@
 	const selectedBG = bgImg[bg as keyof typeof bgImg];
 </script>
 
-<Animate>
+
 	<article
 		id={href ? href : title}
 		class="">
 		<!--<editor-fold desc="Card outer area">-->
-		<div class="pb-safe mb-24 flex h-screen w-full">
+		<div class="pb-safe mb-24 flex min-h-screen w-full">
 			<svelte:element
 				this={href ? 'a' : 'div'}
 				href={href || null}
 				class="contents">
 				<!--<editor-fold desc="Card content">-->
 				<div
-					class="relative z-10 grid min-h-[280px] w-full gap-6 overflow-clip bg-black p-6 md:min-h-[16rem] md:gap-5 md:p-7 lg:min-h-[20rem] lg:gap-10 lg:p-14 portrait:flex portrait:flex-col landscape:min-w-[18rem] landscape:grid-cols-3 landscape:grid-rows-1 {secondaryWorks == null
+					class="relative z-10 grid min-h-[280px] w-full gap-6 overflow-clip bg-black p-5 md:min-h-[16rem] md:gap-5 md:p-8 lg:min-h-[20rem] lg:gap-10 lg:p-14 portrait:flex portrait:flex-col landscape:min-w-[18rem] landscape:grid-cols-3 landscape:grid-rows-1 {secondaryWorks == null
 						? ' portrait:grid-rows-3'
 						: ' portrait:grid-rows-6'}">
 
 					<!--<editor-fold desc="Title and Subtitle">-->
-					<div class="pointer-events-none gap-2 landscape:justify-start">
+					<div class="pointer-events-none gap-2 landscape:place-items-end flex ">
 						<div class=' flex  shrink flex-col '>
 							<!-- Title and Arrow -->
 							<h1 class="text-4x md:text-5x-large max-lg:landscape:text-4x font-light !text-white max-lg:landscape:!leading-snug">
@@ -98,8 +98,8 @@
 
 					<!--<editor-fold desc="Secondary cards">-->
 					{#if secondaryWorks}
-						<div class="relative z-30 flex grow landscape:col-span-2">
-							<div class="isolate grid w-full grid-cols-1 grid-rows-3 gap-6 self-stretch px-0 md:gap-5">
+						<div class="relative z-30 flex grow landscape:col-span-2 ">
+							<div class="isolate grid w-full grid-cols-1 grid-rows-3 gap-4 sm:gap-6 self-stretch px-0 ">
 								{#each Object.values(secondaryWorks) as secondaryWork}
 									<SmallWorkCard
 										{...secondaryWork}
@@ -154,4 +154,4 @@
 		</div>
 		<!--</editor-fold>-->
 	</article>
-</Animate>
+

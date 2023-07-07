@@ -50,9 +50,9 @@
 			<!--</editor-fold>-->
 
 			<!--<editor-fold desc="Title">-->
-			<div class="pointer-events-none z-10 flex p-4 pl-5 md:p-6 md:pl-7 landscape:grow md:portrait:grow {compact ? 'place-items-center pr-4' : 'landscape:place-items-end '}">
+			<div class="pointer-events-none z-10 flex px-5 py-6 md:p-6 md:pl-7 landscape:grow md:portrait:grow {compact ? 'place-items-center pr-4' : 'landscape:place-items-end '}">
 				<h2
-					class="text-1x md:portrait:text-3x md:landscape:text-2x lg:landscape:text-4x max-lg:landscape:text-1x !text-white/95 md:font-light max-lg:landscape:whitespace-nowrap   max-md:landscape:place-items-center max-md:landscape:text-base !leading-snug ">
+					class="text-2x md:portrait:text-3x md:landscape:text-2x lg:landscape:text-4x max-lg:landscape:text-1x !text-white/95 font-light max-lg:landscape:whitespace-nowrap max-md:landscape:place-items-center max-md:landscape:text-base !leading-snug ">
 					{title}
 				</h2>
 			</div>

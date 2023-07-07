@@ -28,6 +28,8 @@
 	// Image
 	import ResumeImg from '$lib/assets/images/bg/resume.svelte';
 	import type { SvelteComponent } from 'svelte';
+	import Noise from '$lib/components/visual-effects/Noise.svelte';
+	import TaglineTitle from '$lib/components/typography/TaglineTitle.svelte';
 	const images: ImgAndClass = {
 		resume: {
 			img: ResumeImg,
@@ -63,8 +65,13 @@
 		class="contents">
 		<!-- Card -->
 		<div class="{className} {secondary ? 'grid grid-cols-1 grid-rows-2 sm:grid-cols-2 sm:grid-rows-1' : ''} bg-glass-gradient relative flex grow overflow-clip">
+
+			<!--<editor-fold desc="Noise overlay">-->
+			<Noise class="dark:!opacity-[10%] !opacity-[20%] rounded-3xl" />
+			<!--</editor-fold>-->
+
 			<!-- Primary text -->
-			<div class="pointer-events-none z-10 flex flex-col gap-2 px-8 py-10 md:px-10 md:py-12">
+			<div class="pointer-events-none z-10 flex flex-col px-5 py-6 md:px-8 md:py-10 {secondary ? 'pb-1 sm:pb-6' : ''}">
 				<!-- Tagline -->
 				{#if tagline}
 					<Tagline>{tagline}</Tagline>
@@ -72,7 +79,7 @@
 				<!-- /Tagline -->
 
 				<!-- Title and Icon -->
-				<Title class="flex items-center gap-3">
+				<Title class="flex items-center gap-3 {secondary ? '' : 'pb-2'}">
 					<!-- Title / Full Name -->
 					{#if title !== 'Quân Hoàng Đỗ'}
 						{title}
@@ -99,6 +106,15 @@
 				<!-- /Subtitle -->
 			</div>
 			<!-- /Primary text -->
+
+			<!-- Secondary text  -->
+			{#if secondary}
+				<div class="pointer-events-none z-10 flex flex-col px-5 pb-2  sm:py-10">
+					<Tagline>{secondary.tagline}</Tagline>
+					<Title>{secondary.title}</Title>
+				</div>
+			{/if}
+			<!-- /Secondary text  -->
 
 			<!-- Illustration -->
 			{#if illustration}
@@ -128,26 +144,20 @@
 
 			<!-- Image -->
 			{#if image}
-				<div class="relative flex max-h-full grow basis-full self-stretch">
-					<div class="bg-glass pointer-events-none absolute -bottom-6 -right-32 top-8 w-[120%] rounded-b-3xl sm:-right-6 sm:w-[85%] [&_img]:h-full [&_img]:w-full [&_img]:object-cover [&_img]:object-left-top">
-						<svelte:component this={images[image].img} />
+				<div class="relative basis-full">
+					<div class="pointer-events-none absolute -bottom-6 -right-6 top-0 left-[30%]">
+						<div class="h-full w-full [&_img]:h-full [&_img]:w-full [&_img]:rounded-lg [&_img]:object-cover [&_img]:object-left-top">
+							<svelte:component this={images[image].img} />
+						</div>
 					</div>
 				</div>
 			{/if}
 			<!-- /Image -->
 
-			<!-- Secondary text  -->
-			{#if secondary}
-				<div class="flex flex-col gap-2 px-8 py-10 md:px-10 md:py-12">
-					<Tagline>{secondary.tagline}</Tagline>
-					<Title>{secondary.title}</Title>
-				</div>
-			{/if}
-			<!-- /Secondary text  -->
 
 			<!-- Glow on hover -->
 			{#if href}
-				<HoverGlow class="rounded-[2.5rem] " />
+				<HoverGlow class="rounded-3xl " />
 			{/if}
 			<!-- /Glow on hover -->
 		</div>

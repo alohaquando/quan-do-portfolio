@@ -11,7 +11,7 @@
 
 <Section
 	id="contact"
-	class="flex flex-col items-center items-stretch gap-20 pb-16 pt-[6rem] md:gap-40 md:pt-[14rem]">
+	class="flex flex-col items-stretch gap-20 pb-16 pt-[6rem] md:gap-40 md:pt-[14rem]">
 	<div class="relative">
 		<SlideIn>
 			<ColorBlurSVG />
@@ -20,7 +20,7 @@
 	</div>
 
 	<!-- Cards -->
-	<div class="mx-auto grid w-full max-w-screen-md flex-col gap-6 px-6 sm:grid-cols-2 sm:grid-rows-2">
+	<div class="mx-auto grid w-full max-w-screen-md flex-col gap-4 sm:gap-6 px-5 md:px-8 sm:grid-cols-2 sm:grid-rows-2">
 		{#each contactData as data}
 			<ContactCard
 				{data}

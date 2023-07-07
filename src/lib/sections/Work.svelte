@@ -69,7 +69,8 @@
 
 <Section
 	id="work"
-	class="relative pb-16 md:-translate-y-16">
+	class="relative pb-16">
+	<div class='h-24 w-full bg-black'/>
 	{#each Object.values(works) as work}
 		<LargeWorkCard {...work} />
 	{/each}
