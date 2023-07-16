@@ -54,10 +54,10 @@
 			<!--</editor-fold>-->
 
 			<!-- Icon -->
-			<div class="bg-glass pointer-events-none z-10 flex h-10 w-10 place-content-center items-center rounded-xl p-2 md:h-14 md:w-14">
+			<div class="bg-glass pointer-events-none z-10 flex h-10 w-10 place-content-center items-center rounded-xl p-2 md:h-12 md:w-12">
 				<Icon
 					name={contactData[data].icon}
-					size="w-6 md:w-8" />
+					size="w-6 md:w-7" />
 			</div>
 			<!-- /Icon -->
 
@@ -69,7 +69,7 @@
 					<Icon
 						name="arrow_up_right"
 						stroke_width="1.5"
-						size="w-7 md:w-8"
+						size="w-7 md:w-7"
 						class="mb-0.5 inline-block" />
 				</Title>
 				<!-- /Title -->
@@ -81,7 +81,7 @@
 			<!-- /Text elements -->
 
 			<!-- Glow on hover -->
-			<HoverGlow class="rounded-[2.5rem]" />
+			<HoverGlow class="rounded-3xl" />
 			<!-- /Glow on hover -->
 		</div>
 		<!-- /Card BG & layout -->

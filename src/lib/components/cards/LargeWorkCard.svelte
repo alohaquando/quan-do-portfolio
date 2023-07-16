@@ -62,33 +62,33 @@
 	const selectedBG = bgImg[bg as keyof typeof bgImg];
 </script>
 
+<Animate rootMargin='-50%'>
 
 	<article
 		id={href ? href : title}
 		class="">
 		<!--<editor-fold desc="Card outer area">-->
-		<div class="pb-safe mb-24 flex min-h-screen w-full">
+		<div class="pb-safe mb-20 flex min-h-screen w-full">
 			<svelte:element
 				this={href ? 'a' : 'div'}
 				href={href || null}
 				class="contents">
 				<!--<editor-fold desc="Card content">-->
 				<div
-					class="relative z-10 grid min-h-[280px] w-full gap-6 overflow-clip bg-black p-5 md:min-h-[16rem] md:gap-5 md:p-8 lg:min-h-[20rem] lg:gap-10 lg:p-14 portrait:flex portrait:flex-col landscape:min-w-[18rem] landscape:grid-cols-3 landscape:grid-rows-1 {secondaryWorks == null
-						? ' portrait:grid-rows-3'
-						: ' portrait:grid-rows-6'}">
-
+					class="relative z-10 grid min-h-[280px] w-full gap-6 overflow-clip dark:bg-black p-5 md:min-h-[16rem] md:gap-5 md:p-8 lg:min-h-[20rem] lg:gap-10 lg:p-14 portrait:flex portrait:flex-col landscape:min-w-[18rem] landscape:grid-cols-3 landscape:grid-rows-1 {secondaryWorks == null
+					? ' portrait:grid-rows-3'
+					: ' portrait:grid-rows-6'}">
 					<!--<editor-fold desc="Title and Subtitle">-->
-					<div class="pointer-events-none gap-2 landscape:place-items-end flex ">
-						<div class=' flex  shrink flex-col '>
+					<div class="pointer-events-none flex gap-2 landscape:place-items-end">
+						<div class=" flex shrink flex-col">
 							<!-- Title and Arrow -->
-							<h1 class="text-4x md:text-5x-large max-lg:landscape:text-4x font-light !text-white max-lg:landscape:!leading-snug">
+							<h1 class="text-4x md:text-5x-large max-lg:landscape:text-4x font-light !leading-snug mb-2">
 								{title}
 							</h1>
 							<!-- /Title and Arrow -->
 
 							<!-- Subtitle -->
-							<h2 class="text-1x md:text-2x-large max-lg:landscape:text-1x max-md:landscape:line-clamp-7 font-light !text-white/80 max-lg:landscape:!leading-snug">
+							<h2 class="text-1x md:text-2x-large max-lg:landscape:text-1x max-md:landscape:line-clamp-7 font-light opacity-70 max-lg:landscape:!leading-snug">
 								{subtitle}
 							</h2>
 							<!-- /Subtitle -->
@@ -98,8 +98,8 @@
 
 					<!--<editor-fold desc="Secondary cards">-->
 					{#if secondaryWorks}
-						<div class="relative z-30 flex grow landscape:col-span-2 ">
-							<div class="isolate grid w-full grid-cols-1 grid-rows-3 gap-4 sm:gap-6 self-stretch px-0 ">
+						<div class="relative z-30 flex grow landscape:col-span-2">
+							<div class="isolate grid w-full grid-cols-1 grid-rows-3 gap-4 self-stretch px-0 sm:gap-6">
 								{#each Object.values(secondaryWorks) as secondaryWork}
 									<SmallWorkCard
 										{...secondaryWork}
@@ -127,15 +127,15 @@
 						<svelte:component
 							this={selectedBG.img}
 							eager={bg === '1'}
-							class="h-full w-full object-cover {selectedBG.class}" />
+							class="h-full w-full object-cover opacity-50  saturate-150 dark:saturate-100 dark:opacity-40 {selectedBG.class}" />
 					</div>
 					<!--</editor-fold>-->
 
 					<!--<editor-fold desc="Background shadow">-->
 					<div class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 -z-10 flex select-none flex-col overflow-clip">
-						<div class="grow bg-gradient-to-b from-black" />
+						<div class="grow bg-gradient-to-b dark:from-black from-white via-white/30" />
 						<div class="grow" />
-						<div class="grow bg-gradient-to-t from-black" />
+						<div class="grow bg-gradient-to-t dark:from-black from-white via-white/30" />
 					</div>
 					<!--</editor-fold>-->
 
@@ -155,3 +155,4 @@
 		<!--</editor-fold>-->
 	</article>
 
+</Animate>

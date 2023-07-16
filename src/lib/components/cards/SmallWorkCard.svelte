@@ -44,7 +44,7 @@
 		<div
 			id={href}
 			bind:this={element}
-			class="bg-glass-gradient relative flex grow overflow-clip rounded-3xl portrait:flex-col landscape:flex-row md:portrait:flex-row">
+			class="bg-glass-gradient bg-white/70 shadow-lg dark:shadow-none dark:bg-transparent relative flex grow overflow-clip rounded-3xl portrait:flex-col landscape:flex-row md:portrait:flex-row ring-1 ring-zinc-500/10">
 			<!--<editor-fold desc="Noise overlay">-->
 			<Noise class="dark:!opacity-[10%] !opacity-[20%]" />
 			<!--</editor-fold>-->
@@ -52,7 +52,7 @@
 			<!--<editor-fold desc="Title">-->
 			<div class="pointer-events-none z-10 flex px-5 py-6 md:p-6 md:pl-7 landscape:grow md:portrait:grow {compact ? 'place-items-center pr-4' : 'landscape:place-items-end '}">
 				<h2
-					class="text-2x md:portrait:text-3x md:landscape:text-2x lg:landscape:text-4x max-lg:landscape:text-1x !text-white/95 font-light max-lg:landscape:whitespace-nowrap max-md:landscape:place-items-center max-md:landscape:text-base !leading-snug ">
+					class="text-2x md:portrait:text-3x md:landscape:text-2x lg:landscape:text-4x max-lg:landscape:text-1x font-light max-lg:landscape:whitespace-nowrap max-md:landscape:place-items-center max-md:landscape:text-base !leading-snug ">
 					{title}
 				</h2>
 			</div>

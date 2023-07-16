@@ -70,7 +70,7 @@
 <Section
 	id="work"
 	class="relative pb-16">
-	<div class='h-24 w-full bg-black'/>
+
 	{#each Object.values(works) as work}
 		<LargeWorkCard {...work} />
 	{/each}

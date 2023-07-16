@@ -9,7 +9,7 @@
 
 <Section
 	id="landing"
-	class="min-h-sm-screen-safe sm:min-h-md-screen-safe md:min-h-screen-safe relative flex">
+	class="min-h-sm-screen-safe sm:min-h-md-screen-safe md:min-h-screen-safe relative flex overflow-hidden">
 	<!-- Foreground elements -->
 	<div class="flex grow flex-col place-content-between items-center gap-10 pt-12 sm:pt-20 md:place-content-center md:pt-16">
 		<!-- Logo -->
@@ -29,10 +29,8 @@
 	<!-- /Foreground elements -->
 
 	<!--<editor-fold desc="Background shadow">-->
-	<div class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 -z-10 flex select-none flex-col  overflow-clip">
-		<div class="grow " />
-
-		<div class="grow bg-gradient-to-t from-black" />
+	<div class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 -z-10 flex flex-col justify-end overflow-clip">
+		<div class=" h-32 bg-gradient-to-t dark:from-black from-white" />
 	</div>
 	<!--</editor-fold>-->
 

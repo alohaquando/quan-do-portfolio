@@ -71,5 +71,6 @@ export const colorfulGradients = {
 	red: 'bg-gradient-to-r from-red-500',
 	blue: 'bg-gradient-to-r from-sky-500 to-blue-400',
 	green: 'bg-gradient-to-r from-emerald-900 to-teal-900',
-	monochrome: 'bg-gradient-to-r from-zinc-100 to-zinc-200 dark:from-white/30 dark:to-white/30'
+	monochrome: 'bg-gradient-to-r from-zinc-100 to-zinc-200 dark:from-white/30 dark:to-white/30',
+	hover: 'bg-gradient-to-r from-blue-300/70 to-teal-300/80 dark:from-white/30 dark:to-white/30'
 };
